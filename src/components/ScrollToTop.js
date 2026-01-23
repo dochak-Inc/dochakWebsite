@@ -6,6 +6,11 @@ export default function ScrollToTop() {
   const prevPathname = useRef(pathname);
 
   useEffect(() => {
+    // Disable browser scroll restoration
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+
     // Only scroll to top if pathname actually changed (not just state updates)
     if (prevPathname.current !== pathname) {
       window.scrollTo(0, 0);

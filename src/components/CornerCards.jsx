@@ -1,0 +1,111 @@
+import React from 'react';
+import { motion } from 'motion/react';
+import { useFrameOpacity } from '../hooks/useScrollFrames';
+import './CornerCards.css';
+
+/**
+ * Feature Card for Four-Corner Layout
+ * Displays during expansion phase (Frames 49-96)
+ */
+const FeatureCard = ({ title, metric, ctaText, ctaLink, position, currentFrame, accentColor = '#58BDEC' }) => {
+  // Fade in quickly: frames 49-64, FULLY visible by frame 72 (sticky frame), fade out: 86-96
+  const opacity = useFrameOpacity(49, 64, 86, 96, currentFrame);
+
+  // Position-specific slide-in animations
+  const getInitialOffset = () => {
+    switch (position) {
+      case 'top-left':
+        return { x: -100, y: -100 };
+      case 'top-right':
+        return { x: 100, y: -100 };
+      case 'bottom-left':
+        return { x: -100, y: 100 };
+      case 'bottom-right':
+        return { x: 100, y: 100 };
+      default:
+        return { x: 0, y: 0 };
+    }
+  };
+
+  const initialOffset = getInitialOffset();
+  const progress = Math.max(0, Math.min(1, (currentFrame - 49) / 15)); // 0-1 over frames 49-64
+
+  return (
+    <motion.div
+      className={`corner-card corner-card-${position}`}
+      style={{
+        opacity,
+        transform: `translate(${initialOffset.x * (1 - progress)}px, ${initialOffset.y * (1 - progress)}px)`,
+        '--accent-color': accentColor
+      }}
+      aria-hidden={opacity === 0}
+    >
+      <div className="corner-card-content">
+        <div className="corner-card-metric">{metric}</div>
+        <h3 className="corner-card-title">{title}</h3>
+        <a href={ctaLink} className="corner-card-cta">{ctaText}</a>
+      </div>
+      <div className="corner-card-glow"></div>
+    </motion.div>
+  );
+};
+
+/**
+ * CornerCards Component
+ * Four-corner feature showcase for expansion phase
+ */
+const CornerCards = ({ currentFrame }) => {
+  // Only render if in expansion phase (frames 49-96)
+  if (currentFrame < 49 || currentFrame > 96) {
+    return null;
+  }
+
+  const features = [
+    {
+      position: 'top-left',
+      title: 'Research Papers',
+      metric: '47+',
+      ctaText: 'View Research',
+      ctaLink: '/disclosure',
+      accentColor: '#58BDEC'
+    },
+    {
+      position: 'top-right',
+      title: 'Expert Team',
+      metric: '15+',
+      ctaText: 'Meet Our Team',
+      ctaLink: '/team',
+      accentColor: '#10b981'
+    },
+    {
+      position: 'bottom-left',
+      title: 'Training Courses',
+      metric: '10+',
+      ctaText: 'View Courses',
+      ctaLink: '/training',
+      accentColor: '#10b981'
+    },
+    {
+      position: 'bottom-right',
+      title: 'Integrated Solutions',
+      metric: '7+',
+      ctaText: 'Explore Solutions',
+      ctaLink: '/solutions',
+      accentColor: '#58BDEC'
+    }
+  ];
+
+  return (
+    <div className="corner-cards-container">
+      {features.map((feature) => (
+        <FeatureCard
+          key={feature.position}
+          {...feature}
+          currentFrame={currentFrame}
+        />
+      ))}
+    </div>
+  );
+};
+
+export default CornerCards;

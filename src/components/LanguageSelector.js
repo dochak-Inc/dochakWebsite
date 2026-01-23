@@ -5,8 +5,19 @@ import './LanguageSelector.css';
 const LanguageSelector = () => {
   const { currentLanguage, setLanguage, availableLanguages } = useContext(LanguageContext);
   const [isOpen, setIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const dropdownRef = useRef(null);
   const buttonRef = useRef(null);
+
+  // Check if mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 1100);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const languageLabels = {
     en: 'EN',
@@ -114,7 +125,12 @@ const LanguageSelector = () => {
   };
 
   return (
-    <div className="language-selector" ref={dropdownRef}>
+    <div
+      className="language-selector"
+      ref={dropdownRef}
+      onMouseEnter={!isMobile ? () => setIsOpen(true) : undefined}
+      onMouseLeave={!isMobile ? () => setIsOpen(false) : undefined}
+    >
       <button
         ref={buttonRef}
         className={`language-selector-button ${isOpen ? 'open' : ''}`}
@@ -125,23 +141,18 @@ const LanguageSelector = () => {
         aria-haspopup="listbox"
         type="button"
       >
-        <span className="language-label">{languageLabels[currentLanguage]}</span>
         <svg
-          className={`dropdown-arrow ${isOpen ? 'rotated' : ''}`}
-          width="12"
-          height="8"
-          viewBox="0 0 12 8"
+          className="globe-icon"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
         >
-          <path
-            d="M1 1.5L6 6.5L11 1.5"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
+          <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M2 12h20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       </button>
 

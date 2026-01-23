@@ -1,3 +1,5 @@
+import React from 'react';
+
 // Image preloader utility to cache images and prevent repeated loading
 class ImagePreloader {
   constructor() {

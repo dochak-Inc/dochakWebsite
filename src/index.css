@@ -22,7 +22,7 @@
 }
 
 html, body {
-  background: #f5f7fa;
+  background: #000000;
   color: var(--text-primary);
   font-family: 'Inter', 'Montserrat', 'Segoe UI', 'Roboto', 'Arial', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;

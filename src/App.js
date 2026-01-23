@@ -6,6 +6,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Hyperspeed from './Hyperspeed';
 import { ContainerTextFlip } from "./components/ui/container-text-flip";
+import HolographicCityScroll from './components/HolographicCityScroll';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 // import Technologies from './Technologies';
 import About from './About';
@@ -173,104 +174,8 @@ function HomePage() {
   
   return (
     <main>
-      {/* Section 1: Hero */}
-      <section className="hero-section" style={{position: 'relative', overflow: 'hidden'}}>
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          zIndex: 1
-        }}>
-          <Hyperspeed
-          effectOptions={{
-            onSpeedUp: () => { },
-            onSlowDown: () => { },
-            distortion: 'xyDistortion',
-            length: 400,
-            roadWidth: 10,
-            islandWidth: 2,
-            lanesPerRoad: 4,
-            fov: 90,
-            fovSpeedUp: 150,
-            speedUp: 3,
-            carLightsFade: 0.4,
-            totalSideLightSticks: 20,
-            lightPairsPerRoadWay: 40,
-            shoulderLinesWidthPercentage: 0.05,
-            brokenLinesWidthPercentage: 0.1,
-            brokenLinesLengthPercentage: 0.5,
-            lightStickWidth: [0.12, 0.5],
-            lightStickHeight: [1.3, 1.7],
-            movingAwaySpeed: [20, 50],
-            movingCloserSpeed: [-150, -230],
-            carLightsLength: [400 * 0.03, 400 * 0.2],
-            carLightsRadius: [0.05, 0.14],
-            carWidthPercentage: [0.3, 0.5],
-            carShiftX: [-0.8, 0.8],
-            carFloorSeparation: [0, 5],
-            colors: {
-              roadColor: 0xCBD5E1,
-              islandColor: 0xE5E7EB,
-              background: 0xF5F7FA,
-              shoulderLines: 0x94A3B8,
-              brokenLines: 0x94A3B8,
-              leftCars: [0x217cd1, 0x57bceb, 0xF1F5F9],
-              rightCars: [0xFFFFFF, 0xF1F5F9, 0x93C5FD],
-              sticks: 0x93C5FD,
-            }              
-          }}
-        />
-        </div>
-        <div className="hero-content hero-centered" style={{position: 'relative', zIndex: 1}}>
-          <div className="hero-text">
-            <AnimatedElement animation="slide-up" delay={0}>
-              <h1>{t('hero.title')}</h1>
-            </AnimatedElement>
-            <AnimatedElement animation="slide-up" delay={200}>
-              <ContainerTextFlip words={t('hero.flipWords')} interval={2200} textClassName="flip-words" />
-            </AnimatedElement>
-            <AnimatedElement animation="slide-up" delay={400}>
-              <div className="hero-subheadline">{t('hero.subtitle')}</div>
-            </AnimatedElement>
-            {/* <div className="hero-buttons">
-              <Link to="/about">
-                <button>Learn More</button>
-              </Link>
-              <Link to="/solutions"> 
-                <button>Our Solutions</button>
-              </Link>
-            </div> }*/}
-            </div>
-        </div>
-      </section>
-      {/* Section 2: Light-grey */}
-      <section className="light-section">
-        <h2>{t('sections.overview')}</h2>
-          <BentoDemo />
-      </section>
-      {/* Section 3: Stats */}
-      {/* <section className="stats-section">
-        <div className="stats-grid">
-          <div className="stat-card" data-aos="fade-up" data-aos-delay="0">
-            <div className="stat-number">29</div>
-            <div className="stat-label">Conference Papers</div>
-          </div>
-          <div className="stat-card" data-aos="fade-up" data-aos-delay="0">
-            <div className="stat-number">7</div>
-            <div className="stat-label">Patents Granted</div>
-          </div>
-          <div className="stat-card" data-aos="fade-up" data-aos-delay="0">
-            <div className="stat-number">₩10B</div>
-            <div className="stat-label">Revenue Goal</div>
-          </div>
-          <div className="stat-card" data-aos="fade-up" data-aos-delay="0">
-            <div className="stat-number">6</div>
-            <div className="stat-label">Solutions</div>
-          </div>
-        </div>
-      </section> */}
+      {/* Section 1: Holographic City Hero */}
+      <HolographicCityScroll />
     </main>
   );
 }

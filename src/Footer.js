@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import './Footer.css';
-import logo from './assets/blue_logo.png';
+import logo from './assets/logo.png';
 import LanguageContext from './contexts/LanguageContext';
 
 function Footer() {

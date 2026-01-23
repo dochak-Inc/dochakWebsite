@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext, useRef } from 'react';
 import './Navbar.css';
-import logo from './assets/blue_logo.png';
+import logo from './assets/logo.png';
 import { Link, useLocation } from 'react-router-dom';
 import LanguageSelector from './components/LanguageSelector';
 import LanguageContext from './contexts/LanguageContext';
@@ -113,29 +113,21 @@ function Navbar() {
         {/* <Link to="/technologies" className={location.pathname === '/technologies' ? 'active' : ''}>{t('nav.technologies')}</Link> */}
         
         {/* Solutions Dropdown */}
-        <div 
-          className="solutions-dropdown" 
+        <div
+          className="solutions-dropdown"
           ref={solutionsDropdownRef}
           onMouseEnter={handleSolutionsMouseEnter}
           onMouseLeave={handleSolutionsMouseLeave}
         >
-          <div 
-            className={`solutions-nav-container ${isSolutionsActive() ? 'active' : ''}`}
-            onKeyDown={handleDropdownKeyDown}
+          <Link
+            to="/solutions"
+            className={`solutions-main-link ${isSolutionsActive() ? 'active' : ''}`}
+            onClick={handleSolutionsClick}
+            aria-label={t('nav.solutionsAriaLabel') || 'Solutions overview page'}
           >
-            <Link
-              to="/solutions"
-              className="solutions-main-link"
-              onClick={handleSolutionsClick}
-              aria-label={t('nav.solutionsAriaLabel') || 'Solutions overview page'}
-            >
-              {t('nav.solutions')}
-            </Link>
-            <div className="solutions-dropdown-toggle">
-              <span className={`dropdown-arrow ${solutionsDropdownOpen ? 'open' : ''}`} aria-hidden="true">▼</span>
-            </div>
-          </div>
-          
+            {t('nav.solutions')}
+          </Link>
+
           {solutionsDropdownOpen && (
             <div className="solutions-dropdown-menu" role="menu">
               {SOLUTION_METADATA.map((solution) => (
@@ -325,9 +317,9 @@ function Navbar() {
             >
               {t('nav.disclosure')}
             </Link>
-            <Link 
-              to="/get-in-touch" 
-              className={location.pathname === '/get-in-touch' ? 'active' : ''} 
+            <Link
+              to="/get-in-touch"
+              className={location.pathname === '/get-in-touch' ? 'active' : ''}
               onClick={() => setIsMenuOpen(false)}
               role="menuitem"
               aria-label={t('nav.getInTouchAriaLabel') || 'Contact us page'}
@@ -335,6 +327,11 @@ function Navbar() {
               {t('nav.getInTouch')}
             </Link>
           </nav>
+
+          {/* Language Selector in Mobile Menu */}
+          <div className="mobile-language-selector">
+            <LanguageSelector />
+          </div>
         </div>
       )}
     </nav>

@@ -1,10 +1,14 @@
 .footer {
-  background: #fff;
-  color: var(--text-primary);
+  /* Dark theme background */
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+
+  color: rgba(255, 255, 255, 0.85);
   padding: 2.2rem 0 1.2rem 0;
   font-size: 1rem;
   margin-top: 0rem;
-  border-top: 1.5px solid var(--border-light);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-content {
@@ -33,7 +37,7 @@
 .footer-company {
   font-weight: 800;
   font-size: 1.2rem;
-  color: var(--navy-heading);
+  color: rgba(255, 255, 255, 0.95);
   letter-spacing: 1px;
 }
 
@@ -43,19 +47,21 @@
 }
 
 .footer-links a {
-  color: var(--science-blue);
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.2s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.5rem;
 }
 .footer-links a:hover {
-  color: var(--picton-blue);
-  text-decoration: underline;
+  color: rgba(255, 255, 255, 1);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .footer-bottom {
   text-align: center;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.6);
   font-size: 0.98rem;
   margin-top: 1.5rem;
   letter-spacing: 0.2px;
@@ -64,15 +70,14 @@
 .footer-designer {
   text-align: center;
   margin-top: 1rem;
-  color: var(--science-blue);
+  color: rgba(255, 255, 255, 0.5);
   font-weight: 600;
   font-size: 0.75rem;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 .footer-designer:hover {
-  opacity: 1;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* Add mobile responsiveness */

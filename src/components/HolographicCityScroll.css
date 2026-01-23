@@ -1,0 +1,380 @@
+/* Holographic City Scroll Styles */
+
+/* ===== MAIN CONTAINER ===== */
+
+.holographic-scroll-container {
+  position: relative;
+  height: 600vh; /* 6x viewport for faster animation with sticky frames */
+  width: 100%;
+  background: #000000;
+}
+
+/* ===== STICKY WRAPPER ===== */
+
+.holographic-sticky-wrapper {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.holographic-canvas-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #000000;
+}
+
+/* ===== CANVAS ===== */
+
+.holographic-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 1;
+
+  /* Prevent browser from applying its own image optimization */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+
+  /* Blue glow effect that intensifies during layer separation */
+  filter: drop-shadow(0 0 80px rgba(88, 189, 236, var(--glow-intensity, 0.2)));
+  transition: filter 0.3s ease-out;
+}
+
+/* ===== SCAN LINE OVERLAY ===== */
+
+.holographic-scanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(88, 189, 236, 0.03) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+  animation: scanline 8s linear infinite;
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* ===== SCROLL PROGRESS BAR ===== */
+
+.scroll-progress-bar {
+  display: none; /* Hidden - removed from UI */
+}
+
+/* ===== LOADING SCREEN ===== */
+
+.holographic-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.loading-content {
+  text-align: center;
+  max-width: 400px;
+  padding: 2rem;
+}
+
+.loading-spinner {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 2rem;
+}
+
+.spinner-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border: 3px solid transparent;
+  border-top-color: #58BDEC;
+  border-radius: 50%;
+  animation: spin 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+  transform: translate(-50%, -50%);
+}
+
+.spinner-ring:nth-child(2) {
+  width: 80%;
+  height: 80%;
+  border-top-color: #005BAC;
+  animation-delay: -0.5s;
+  animation-duration: 2s;
+}
+
+.spinner-ring:nth-child(3) {
+  width: 60%;
+  height: 60%;
+  border-top-color: #10b981;
+  animation-delay: -1s;
+  animation-duration: 2.5s;
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.loading-text {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 1.125rem;
+  color: #58BDEC;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.loading-progress {
+  width: 100%;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(88, 189, 236, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(to right, #005BAC 0%, #58BDEC 100%);
+  transition: width 0.3s ease-out;
+  box-shadow: 0 0 12px rgba(88, 189, 236, 0.6);
+}
+
+.progress-label {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+}
+
+/* ===== BACKGROUND LOADING INDICATOR ===== */
+
+.background-loading-indicator {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(88, 189, 236, 0.3);
+  border-radius: 6px;
+  z-index: 50;
+}
+
+.loading-dot {
+  width: 8px;
+  height: 8px;
+  background: #58BDEC;
+  border-radius: 50%;
+  animation: pulse-dot 1.5s ease-in-out infinite;
+  box-shadow: 0 0 8px rgba(88, 189, 236, 0.6);
+}
+
+.loading-dot:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.loading-dot:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* ===== SPACER FOR SCROLL ===== */
+
+.holographic-scroll-spacer {
+  height: 1px;
+  width: 100%;
+}
+
+/* ===== STATIC VIEW (Reduced Motion / Skip) ===== */
+
+.holographic-static {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.holographic-static-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* ===== VIGNETTE EFFECT ===== */
+
+.holographic-canvas-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    rgba(0, 0, 0, 0.3) 80%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* ===== GLASS MORPHISM UTILITIES ===== */
+
+.glass-card {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(88, 189, 236, 0.3);
+  border-radius: 12px;
+}
+
+/* ===== ACCESSIBILITY ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  .holographic-scroll-container {
+    height: 100vh !important;
+  }
+
+  .holographic-canvas,
+  .holographic-scanline,
+  .spinner-ring,
+  .loading-dot {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 1024px) {
+  .holographic-scroll-container {
+    height: 500vh; /* Reduce scroll height on tablet */
+  }
+
+  .holographic-canvas {
+    filter: drop-shadow(0 0 60px rgba(88, 189, 236, var(--glow-intensity, 0.2)));
+  }
+}
+
+@media (max-width: 768px) {
+  .holographic-scroll-container {
+    height: 400vh; /* Further reduce on mobile */
+  }
+
+  .scroll-progress-bar {
+    height: 3px;
+  }
+
+  .holographic-canvas {
+    filter: drop-shadow(0 0 40px rgba(88, 189, 236, var(--glow-intensity, 0.15)));
+  }
+
+  .loading-spinner {
+    width: 80px;
+    height: 80px;
+  }
+
+  .loading-text {
+    font-size: 1rem;
+  }
+
+  .background-loading-indicator {
+    bottom: 10px;
+    right: 10px;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .loading-dot {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .holographic-scroll-container {
+    height: 250vh; /* Minimal scroll on small phones */
+  }
+}
+
+/* ===== PERFORMANCE OPTIMIZATIONS ===== */
+
+/* GPU acceleration */
+.holographic-canvas,
+.holographic-scanline,
+.scroll-progress-bar {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Smooth font rendering */
+.holographic-scroll-container,
+.holographic-scroll-container * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

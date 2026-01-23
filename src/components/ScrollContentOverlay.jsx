@@ -1,0 +1,144 @@
+import React from 'react';
+import { motion } from 'motion/react';
+import { useFrameOpacity } from '../hooks/useScrollFrames';
+import logo from '../assets/logo.png';
+import './ScrollContentOverlay.css';
+
+/**
+ * Phase 1: Introduction Content (Frames 1-48)
+ * City on RIGHT, content on LEFT
+ */
+const IntroContent = ({ currentFrame }) => {
+  // Fully visible immediately at frame 1, fade out before frame 48
+  const opacity = useFrameOpacity(1, 1, 42, 48, currentFrame);
+
+  return (
+    <motion.div
+      className="scroll-content intro-content"
+      style={{
+        opacity,
+        transform: 'translateY(0px)',
+      }}
+    >
+      <div className="intro-text-block">
+        <img src={logo} alt="Dochak Logo" className="intro-logo" />
+        <h1 className="intro-title">
+          Urban Mobility Revolution
+        </h1>
+        <p className="intro-tagline">Driving the Future: Smarter, Safer, and Seamless Mobility</p>
+        <a href="/about" className="intro-cta-button">
+          Learn More
+          <svg className="intro-cta-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </motion.div>
+  );
+};
+
+/**
+ * Phase 3: Deep Dive Content (Frames 97-154)
+ * City on LEFT, content on RIGHT
+ */
+const DeepDiveContent = ({ currentFrame }) => {
+  const opacity = useFrameOpacity(97, 104, 146, 154, currentFrame);
+  const descOpacity = useFrameOpacity(102, 104, 146, 154, currentFrame);
+  const codeOpacity = useFrameOpacity(106, 108, 146, 154, currentFrame);
+
+  return (
+    <motion.div
+      className="scroll-content deepdive-content"
+      style={{ opacity }}
+    >
+      <div className="deepdive-text-block">
+        <h2 className="deepdive-heading">Smart Mobility Centre of Excellence</h2>
+
+        <p
+          className="deepdive-description"
+          style={{ opacity: descOpacity }}
+        >
+          Revolutionizing urban mobility through cutting-edge AI-driven autonomous driving, intelligent traffic operations, and innovative management solutions
+        </p>
+
+        <div
+          className="deepdive-code-snippet"
+          style={{ opacity: codeOpacity }}
+        >
+          <pre>
+            <code>{`{
+  "projects": [
+    "Naepo Digital Twin",
+    "Daejeon-Jeju Tele-driving",
+    "Daejeon Public Transport",
+    "Incheon Airport Parking"
+  ],
+  "status": "Ongoing",
+  "impact": "City-wide"
+}`}</code>
+          </pre>
+          <a href="/projects" className="deepdive-code-cta">
+            View All Projects
+          </a>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
+/**
+ * Phase 4: Call to Action (Frames 155-200)
+ * City on LEFT, CTA on RIGHT
+ */
+const CTAContent = ({ currentFrame }) => {
+  // Fade in quickly, FULLY visible by frame 170 (before frame 200 sticky), stay until end
+  const opacity = useFrameOpacity(145, 170, 200, 201, currentFrame);
+
+  return (
+    <motion.div
+      className="scroll-content cta-content"
+      style={{ opacity }}
+    >
+      <div className="cta-text-block">
+        <h2 className="cta-heading">Shape the Future of Urban Mobility</h2>
+        <p className="cta-subheading">
+          Together, with innovation, dedication, and teamwork, we can make our vision a reality
+        </p>
+
+        <div className="cta-buttons">
+          <a href="/projects" className="cta-button cta-primary">
+            Explore Solutions
+          </a>
+          <a href="/get-in-touch" className="cta-button cta-secondary">
+            Get in Touch
+          </a>
+        </div>
+
+        <div className="cta-trust-badge">
+          Serving Korea, Middle East, Australia & Southeast Asia
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
+/**
+ * Main ScrollContentOverlay Component
+ * Renders appropriate content based on current frame/phase
+ */
+const ScrollContentOverlay = ({ currentFrame, phase }) => {
+  return (
+    <div className="scroll-content-overlay">
+      {/* Phase 1: Introduction (frames 1-25) */}
+      {phase === 'intro' && <IntroContent currentFrame={currentFrame} />}
+
+      {/* Phase 3: Deep Dive (frames 51-80) */}
+      {phase === 'deepDive' && <DeepDiveContent currentFrame={currentFrame} />}
+
+      {/* Phase 4: CTA (frames 81-104) */}
+      {phase === 'cta' && <CTAContent currentFrame={currentFrame} />}
+    </div>
+  );
+};
+
+export default ScrollContentOverlay;
