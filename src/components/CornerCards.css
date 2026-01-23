@@ -25,21 +25,25 @@
 .corner-card-top-left {
   top: 22%;
   left: 15%;
+  transform: translate(0, 0);
 }
 
 .corner-card-top-right {
   top: 22%;
   right: 15%;
+  transform: translate(0, 0);
 }
 
 .corner-card-bottom-left {
   bottom: 18%;
   left: 15%;
+  transform: translate(0, 0);
 }
 
 .corner-card-bottom-right {
   bottom: 18%;
   right: 15%;
+  transform: translate(0, 0);
 }
 
 /* Removed annotation dots and lines */
@@ -73,15 +77,9 @@
   font-size: 1rem;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.95);
-  margin: 0 0 1rem 0;
+  margin: 0;
   letter-spacing: -0.01em;
   line-height: 1.3;
-}
-
-.corner-card-cta {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 0.85rem;
-  font-weight: 500;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
@@ -89,20 +87,19 @@
   align-items: center;
   gap: 0.35rem;
   pointer-events: auto;
-  position: relative;
 }
 
-.corner-card-cta::after {
+.corner-card-title::after {
   content: '→';
   transition: transform 0.3s ease;
 }
 
-.corner-card-cta:hover {
+.corner-card-title:hover {
   color: #ffffff;
   text-decoration: underline;
 }
 
-.corner-card-cta:hover::after {
+.corner-card-title:hover::after {
   transform: translateX(3px);
 }
 
@@ -146,7 +143,7 @@
 /* Mobile responsive */
 @media (max-width: 1024px) {
   .corner-card {
-    min-width: 220px;
+    min-width: 210px;
   }
 
   .corner-card-content {
@@ -155,22 +152,22 @@
 
   .corner-card-top-left,
   .corner-card-top-right {
-    top: 3%;
+    top: 20%;
   }
 
   .corner-card-bottom-left,
   .corner-card-bottom-right {
-    bottom: 8%;
+    bottom: 20%;
   }
 
   .corner-card-top-left,
   .corner-card-bottom-left {
-    left: 3%;
+    left: 20%;
   }
 
   .corner-card-top-right,
   .corner-card-bottom-right {
-    right: 3%;
+    right: 20%;
   }
 
   .corner-card-metric {
@@ -180,78 +177,49 @@
   .corner-card-title {
     font-size: 0.9rem;
   }
-
-  .corner-card-cta {
-    font-size: 0.8rem;
-  }
 }
 
 @media (max-width: 768px) {
-  /* Stack cards in 2x2 grid on mobile */
+  /* Keep cards in 2x2 grid centered on mobile - more squared */
   .corner-card {
-    min-width: 42%;
+    min-width: 30%;
+    max-width: 30%;
   }
 
   .corner-card-content {
-    padding: 1rem;
+    padding: 1.25rem 0.75rem;
   }
 
   .corner-card-top-left {
-    top: 15%;
-    left: 2%;
+    top: 20%;
+    left: 10%;
+    right: auto;
+    bottom: auto;
+    transform: translate(0, 0) !important;
   }
 
   .corner-card-top-right {
-    top: 15%;
-    right: 2%;
+    top: 20%;
+    right: 10%;
+    left: auto;
+    bottom: auto;
+    transform: translate(0, 0) !important;
   }
 
   .corner-card-bottom-left {
-    bottom: 15%;
-    left: 2%;
+    bottom: 25%;
+    left: 10%;
+    right: auto;
+    top: auto;
+    transform: translate(0, 0) !important;
   }
 
   .corner-card-bottom-right {
-    bottom: 15%;
-    right: 2%;
-  }
-
-  .corner-card-metric {
-    font-size: 3.5rem;
-  }
-
-  .corner-card-title {
-    font-size: 0.85rem;
-  }
-
-  .corner-card-cta {
-    font-size: 0.8rem;
-  }
-}
-
-@media (max-width: 480px) {
-  /* Vertical stack on very small screens */
-  .corner-cards-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    padding: 1rem;
-  }
-
-  .corner-card {
-    position: relative !important;
-    top: auto !important;
-    bottom: auto !important;
-    left: auto !important;
-    right: auto !important;
-    width: 90%;
-    max-width: 320px;
-  }
-
-  .corner-card-content {
-    padding: 1.25rem;
+    bottom: 25%;
+    right: 10%;
+    left: auto;
+    top: auto;
+    transform: translate(0, 0) !important;
   }
 
   .corner-card-metric {
@@ -259,10 +227,58 @@
   }
 
   .corner-card-title {
-    font-size: 0.9rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Keep 2x2 grid on small screens, more centered and squared */
+  .corner-card {
+    min-width: 42%;
+    max-width: 42%;
   }
 
-  .corner-card-cta {
-    font-size: 0.8rem;
+  .corner-card-content {
+    padding: 1rem 0.5rem;
+  }
+
+  .corner-card-top-left {
+    top: 20%;
+    left: 4%;
+    right: auto;
+    bottom: auto;
+    transform: translate(0, 0) !important;
+  }
+
+  .corner-card-top-right {
+    top: 20%;
+    right: 4%;
+    left: auto;
+    bottom: auto;
+    transform: translate(0, 0) !important;
+  }
+
+  .corner-card-bottom-left {
+    bottom: 15%;
+    left: 4%;
+    right: auto;
+    top: auto;
+    transform: translate(0, 0) !important;
+  }
+
+  .corner-card-bottom-right {
+    bottom: 15%;
+    right: 4%;
+    left: auto;
+    top: auto;
+    transform: translate(0, 0) !important;
+  }
+
+  .corner-card-metric {
+    font-size: 2rem;
+  }
+
+  .corner-card-title {
+    font-size: 0.7rem;
   }
 }

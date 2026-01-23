@@ -7,7 +7,7 @@ import './CornerCards.css';
  * Feature Card for Four-Corner Layout
  * Displays during expansion phase (Frames 49-96)
  */
-const FeatureCard = ({ title, metric, ctaText, ctaLink, position, currentFrame, accentColor = '#58BDEC' }) => {
+const FeatureCard = ({ title, metric, ctaLink, position, currentFrame, accentColor = '#58BDEC' }) => {
   // Fade in quickly: frames 49-64, FULLY visible by frame 72 (sticky frame), fade out: 86-96
   const opacity = useFrameOpacity(49, 64, 86, 96, currentFrame);
 
@@ -30,20 +30,23 @@ const FeatureCard = ({ title, metric, ctaText, ctaLink, position, currentFrame, 
   const initialOffset = getInitialOffset();
   const progress = Math.max(0, Math.min(1, (currentFrame - 49) / 15)); // 0-1 over frames 49-64
 
+  const slideX = initialOffset.x * (1 - progress);
+  const slideY = initialOffset.y * (1 - progress);
+
   return (
     <motion.div
       className={`corner-card corner-card-${position}`}
       style={{
         opacity,
-        transform: `translate(${initialOffset.x * (1 - progress)}px, ${initialOffset.y * (1 - progress)}px)`,
         '--accent-color': accentColor
       }}
+      data-slide-x={slideX}
+      data-slide-y={slideY}
       aria-hidden={opacity === 0}
     >
       <div className="corner-card-content">
         <div className="corner-card-metric">{metric}</div>
-        <h3 className="corner-card-title">{title}</h3>
-        <a href={ctaLink} className="corner-card-cta">{ctaText}</a>
+        <a href={ctaLink} className="corner-card-title">{title}</a>
       </div>
       <div className="corner-card-glow"></div>
     </motion.div>
@@ -65,7 +68,6 @@ const CornerCards = ({ currentFrame }) => {
       position: 'top-left',
       title: 'Research Papers',
       metric: '47+',
-      ctaText: 'View Research',
       ctaLink: '/disclosure',
       accentColor: '#58BDEC'
     },
@@ -73,7 +75,6 @@ const CornerCards = ({ currentFrame }) => {
       position: 'top-right',
       title: 'Expert Team',
       metric: '15+',
-      ctaText: 'Meet Our Team',
       ctaLink: '/team',
       accentColor: '#10b981'
     },
@@ -81,7 +82,6 @@ const CornerCards = ({ currentFrame }) => {
       position: 'bottom-left',
       title: 'Training Courses',
       metric: '10+',
-      ctaText: 'View Courses',
       ctaLink: '/training',
       accentColor: '#10b981'
     },
@@ -89,7 +89,6 @@ const CornerCards = ({ currentFrame }) => {
       position: 'bottom-right',
       title: 'Integrated Solutions',
       metric: '7+',
-      ctaText: 'Explore Solutions',
       ctaLink: '/solutions',
       accentColor: '#58BDEC'
     }

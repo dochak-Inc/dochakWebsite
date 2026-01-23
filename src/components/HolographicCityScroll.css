@@ -43,8 +43,10 @@
   image-rendering: crisp-edges;
 
   /* Blue glow effect that intensifies during layer separation */
-  filter: drop-shadow(0 0 80px rgba(88, 189, 236, var(--glow-intensity, 0.2)));
+  filter: none;
   transition: filter 0.3s ease-out;
+
+  filter: none !important;
 }
 
 /* ===== SCAN LINE OVERLAY ===== */
@@ -318,7 +320,7 @@
   }
 
   .holographic-canvas {
-    filter: drop-shadow(0 0 60px rgba(88, 189, 236, var(--glow-intensity, 0.2)));
+    filter: none !important;
   }
 }
 
@@ -332,7 +334,13 @@
   }
 
   .holographic-canvas {
-    filter: drop-shadow(0 0 40px rgba(88, 189, 236, var(--glow-intensity, 0.15)));
+    filter: none !important;
+    /* Scale UP and center so both left and right are cropped */
+    width: 200% !important;
+    height: 100% !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(15%) !important;
+    transform-origin: center center !important;
   }
 
   .loading-spinner {
@@ -359,6 +367,16 @@
 @media (max-width: 480px) {
   .holographic-scroll-container {
     height: 250vh; /* Minimal scroll on small phones */
+  }
+
+  .holographic-canvas {
+    /* Scale up even more for small screens to ensure cropping on sides */
+    filter: none !important;
+    width: 250% !important;
+    height: 100% !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(20%) !important;
+    transform-origin: center center !important;
   }
 }
 

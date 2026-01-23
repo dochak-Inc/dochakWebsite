@@ -377,20 +377,35 @@
 }
 
 @media (max-width: 768px) {
-  /* Center all content on mobile */
+  /* Position content closer to top on mobile */
   .intro-content,
   .deepdive-content,
   .cta-content {
-    justify-content: center;
-    padding: 2rem 1.5rem;
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(8px);
+    align-items: flex-start !important;
+    padding: 2rem 1.5rem !important;
+    padding-top: 6rem !important;
+    background: rgba(0, 0, 0, 0.4) !important;
+    backdrop-filter: none !important;
   }
 
-  .intro-text-block,
+  .intro-content {
+    justify-content: flex-start !important;
+  }
+
+  .deepdive-content,
+  .cta-content {
+    justify-content: flex-end !important;
+  }
+
+  .intro-text-block {
+    text-align: left;
+    max-width: 100%;
+    padding-right: 0;
+  }
+
   .deepdive-text-block,
   .cta-text-block {
-    text-align: center;
+    text-align: right;
     max-width: 100%;
     padding-right: 0;
   }
@@ -409,7 +424,7 @@
 
   .deepdive-heading,
   .cta-heading {
-    font-size: 1.75rem;
+    font-size: 2.25rem;
   }
 
   .deepdive-feature-item {
@@ -433,14 +448,18 @@
   }
 
   .cta-buttons {
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
+    flex-direction: row !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    flex-wrap: nowrap !important;
   }
 
   .cta-button {
-    width: 100%;
-    padding: 0.65rem 1.25rem;
+    width: auto !important;
+    padding: 0.5rem 1rem !important;
+    font-size: 0.85rem !important;
+    white-space: nowrap !important;
   }
 
   .cta-particles {
@@ -449,20 +468,79 @@
 }
 
 @media (max-width: 480px) {
+  .intro-content {
+    padding: 2rem 1.5rem !important;
+    padding-top: 6rem !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: none !important;
+    justify-content: flex-start !important;
+  }
+
+  .deepdive-content,
+  .cta-content {
+    padding: 2rem 1.5rem !important;
+    padding-top: 6rem !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: none !important;
+    justify-content: flex-end !important;
+  }
+
+  .intro-text-block {
+    text-align: left;
+  }
+
+  .deepdive-text-block,
+  .cta-text-block {
+    text-align: right;
+  }
+
   .intro-title {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
 
   .intro-subtitle {
-    font-size: 1.15rem;
+    font-size: 1rem;
+  }
+
+  .intro-tagline {
+    font-size: 0.9rem;
   }
 
   .deepdive-heading,
   .cta-heading {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
 
   .cta-subheading {
-    font-size: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .deepdive-code-snippet {
+    padding: 0.75rem;
+    padding-bottom: 2.25rem;
+  }
+
+  .deepdive-code-snippet pre {
+    font-size: 0.7rem;
+  }
+
+  .deepdive-code-cta {
+    font-size: 0.75rem;
+    bottom: 0.75rem;
+    right: 0.75rem;
+  }
+
+  .cta-buttons {
+    flex-direction: row !important;
+    justify-content: flex-end !important;
+    gap: 0.5rem !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .cta-button {
+    width: auto !important;
+    padding: 0.3rem 0.5rem !important;
+    font-size: 0.7rem !important;
+    white-space: nowrap !important;
   }
 }
