@@ -8,10 +8,10 @@ import { mapScrollToFrame } from '../utils/frameDuplication';
  * Uses custom scroll tracking for better reliability
  *
  * @param {Object} options - Configuration options
- * @param {number} options.totalFrames - Total number of frames (default: 200)
+ * @param {number} options.totalFrames - Total number of frames (default: 100)
  * @returns {Object} Scroll frame data and refs
  */
-export const useScrollFrames = ({ totalFrames = 200 } = {}) => {
+export const useScrollFrames = ({ totalFrames = 100 } = {}) => {
   const containerRef = useRef(null);
   const [currentFrame, setCurrentFrame] = useState(1);
   const [phase, setPhase] = useState('intro');

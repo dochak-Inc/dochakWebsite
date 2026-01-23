@@ -4,14 +4,14 @@
  */
 
 /**
- * Key frames to hold/duplicate (200 frames total - 2x smoother)
+ * Key frames to hold/duplicate (100 frames total - 2x smoother)
  * duration: how many times to repeat the frame (higher = stickier)
  */
 const KEY_FRAME_HOLDS = [
-  { frame: 1, duration: 15, label: 'Intro Start' },
-  { frame: 76, duration: 8, label: 'Expansion Peak' },
-  { frame: 135, duration: 12, label: 'Deep Dive Start' },
-  { frame: 200, duration: 30, label: 'CTA End' }
+  { frame: 1, duration: 5, label: 'Intro Start' },
+  { frame: 38, duration: 3, label: 'Expansion Peak' },
+  { frame: 68, duration: 4, label: 'Deep Dive Start' },
+  { frame: 100, duration: 10, label: 'CTA End' }
 ];
 
 /**
@@ -22,7 +22,7 @@ export const buildExtendedFrameSequence = () => {
   const sequence = [];
   let currentFrame = 1;
 
-  while (currentFrame <= 200) {
+  while (currentFrame <= 100) {
     // Check if this frame should be held
     const hold = KEY_FRAME_HOLDS.find(h => h.frame === currentFrame);
 
@@ -36,7 +36,7 @@ export const buildExtendedFrameSequence = () => {
     } else {
       // Show every frame once for faster playback
       const nextHold = KEY_FRAME_HOLDS.find(h => h.frame > currentFrame);
-      const distanceToNextHold = nextHold ? (nextHold.frame - currentFrame) : 200;
+      const distanceToNextHold = nextHold ? (nextHold.frame - currentFrame) : 100;
 
       // Within 10 frames of a sticky point, show all frames
       if (distanceToNextHold <= 10) {
@@ -50,7 +50,7 @@ export const buildExtendedFrameSequence = () => {
     }
   }
 
-  console.log(`Extended sequence: ${sequence.length} total positions for 200 unique frames (smoother animation)`);
+  console.log(`Extended sequence: ${sequence.length} total positions for 100 unique frames (smoother animation)`);
   return sequence;
 };
 

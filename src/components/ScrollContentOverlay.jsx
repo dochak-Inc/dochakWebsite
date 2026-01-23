@@ -5,12 +5,12 @@ import logo from '../assets/logo.png';
 import './ScrollContentOverlay.css';
 
 /**
- * Phase 1: Introduction Content (Frames 1-48)
+ * Phase 1: Introduction Content (Frames 1-24)
  * City on RIGHT, content on LEFT
  */
 const IntroContent = ({ currentFrame }) => {
-  // Fully visible immediately at frame 1, fade out before frame 48
-  const opacity = useFrameOpacity(1, 1, 42, 48, currentFrame);
+  // Fully visible immediately at frame 1, fade out before frame 24
+  const opacity = useFrameOpacity(1, 1, 21, 24, currentFrame);
 
   return (
     <motion.div
@@ -38,13 +38,13 @@ const IntroContent = ({ currentFrame }) => {
 };
 
 /**
- * Phase 3: Deep Dive Content (Frames 97-154)
+ * Phase 3: Deep Dive Content (Frames 49-77)
  * City on LEFT, content on RIGHT
  */
 const DeepDiveContent = ({ currentFrame }) => {
-  const opacity = useFrameOpacity(97, 104, 146, 154, currentFrame);
-  const descOpacity = useFrameOpacity(102, 104, 146, 154, currentFrame);
-  const codeOpacity = useFrameOpacity(106, 108, 146, 154, currentFrame);
+  const opacity = useFrameOpacity(49, 52, 73, 77, currentFrame);
+  const descOpacity = useFrameOpacity(51, 52, 73, 77, currentFrame);
+  const codeOpacity = useFrameOpacity(53, 54, 73, 77, currentFrame);
 
   return (
     <motion.div
@@ -87,12 +87,12 @@ const DeepDiveContent = ({ currentFrame }) => {
 };
 
 /**
- * Phase 4: Call to Action (Frames 155-200)
+ * Phase 4: Call to Action (Frames 78-100)
  * City on LEFT, CTA on RIGHT
  */
 const CTAContent = ({ currentFrame }) => {
-  // Fade in quickly, FULLY visible by frame 170 (before frame 200 sticky), stay until end
-  const opacity = useFrameOpacity(145, 170, 200, 201, currentFrame);
+  // Fade in quickly, FULLY visible by frame 85 (before frame 100 sticky), stay until end
+  const opacity = useFrameOpacity(73, 85, 100, 101, currentFrame);
 
   return (
     <motion.div
@@ -129,13 +129,13 @@ const CTAContent = ({ currentFrame }) => {
 const ScrollContentOverlay = ({ currentFrame, phase }) => {
   return (
     <div className="scroll-content-overlay">
-      {/* Phase 1: Introduction (frames 1-25) */}
+      {/* Phase 1: Introduction (frames 1-24) */}
       {phase === 'intro' && <IntroContent currentFrame={currentFrame} />}
 
-      {/* Phase 3: Deep Dive (frames 51-80) */}
+      {/* Phase 3: Deep Dive (frames 49-77) */}
       {phase === 'deepDive' && <DeepDiveContent currentFrame={currentFrame} />}
 
-      {/* Phase 4: CTA (frames 81-104) */}
+      {/* Phase 4: CTA (frames 78-100) */}
       {phase === 'cta' && <CTAContent currentFrame={currentFrame} />}
     </div>
   );

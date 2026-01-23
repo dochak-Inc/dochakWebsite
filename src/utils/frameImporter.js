@@ -11,7 +11,7 @@ const importAllFrames = () => {
   try {
     // Use webpack's require.context to import all webp frames
     const requireContext = require.context(
-      '../assets/Sequence 01_frames',
+      '../assets/frame100',
       false,
       /Sequence 01_frame_\d{3}\.webp$/
     );
@@ -38,7 +38,7 @@ export const FRAME_IMPORTS = importAllFrames();
 
 /**
  * Get frame path by number
- * @param {number} frameNumber - Frame number (1-104)
+ * @param {number} frameNumber - Frame number (1-100)
  * @returns {string} Frame path
  */
 export const getFrameImport = (frameNumber) => {
@@ -46,12 +46,12 @@ export const getFrameImport = (frameNumber) => {
 };
 
 /**
- * Get all frame paths in order (200 frames)
+ * Get all frame paths in order (100 frames)
  * @returns {string[]} Array of frame paths
  */
 export const getAllFrameImports = () => {
   const frames = [];
-  for (let i = 1; i <= 200; i++) {
+  for (let i = 1; i <= 100; i++) {
     if (FRAME_IMPORTS[i]) {
       frames.push(FRAME_IMPORTS[i]);
     }
@@ -79,7 +79,7 @@ export const getPriorityFrameImports = () => {
  */
 export const getRemainingFrameImports = () => {
   const frames = [];
-  for (let i = 41; i <= 200; i++) {
+  for (let i = 41; i <= 100; i++) {
     if (FRAME_IMPORTS[i]) {
       frames.push(FRAME_IMPORTS[i]);
     }
