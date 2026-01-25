@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/dochakWebsite/static/css/main.61a5b7d3.css",
-    "main.js": "/dochakWebsite/static/js/main.117a3f06.js",
+    "main.css": "/dochakWebsite/static/css/main.ffe084fe.css",
+    "main.js": "/dochakWebsite/static/js/main.8a9133ab.js",
     "static/js/453.1dfa49b1.chunk.js": "/dochakWebsite/static/js/453.1dfa49b1.chunk.js",
     "static/media/teledriving.png": "/dochakWebsite/static/media/teledriving.8bc10f8cb15680acea73.png",
     "static/media/내포3D모델.png": "/dochakWebsite/static/media/내포3D모델.64cd1130ab4817480017.png",
@@ -25,6 +25,7 @@
     "static/media/building.png": "/dochakWebsite/static/media/building.73e75e5614b07ba1d158.png",
     "static/media/watch.png": "/dochakWebsite/static/media/watch.0527f07a2f53ed955390.png",
     "static/media/LLM1.png": "/dochakWebsite/static/media/LLM1.85c7d899f356f83e3ca1.png",
+    "static/media/trafficTwin.webp": "/dochakWebsite/static/media/trafficTwin.9417d1feeabdc38b5183.webp",
     "static/media/computer.png": "/dochakWebsite/static/media/computer.67f8f11f100c69e1f237.png",
     "static/media/jeju.png": "/dochakWebsite/static/media/jeju.176dbb884197bfab5c76.png",
     "static/media/highway.png": "/dochakWebsite/static/media/highway.380da6fc9f16575ff9f2.png",
@@ -36,6 +37,7 @@
     "static/media/meso.png": "/dochakWebsite/static/media/meso.cfe9b8d3ab5df96368b4.png",
     "static/media/vistro.png": "/dochakWebsite/static/media/vistro.4d63528842014d2eaee0.png",
     "static/media/newsMobility.jpg": "/dochakWebsite/static/media/newsMobility.5d11f56ee963673ef767.jpg",
+    "static/media/MOLITaward.webp": "/dochakWebsite/static/media/MOLITaward.5d8cd91eec8facd9b89e.webp",
     "static/media/truck.png": "/dochakWebsite/static/media/truck.b0733db830e005a61c87.png",
     "static/media/dash.png": "/dochakWebsite/static/media/dash.512a2c80616baf5f1f06.png",
     "static/media/BoWang.png": "/dochakWebsite/static/media/BoWang.40382e21254f5af8f06d.png",
@@ -150,6 +152,7 @@
     "static/media/Sequence 01_frame_039.webp": "/dochakWebsite/static/media/Sequence 01_frame_039.8f0a6c10c4812a17d6ee.webp",
     "static/media/Sequence 01_frame_022.webp": "/dochakWebsite/static/media/Sequence 01_frame_022.c11d0d0dee5ce18f82b4.webp",
     "static/media/Sequence 01_frame_024.webp": "/dochakWebsite/static/media/Sequence 01_frame_024.d0304af186cb0002a337.webp",
+    "static/media/scienceTechSupport2025.webp": "/dochakWebsite/static/media/scienceTechSupport2025.a5273dca4578ac8346bf.webp",
     "static/media/micro.png": "/dochakWebsite/static/media/micro.ed8d8ed22153c942b64e.png",
     "static/media/tengfeng.jpg": "/dochakWebsite/static/media/tengfeng.83c0f2bb2dec44b080b8.jpg",
     "static/media/kaihan.jpg": "/dochakWebsite/static/media/kaihan.86ff1390e0d70c0d9039.jpg",
@@ -170,12 +173,12 @@
     "static/media/logo.png": "/dochakWebsite/static/media/logo.dcd6d0af317670769eed.png",
     "static/media/reuben.jpg": "/dochakWebsite/static/media/reuben.1b2c79142ccc5c225435.jpg",
     "index.html": "/dochakWebsite/index.html",
-    "main.61a5b7d3.css.map": "/dochakWebsite/static/css/main.61a5b7d3.css.map",
-    "main.117a3f06.js.map": "/dochakWebsite/static/js/main.117a3f06.js.map",
+    "main.ffe084fe.css.map": "/dochakWebsite/static/css/main.ffe084fe.css.map",
+    "main.8a9133ab.js.map": "/dochakWebsite/static/js/main.8a9133ab.js.map",
     "453.1dfa49b1.chunk.js.map": "/dochakWebsite/static/js/453.1dfa49b1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.61a5b7d3.css",
-    "static/js/main.117a3f06.js"
+    "static/css/main.ffe084fe.css",
+    "static/js/main.8a9133ab.js"
   ]
 }
