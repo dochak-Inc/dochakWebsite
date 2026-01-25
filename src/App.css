@@ -5,14 +5,14 @@
 .timeline-demo-container,
 .project-content,
 .project-overview {
-  color-scheme: dark !important;
-  -webkit-color-scheme: dark !important;
+  color-scheme: dark;
+  -webkit-color-scheme: dark;
 }
 
 /* Reset some defaults */
 .App {
   font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
-  background: #000000;
+  background: #070707;
   min-height: 100vh;
   padding-top: 0rem;
   color: var(--text-primary);

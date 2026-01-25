@@ -120,13 +120,13 @@ const CanvasRenderer = ({ currentFrame, loadedFrames, containerRef }) => {
 
       if (!img || !img.complete) {
         // Clear to black if no image
-        ctx.fillStyle = '#000000';
+        ctx.fillStyle = '#070707';
         ctx.fillRect(0, 0, displayWidth, displayHeight);
         return;
       }
 
       // Clear canvas with black background
-      ctx.fillStyle = '#000000';
+      ctx.fillStyle = '#070707';
       ctx.fillRect(0, 0, displayWidth, displayHeight);
 
       // Re-enable high quality rendering each time (some browsers reset this)
