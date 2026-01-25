@@ -68,28 +68,28 @@ const CornerCards = ({ currentFrame }) => {
       position: 'top-left',
       title: 'Research Papers',
       metric: '47+',
-      ctaLink: '/disclosure',
+      ctaLink: '/dochakWebsite/disclosure',
       accentColor: '#58BDEC'
     },
     {
       position: 'top-right',
       title: 'Expert Team',
       metric: '15+',
-      ctaLink: '/team',
+      ctaLink: '/dochakWebsite/team',
       accentColor: '#10b981'
     },
     {
       position: 'bottom-left',
       title: 'Training Courses',
       metric: '10+',
-      ctaLink: '/training',
+      ctaLink: '/dochakWebsite/training',
       accentColor: '#10b981'
     },
     {
       position: 'bottom-right',
       title: 'Integrated Solutions',
       metric: '7+',
-      ctaLink: '/solutions',
+      ctaLink: '/dochakWebsite/solutions',
       accentColor: '#58BDEC'
     }
   ];

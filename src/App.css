@@ -376,7 +376,7 @@ main {
 h1,
 h2,
 .section-title {
-  color: var(--endeavour) !important;
+  color: var(--endeavour);
 }
 
 /* Stats Section Title (if any) */

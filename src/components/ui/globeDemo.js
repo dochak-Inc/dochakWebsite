@@ -6,18 +6,18 @@ import "./globeDemo.css"; // Ensure you import the CSS
 export function GlobeDemo() {
     const globeConfig = {
       pointSize: 4,
-      globeColor: "#062056",
+      globeColor: "#2e2e2e",
       showAtmosphere: true,
-      atmosphereColor: "#FFFFFF",
+      atmosphereColor: "#10B981",
       atmosphereAltitude: 0.1,
-      emissive: "#062056",
+      emissive: "#2e2e2e",
       emissiveIntensity: 0.1,
       shininess: 0.9,
-      polygonColor: "rgba(255,255,255,0.7)",
-      ambientLight: "#38bdf8",
+      polygonColor: "#ffffff",
+      ambientLight: "#363636",
       directionalLeftLight: "#ffffff",
       directionalTopLight: "#ffffff",
-      pointLight: "#ffffff",
+      pointLight: "#10B981",
       arcTime: 1000,
       arcLength: 0.9,
       rings: 1,
@@ -26,7 +26,7 @@ export function GlobeDemo() {
       autoRotate: true,
       autoRotateSpeed: 0.5,
     };
-    const colors = ["#06b6d4", "#3b82f6", "#6366f1"];
+    const colors = ["#58BDEC", "#10B981", "#10B981"];
     const sampleArcs = [
       {
         order: 1,

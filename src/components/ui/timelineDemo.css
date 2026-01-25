@@ -6,35 +6,23 @@
     width: 100%;
     overflow: clip;
     font-family: 'Inter', 'Segoe UI', 'Roboto', Arial, sans-serif;
-    color-scheme: light !important;
-    -webkit-color-scheme: light !important;
+    background: transparent;
   }
 
-/* Prevent dark mode auto-adjustment for timeline elements */
-.timeline-demo-container,
-.timeline-demo-title,
-.timeline-demo-paragraph,
-.timeline-demo-number,
-.timeline-demo-revenue-text,
-.timeline-demo-checklist {
-  color-scheme: light !important;
-  -webkit-color-scheme: light !important;
-}
-
   .timeline-demo-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: 1rem;
     text-align: left;
   }
-  
+
   /* Paragraph styling */
   .timeline-demo-paragraph {
-    margin-bottom: 2rem;
-    font-size: 1rem !important;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem !important;
     font-weight: 400;
-    color: var(--text-primary); /* neutral-800 */
+    color: rgba(255, 255, 255, 0.7);
     text-align: left;
     line-height: 1.6;
     position: relative;
@@ -52,35 +40,35 @@
   }
 
   .timeline-demo-number {
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: var(--navy-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
     margin-bottom: 1rem;
     text-align: center;
   }
 
   /* Revenue target paragraphs without checkmarks */
   .timeline-demo-revenue-text {
-    margin-bottom: 2rem;
-    font-size: 1rem !important;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem !important;
     font-weight: 400;
-    color: var(--text-primary);
+    color: rgba(255, 255, 255, 0.7);
     text-align: left;
     line-height: 1.6;
   }
   
   @media (min-width: 768px) {
     .timeline-demo-paragraph {
-      font-size: 1.125rem !important;
+      font-size: 1rem !important;
     }
     .timeline-demo-title {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
   }
-  
+
   @media (min-width: 1200px) {
     .timeline-demo-paragraph {
-      font-size: 1.2rem !important;
+      font-size: 1.05rem !important;
     }
   }
   
@@ -125,7 +113,7 @@
     align-items: center;
     gap: 0.5rem;
     font-size: 0.75rem;
-    color: #404040; /* neutral-700 */
+    color: rgba(255, 255, 255, 0.6);
   }
   
   @media (min-width: 768px) {

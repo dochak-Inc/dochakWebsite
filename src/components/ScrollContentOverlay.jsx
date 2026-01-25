@@ -26,7 +26,7 @@ const IntroContent = ({ currentFrame }) => {
           Urban Mobility Revolution
         </h1>
         <p className="intro-tagline">Driving the Future: Smarter, Safer, and Seamless Mobility</p>
-        <a href="/about" className="intro-cta-button">
+        <a href="/dochakWebsite/about" className="intro-cta-button">
           Learn More
           <svg className="intro-cta-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -77,7 +77,7 @@ const DeepDiveContent = ({ currentFrame }) => {
   "impact": "City-wide"
 }`}</code>
           </pre>
-          <a href="/projects" className="deepdive-code-cta">
+          <a href="/dochakWebsite/projects" className="deepdive-code-cta">
             View All Projects
           </a>
         </div>
@@ -106,10 +106,10 @@ const CTAContent = ({ currentFrame }) => {
         </p>
 
         <div className="cta-buttons">
-          <a href="/projects" className="cta-button cta-primary">
+          <a href="/dochakWebsite/solutions" className="cta-button cta-primary">
             Explore Solutions
           </a>
-          <a href="/get-in-touch" className="cta-button cta-secondary">
+          <a href="/dochakWebsite/get-in-touch" className="cta-button cta-secondary">
             Get in Touch
           </a>
         </div>
