@@ -14,6 +14,9 @@ import llm2 from './assets/LLM2.png';
 import mobilityTech from './assets/newsMobility.jpg';
 import tkkimPresentation from './assets/tkkimPresentation.jpg';
 import changhuiKimNews from './assets/김창희News2.jpg';
+import scienceTechSupport2025 from './assets/scienceTechSupport2025.webp';
+import molitAward from './assets/MOLITaward.webp';
+import trafficTwin from './assets/trafficTwin.webp';
 
 export default function News() {
   const { t } = useContext(LanguageContext);
@@ -60,6 +63,36 @@ export default function News() {
 
   // Real news data - Articles ordered by date (newest first)
   const allNewsItems = [
+    {
+      id: 7,
+      title: t('news.items.trafficTwinV2.title'),
+      date: '2026-01-13',
+      displayDate: t('news.items.trafficTwinV2.date'),
+      category: t('news.items.trafficTwinV2.category'),
+      excerpt: t('news.items.trafficTwinV2.excerpt'),
+      image: trafficTwin,
+      slug: 'traffictwin-v2-release'
+    },
+    {
+      id: 6,
+      title: t('news.items.molitAward2025.title'),
+      date: '2025-12-31',
+      displayDate: t('news.items.molitAward2025.date'),
+      category: t('news.items.molitAward2025.category'),
+      excerpt: t('news.items.molitAward2025.excerpt'),
+      image: molitAward,
+      slug: 'molit-award-2025'
+    },
+    {
+      id: 5,
+      title: t('news.items.scienceTechSupport2025.title'),
+      date: '2026-01-16',
+      displayDate: t('news.items.scienceTechSupport2025.date'),
+      category: t('news.items.scienceTechSupport2025.category'),
+      excerpt: t('news.items.scienceTechSupport2025.excerpt'),
+      image: scienceTechSupport2025,
+      slug: 'science-tech-support-2025'
+    },
     {
       id: 4,
       title: t('news.items.ptvApacUgm2025.title'),
@@ -197,7 +230,7 @@ export default function News() {
             {currentNews.map((item, index) => (
               <AnimatedElement key={item.id} animation="slide-up" delay={index * 100}>
                 <article className="news-card">
-                  <div className="news-image-container">
+                  <div className={`news-image-container ${item.slug === 'molit-award-2025' ? 'molit-award-image' : ''}`}>
                     <img
                       src={item.image}
                       alt={item.title}

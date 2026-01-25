@@ -27,6 +27,9 @@ import tkkimPhoto from './assets/TKPhotoPTVmeeting.jpg';
 import tkkimCertificate from './assets/ptvTKkimCertificate.jpg';
 import changhuiKimNews from './assets/김창희News.jpg';
 import changhuiKimNews2 from './assets/김창희News2.jpg';
+import scienceTechSupport2025 from './assets/scienceTechSupport2025.webp';
+import molitAward from './assets/MOLITaward.webp';
+import trafficTwin from './assets/trafficTwin.webp';
 
 export default function NewsArticle() {
   const { slug } = useParams();
@@ -129,6 +132,47 @@ export default function NewsArticle() {
           .replace('IMAGE_CHANGHUI_CERTIFICATE', changhuiKimNews)
           .replace('IMAGE_CHANGHUI_SINGAPORE', changhuiKimNews2),
         images: []
+      },
+      'science-tech-support-2025': {
+        id: 5,
+        title: t('news.articles.scienceTechSupport2025.title'),
+        date: '2026-01-16',
+        displayDate: t('news.articles.scienceTechSupport2025.date'),
+        category: t('news.articles.scienceTechSupport2025.category'),
+        author: t('news.articles.scienceTechSupport2025.author'),
+        readTime: t('news.articles.scienceTechSupport2025.readTime'),
+        heroImage: scienceTechSupport2025,
+        content: t('news.articles.scienceTechSupport2025.content'),
+        images: []
+      },
+      'molit-award-2025': {
+        id: 6,
+        title: t('news.articles.molitAward2025.title'),
+        date: '2025-12-31',
+        displayDate: t('news.articles.molitAward2025.date'),
+        category: t('news.articles.molitAward2025.category'),
+        author: t('news.articles.molitAward2025.author'),
+        readTime: t('news.articles.molitAward2025.readTime'),
+        heroImage: molitAward,
+        content: t('news.articles.molitAward2025.content'),
+        images: []
+      },
+      'traffictwin-v2-release': {
+        id: 7,
+        title: t('news.articles.trafficTwinV2.title'),
+        date: '2026-01-13',
+        displayDate: t('news.articles.trafficTwinV2.date'),
+        category: t('news.articles.trafficTwinV2.category'),
+        author: t('news.articles.trafficTwinV2.author'),
+        readTime: t('news.articles.trafficTwinV2.readTime'),
+        heroImage: trafficTwin,
+        contentIntro: t('news.articles.trafficTwinV2.contentIntro'),
+        contentMain: t('news.articles.trafficTwinV2.contentMain'),
+        images: [],
+        ctaButton: {
+          text: t('news.articles.trafficTwinV2.ctaButton'),
+          link: 'https://traffictwin.com/'
+        }
       }
     };
 
@@ -185,7 +229,7 @@ export default function NewsArticle() {
 
       {/* Hero Image */}
       <section className="article-hero">
-        <div className="article-hero-image-container">
+        <div className={`article-hero-image-container ${slug === 'molit-award-2025' ? 'molit-award-image' : ''}`}>
           <AnimatedElement animation="slide-up" delay={0}>
             <img
               src={article.heroImage}

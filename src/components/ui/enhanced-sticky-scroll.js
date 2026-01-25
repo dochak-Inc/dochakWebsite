@@ -59,7 +59,7 @@ const TechnologyImage = ({ technology, isActive }) => {
             <div className="relative overflow-hidden rounded-3xl">
                 {/* Loading State */}
                 {isLoading && (
-                    <div className="sticky-image bg-gradient-to-br from-gray-100 to-gray-200 animate-pulse flex items-center justify-center">
+                    <div className="sticky-image bg-gradient-to-br from-gray-800 to-gray-900 animate-pulse flex items-center justify-center">
                         <div className="text-gray-400">
                             <svg className="w-12 h-12 animate-spin" fill="none" viewBox="0 0 24 24">
                                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
@@ -71,11 +71,11 @@ const TechnologyImage = ({ technology, isActive }) => {
 
                 {/* Error State */}
                 {imageError && (
-                    <div className="sticky-image bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center text-center p-6">
-                        <div className="text-gray-500">
+                    <div className="sticky-image bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center text-center p-6">
+                        <div className="text-gray-400">
                             <div className="text-4xl mb-3">📊</div>
-                            <div className="font-medium text-lg mb-1">{technology.title}</div>
-                            <div className="text-sm opacity-70">Image not available</div>
+                            <div className="font-medium text-lg mb-1 text-white">{technology.title}</div>
+                            <div className="text-sm opacity-70 text-gray-400">Image not available</div>
                         </div>
                     </div>
                 )}
@@ -113,7 +113,7 @@ const TechnologyImage = ({ technology, isActive }) => {
 
 // Content Renderer Component for different layout types
 const ContentRenderer = ({ section, isActive }) => {
-    const baseItemClass = "bg-white rounded-2xl shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-md hover:border-gray-200";
+    const baseItemClass = "bg-gray-900 rounded-2xl shadow-sm border border-gray-800 transition-all duration-300 hover:shadow-md hover:border-gray-700";
 
     const renderListLayout = () => (
         <div className="space-y-4">
@@ -125,7 +125,7 @@ const ContentRenderer = ({ section, isActive }) => {
                     transition={{ delay: itemIndex * 0.1, duration: 0.5 }}
                     className={cn(baseItemClass, "p-4 relative overflow-hidden")}
                 >
-                    <p className="text-gray-700 text-lg leading-relaxed">{item}</p>
+                    <p className="text-gray-300 text-lg leading-relaxed">{item}</p>
                 </motion.div>
             ))}
         </div>
@@ -147,10 +147,10 @@ const ContentRenderer = ({ section, isActive }) => {
                 >
                     <div className="absolute inset-0 bg-gradient-to-br rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="relative z-10">
-                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4">
                             <span className="text-white font-bold text-lg">{itemIndex + 1}</span>
                         </div>
-                        <p className="text-gray-700 text-lg leading-relaxed">{item}</p>
+                        <p className="text-gray-300 text-lg leading-relaxed">{item}</p>
                     </div>
                 </motion.div>
             ))}
@@ -184,7 +184,7 @@ const ContentRenderer = ({ section, isActive }) => {
                         className="p-4 relative group"
                     >
                         <div className="min-w-0">
-                            <p className="text-gray-700 text-lg leading-relaxed break-words">{item}</p>
+                            <p className="text-gray-300 text-lg leading-relaxed break-words">{item}</p>
                         </div>
 
                     </motion.div>
@@ -202,12 +202,12 @@ const ContentRenderer = ({ section, isActive }) => {
         >
             {Array.isArray(section.content) ? (
                 section.content.map((item, itemIndex) => (
-                    <p key={itemIndex} className="text-gray-700 text-lg leading-relaxed mb-4 last:mb-0">
+                    <p key={itemIndex} className="text-gray-300 text-lg leading-relaxed mb-4 last:mb-0">
                         {item}
                     </p>
                 ))
             ) : (
-                <p className="text-gray-700 text-lg leading-relaxed">{section.content}</p>
+                <p className="text-gray-300 text-lg leading-relaxed">{section.content}</p>
             )}
         </motion.div>
     );
@@ -296,11 +296,11 @@ export const EnhancedStickyScroll = ({
 
     useMotionValueEvent(scrollYProgress, "change", handleScrollProgress);
 
-    // Background colors that match the existing design system
+    // Background colors that match the dark theme design system
     const backgroundColors = [
-        "#f9fafd", // Match technologies page background
-        "#f9fafd", // Slightly darker variant
-        "#f9fafd", // Light slate variant
+        "#070707", // Dark background matching App.css
+        "#0a0a0a", // Slightly lighter variant
+        "#0f0f0f", // Another dark variant
     ];
 
     const [currentBackground, setCurrentBackground] = useState(backgroundColors[0]);
@@ -350,7 +350,7 @@ export const EnhancedStickyScroll = ({
 
                                         {/* Technology Title */}
                                         <motion.h2
-                                            className="mobile-tech-title text-3xl font-bold text-slate-800 mb-4 mt-6"
+                                            className="mobile-tech-title text-3xl font-bold text-white mb-4 mt-6"
                                             initial={{ opacity: 0, y: 20 }}
                                             animate={{ opacity: 1, y: 0 }}
                                             transition={{ delay: 0.2, duration: 0.5 }}
@@ -360,7 +360,7 @@ export const EnhancedStickyScroll = ({
 
                                         {/* Technology Subtitle */}
                                         <motion.p
-                                            className="mobile-tech-subtitle text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed"
+                                            className="mobile-tech-subtitle text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed"
                                             initial={{ opacity: 0, y: 20 }}
                                             animate={{ opacity: 1, y: 0 }}
                                             transition={{ delay: 0.3, duration: 0.5 }}
@@ -392,7 +392,7 @@ export const EnhancedStickyScroll = ({
                                         }}
                                         transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
                                     >
-                                        <h3 className="text-2xl font-semibold text-blue-600 mb-6">
+                                        <h3 className="text-2xl font-semibold text-cyan-400 mb-6">
                                             {section.sectionTitle}
                                         </h3>
 
@@ -465,8 +465,8 @@ export const EnhancedStickyScroll = ({
                                 className={cn(
                                     "w-1.5 h-1.5 rounded-full transition-all duration-300 cursor-pointer",
                                     techIndex === activeTechnology
-                                        ? "bg-blue-600 w-6"
-                                        : "bg-gray-400 hover:bg-gray-500"
+                                        ? "bg-cyan-400 w-6"
+                                        : "bg-gray-600 hover:bg-gray-500"
                                 )}
                                 onClick={() => {
                                     // Scroll to specific technology (optional feature)

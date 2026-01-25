@@ -1020,6 +1020,24 @@
         "date": "2025년 8월 29일",
         "category": "인턴십",
         "excerpt": "KAIST 컴퓨터공학과 4학년 김창희 학생이 KAIST-PTV Group 여름 인턴십을 성공적으로 마치고 PTV Group이 주최한 아시아 태평양 사용자 그룹 미팅에 초청받아 싱가포르를 방문하였습니다."
+      },
+      "scienceTechSupport2025": {
+        "title": "(주)도착, 2025년 협력·융합 과학기술사업화 촉진지원사업 선정",
+        "date": "2026년 1월 16일",
+        "category": "비즈니스",
+        "excerpt": "(주)도착이 과학기술정보통신부 주관 '2025년 협력·융합 과학기술사업화 촉진지원사업'의 수행 기관으로 최종 선정되었습니다."
+      },
+      "molitAward2025": {
+        "title": "(주)도착 김인희 대표이사, 국토교통부 장관 표창 수상",
+        "date": "2025년 12월 31일",
+        "category": "수상",
+        "excerpt": "(주)도착 김인희 대표이사가 한-아세안 교통 분야 협력 및 디지털화에 기여한 공로를 인정받아 국토교통부 장관 표창을 수상했습니다."
+      },
+      "trafficTwinV2": {
+        "title": "LLM 기반 미시교통분석도구 V2.0 출시 - TrafficTwin",
+        "date": "2026년 1월 13일",
+        "category": "비즈니스",
+        "excerpt": "AI 기반 모빌리티 커맨드 센터인 TrafficTwin V2.0이 출시되었습니다. 실시간 도로 네트워크, AI 예측, 고성능 시뮬레이션을 결합하여 복잡한 교통 모델을 실행 가능한 전략으로 변환합니다."
       }
     },
     "articles": {
@@ -1066,6 +1084,32 @@
         "author": "도착 팀",
         "readTime": "3분 읽기",
         "content": "<p>KAIST 컴퓨터공학과 4학년 <strong>김창희</strong> 학생이 <strong>KAIST-PTV Group 여름 인턴십 프로그램</strong>을 2025년 8월 29일 성공적으로 완료하였습니다.</p><h2>인턴십 연구 주제</h2><div class=\"content-with-image-section\"><div class=\"content-text\"><p>김창희 학생의 인턴십 주제는 <strong>\"AI 기반 합성 인구 및 활동 생성을 위한 Visum 기반 검증 프레임워크 (A Visum-Based Validation Framework for AI-Driven Synthetic Population and Activity Generation)\"</strong>였습니다.</p><p>이번 연구는 <strong>에이전트 기반 모델링(ABM, Agent-Based Modeling)</strong>, 합성 인구 생성, 그리고 실제 환경 검증에 중점을 두었으며, 교통 연구 분야에서 <strong>PTV Visum</strong> 소프트웨어를 광범위하게 활용하여 데이터 기반 모델링 및 검증 프레임워크에 대한 귀중한 통찰을 제공하였습니다. 인턴십 프로젝트는 AI 기반 접근법과 기존 교통 계획 도구를 통합하여 강력한 검증 방법론을 구축하는 데 성공하였습니다.</p></div><div class=\"content-image\"><img src=\"IMAGE_CHANGHUI_CERTIFICATE\" alt=\"KAIST-PTV Group 여름 인턴십 수료증\" class=\"inline-content-image\" /><p style=\"font-size: 0.9rem; color: #64748b; font-style: italic; margin-top: 0.5rem;\">김창희 학생의 KAIST-PTV Group 여름 인턴십 수료증</p></div></div><blockquote>인턴십 프로젝트는 모빌리티 연구 내에서 데이터 기반 모델링과 검증 프레임워크에 귀중한 통찰을 제공하며, PTV Visum을 광범위하게 활용하였습니다.</blockquote><h2>싱가포르 PTV APAC 사용자 그룹 미팅 참석</h2><p>인턴십의 성과로 김창희 학생은 <strong>PTV Group이 주최한 아시아 태평양 사용자 그룹 미팅</strong>에 초청받아 싱가포르를 방문하였습니다. 이 행사는 아시아 태평양 지역의 교통 전문가들이 한자리에 모여 PTV 소프트웨어의 혁신적인 응용 사례를 공유하는 중요한 국제 행사입니다.</p><figure class=\"article-figure\"><img src=\"IMAGE_CHANGHUI_SINGAPORE\" alt=\"싱가포르 PTV APAC 사용자 그룹 미팅\" class=\"article-image\" /><figcaption class=\"article-image-caption\">싱가포르에서 열린 PTV APAC 사용자 그룹 미팅에 참석한 김창희 학생</figcaption></figure><p>Ryan Wong PTV Group 아시아 태평양 지역 총괄이사로부터 수여된 공식 수료증은 김창희 학생의 헌신과 인턴십 기간 동안의 우수한 성과를 인정하는 것입니다.</p><h2>향후 기대</h2><blockquote>앞으로도 김창희 학생의 연구와 학업에서 좋은 성과가 있기를 바랍니다.</blockquote><p>이번 인턴십은 KAIST와 PTV Group의 성공적인 산학협력 사례로, 학생들에게 실무 경험과 국제적 네트워킹 기회를 제공하는 중요한 프로그램입니다.</p>"
+      },
+      "scienceTechSupport2025": {
+        "title": "(주)도착, 2025년 협력·융합 과학기술사업화 촉진지원사업 선정",
+        "date": "2026년 1월 16일",
+        "category": "비즈니스",
+        "author": "도착팀",
+        "readTime": "5분 읽기",
+        "content": "<h2>📢 [공지] (주)도착, 2025년 협력·융합 과학기술사업화 촉진지원사업 선정</h2><p>카이스트 스핀오프 기업 (주)도착이 과학기술정보통신부 주관 <strong>'2025년 협력·융합 과학기술사업화 촉진지원사업'</strong>의 수행 기관으로 최종 선정되었습니다.</p><p>이번 사업은 연구조합과 컨소시엄을 중심으로 가치사슬 내 기업 간 협력을 활성화하여 국가 과학기술의 사업화를 촉진하는 것을 목적으로 합니다. (주)도착은 이번 선정을 통해 다음과 같은 성장을 도모할 예정입니다.</p><h2>🔹 주요 추진 내용 및 기대 효과</h2><h3>가치사슬 연계 R&D 기획</h3><p>전·후방 산업 기업들과의 연계를 통해 선도적인 기술과 제품, 신공정 아이템을 발굴하고 구체화하는 기획 과제를 수행합니다.</p><h3>국가 전략 기술 분야 혁신</h3><p>12대 국가전략기술분야와 연계하여 TRL(기술성숙도) 6단계 이상의 실질적인 사업화 가능 기술을 개발합니다.</p><h3>후속 R&D 연계 기회 확보</h3><p>이번 기획 과제의 결과 평가에서 우수 과제로 선정될 경우, 2026년부터 연간 약 7.5억 원 규모(총 2년)의 대규모 후속 R&D 지원을 받을 수 있는 발판을 마련했습니다.</p><h2>🔹 (주)도착의 다짐</h2><p>(주)도착은 이번 사업 선정을 계기로 모빌리티 분야의 자생적 기술협력 생태계 조성에 기여하고, 연구실의 성과가 산업 현장의 실질적인 가치로 이어질 수 있도록 최선을 다하겠습니다.</p><blockquote>저희와 함께 미래 모빌리티의 가치사슬을 만들어가는 파트너사 및 관계자 여러분의 많은 성원 부탁드립니다."
+      },
+      "molitAward2025": {
+        "title": "(주)도착 김인희 대표이사, 국토교통부 장관 표창 수상",
+        "date": "2025년 12월 31일",
+        "category": "수상",
+        "author": "도착팀",
+        "readTime": "4분 읽기",
+        "content": "<p>(주)도착 <strong>김인희 대표이사</strong>가 한-아세안 교통 분야 협력 및 디지털화에 기여한 공로를 인정받아 지난 12월 31일 국토교통부 장관 표창을 수상했습니다.</p><h2>국제 협력 사업의 핵심 역할</h2><p>김인희 대표이사는 지난 2024년부터 국토교통부 국제협력통상담당관실의 핵심 자문 역을 맡아, 대한민국과 아세안(ASEAN) 국가 간의 교통망 선진화를 위한 주요 국제 협력 사업을 성공적으로 이끌어왔습니다.</p><h2>주요 업적 및 수행 과제</h2><p>주요 업적수행 과제로는 다음 두 가지가 꼽힙니다:</p><ul><li><strong>아세안 지역 내 공공교통 및 물류 디지털화 격차 분석 연구</strong></li><li><strong>2026-2030 한-아세안 교통협력 로드맵 수립</strong></li></ul><p>김인희 대표이사는 이를 통해 아세안 국가들의 교통 디지털화 현황을 진단하고, 향후 5년간 한국과 아세안이 나아갈 전략적 협력 방향을 제시했다는 평을 받습니다.</p><h2>실질적인 파트너십 구축</h2><p>특히 김인희 대표이사는 지난 2년 동안 국토교통부 실무진과 함께 다수의 아세안 회원국을 직접 방문해 현지 교통 인프라를 점검하고, 각국 정부 관계자들과의 긴밀한 소통을 통해 국가 간 이해관계를 조정하는 등 실질적인 파트너십 구축에 앞장서 왔습니다.</p><blockquote>김인희 대표이사는 \"2026년에도 아세안 국가들의 교통 인프라 및 기술 고도화를 위한 선도적인 역할을 이어갈 예정\"이라며, \"앞으로도 한국의 선진 교통 기술이 아세안 지역에 성공적으로 뿌리내릴 수 있도록 연구와 협력에 매진하겠다\"고 밝혔습니다.</blockquote><p>이번 수상은 (주)도착의 국제 협력 역량과 교통 기술의 글로벌 확산에 대한 기여를 인정받은 것으로, 앞으로도 (주)도착이 아세안 지역을 포함한 글로벌 모빌리티 시장에서 선도적인 역할을 수행할 것으로 기대됩니다.</p>"
+      },
+      "trafficTwinV2": {
+        "title": "LLM 기반 미시교통분석도구 V2.0 출시 - TrafficTwin",
+        "date": "2026년 1월 13일",
+        "category": "비즈니스",
+        "author": "도착팀",
+        "readTime": "5분 읽기",
+        "contentIntro": "<p>혁신적인 <strong>LLM 기반 미시교통분석도구 V2.0 - TrafficTwin</strong>의 출시를 발표하게 되어 기쁩니다. 이는 AI 기반 모빌리티 커맨드 센터로, 실시간 교통 데이터를 AI 기반 운영 커맨드 센터로 변환하는 플랫폼입니다.</p>",
+        "contentMain": "<h2>Intelligent Mobility × AI Digital Twin</h2><p><strong>TrafficTwin</strong>은 실시간 도로 네트워크, AI 예측, 고성능 시뮬레이션을 결합하여 복잡한 교통 모델을 실행 가능한 전략으로 변환합니다. 이를 통해 더 빠른 계획 수립과 운영이 가능합니다.</p><h2>주요 기능</h2><h3>AI Strategy Builder</h3><p>생성형 플레이북을 통해 폐쇄, 속도 정책, 경로 안내 시나리오를 몇 초 만에 평가할 수 있습니다.</p><h3>Multi-Agent Scenario Studio</h3><p>다양한 에이전트 기반 시나리오를 시뮬레이션하고 분석할 수 있는 강력한 스튜디오 기능을 제공합니다.</p><h3>Real-time Feedback</h3><p>클라우드 SUMO 시뮬레이션 클러스터와 실시간 Mapbox 속도 인텔리전스를 통해 변화하는 조건을 추적합니다.</p><ul><li><strong>Live Speeds</strong> - 실시간 속도 모니터링</li><li><strong>Adaptive KPI</strong> - 적응형 핵심 성과 지표</li><li><strong>City Twin Status</strong> - 도시 트윈 상태</li></ul><h2>성능 지표</h2><p>TrafficTwin V2.0은 다음과 같은 성능을 제공합니다:</p><ul><li><strong>Network Flow 87%</strong> - 네트워크 흐름 효율성</li><li><strong>AI Confidence 0.94</strong> - 높은 AI 신뢰도</li><li><strong>40% Faster congestion recovery</strong> - 40% 빠른 혼잡 회복</li><li><strong>12+ Interactive performance KPIs</strong> - 12개 이상의 대화형 성능 지표</li><li><strong>3D Citywide situational twins</strong> - 3D 도시 전체 상황 트윈</li></ul><blockquote>TrafficTwin은 스마트한 도시를 위한 AI 기반 모빌리티 트윈을 제공합니다. 시뮬레이션, 최적화, 그리고 성장을 통해 도시의 미래를 만들어갑니다.</blockquote><p>V2.0은 V1.0의 성공을 기반으로 더욱 강력한 AI 기능과 실시간 분석 능력을 제공하여 도시 교통 관리의 새로운 표준을 제시합니다.</p>",
+        "ctaButton": "TrafficTwin 서비스 방문하기"
       }
     },
     "article": {

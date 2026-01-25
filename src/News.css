@@ -179,6 +179,11 @@
   transition: transform 0.4s ease;
 }
 
+/* MOLIT Award image - position between top and middle */
+.molit-award-image .news-image {
+  object-position: center 20%;
+}
+
 .news-card:hover .news-image {
   transform: scale(1.05);
 }
