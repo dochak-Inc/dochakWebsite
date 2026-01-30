@@ -1,46 +1,53 @@
 /* Team Page Styles */
 .team-page {
-  background: #f4f6f8;
-  color: var(--navy-heading);
+  background: #000000;
+  color: #ffffff;
   font-family: 'Inter', 'Segoe UI', 'Roboto', Arial, sans-serif;
 }
 
 /* PTV Certified Trainer Badge */
 .team-certified-badge {
   display: inline-block;
-  background: linear-gradient(135deg, rgba(232, 244, 248, 0.4) 0%, rgba(240, 247, 251, 0.4) 100%);
-  color: rgba(44, 95, 122, 0.7);
+  background: rgba(87, 188, 235, 0.15);
+  color: #57bceb;
   font-size: 0.6rem;
   font-weight: 600;
   padding: 0.3rem 0.7rem;
   border-radius: 12px;
-  border: 1px solid rgba(87, 188, 235, 0.15);
+  border: 1px solid rgba(87, 188, 235, 0.3);
   margin-bottom: 0.6rem;
   letter-spacing: 0.3px;
   text-transform: uppercase;
+  backdrop-filter: blur(10px);
 }
 
 /* Hero Section */
 .team-hero {
-  background: linear-gradient(160deg, #f4f6f8 0%, #e3f0fa 100%);
-  padding: 6rem 0 5rem 0;
+  background: #0f0f0f;
+  padding: 8rem 0 7rem 0;
   text-align: center;
-  border-bottom: 1px solid var(--border-light);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.team-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .team-hero-title {
-  font-size: 3.2rem;
-  font-weight: 750;
-  color: var(--navy-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff !important;
   margin-bottom: 1.5rem;
-  letter-spacing: -0.5px;
-  line-height: 1.1;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 
 .team-hero-subtitle {
-  font-size: 1.4rem;
-  color: var(--text-secondary);
-  font-weight: 500;
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.6;
@@ -49,11 +56,11 @@
 /* Large screen responsive font sizes */
 @media (min-width: 1200px) {
   .team-hero-title {
-    font-size: 3.5rem;
+    font-size: 3.5rem !important;
   }
 
   .team-hero-subtitle {
-    font-size: 1.5rem;
+    font-size: 1.5rem !important;
   }
 
   .team-section-title {
@@ -120,9 +127,9 @@
 
 /* CEO Section */
 .team-ceo-section {
-  background: linear-gradient(135deg, #ffffff 0%, #f9fbff 100%);
+  background: #000000;
   padding: 5rem 0;
-  border-bottom: 1px solid var(--border-light);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
   justify-content: center;
 }
@@ -132,13 +139,21 @@
   flex-direction: row;
   align-items: center;
   gap: 2.5rem;
-  background: linear-gradient(145deg, #ffffff 0%, #f8fffe 100%);
+  background: linear-gradient(145deg, rgba(30, 30, 30, 0.9) 0%, rgba(20, 20, 20, 0.9) 100%);
   border-radius: 2rem;
-  box-shadow: 0 8px 32px rgba(87, 188, 235, 0.15), 0 2px 8px rgba(0, 0, 0, 0.05);
-  border: 2px solid rgba(87, 188, 235, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 2.5rem 3rem;
   max-width: 700px;
   width: 100%;
+  backdrop-filter: blur(8px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-ceo-card:hover {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-4px);
 }
 
 .team-ceo-photo {
@@ -146,9 +161,10 @@
   height: 140px;
   object-fit: cover;
   border-radius: 50%;
-  background: #fff;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
   flex-shrink: 0;
+  border: 3px solid rgba(255, 255, 255, 0.1);
 }
 
 .team-ceo-info {
@@ -158,31 +174,32 @@
 
 .team-ceo-name {
   font-size: 1.8rem;
-  font-weight: 800;
-  color: var(--navy-heading);
+  font-weight: 700;
+  color: #ffffff;
   margin-bottom: 0.3rem;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.02em;
 }
 
 .team-ceo-title {
   font-size: 1.2rem;
-  color: var(--science-blue);
-  font-weight: 650;
+  color: #10b981;
+  font-weight: 600;
   margin-bottom: 0.8rem;
   line-height: 1.3;
 }
 
 .team-ceo-bio {
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 1.2rem;
+  font-weight: 400;
 }
 
 /* Members Section */
 .team-members-section {
-  background: #f9fafd;
-  padding: 4rem 0 4rem 0;
+  background: #0a0a0a;
+  padding: 5rem 0;
 }
 
 .team-section-header {
@@ -198,10 +215,10 @@
 
 .team-section-title {
   font-size: 2.2rem;
-  font-weight: 750;
-  color: var(--science-blue);
+  font-weight: 700;
+  color: #ffffff;
   margin-bottom: 0;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.02em;
   line-height: 1.2;
 }
 
@@ -213,30 +230,32 @@
 
 .team-sort-select {
   padding: 0.5rem 2rem 0.5rem 0.75rem;
-  border: 1px solid var(--border-light);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 6px;
   font-size: 0.85rem;
-  background: white;
-  color: var(--text-secondary);
+  background: rgba(0, 0, 0, 0.4);
+  color: rgba(255, 255, 255, 0.9);
   font-weight: 500;
   transition: all 0.3s ease;
   outline: none;
   cursor: pointer;
   min-width: 100px;
   appearance: none;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
   background-position: right 0.5rem center;
   background-repeat: no-repeat;
   background-size: 0.8rem;
+  backdrop-filter: blur(8px);
 }
 
 .team-sort-select:focus {
-  border-color: var(--curious-blue);
-  box-shadow: 0 0 0 3px rgba(87, 188, 235, 0.1);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
 }
 
 .team-sort-select:hover {
-  border-color: var(--curious-blue-transparent);
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .team-members-grid {
@@ -250,10 +269,10 @@
 }
 
 .team-member-card {
-  background: #fff;
+  background: rgba(0, 0, 0, 0.4);
   border-radius: 1.2rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-  border: 1px solid var(--border-light);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 2rem 2.5rem;
   display: flex;
   flex-direction: column;
@@ -261,13 +280,14 @@
   text-align: center;
   width: 320px;
   height: 400px;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(8px);
 }
 
 .team-member-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(87, 188, 235, 0.15);
-  border-color: rgba(87, 188, 235, 0.2);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .team-member-photo {
@@ -275,34 +295,36 @@
   height: 100px;
   object-fit: cover;
   border-radius: 50%;
-  background: #fff;
-  border: 3px solid #f8f9fa;
+  background: rgba(255, 255, 255, 0.05);
+  border: 3px solid rgba(255, 255, 255, 0.1);
   margin-bottom: 1.5rem;
   flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
 .team-member-name {
   font-size: 1.15rem;
   font-weight: 700;
-  color: var(--navy-heading);
+  color: #ffffff;
   margin-bottom: 0.5rem;
   line-height: 1.3;
 }
 
 .team-member-title {
   font-size: 0.95rem;
-  color: var(--science-blue);
+  color: #57bceb;
   font-weight: 600;
   margin-bottom: 1rem;
   line-height: 1.4;
 }
 
 .team-member-bio {
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 0.9rem;
   line-height: 1.6;
   flex-grow: 1;
   margin-bottom: 0.3rem;
+  font-weight: 400;
 }
 
 @media (max-width: 1024px) {
@@ -369,14 +391,14 @@
     height: 350px;
   }
 
-  .team-hero{
-    padding: 6rem 2rem 5rem 2rem;
+  .team-hero {
+    padding: 6rem 2rem 5rem 2rem !important;
   }
   .team-hero-title {
-    font-size: 2rem;
+    font-size: 2rem !important;
   }
   .team-hero-subtitle {
-    font-size: 1rem;
+    font-size: 1rem !important;
   }
   
   .team-section-header {
@@ -486,7 +508,7 @@
 }
 
 .team-email-link {
-  color: var(--text-third);
+  color: rgba(255, 255, 255, 0.6);
   font-size: 0.85rem;
   font-weight: 400;
   text-decoration: none;
@@ -495,13 +517,13 @@
 }
 
 .team-email-link:hover {
-  color: var(--curious-blue);
+  color: #57bceb;
   text-decoration: underline;
 }
 
 /* Distinguished CEO email styling */
 .team-ceo-card .team-email-link {
-  color: var(--text-third);
+  color: rgba(255, 255, 255, 0.6);
   font-size: 1rem;
   font-weight: 400;
   text-decoration: none;

@@ -1,7 +1,7 @@
 /* Projects Page Styles */
 .projects-page {
-  background: #f4f6f8;
-  color: var(--navy-heading);
+  background: #000000;
+  color: #ffffff;
   font-family: 'Inter', 'Segoe UI', 'Roboto', Arial, sans-serif;
   min-height: 100vh;
 }
@@ -16,25 +16,31 @@
 
 /* Hero Section */
 .projects-hero {
-  background: linear-gradient(160deg, #f4f6f8 0%, #e3f0fa 100%);
-  padding: 6rem 0 5rem 0;
+  background: #0f0f0f;
+  padding: 8rem 0 7rem 0;
   text-align: center;
-  border-bottom: 1px solid var(--border-light);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.projects-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .projects-hero-title {
-  font-size: 3.2rem;
-  font-weight: 750;
-  color: var(--navy-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff !important;
   margin-bottom: 1.5rem;
-  letter-spacing: -0.5px;
-  line-height: 1.1;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 
 .projects-hero-subtitle {
-  font-size: 1.4rem;
-  color: var(--text-secondary);
-  font-weight: 500;
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.6;
@@ -42,11 +48,13 @@
 
 /* Tab Navigation */
 .projects-tab-navigation {
-  background: #fff;
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
   padding: 0;
   position: sticky;
   top: 3.2rem;
   z-index: 10;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .tab-container {
@@ -59,13 +67,13 @@
 
 .tab-button {
   background: transparent;
-  border: 2px solid #e5e7eb;
-  color: #6b7280;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.7);
   padding: 16px 16px;
   font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   border-radius: 8px;
   position: relative;
   flex: 1;
@@ -77,15 +85,15 @@
 }
 
 .tab-button:hover {
-  background: #f3f4f6;
-  border-color: #d1d5db;
-  color: #374151;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .tab-button.active {
-  background: transparent;
-  border-color: var(--science-blue);
-  color: var(--science-blue);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
   font-weight: 700;
 }
 
@@ -97,7 +105,7 @@
 .tab-button:focus-within {
   outline: none !important;
   box-shadow: none !important;
-  border-color: #e5e7eb !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
 }
 
 .tab-button.active:focus,
@@ -106,16 +114,16 @@
 .tab-button.active:hover {
   outline: none !important;
   box-shadow: none !important;
-  background: transparent !important;
-  border-color: var(--science-blue) !important;
-  color: var(--science-blue) !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  color: #ffffff !important;
 }
 
 /* Content Area */
 .projects-content {
   padding: 0;
-  background: #fff;
-  border-top: 1px solid #e5e7eb;
+  background: #000000;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .content-container {
@@ -140,8 +148,8 @@
 /* Project Header */
 .project-header {
   padding: 3rem 2rem 2rem 2rem;
-  border-bottom: 1px solid #e5e7eb;
-  background: #fafbfc;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: #0a0a0a;
 }
 
 .project-title-section {
@@ -154,11 +162,11 @@
 
 .project-title {
   font-size: 2.2rem;
-  font-weight: 750;
-  color: #1f2937;
+  font-weight: 700;
+  color: #ffffff;
   margin: 0;
   line-height: 1.2;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.02em;
 }
 
 .project-badges {
@@ -168,15 +176,16 @@
 }
 
 .project-timeline {
-  background: #fff3e0;
-  color: #f57c00;
-  border: 1px solid #ffcc02;
+  background: rgba(168, 85, 247, 0.15);
+  color: #a855f7;
+  border: 1px solid rgba(168, 85, 247, 0.3);
   padding: 8px 16px;
   border-radius: 20px;
   font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+  backdrop-filter: blur(10px);
 }
 
 .project-status {
@@ -186,18 +195,19 @@
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+  backdrop-filter: blur(10px);
 }
 
 .project-status-ongoing {
-  background: #e0f7fa;
-  color: #0097a7;
-  border: 1px solid #b2ebf2;
+  background: rgba(87, 188, 235, 0.15);
+  color: #57bceb;
+  border: 1px solid rgba(87, 188, 235, 0.3);
 }
 
 /* Overview and Video Section */
 .project-overview-video-section {
   padding: 5rem 2rem 5rem 2rem;
-  background: #fff;
+  background: #000000;
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
@@ -217,18 +227,18 @@
 
 .project-overview-content .section-title {
   font-size: 2.1rem;
-  font-weight: 750;
-  color: #2563eb;
+  font-weight: 700;
+  color: #ffffff;
   margin-bottom: 1.8rem;
   text-align: left;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.02em;
   line-height: 1.2;
 }
 
 .project-overview-content .project-description {
   font-size: 1.125rem;
   line-height: 1.8;
-  color: #374151;
+  color: rgba(255, 255, 255, 0.7);
   margin: 0;
 }
 
@@ -244,8 +254,9 @@
   height: 0;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
   margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .project-video {
@@ -260,17 +271,20 @@
 
 .video-info {
   text-align: center;
+  background: transparent;
+  padding: 1rem;
+  border-radius: 12px;
 }
 
 .video-title {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #1f2937;
+  color: #ffffff;
   margin-bottom: 0.5rem;
 }
 
 .video-description {
-  color: #6b7280;
+  color: rgba(255, 255, 255, 0.7);
   line-height: 1.6;
   font-size: 0.95rem;
 }
@@ -278,8 +292,8 @@
 /* Features Section */
 .project-features-section {
   padding: 5rem 2rem;
-  background: #f9fafd;
-  border-bottom: 1px solid var(--border-light);
+  background: #0a0a0a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .project-features-container {
@@ -290,8 +304,8 @@
 /* Impact Section */
 .project-impact-section {
   padding: 5rem 2rem;
-  background: #fff;
-  border-bottom: 1px solid var(--border-light);
+  background: #000000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .project-impact-container {
@@ -302,8 +316,8 @@
 /* Technologies Section */
 .project-technologies-section {
   padding: 5rem 2rem;
-  background: #f9fafd;
-  border-bottom: 1px solid var(--border-light);
+  background: #0a0a0a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .project-technologies-container {
@@ -314,11 +328,11 @@
 /* Features Section */
 .project-features .section-title {
   font-size: 2.1rem;
-  font-weight: 750;
-  color: var(--navy-heading);
+  font-weight: 700;
+  color: #ffffff;
   margin-bottom: 3.5rem;
   text-align: center;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.02em;
   line-height: 1.2;
   position: relative;
 }
@@ -340,49 +354,51 @@
   text-align: center;
   gap: 1rem;
   padding: 2rem 1.5rem;
-  background: #f8fafc;
+  background: rgba(0, 0, 0, 0.4);
   border-radius: 16px;
-  border: 2px solid #e5e7eb;
-  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   min-height: 150px;
+  backdrop-filter: blur(8px);
 }
 
 .feature-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px var(--picton-blue-transparent);
-  border-color: var(--picton-blue);
-  background: #f0f9ff;
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .feature-icon {
   flex-shrink: 0;
   width: 48px;
   height: 48px;
-  background: linear-gradient(135deg, var(--picton-blue), var(--curious-blue));
-  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px var(--picton-blue-transparent);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .feature-text {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #374151;
+  color: rgba(255, 255, 255, 0.7);
   margin: 0;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 /* Impact Section */
 .project-impact .section-title {
   font-size: 2.1rem;
-  font-weight: 750;
-  color: var(--navy-heading);
+  font-weight: 700;
+  color: #ffffff;
   margin-bottom: 3.5rem;
   text-align: center;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.02em;
   line-height: 1.2;
   position: relative;
 }
@@ -413,7 +429,7 @@
 }
 
 .impact-number {
-  color: var(--emerald);
+  color: #10b981;
   font-weight: 700;
   font-size: 2.5rem;
   min-width: 4rem;
@@ -424,7 +440,7 @@
 .impact-text {
   font-size: 1.2rem;
   line-height: 1.6;
-  color: #374151;
+  color: rgba(255, 255, 255, 0.7);
   margin: 0;
   flex: 1;
   text-align: left;
@@ -433,11 +449,11 @@
 /* Technologies Section */
 .project-technologies .section-title {
   font-size: 2.1rem;
-  font-weight: 750;
-  color: var(--navy-heading);
+  font-weight: 700;
+  color: #ffffff;
   margin-bottom: 3.5rem;
   text-align: center;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.02em;
   line-height: 1.2;
   position: relative;
 }
@@ -457,22 +473,24 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.25rem;
-  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
-  border: 2px solid var(--science-blue);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 50px;
   font-size: 0.95rem;
   font-weight: 600;
-  color: #1f2937;
+  color: rgba(255, 255, 255, 0.9);
   transition: all 0.3s ease;
   cursor: default;
-  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
 }
 
 .technology-tag:hover {
   transform: translateY(-2px);
-  background: linear-gradient(135deg, var(--science-blue), var(--curious-blue));
-  color: white;
-  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
 .technology-icon {
@@ -484,14 +502,14 @@
 }
 
 .technology-tag:hover .technology-icon {
-  color: white;
+  color: #ffffff;
 }
 
 /* Get in Touch Section */
 .project-get-in-touch-section {
   padding: 4rem 2rem;
-  background: #fff;
-  border-top: 1px solid #e5e7eb;
+  background: #0f0f0f;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .get-in-touch-container {
@@ -507,17 +525,17 @@
 
 .get-in-touch-content .section-title {
   font-size: 2.1rem;
-  font-weight: 750;
-  color: var(--navy-heading);
+  font-weight: 700;
+  color: #ffffff;
   margin-bottom: 1.8rem;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.02em;
   line-height: 1.2;
 }
 
 .get-in-touch-description {
   font-size: 1.125rem;
   line-height: 1.7;
-  color: #4b5563;
+  color: rgba(255, 255, 255, 0.7);
   margin-bottom: 2.5rem;
   max-width: 600px;
   margin-left: auto;
@@ -532,13 +550,13 @@
 }
 
 .contact-button {
-  padding: 0.5rem 2rem;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
+  padding: 0.65rem 1.25rem;
+  border-radius: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   min-height: 36px;
   min-width: 140px;
   display: flex;
@@ -546,33 +564,34 @@
   justify-content: center;
   text-decoration: none;
   touch-action: manipulation;
+  backdrop-filter: blur(8px);
 }
 
 .contact-button.primary {
-  background: transparent;
-  color: var(--science-blue);
-  border: 2px solid var(--science-blue);
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .contact-button.primary:hover {
-  background: var(--curious-blue);
-  border-color: var(--curious-blue);
-  color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px var(--curious-blue-transparent);
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .contact-button.secondary {
   background: transparent;
-  color: var(--science-blue);
-  border-color: var(--science-blue);
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .contact-button.secondary:hover {
-  background: var(--science-blue);
-  color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px var(--science-blue-transparent);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* Tablet Design (768px - 1023px) */
@@ -608,6 +627,8 @@
     border-radius: 8px;
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.7);
   }
   
   .tab-button:active {
@@ -615,17 +636,17 @@
   }
   
   .tab-button.active {
-    background: transparent;
-    border-color: var(--science-blue);
-    color: var(--science-blue);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
+    color: #ffffff;
     font-weight: 700;
     transform: scale(1.02);
   }
-  
+
   .tab-button:hover {
-    background: #f3f4f6;
-    border-color: #d1d5db;
-    color: #374151;
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.9);
   }
   
   /* .tab-button.active:hover {
@@ -803,7 +824,7 @@
     font-size: 0.8rem;
     font-weight: 600;
     border-radius: 8px;
-    border: 2px solid #e5e7eb;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     white-space: normal;
     word-wrap: break-word;
     text-align: center;
@@ -814,6 +835,7 @@
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
     transition: all 0.3s ease;
+    color: rgba(255, 255, 255, 0.7);
   }
   
   .tab-button:active {
@@ -821,21 +843,21 @@
   }
   
   .tab-button.active {
-    background: transparent;
-    border-color: var(--science-blue);
-    color: var(--science-blue);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
+    color: #ffffff;
     font-weight: 700;
     transform: scale(1.02);
   }
-  
+
   .tab-button:hover {
-    background: #f3f4f6;
-    border-color: #d1d5db;
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
   }
-/*   
+/*
   .tab-button.active:hover {
-    background: #2563eb;
-    border-color: #2563eb;
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
   } */
   
   .project-header {
@@ -1272,11 +1294,11 @@
 /* Large screen enhancements (1200px+) */
 @media (min-width: 1200px) {
   .projects-hero-title {
-    font-size: 3.5rem;
+    font-size: 3.5rem !important;
   }
 
   .projects-hero-subtitle {
-    font-size: 1.5rem;
+    font-size: 1.5rem !important;
   }
   
   .content-container {
@@ -1685,17 +1707,17 @@
 /* Mobile responsive styles for hero */
 @media (max-width: 767px) {
   .projects-hero {
-    padding: 6rem 2rem 5rem 2rem;
+    padding: 6rem 2rem 5rem 2rem !important;
   }
-  
+
   .projects-hero-title {
-    font-size: 2rem;
+    font-size: 2rem !important;
   }
-  
+
   .projects-hero-subtitle {
-    font-size: 1rem;
+    font-size: 1rem !important;
   }
-  
+
   .projects-tab-navigation {
     top: 0rem;
   }
