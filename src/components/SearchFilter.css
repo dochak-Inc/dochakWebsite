@@ -1,12 +1,13 @@
 /* SearchFilter Component Styles */
 .search-filter {
-  background: #fff;
+  background: rgba(0, 0, 0, 0.4);
   border-radius: 1rem;
-  box-shadow: 0 2px 12px #57bceb15;
-  border: 1px solid var(--border-light);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 1.5rem;
   margin-bottom: 2rem;
   font-family: 'Inter', 'Segoe UI', 'Roboto', Arial, sans-serif;
+  backdrop-filter: blur(8px);
 }
 
 .search-filter-controls {
@@ -30,31 +31,32 @@
 .search-input {
   width: 100%;
   padding: 0.75rem 1rem 0.75rem 2.5rem;
-  border: 1.5px solid var(--border-light);
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
   border-radius: 0.75rem;
   font-size: 1rem;
   font-weight: 500;
-  color: var(--text-primary);
-  background: #fafbfc;
-  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  transition: all 0.3s ease;
+  outline: none;
 }
 
 .search-input:focus {
-  outline: none;
-  border-color: var(--science-blue);
-  box-shadow: 0 0 0 3px var(--science-blue-transparent);
-  background: #fff;
+  outline: none !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  box-shadow: none !important;
+  background: rgba(255, 255, 255, 0.08) !important;
 }
 
 .search-input::placeholder {
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.5);
   font-weight: 400;
 }
 
 .search-icon {
   position: absolute;
   left: 0.75rem;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.5);
   pointer-events: none;
   display: flex;
   align-items: center;
@@ -65,23 +67,23 @@
   right: 0.5rem;
   background: none;
   border: none;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.5);
   cursor: pointer;
   padding: 0.25rem;
   border-radius: 0.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: color 0.2s, background-color 0.2s;
+  transition: all 0.3s ease;
 }
 
 .clear-search-btn:hover {
-  color: var(--science-blue);
-  background: var(--border-light);
+  color: #57bceb;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .clear-search-btn:focus {
-  outline: 2px solid var(--science-blue);
+  outline: 2px solid #57bceb;
   outline-offset: 2px;
 }
 
@@ -94,22 +96,28 @@
 .year-filter-select {
   width: 100%;
   padding: 0.75rem 2rem 0.75rem 1rem;
-  border: 1.5px solid var(--border-light);
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
   border-radius: 0.75rem;
   font-size: 1rem;
   font-weight: 500;
-  color: var(--text-primary);
-  background: #fafbfc;
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.05) !important;
   cursor: pointer;
   appearance: none;
-  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+  transition: all 0.3s ease;
+  outline: none;
 }
 
 .year-filter-select:focus {
-  outline: none;
-  border-color: var(--science-blue);
-  box-shadow: 0 0 0 3px var(--science-blue-transparent);
-  background: #fff;
+  outline: none !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  box-shadow: none !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.year-filter-select option {
+  background: #1a1a1a;
+  color: #ffffff;
 }
 
 /* Type Filter Styles */
@@ -121,22 +129,28 @@
 .type-filter-select {
   width: 100%;
   padding: 0.75rem 2rem 0.75rem 1rem;
-  border: 1.5px solid var(--border-light);
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
   border-radius: 0.75rem;
   font-size: 1rem;
   font-weight: 500;
-  color: var(--text-primary);
-  background: #fafbfc;
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.05) !important;
   cursor: pointer;
   appearance: none;
-  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+  transition: all 0.3s ease;
+  outline: none;
 }
 
 .type-filter-select:focus {
-  outline: none;
-  border-color: var(--science-blue);
-  box-shadow: 0 0 0 3px var(--science-blue-transparent);
-  background: #fff;
+  outline: none !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  box-shadow: none !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.type-filter-select option {
+  background: #1a1a1a;
+  color: #ffffff;
 }
 
 .select-arrow {
@@ -144,7 +158,7 @@
   right: 0.75rem;
   top: 50%;
   transform: translateY(-50%);
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.5);
   pointer-events: none;
 }
 
@@ -152,13 +166,13 @@
 .active-filters {
   margin-top: 1.2rem;
   padding-top: 1.2rem;
-  border-top: 1px solid var(--border-light);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .active-filters-label {
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.7);
   margin-bottom: 0.8rem;
 }
 
@@ -172,13 +186,15 @@
 .filter-tag {
   display: flex;
   align-items: center;
-  background: var(--science-blue);
-  color: #fff;
+  background: rgba(87, 188, 235, 0.2);
+  color: #57bceb;
+  border: 1px solid rgba(87, 188, 235, 0.4);
   border-radius: 1.5rem;
   padding: 0.4rem 0.8rem;
   font-size: 0.85rem;
   font-weight: 500;
   gap: 0.3rem;
+  backdrop-filter: blur(10px);
 }
 
 .filter-tag-label {
@@ -192,7 +208,7 @@
 .filter-tag-remove {
   background: none;
   border: none;
-  color: #fff;
+  color: #57bceb;
   cursor: pointer;
   font-size: 1.2rem;
   font-weight: 700;
@@ -209,34 +225,35 @@
 }
 
 .filter-tag-remove:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(87, 188, 235, 0.3);
+  color: #ffffff;
 }
 
 .filter-tag-remove:focus {
-  outline: 2px solid #fff;
+  outline: 2px solid #57bceb;
   outline-offset: 1px;
 }
 
 .clear-all-filters-btn {
   background: none;
-  border: 1px solid var(--border-light);
-  color: var(--text-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.7);
   cursor: pointer;
   font-size: 0.85rem;
   font-weight: 600;
   padding: 0.4rem 0.8rem;
   border-radius: 0.5rem;
-  transition: border-color 0.2s, color 0.2s, background-color 0.2s;
+  transition: all 0.3s ease;
 }
 
 .clear-all-filters-btn:hover {
-  border-color: var(--science-blue);
-  color: var(--science-blue);
-  background: var(--science-blue-transparent);
+  border-color: rgba(87, 188, 235, 0.4);
+  color: #57bceb;
+  background: rgba(87, 188, 235, 0.1);
 }
 
 .clear-all-filters-btn:focus {
-  outline: 2px solid var(--science-blue);
+  outline: 2px solid #57bceb;
   outline-offset: 2px;
 }
 
@@ -261,14 +278,16 @@
 }
 
 .search-input,
-.year-filter-select {
+.year-filter-select,
+.type-filter-select {
   font-size: 0.9rem;
   padding: 0.6rem 0.8rem 0.6rem 2.2rem;
   border-radius: 0.6rem;
   min-height: 44px; /* Touch-friendly */
 }
 
-.year-filter-select {
+.year-filter-select,
+.type-filter-select {
   padding: 0.6rem 1.6rem 0.6rem 0.8rem;
 }
 
@@ -319,29 +338,31 @@
     padding: 1.1rem;
     margin-bottom: 1.3rem;
   }
-  
+
   .search-filter-controls {
     gap: 0.7rem;
   }
-  
+
   .search-input,
-  .year-filter-select {
+  .year-filter-select,
+  .type-filter-select {
     font-size: 0.95rem;
     padding: 0.65rem 0.9rem 0.65rem 2.3rem;
   }
-  
-  .year-filter-select {
+
+  .year-filter-select,
+  .type-filter-select {
     padding: 0.65rem 1.7rem 0.65rem 0.9rem;
   }
-  
+
   .search-icon {
     left: 0.65rem;
   }
-  
+
   .select-arrow {
     right: 0.65rem;
   }
-  
+
   .active-filters-list {
     flex-wrap: wrap;
     flex-direction: row;
@@ -355,36 +376,38 @@
     padding: 1.3rem;
     margin-bottom: 1.5rem;
   }
-  
+
   .search-filter-controls {
     flex-direction: row;
     gap: 1rem;
   }
-  
+
   .search-input-container {
     flex: 1;
   }
-  
+
   .year-filter-container,
   .type-filter-container {
     min-width: 140px;
     width: auto;
   }
-  
+
   .search-input,
-  .year-filter-select {
+  .year-filter-select,
+  .type-filter-select {
     font-size: 0.95rem;
     padding: 0.7rem 1rem 0.7rem 2.3rem;
   }
-  
-  .year-filter-select {
+
+  .year-filter-select,
+  .type-filter-select {
     padding: 0.7rem 1.8rem 0.7rem 1rem;
   }
-  
+
   .search-icon {
     left: 0.7rem;
   }
-  
+
   .select-arrow {
     right: 0.7rem;
   }
@@ -397,36 +420,38 @@
     margin-bottom: 2rem;
     border-radius: 1rem;
   }
-  
+
   .search-input,
-  .year-filter-select {
+  .year-filter-select,
+  .type-filter-select {
     font-size: 1rem;
     padding: 0.75rem 1rem 0.75rem 2.5rem;
     border-radius: 0.75rem;
   }
-  
-  .year-filter-select {
+
+  .year-filter-select,
+  .type-filter-select {
     padding: 0.75rem 2rem 0.75rem 1rem;
   }
-  
+
   .search-icon {
     left: 0.75rem;
   }
-  
+
   .select-arrow {
     right: 0.75rem;
   }
-  
+
   .active-filters {
     margin-top: 1.2rem;
     padding-top: 1.2rem;
   }
-  
+
   .filter-tag {
     font-size: 0.85rem;
     padding: 0.4rem 0.8rem;
   }
-  
+
   .clear-all-filters-btn {
     font-size: 0.85rem;
     padding: 0.4rem 0.8rem;
@@ -438,7 +463,7 @@
   .search-filter {
     padding: 1.5rem;
   }
-  
+
   .year-filter-container,
   .type-filter-container {
     min-width: 150px;
@@ -452,12 +477,14 @@
   }
 
   .search-input,
-  .year-filter-select {
+  .year-filter-select,
+  .type-filter-select {
     font-size: 1.1rem;
     padding: 0.8rem 1.2rem 0.8rem 2.8rem;
   }
 
-  .year-filter-select {
+  .year-filter-select,
+  .type-filter-select {
     padding: 0.8rem 2.2rem 0.8rem 1.2rem;
   }
 
@@ -480,25 +507,28 @@
   .search-filter {
     padding: 2rem 2.5rem;
   }
-  
+
   .search-input,
-  .year-filter-select {
+  .year-filter-select,
+  .type-filter-select {
     font-size: 1.15rem;
     padding: 0.85rem 1.3rem 0.85rem 3rem;
   }
-  
-  .year-filter-select {
+
+  .year-filter-select,
+  .type-filter-select {
     padding: 0.85rem 2.3rem 0.85rem 1.3rem;
   }
-  
-  .year-filter-container {
+
+  .year-filter-container,
+  .type-filter-container {
     min-width: 180px;
   }
-  
+
   .search-icon {
     left: 1.1rem;
   }
-  
+
   .select-arrow {
     right: 1.1rem;
   }
@@ -506,32 +536,40 @@
 
 /* Focus management for keyboard navigation */
 .search-filter:focus-within {
-  box-shadow: 0 2px 12px var(--science-blue-transparent);
+  box-shadow: 0 8px 32px rgba(87, 188, 235, 0.2);
 }
 
 /* High contrast mode support */
 @media (prefers-contrast: high) {
+  .search-filter {
+    background: #000;
+    border: 2px solid #fff;
+  }
+
   .search-input,
-  .year-filter-select {
-    border: 2px solid #000;
-    background: #fff;
+  .year-filter-select,
+  .type-filter-select {
+    border: 2px solid #fff !important;
+    background: #000 !important;
+    color: #fff !important;
   }
 
   .search-input:focus,
-  .year-filter-select:focus {
-    border-color: #000;
-    box-shadow: 0 0 0 3px #000;
+  .year-filter-select:focus,
+  .type-filter-select:focus {
+    border-color: #fff !important;
+    box-shadow: 0 0 0 3px #fff !important;
   }
 
   .filter-tag {
-    background: #000;
-    color: #fff;
-    border: 1px solid #000;
+    background: #fff;
+    color: #000;
+    border: 2px solid #fff;
   }
 
   .clear-all-filters-btn {
-    border: 2px solid #000;
-    color: #000;
+    border: 2px solid #fff;
+    color: #fff;
   }
 }
 
@@ -553,7 +591,7 @@
   .search-filter {
     display: none;
   }
-  
+
   .sr-only {
     display: none;
   }

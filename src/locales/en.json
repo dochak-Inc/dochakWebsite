@@ -50,7 +50,7 @@
     "projectsText": "Discover our <strong>impactful projects</strong> shaping the future of <em>smart cities</em> with <strong>advanced AI</strong> and simulation technologies.",
     "teamText": "Meet the <strong>talented researchers</strong>, engineers, and experts driving <em>mobility innovation</em> with <strong>decades of combined experience</strong>.",
     "missionCTA1": "Explore Solutions",
-    "missionCTA2": "View Projects", 
+    "missionCTA2": "View Projects",
     "missionCTA3": "Meet the Team",
     "valuesTitle": "Core Values",
     "values": {
@@ -298,8 +298,8 @@
         "title": "Overview",
         "demo": "Naepo Mobility Digital Twin",
         "demoDesc": "Experience our <strong>Unity-based real-time rendering system</strong> that integrates high-fidelity traffic simulations and <strong>urban environment visualization</strong>.",
-        "dt-1" : "Daejeon Articulated Bus DT",
-        "dt-1Desc" : "Daejeon is planning to introduce a <strong>three-car bus system</strong>. Before implementing this new form of transportation, it's crucial to conduct a traffic impact analysis to develop a <strong>more efficient transportation system</strong>. The simulation results have been made more visually understandable through data visualization.",
+        "dt-1": "Daejeon Articulated Bus DT",
+        "dt-1Desc": "Daejeon is planning to introduce a <strong>three-car bus system</strong>. Before implementing this new form of transportation, it's crucial to conduct a traffic impact analysis to develop a <strong>more efficient transportation system</strong>. The simulation results have been made more visually understandable through data visualization.",
         "dt-2": "KAIST Campus DT",
         "dt-2Desc": "KAIST researchers have developed the <strong>KAIST Munji DT</strong> for the first time. It renders images and cloud points to create videos that are very similar to real life",
         "playVideo": "Play Video"
@@ -400,16 +400,16 @@
         "title": "Overview",
         "demo": "Macro scopic simulation - Shared bikes",
         "demoDesc": "A <strong>large scale network analysis</strong> for comprehensive traffic evaluation. This is particularly how the <strong>shared bike system</strong> is operated in Daejeon",
-        "TA-1":"Co-simulation",
-        "TA-1Desc":"<strong>Co-simulation between VISSIM and Unity</strong> is a powerful technique for creating highly realistic and interactive virtual environments for traffic and transportation research. It combines the strengths of both platforms: <strong>VISSIM</strong> for its robust, validated, and detailed microscopic traffic simulation, and <strong>Unity</strong> for its advanced 3D rendering, physics, and a wide range of <strong>life-saving robot simulation</strong> and human-in-the-loop capabilities",
-        "TA-2":"Co-simulation with Dynanometer" ,
-        "TA-2Desc":"A <strong>specialized and powerful form</strong> of Hardware-in-the-Loop (HIL) simulation. It combines a <strong>real, physical piece of hardware</strong>—the dynamometer—with one or more virtual simulation models. This approach is widely used in the <strong>automotive and aerospace industries</strong> for testing and developing powertrains and control systems" ,
-        "TA-3":"Micro simulation - EV autonomous charging station",
-        "TA-3Desc":"An <strong>autonomous EV charging station</strong> is a system that can charge an electric vehicle without any human intervention. Using <strong>microsimulation</strong>, this technology is being developed to address some of the key challenges of the growing EV market",
-        "TA-4":"Activity Based Model for Hwaseung City in Korea",
-        "TA-4Desc":"This model focuses on understanding and simulating the <strong>autonomous vehicle level 4+</strong> that will occur within Hwaseung City in 2027, providing insights into <strong>traffic patterns</strong> and urban mobility.",
-        "TA-5":"LLM-based Microscopic Traffic Analysis Tool is released NOW",
-        "TA-5Desc":"A <strong>Large Language Model (LLM)-based traffic analysis tool</strong> developed by <strong>Dr. Bo Wang</strong>(dochack's technical advisor) is an advanced software application that leverages the capabilities of large language models, such as GPT-4, to analyze and interpret traffic data. This tool can process vast amounts of traffic-related information, including historical data, real-time sensor inputs, and textual reports, to provide insights and predictions about traffic patterns, congestion, and incidents.",
+        "TA-1": "Co-simulation",
+        "TA-1Desc": "<strong>Co-simulation between VISSIM and Unity</strong> is a powerful technique for creating highly realistic and interactive virtual environments for traffic and transportation research. It combines the strengths of both platforms: <strong>VISSIM</strong> for its robust, validated, and detailed microscopic traffic simulation, and <strong>Unity</strong> for its advanced 3D rendering, physics, and a wide range of <strong>life-saving robot simulation</strong> and human-in-the-loop capabilities",
+        "TA-2": "Co-simulation with Dynanometer",
+        "TA-2Desc": "A <strong>specialized and powerful form</strong> of Hardware-in-the-Loop (HIL) simulation. It combines a <strong>real, physical piece of hardware</strong>—the dynamometer—with one or more virtual simulation models. This approach is widely used in the <strong>automotive and aerospace industries</strong> for testing and developing powertrains and control systems",
+        "TA-3": "Micro simulation - EV autonomous charging station",
+        "TA-3Desc": "An <strong>autonomous EV charging station</strong> is a system that can charge an electric vehicle without any human intervention. Using <strong>microsimulation</strong>, this technology is being developed to address some of the key challenges of the growing EV market",
+        "TA-4": "Activity Based Model for Hwaseung City in Korea",
+        "TA-4Desc": "This model focuses on understanding and simulating the <strong>autonomous vehicle level 4+</strong> that will occur within Hwaseung City in 2027, providing insights into <strong>traffic patterns</strong> and urban mobility.",
+        "TA-5": "LLM-based Microscopic Traffic Analysis Tool is released NOW",
+        "TA-5Desc": "A <strong>Large Language Model (LLM)-based traffic analysis tool</strong> developed by <strong>Dr. Bo Wang</strong>(dochack's technical advisor) is an advanced software application that leverages the capabilities of large language models, such as GPT-4, to analyze and interpret traffic data. This tool can process vast amounts of traffic-related information, including historical data, real-time sensor inputs, and textual reports, to provide insights and predictions about traffic patterns, congestion, and incidents.",
         "playVideo": "Play Video"
       },
       "technical": {
@@ -693,14 +693,24 @@
   },
   "team": {
     "heroTitle": "Meet Our Team",
-    "heroSubtitle": "Meet the experts driving innovation in smart mobility and simulation.",
-    "sectionTitle": "Our Team",
+    "heroSubtitle": "Talented researchers and engineers working together to revolutionize transportation technology",
+    "sectionTitle": "Our Team Members",
+    "sort": {
+      "byTitle": "By Title",
+      "byName": "By Name"
+    },
     "ceo": {
       "name": "Inhi Kim",
-      "title": "CEO, Associate Professor",
-      "bio": "Oversees the entire business, driving Dochak's mission for smart mobility innovation."
+      "title": "CEO & Founder",
+      "bio": "Leading research in transportation systems and urban mobility with over 15 years of experience in AI and autonomous systems."
     },
     "members": {
+      "tkkim": {
+        "name": "TK Kim",
+        "title": "Executive Technical Advisor",
+        "bio": "Multimodal simulation modeling, Transport planning & network assessment, Signal optimization",
+        "email": "tkkim.aus@kaist.ac.kr"
+      },
       "bowang": {
         "name": "Dr. Bo Wang",
         "title": "Technical Advisor",
@@ -727,11 +737,6 @@
         "name": "Tengfeng Lin",
         "title": "Researcher",
         "bio": "Leads image processing tasks."
-      },
-      "donghyun": {
-        "name": "Donghyun Kwon",
-        "title": "Researcher",
-        "bio": "Leads activity based model development."
       },
       "younghi": {
         "name": "Younghi Liu",
@@ -1154,98 +1159,9 @@
       }
     }
   },
-  "team": {
-    "heroTitle": "Meet Our Team",
-    "heroSubtitle": "Talented researchers and engineers working together to revolutionize transportation technology",
-    "sectionTitle": "Our Team Members",
-    "sort": {
-      "byTitle": "By Title",
-      "byName": "By Name"
-    },
-    "ceo": {
-      "name": "Inhi Kim",
-      "title": "CEO & Founder",
-      "bio": "Leading research in transportation systems and urban mobility with over 15 years of experience in AI and autonomous systems."
-    },
-    "members": {
-      "tkkim": {
-        "name": "TK Kim",
-        "title": "Executive Technical Advisor",
-        "bio": "Multimodal simulation modeling, Transport planning & network assessment, Signal optimization",
-        "email": "tkkim.aus@kaist.ac.kr"
-      },
-      "bowang": {
-        "name": "Dr. Bo Wang",
-        "title": "Technical Advisor",
-        "bio": "Technical advisor specializing in advanced traffic analysis and AI-driven mobility solutions.",
-        "email": "resulycheng@gmail.com",
-        "image": "BoWang.png"
-      },
-      "reuben": {
-        "name": "Dr. Reuben Tamakloe",
-        "title": "Principal Researcher",
-        "bio": "Manages overall operations, ensuring project and research execution align with goals."
-      },
-      "gyounghoon": {
-        "name": "Dr. Gyounghoon Chun",
-        "title": "Principal Researcher",
-        "bio": "Manages microsimulation and mos projects and research execution align with goals."
-      },
-      "taeho": {
-        "name": "Dr.Taeho Oh",
-        "title": "Principal Researcher",
-        "bio": "Manages digital twin projects and virtual environment simulations."
-      },
-      "tengfeng": {
-        "name": "Tengfeng Lin",
-        "title": "Researcher",
-        "bio": "Leads image processing tasks."
-      },
-      "younghi": {
-        "name": "Younghi Liu",
-        "title": "Researcher",
-        "bio": "Leads data science initiatives."
-      },
-      "kaihan": {
-        "name": "Kaihan Zhang",
-        "title": "Researcher",
-        "bio": "Leads urban mobility research."
-      },
-      "mahdi": {
-        "name": "Mahdi Khosravi",
-        "title": "Researcher",
-        "bio": "Leads 3D virtual environment development."
-      },
-      "hui": {
-        "name": "Ng Hui Zhi",
-        "title": "Researcher",
-        "bio": "Leads EV operation in the large scale network."
-      },
-      "kervin": {
-        "name": "Kervin Lucas",
-        "title": "Researcher",
-        "bio": "Leads macro scopic simulation including Visum, Emme, and Cube."
-      },
-      "hyuncheol": {
-        "name": "Hyuncheol Park",
-        "title": "Researcher",
-        "bio": "multimodal driving simulators."
-      },
-      "jaehyuk": {
-        "name": "Jaehyuk Lim",
-        "title": "Researcher",
-        "bio": "Designs experimental scenarios for practical simulation-based validation."
-      },
-      "heeyeon": {
-        "name": "Heeyeon Kang",
-        "title": "Researcher",
-        "bio": "Supports project collaboration and research development through teamwork."
-      }
-    }
-  },
   "training": {
     "heroTitle": "Our Training Courses",
-    "heroSubtitle": "This course is a collaborative program between the KAIST Mobility Research Institute and dochak. Specifically, the PTV Software Training Course is the first in Korea to be officially taught by Korean speaking PTV-certified trainers. Students who successfully complete the training will be awarded an official PTV certificate.",
+    "heroSubtitle": "Korea's first official PTV Software training course taught by Korean-speaking PTV-certified trainers from KAIST and dochak. Earn your official PTV certificate upon completion.",
     "filters": {
       "allProducts": "All products",
       "allLevels": "All levels",
@@ -1293,6 +1209,4 @@
       }
     }
   }
-
 }
-

@@ -1,20 +1,23 @@
 /* PatentCard Component Styles */
 .patent-card {
-  background: #fff;
+  background: #0f0f0f;
   border-radius: 1.2rem;
-  box-shadow: 0 4px 24px #57bceb22;
-  border: 1.5px solid var(--border-light);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 1.8rem 2rem;
   margin-bottom: 1.5rem;
-  transition: box-shadow 0.2s, transform 0.2s, border 0.2s;
+  transition: all 0.3s ease;
   font-family: 'Inter', 'Segoe UI', 'Roboto', Arial, sans-serif;
   display: flex;
   flex-direction: column;
   height: 100%;
+  backdrop-filter: blur(8px);
 }
 
 .patent-card:hover {
   transform: translateY(-2px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 .patent-header {
@@ -33,22 +36,24 @@
   letter-spacing: 0.5px;
   text-transform: uppercase;
   white-space: nowrap;
+  border: 1px solid;
+  backdrop-filter: blur(10px);
 }
 
 .patent-status-registered {
-  background: #e0f7fa;
-  color: #0097a7;
-  border: 1px solid #b2ebf2;
+  background: rgba(224, 247, 250, 0.98);
+  color: #006064;
+  border-color: rgba(178, 235, 242, 0.9);
 }
 
 .patent-status-pending {
-  background: #fff3e0;
-  color: #f57c00;
-  border: 1px solid #ffcc02;
+  background: rgba(255, 243, 224, 0.98);
+  color: #e65100;
+  border-color: rgba(255, 183, 77, 0.9);
 }
 
 .patent-country {
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 0.95rem;
   font-weight: 600;
   white-space: nowrap;
@@ -64,9 +69,10 @@
 .patent-name {
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--navy-heading);
+  color: #ffffff;
   line-height: 1.4;
   margin: 0;
+  letter-spacing: -0.02em;
 }
 
 .patent-details {
@@ -86,23 +92,23 @@
 
 .patent-date-label,
 .patent-number-label {
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.6);
   font-weight: 600;
   min-width: fit-content;
 }
 
 .patent-date-value,
 .patent-number-value {
-  color: var(--text-primary);
+  color: rgba(255, 255, 255, 0.9);
   font-weight: 500;
   font-family: 'Courier New', monospace;
 }
 
 .patent-number-value {
-  background: #f8f9fa;
+  background: rgba(255, 255, 255, 0.05);
   padding: 0.2rem 0.5rem;
   border-radius: 0.4rem;
-  border: 1px solid var(--border-light);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   font-size: 0.9rem;
 }
 
@@ -164,30 +170,30 @@
     padding: 1.4rem;
     margin-bottom: 1.2rem;
   }
-  
+
   .patent-status {
     font-size: 0.8rem;
     padding: 0.3rem 0.8rem;
   }
-  
+
   .patent-country {
     font-size: 0.9rem;
   }
-  
+
   .patent-name {
     font-size: 1.05rem;
   }
-  
+
   .patent-date,
   .patent-number {
     font-size: 0.9rem;
   }
-  
+
   .patent-date-label,
   .patent-number-label {
     font-size: 0.85rem;
   }
-  
+
   .patent-number-value {
     font-size: 0.85rem;
     padding: 0.15rem 0.4rem;
@@ -200,7 +206,7 @@
     padding: 1.6rem;
     margin-bottom: 1.3rem;
   }
-  
+
   .patent-header {
     flex-direction: row;
     align-items: center;
@@ -208,18 +214,18 @@
     gap: 1rem;
     margin-bottom: 1rem;
   }
-  
+
   .patent-country {
     align-self: auto;
     margin-top: 0;
     white-space: nowrap;
   }
-  
+
   .patent-name {
     font-size: 1.1rem;
     line-height: 1.3;
   }
-  
+
   .patent-date,
   .patent-number {
     flex-direction: row;
@@ -236,25 +242,25 @@
     margin-bottom: 1.5rem;
     border-radius: 1.2rem;
   }
-  
+
   .patent-header {
     margin-bottom: 1.2rem;
   }
-  
+
   .patent-status {
     font-size: 0.85rem;
     padding: 0.4rem 1rem;
   }
-  
+
   .patent-country {
     font-size: 0.95rem;
   }
-  
+
   .patent-name {
     font-size: 1.2rem;
     line-height: 1.4;
   }
-  
+
   .patent-date,
   .patent-number {
     font-size: 0.95rem;
@@ -266,11 +272,11 @@
   .patent-card {
     padding: 1.8rem 2rem;
   }
-  
+
   .patent-name {
     font-size: 1.2rem;
   }
-  
+
   .patent-date,
   .patent-number {
     font-size: 0.95rem;
@@ -307,20 +313,20 @@
   .patent-card {
     padding: 2.2rem 3rem;
   }
-  
+
   .patent-name {
     font-size: 1.4rem;
   }
-  
+
   .patent-status {
     font-size: 0.95rem;
     padding: 0.55rem 1.3rem;
   }
-  
+
   .patent-country {
     font-size: 1.05rem;
   }
-  
+
   .patent-date,
   .patent-number {
     font-size: 1.05rem;
@@ -329,7 +335,7 @@
 
 /* Focus styles for accessibility */
 .patent-card:focus-within {
-  outline: 2px solid var(--science-blue);
+  outline: 2px solid #57bceb;
   outline-offset: 2px;
 }
 
@@ -353,6 +359,8 @@
     border: 1px solid #ccc;
     break-inside: avoid;
     margin-bottom: 1rem;
+    background: #fff;
+    color: #000;
   }
 
   .patent-status-registered {
@@ -371,7 +379,7 @@
     background: #f8f8f8;
     border: 1px solid #ccc;
   }
-  
+
   .sr-only {
     display: none;
   }
@@ -379,20 +387,26 @@
 
 /* High contrast mode support */
 @media (prefers-contrast: high) {
-  .patent-status-registered {
+  .patent-card {
     background: #000;
-    color: #fff;
-    border: 2px solid #000;
+    border: 2px solid #fff;
+  }
+
+  .patent-status-registered {
+    background: #fff;
+    color: #000;
+    border: 2px solid #fff;
   }
 
   .patent-status-pending {
-    background: #333;
-    color: #fff;
-    border: 2px solid #333;
+    background: #fff;
+    color: #000;
+    border: 2px solid #fff;
   }
 
   .patent-number-value {
-    background: #f0f0f0;
-    border: 2px solid #000;
+    background: #fff;
+    color: #000;
+    border: 2px solid #fff;
   }
 }

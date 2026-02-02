@@ -1,14 +1,14 @@
 /* DisclosureTabs Component Styles */
 .disclosure-tabs {
-  background: #fff;
-  /* border-radius: 1rem; */
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
-  border: 1px solid var(--border-light);
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   margin-bottom: 2rem;
   font-family: 'Inter', 'Segoe UI', 'Roboto', Arial, sans-serif;
   position: relative;
   overflow: hidden;
   width: 100%;
+  backdrop-filter: blur(8px);
 }
 
 .tabs-container {
@@ -29,26 +29,17 @@
   gap: 0.75rem;
   font-size: 1rem;
   font-weight: 600;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.7) !important;
   transition: all 0.3s ease;
   position: relative;
   border-radius: 0;
   width: 100%;
   max-width: none;
 }
-/* 
-.tab-button:first-child {
-  border-top-left-radius: 1rem;
-  border-bottom-left-radius: 1rem;
-}
-
-.tab-button:last-child {
-  border-top-right-radius: 1rem;
-  border-bottom-right-radius: 1rem;
-} */
 
 .tab-button:hover {
-  /* No hover effects */
+  color: rgba(255, 255, 255, 0.9) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
 }
 
 .tab-button:focus,
@@ -56,12 +47,21 @@
 .tab-button:active,
 .tab-button:focus-within {
   outline: none !important;
-  background: none !important;
+  background: rgba(255, 255, 255, 0.05) !important;
 }
 
 .tab-button.active {
-  color: var(--science-blue);
+  color: #ffffff !important;
   font-weight: 700;
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.tab-button.active:focus,
+.tab-button.active:focus-visible,
+.tab-button.active:active,
+.tab-button.active:focus-within {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.1) !important;
 }
 
 .tab-label {
@@ -70,9 +70,9 @@
 }
 
 .tab-count {
-  background: #f3f4f6;
-  color: #6b7280;
-  border: 1px solid #d1d5db;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 1rem;
   padding: 0.25rem 0.6rem;
   font-size: 0.8rem;
@@ -86,13 +86,14 @@
 }
 
 .tab-button:hover .tab-count {
-  /* No hover effects */
+  background: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .tab-button.active .tab-count {
-  background: #e1f5fe;
-  color: #0277bd;
-  border-color: #81d4fa;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.4);
   font-weight: 700;
 }
 
@@ -104,7 +105,7 @@
   top: 25%;
   bottom: 25%;
   width: 1px;
-  background: #00000000;
+  background: rgba(255, 255, 255, 0.1);
   transition: opacity 0.3s ease;
 }
 
@@ -115,22 +116,11 @@
   opacity: 0;
 }
 
-/* Tab indicator line - disabled for subtle design */
-/* .tab-indicator {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 3px;
-  background: var(--science-blue);
-  transition: all 0.3s ease;
-} */
-
 /* Mobile-first responsive styles */
 
 /* Base mobile styles (320px and up) */
 .disclosure-tabs {
   margin-bottom: 1.2rem;
-  /* border-radius: 0.8rem; */
 }
 
 .tab-button {
@@ -143,16 +133,6 @@
   width: 100%;
   flex: 1;
 }
-/* 
-.tab-button:first-child {
-  border-top-left-radius: 0.8rem;
-  border-bottom-left-radius: 0.8rem;
-}
-
-.tab-button:last-child {
-  border-top-right-radius: 0.8rem;
-  border-bottom-right-radius: 0.8rem;
-} */
 
 .tab-count {
   font-size: 0.6rem;
@@ -172,7 +152,7 @@
   .disclosure-tabs {
     margin-bottom: 1.3rem;
   }
-  
+
   .tab-button {
     padding: 0.8rem 0.8rem;
     font-size: 0.85rem;
@@ -193,9 +173,8 @@
 @media (min-width: 640px) {
   .disclosure-tabs {
     margin-bottom: 1.5rem;
-    /* border-radius: 1rem; */
   }
-  
+
   .tab-button {
     padding: 0.9rem 1rem;
     font-size: 0.9rem;
@@ -204,16 +183,6 @@
     width: 100%;
     flex: 1;
   }
-  
-  /* .tab-button:first-child {
-    border-top-left-radius: 1rem;
-    border-bottom-left-radius: 1rem;
-  }
-
-  .tab-button:last-child {
-    border-top-right-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-  } */
 
   .tab-count {
     font-size: 0.7rem;
@@ -222,7 +191,7 @@
     height: 1.2rem;
     margin-top: 0;
   }
-  
+
   .tab-label {
     text-align: left;
   }
@@ -233,7 +202,7 @@
   .disclosure-tabs {
     margin-bottom: 2rem;
   }
-  
+
   .tab-button {
     padding: 1rem 1.5rem;
     font-size: 0.95rem;
@@ -299,12 +268,13 @@
 /* High contrast mode support */
 @media (prefers-contrast: high) {
   .disclosure-tabs {
-    border: 2px solid #000;
+    border: 2px solid #fff;
+    background: #000;
   }
 
   .tab-button {
-    color: #000;
-    border-right: 1px solid #000;
+    color: #fff !important;
+    border-right: 1px solid #fff;
   }
 
   .tab-button:last-child {
@@ -312,18 +282,14 @@
   }
 
   .tab-button.active {
-    background: #000;
-    color: #fff;
-  }
-
-  .tab-button.active::after {
-    background: #000;
+    background: #fff !important;
+    color: #000 !important;
   }
 
   .tab-count {
-    background: #f0f0f0;
+    background: #fff;
     color: #000;
-    border: 2px solid #000;
+    border: 2px solid #fff;
   }
 
   .tab-button.active .tab-count {
@@ -341,11 +307,6 @@
     transition: none;
   }
 }
-
-/* Focus management for keyboard navigation */
-/* .disclosure-tabs:focus-within {
-  box-shadow: 0 2px 12px var(--science-blue-transparent);
-} */
 
 /* Screen Reader Only Content */
 .sr-only {
@@ -365,11 +326,16 @@
   .disclosure-tabs {
     box-shadow: none;
     border: 1px solid #000;
+    background: #fff;
+  }
+
+  .tab-button {
+    color: #000 !important;
   }
 
   .tab-button.active {
-    background: #f0f0f0;
-    color: #000;
+    background: #f0f0f0 !important;
+    color: #000 !important;
   }
 
   .tab-count {
@@ -377,7 +343,7 @@
     color: #000;
     border: 1px solid #000;
   }
-  
+
   .sr-only {
     display: none;
   }

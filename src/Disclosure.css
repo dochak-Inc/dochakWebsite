@@ -1,33 +1,34 @@
 /* Disclosure Page Styles */
 .disclosure-page {
   min-height: 100vh;
-  background: #f4f6f8;
+  background: #000000;
+  color: #ffffff;
   font-family: 'Inter', 'Segoe UI', 'Roboto', Arial, sans-serif;
 }
 
 /* Hero Section */
 .disclosure-hero {
-  background: linear-gradient(160deg, #f4f6f8 0%, #e3f0fa 100%);
-  padding: 6rem 0 5rem 0;
+  background: #0f0f0f;
+  padding: 8rem 0 7rem 0;
   text-align: center;
-  border-bottom: 1px solid var(--border-light);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .disclosure-hero-title {
   font-size: 3rem;
-  font-weight: 650;
-  color: var(--navy-heading);
+  font-weight: 700;
+  color: #ffffff;
   margin-bottom: 1.2rem;
-  letter-spacing: 1px;
+  letter-spacing: -0.02em;
 }
 
 .disclosure-hero-subtitle {
   font-size: 1.3rem;
-  color: var(--text-secondary);
-  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
   max-width: 700px;
   margin: 0 auto;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 /* Container */
@@ -71,8 +72,8 @@
 .loading-spinner {
   width: 40px;
   height: 40px;
-  border: 3px solid #e2e8f0;
-  border-top: 3px solid #004394ce;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-top: 3px solid #57bceb;
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin-bottom: 1rem;
@@ -89,7 +90,7 @@
 }
 
 .disclosure-loading p {
-  color: #64748b;
+  color: rgba(255, 255, 255, 0.6);
   font-size: 1rem;
 }
 
@@ -100,13 +101,13 @@
 }
 
 .disclosure-error h2 {
-  color: #dc2626;
+  color: #ef4444;
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
 .disclosure-error p {
-  color: #64748b;
+  color: rgba(255, 255, 255, 0.6);
   margin-bottom: 2rem;
   max-width: 500px;
   margin-left: auto;
@@ -114,18 +115,20 @@
 }
 
 .retry-button {
-  background-color: #004294;
-  color: white;
-  border: none;
+  background: rgba(87, 188, 235, 0.15);
+  color: #57bceb;
+  border: 1px solid rgba(87, 188, 235, 0.3);
   padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
 .retry-button:hover {
-  background-color: #003875;
+  background: rgba(87, 188, 235, 0.25);
+  color: #ffffff;
 }
 
 /* Results Section */
@@ -139,18 +142,19 @@
   align-items: center;
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .results-title {
   font-size: 1.5rem;
-  font-weight: 600;
-  color: #1e293b;
+  font-weight: 700;
+  color: #ffffff;
   margin: 0;
+  letter-spacing: -0.02em;
 }
 
 .results-count {
-  color: #64748b;
+  color: rgba(255, 255, 255, 0.6);
   font-size: 0.875rem;
   font-weight: 500;
 }
@@ -179,36 +183,38 @@
 }
 
 .no-results-icon {
-  color: #94a3b8;
+  color: rgba(255, 255, 255, 0.3);
   margin-bottom: 1rem;
 }
 
 .no-results h3 {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #475569;
+  color: #ffffff;
   margin-bottom: 0.5rem;
 }
 
 .no-results p {
-  color: #64748b;
+  color: rgba(255, 255, 255, 0.6);
   margin-bottom: 1.5rem;
   max-width: 400px;
 }
 
 .clear-filters-button {
-  background-color: #289AD7;
-  color: white;
-  border: none;
+  background: rgba(87, 188, 235, 0.15);
+  color: #57bceb;
+  border: 1px solid rgba(87, 188, 235, 0.3);
   padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
   font-size: 0.875rem;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
 .clear-filters-button:hover {
-  background-color: #2563eb;
+  background: rgba(87, 188, 235, 0.25);
+  color: #ffffff;
 }
 
 /* Mobile-first Responsive Design */
@@ -273,7 +279,7 @@
   .disclosure-content {
     padding: 1.5rem 0;
   }
-  
+
   .results-title {
     font-size: 1.25rem;
   }
@@ -281,7 +287,7 @@
   .results-count {
     font-size: 0.8rem;
   }
-  
+
   .publications-grid,
   .patents-grid {
     gap: 1rem;
@@ -299,7 +305,7 @@
   .disclosure-content {
     padding: 3rem 0;
   }
-  
+
   .results-header {
     flex-direction: row;
     align-items: center;
@@ -355,7 +361,7 @@
 /* Focus and Accessibility */
 .retry-button:focus,
 .clear-filters-button:focus {
-  outline: 2px solid #004294;
+  outline: 2px solid #57bceb;
   outline-offset: 2px;
 }
 
@@ -407,8 +413,8 @@
   position: absolute;
   top: -40px;
   left: 6px;
-  background: var(--science-blue);
-  color: white;
+  background: #57bceb;
+  color: #000000;
   padding: 8px;
   text-decoration: none;
   border-radius: 4px;
@@ -423,41 +429,41 @@
 /* High contrast mode support */
 @media (prefers-contrast: high) {
   .disclosure-page {
-    background-color: #fff;
+    background-color: #000;
   }
 
   .disclosure-hero {
-    background: #fff;
-    border-bottom: 3px solid #000;
+    background: #000;
+    border-bottom: 3px solid #fff;
   }
 
   .disclosure-hero-title {
-    color: #000;
+    color: #fff;
   }
 
   .disclosure-hero-subtitle {
-    color: #000;
+    color: #fff;
   }
 
   .retry-button,
   .clear-filters-button {
-    background-color: #000;
-    color: #fff;
-    border: 2px solid #000;
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #fff;
   }
 
   .retry-button:hover,
   .clear-filters-button:hover {
-    background-color: #fff;
-    color: #000;
+    background-color: #000;
+    color: #fff;
   }
 
   .results-title {
-    color: #000;
+    color: #fff;
   }
 
   .results-count {
-    color: #000;
+    color: #fff;
   }
 }
 
@@ -536,7 +542,7 @@
   .animate-on-scroll {
     transition-duration: 0.4s;
   }
-  
+
   .slide-up {
     transform: translateY(20px);
   }

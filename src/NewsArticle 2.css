@@ -91,7 +91,7 @@
 /* Article Header */
 .article-header {
   padding: 2rem 0 3rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--border-light);
   margin-bottom: 3rem;
 }
 
@@ -108,64 +108,56 @@
   backdrop-filter: blur(10px);
 }
 
-/* Category colors matching News page - bright backgrounds */
+/* Category colors matching News page - light backgrounds like patent tags */
 .article-category-badge[data-category*="Company"],
 .article-category-badge[data-category*="회사"] {
-  background: rgba(230, 245, 255, 0.98);
-  color: #0d47a1;
-  border-color: rgba(100, 181, 246, 0.9);
+  background: #e3f2fd;
+  color: #1565c0;
+  border-color: #90caf9;
 }
 
 .article-category-badge[data-category*="Business"],
 .article-category-badge[data-category*="비즈니스"] {
-  background: rgba(230, 255, 230, 0.98);
-  color: #1b5e20;
-  border-color: rgba(129, 199, 132, 0.9);
+  background: #e8f5e8;
+  color: #2e7d32;
+  border-color: #a5d6a7;
 }
 
 .article-category-badge[data-category*="Technology"],
 .article-category-badge[data-category*="기술"] {
-  background: rgba(224, 247, 250, 0.98);
-  color: #01579b;
-  border-color: rgba(129, 212, 250, 0.9);
+  background: #e1f5fe;
+  color: #0277bd;
+  border-color: #81d4fa;
 }
 
 .article-category-badge[data-category*="Events"],
 .article-category-badge[data-category*="이벤트"] {
-  background: rgba(255, 243, 224, 0.98);
-  color: #e65100;
-  border-color: rgba(255, 183, 77, 0.9);
+  background: #fff3e0;
+  color: #f57c00;
+  border-color: #ffcc02;
 }
 
 .article-category-badge[data-category*="Conference"],
 .article-category-badge[data-category*="학술대회"] {
-  background: rgba(243, 229, 245, 0.98);
-  color: #4a148c;
-  border-color: rgba(186, 104, 200, 0.9);
+  background: #f3e5f5;
+  color: #6a1b9a;
+  border-color: #ba68c8;
 }
 
 .article-category-badge[data-category*="Internship"],
 .article-category-badge[data-category*="인턴십"] {
-  background: rgba(255, 251, 230, 0.98);
+  background: #fff8e1;
   color: #f57f17;
-  border-color: rgba(255, 213, 79, 0.9);
-}
-
-.article-category-badge[data-category*="Award"],
-.article-category-badge[data-category*="수상"],
-.article-category-badge[data-category*="상"] {
-  background: rgba(255, 235, 238, 0.98);
-  color: #c62828;
-  border-color: rgba(239, 83, 80, 0.9);
+  border-color: #ffd54f;
 }
 
 .article-title {
   font-size: 2.5rem;
-  font-weight: 700;
-  color: #ffffff;
+  font-weight: 750;
+  color: var(--navy-heading);
   line-height: 1.2;
   margin-bottom: 2rem;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.5px;
 }
 
 .article-meta {
@@ -179,7 +171,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-secondary);
   font-size: 0.95rem;
   font-weight: 500;
 }
@@ -187,14 +179,14 @@
 .meta-icon {
   width: 18px;
   height: 18px;
-  color: #57bceb;
+  color: var(--curious-blue);
   flex-shrink: 0;
 }
 
 .article-date,
 .article-author,
 .article-read-time {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-secondary);
 }
 
 /* Article Body */
@@ -206,22 +198,22 @@
 .article-content {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--text-primary);
   margin-bottom: 3rem;
 }
 
 .article-content h2 {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--navy-heading);
   margin: 2.5rem 0 1.5rem 0;
   line-height: 1.3;
 }
 
 .article-content h3 {
   font-size: 1.4rem;
-  font-weight: 600;
-  color: #ffffff;
+  font-weight: 650;
+  color: var(--navy-heading);
   margin: 2rem 0 1rem 0;
   line-height: 1.4;
 }
@@ -231,12 +223,12 @@
 }
 
 .article-content strong {
-  color: #ffffff;
+  color: var(--navy-heading);
   font-weight: 700;
 }
 
 .article-content em {
-  color: #57bceb;
+  color: var(--curious-blue);
   font-style: italic;
 }
 
@@ -251,12 +243,12 @@
 }
 
 .article-content blockquote {
-  border-left: 4px solid #57bceb;
-  background: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid var(--curious-blue);
+  background: #f8fafc;
   padding: 1.5rem 2rem;
   margin: 2rem 0;
   font-style: italic;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-secondary);
   border-radius: 0 0.5rem 0.5rem 0;
 }
 
@@ -275,42 +267,15 @@
   max-width: 100%;
   height: auto;
   border-radius: 0.75rem;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
   margin-bottom: 1rem;
 }
 
 .article-image-caption {
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-third);
   font-style: italic;
   line-height: 1.5;
-}
-
-/* Article Video */
-.article-video {
-  margin: 3rem 0;
-}
-
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
-  height: 0;
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.youtube-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-radius: 0;
 }
 
 /* Training Programs Section with Inline Image */
@@ -335,8 +300,7 @@
   max-width: 300px;
   height: auto;
   border-radius: 0.75rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
@@ -366,8 +330,7 @@
   max-width: 280px;
   height: auto;
   border-radius: 0.75rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
@@ -415,13 +378,13 @@
 .certificate-gallery {
   margin: 4rem 0;
   padding: 2rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--border-light);
 }
 
 .certificate-gallery-title {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--navy-heading);
   text-align: center;
   margin-bottom: 2.5rem;
 }
@@ -445,11 +408,9 @@
   object-fit: contain;
   object-position: center;
   border-radius: 0.5rem;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
   margin-bottom: 1rem;
-  background: rgba(255, 255, 255, 0.02);
 }
 
 .certificate-image:hover {
@@ -457,7 +418,7 @@
 }
 
 .certificate-caption {
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-secondary);
   font-size: 0.9rem;
   font-weight: 600;
   text-align: center;
@@ -475,7 +436,7 @@
   gap: 0.5rem;
   padding: 0.75rem 1rem;
   background: transparent;
-  color: #57bceb;
+  color: var(--curious-blue);
   border: none;
   border-radius: 0.5rem;
   font-size: 0.9rem;
@@ -487,7 +448,7 @@
 }
 
 .team-cta-button:hover {
-  color: #ffffff;
+  color: var(--science-blue);
   transform: translateX(4px);
 }
 
@@ -541,8 +502,8 @@
   gap: 0.75rem;
   padding: 1rem 2rem;
   background: transparent;
-  color: #57bceb;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: var(--curious-blue);
+  border: 2px solid var(--curious-blue);
   border-radius: 0.75rem;
   font-size: 1rem;
   font-weight: 600;
@@ -551,10 +512,10 @@
 }
 
 .back-to-news-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.3);
+  background: var(--curious-blue);
+  color: white;
   transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(87, 188, 235, 0.2);
 }
 
 .back-icon {
@@ -571,22 +532,21 @@
 .article-not-found {
   text-align: center;
   padding: 4rem 2rem;
-  background: rgba(0, 0, 0, 0.4);
+  background: #fff;
   border-radius: 1rem;
   margin: 4rem 0;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
 }
 
 .article-not-found h1 {
   font-size: 2rem;
-  color: #ffffff;
+  color: var(--navy-heading);
   margin-bottom: 1rem;
 }
 
 .article-not-found p {
   font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-secondary);
   margin-bottom: 2rem;
 }
 
@@ -707,29 +667,28 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background: rgba(87, 188, 235, 0.15);
-  color: #57bceb;
+  background: rgba(40, 154, 215, 0.08);
+  color: var(--curious-blue);
   text-decoration: none;
   font-weight: 500;
   font-size: 0.875rem;
   padding: 0.5rem 0.875rem;
   border-radius: 12px;
-  border: 1px solid rgba(87, 188, 235, 0.3);
+  border: 1px solid rgba(40, 154, 215, 0.2);
   transition: all 0.2s ease;
   position: relative;
 }
 
 .article-cta-button:hover {
-  background: rgba(87, 188, 235, 0.25);
-  border-color: rgba(87, 188, 235, 0.5);
-  color: #ffffff;
+  background: rgba(40, 154, 215, 0.12);
+  border-color: rgba(40, 154, 215, 0.3);
   transform: translateY(-0.5px);
-  box-shadow: 0 2px 8px rgba(87, 188, 235, 0.3);
+  box-shadow: 0 2px 8px rgba(40, 154, 215, 0.15);
 }
 
 .article-cta-button:active {
   transform: translateY(0);
-  background: rgba(87, 188, 235, 0.3);
+  background: rgba(40, 154, 215, 0.15);
 }
 
 .cta-arrow {

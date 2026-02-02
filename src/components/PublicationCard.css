@@ -1,20 +1,23 @@
 /* PublicationCard Component Styles */
 .publication-card {
-  background: #fff;
+  background: #0f0f0f;
   border-radius: 1.2rem;
-  box-shadow: 0 4px 24px #57bceb22;
-  border: 1.5px solid var(--border-light);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 1.8rem 2rem;
   margin-bottom: 1.5rem;
-  transition: box-shadow 0.2s, transform 0.2s, border 0.2s;
+  transition: all 0.3s ease;
   font-family: 'Inter', 'Segoe UI', 'Roboto', Arial, sans-serif;
   display: flex;
   flex-direction: column;
   height: 100%;
+  backdrop-filter: blur(8px);
 }
 
 .publication-card:hover {
   transform: translateY(-2px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 .publication-header {
@@ -27,31 +30,32 @@
 
 .publication-type-badge {
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 700;
   padding: 0.4rem 1rem;
   border-radius: 1.5rem;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   white-space: nowrap;
   border: 1px solid;
+  backdrop-filter: blur(10px);
 }
 
-/* Journal type styling - light background design */
+/* Journal type styling - bright background for dark theme */
 .publication-type-journal {
-  background: #e1f5fe;
-  color: #0277bd;
-  border-color: #81d4fa;
+  background: rgba(224, 247, 250, 0.98);
+  color: #006064;
+  border-color: rgba(178, 235, 242, 0.9);
 }
 
-/* Conference type styling - light background design */
+/* Conference type styling - bright background for dark theme */
 .publication-type-conference {
-  background: #e8f5e8;
-  color: #2e7d32;
-  border-color: #a5d6a7;
+  background: rgba(209, 250, 229, 0.98);
+  color: #047857;
+  border-color: rgba(167, 243, 208, 0.9);
 }
 
 .publication-date {
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 0.95rem;
   font-weight: 500;
   white-space: nowrap;
@@ -67,42 +71,43 @@
 .publication-title {
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--navy-heading);
+  color: #ffffff;
   line-height: 1.4;
   margin: 0;
+  letter-spacing: -0.02em;
 }
 
 .publication-title-link {
-  color: var(--science-blue);
+  color: #57bceb;
   text-decoration: none;
   transition: color 0.2s;
 }
 
 .publication-title-link:hover {
-  color: var(--curious-blue);
+  color: #ffffff;
   text-decoration: underline;
 }
 
 .publication-authors {
   font-size: 1rem;
   line-height: 1.5;
-  color: var(--text-primary);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .author-team-member {
   font-weight: 600;
-  color: var(--science-blue);
+  color: #57bceb;
 }
 
 .author-external {
   font-weight: 500;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .publication-journal {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--navy-heading);
+  color: #ffffff;
   font-style: italic;
 }
 
@@ -114,12 +119,12 @@
 }
 
 .doi-label {
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.6);
   font-weight: 500;
 }
 
 .doi-link {
-  color: var(--science-blue);
+  color: #57bceb;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s;
@@ -127,7 +132,7 @@
 }
 
 .doi-link:hover {
-  color: var(--curious-blue);
+  color: #ffffff;
   text-decoration: underline;
 }
 
@@ -191,20 +196,20 @@
     padding: 1.4rem;
     margin-bottom: 1.2rem;
   }
-  
+
   .publication-type-badge {
     font-size: 0.8rem;
     padding: 0.3rem 0.8rem;
   }
-  
+
   .publication-date {
     font-size: 0.9rem;
   }
-  
+
   .publication-title {
     font-size: 1.05rem;
   }
-  
+
   .publication-authors,
   .publication-journal {
     font-size: 0.95rem;
@@ -217,7 +222,7 @@
     padding: 1.6rem;
     margin-bottom: 1.3rem;
   }
-  
+
   .publication-header {
     flex-direction: row;
     align-items: center;
@@ -225,23 +230,23 @@
     gap: 1rem;
     margin-bottom: 1rem;
   }
-  
+
   .publication-date {
     align-self: auto;
     margin-top: 0;
     white-space: nowrap;
   }
-  
+
   .publication-title {
     font-size: 1.1rem;
     line-height: 1.3;
   }
-  
+
   .publication-authors,
   .publication-journal {
     font-size: 1rem;
   }
-  
+
   .publication-doi {
     flex-direction: row;
     align-items: center;
@@ -257,25 +262,25 @@
     margin-bottom: 1.5rem;
     border-radius: 1.2rem;
   }
-  
+
   .publication-header {
     margin-bottom: 1.2rem;
   }
-  
+
   .publication-type-badge {
     font-size: 0.85rem;
     padding: 0.4rem 1rem;
   }
-  
+
   .publication-date {
     font-size: 0.95rem;
   }
-  
+
   .publication-title {
     font-size: 1.2rem;
     line-height: 1.4;
   }
-  
+
   .publication-authors,
   .publication-journal {
     font-size: 1rem;
@@ -287,11 +292,11 @@
   .publication-card {
     padding: 1.8rem 2rem;
   }
-  
+
   .publication-title {
     font-size: 1.2rem;
   }
-  
+
   .publication-authors,
   .publication-journal {
     font-size: 1rem;
@@ -328,11 +333,11 @@
   .publication-card {
     padding: 2.2rem 3rem;
   }
-  
+
   .publication-title {
     font-size: 1.4rem;
   }
-  
+
   .publication-authors,
   .publication-journal {
     font-size: 1.15rem;
@@ -342,7 +347,7 @@
 /* Focus styles for accessibility */
 .publication-title-link:focus,
 .doi-link:focus {
-  outline: 2px solid var(--science-blue);
+  outline: 2px solid #57bceb;
   outline-offset: 2px;
   border-radius: 0.25rem;
 }
@@ -367,6 +372,8 @@
     border: 1px solid #ccc;
     break-inside: avoid;
     margin-bottom: 1rem;
+    background: #fff;
+    color: #000;
   }
 
   .publication-title-link,
@@ -374,8 +381,23 @@
     color: #000;
     text-decoration: underline;
   }
-  
+
   .sr-only {
     display: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .publication-card {
+    background: #000;
+    border: 2px solid #fff;
+  }
+
+  .publication-type-journal,
+  .publication-type-conference {
+    background: #fff;
+    color: #000;
+    border: 2px solid #fff;
   }
 }
