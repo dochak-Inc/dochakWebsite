@@ -1,15 +1,15 @@
-import nepo from '../assets/nepo.png';
-import working from '../assets/working.png';
-import tele from '../assets/tele.png';
-import jeju from '../assets/jeju.png';
-import laugh from '../assets/laugh.png';
-import building from '../assets/building.png';
-import car from '../assets/car.png';
-import city from '../assets/city.png';
-import computer from '../assets/computer.png';
-import dash from '../assets/dash.png';
-import highway from '../assets/highway.png';
-import truck from '../assets/truck.png';
+import nepo from '../assets/nepo.webp';
+import working from '../assets/working.webp';
+import tele from '../assets/tele.webp';
+import jeju from '../assets/jeju.webp';
+import laugh from '../assets/laugh.webp';
+import building from '../assets/building.webp';
+import car from '../assets/car.webp';
+import city from '../assets/city.webp';
+import computer from '../assets/computer.webp';
+import dash from '../assets/dash.webp';
+import highway from '../assets/highway.webp';
+import truck from '../assets/truck.webp';
 
 /**
  * Project data constants for the new tab-based Projects page

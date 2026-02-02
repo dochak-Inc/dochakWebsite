@@ -1,24 +1,24 @@
 import React, { useContext, useState } from 'react';
 import './Team.css';
-import Img from './assets/dochak_Symbol.png';
-import R1 from './assets/reuben.jpg';
-import R2 from './assets/gyounghoon.jpg';
-import R3 from './assets/taeho.jpg';
-import R4 from './assets/tengfeng.jpg';
-import R5 from './assets/donghyun.jpg';
-import R6 from './assets/yonghi.jpg';
-import R7 from './assets/kaihan.jpg';
-import R8 from './assets/kervin.png';
-import R9 from './assets/hyunchul.jpg';
-import R10 from './assets/Jaehyuck.jpg';
-import R11 from './assets/heeyun.png';
-import R12 from './assets/Mahdi.png';
-import R13 from './assets/Huizi.png';
-import BoWang from './assets/BoWang.png';
-import TKKim from './assets/TK-Kim.png';
+import Img from './assets/dochak_Symbol.webp';
+import R1 from './assets/reuben.webp';
+import R2 from './assets/gyounghoon.webp';
+import R3 from './assets/taeho.webp';
+import R4 from './assets/tengfeng.webp';
+import R5 from './assets/donghyun.webp';
+import R6 from './assets/yonghi.webp';
+import R7 from './assets/kaihan.webp';
+import R8 from './assets/kervin.webp';
+import R9 from './assets/hyunchul.webp';
+import R10 from './assets/Jaehyuck.webp';
+import R11 from './assets/heeyun.webp';
+import R12 from './assets/Mahdi.webp';
+import R13 from './assets/Huizi.webp';
+import BoWang from './assets/BoWang.webp';
+import TKKim from './assets/TK-Kim.webp';
 
 
-import ceo from './assets/inhiKim.jpg';
+import ceo from './assets/inhiKim.webp';
 import LanguageContext from './contexts/LanguageContext';
 import { useScrollAnimation } from './hooks/useScrollAnimation';
 

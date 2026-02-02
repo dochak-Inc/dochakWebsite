@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
 import { Timeline } from "../ui/timeline";
 import "./timelineDemo.css";
-import working from "../../assets/working.png";
-import computer from "../../assets/computer.png";
-import booth from "../../assets/booth.png";
-import car from "../../assets/car.png";
-import nepo from "../../assets/nepo.png";
-import building from "../../assets/building.png";
-import highway from "../../assets/highway.png";
-import watch from "../../assets/watch.png";
+import working from "../../assets/working.webp";
+import computer from "../../assets/computer.webp";
+import booth from "../../assets/booth.webp";
+import car from "../../assets/car.webp";
+import nepo from "../../assets/nepo.webp";
+import building from "../../assets/building.webp";
+import highway from "../../assets/highway.webp";
+import watch from "../../assets/watch.webp";
 import LanguageContext from "../../contexts/LanguageContext";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 

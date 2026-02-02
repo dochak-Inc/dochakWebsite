@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import './About.css';
-import truck from './assets/truck_hori.png';
+import truck from './assets/truck_hori.webp';
 import { Link } from 'react-router-dom';
 import { GlobeDemo } from './components/ui/globeDemo';
 import { TimelineDemo } from './components/ui/timelineDemo';
@@ -8,10 +8,10 @@ import LanguageContext from './contexts/LanguageContext';
 import { useScrollAnimation } from './hooks/useScrollAnimation';
 
 // Import images for core values backgrounds
-import automationImg from './assets/car.png';
-import integrationImg from './assets/clap.png';
-import excellenceImg from './assets/automob.png';
-import innovationImg from './assets/highway.png';
+import automationImg from './assets/car.webp';
+import integrationImg from './assets/clap.webp';
+import excellenceImg from './assets/automob.webp';
+import innovationImg from './assets/highway.webp';
 
 export default function About() {
   const { t } = useContext(LanguageContext);

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { useFrameOpacity } from '../hooks/useScrollFrames';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo.webp';
 import './ScrollContentOverlay.css';
 
 /**

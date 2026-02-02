@@ -5,15 +5,15 @@ import LanguageContext from './contexts/LanguageContext';
 import { useScrollAnimation } from './hooks/useScrollAnimation';
 
 // Import actual images from assets
-import automob from './assets/automob.png';
-import teledriving from './assets/teledriving.png';
-import twin from './assets/twin.png';
-import simulator from './assets/simulator.png';
-import news11 from './assets/news11.png';
-import llm2 from './assets/LLM2.png';
-import mobilityTech from './assets/newsMobility.jpg';
-import tkkimPresentation from './assets/tkkimPresentation.jpg';
-import changhuiKimNews from './assets/김창희News2.jpg';
+import automob from './assets/automob.webp';
+import teledriving from './assets/teledriving.webp';
+import twin from './assets/twin.webp';
+import simulator from './assets/simulator.webp';
+import news11 from './assets/news11.webp';
+import llm2 from './assets/LLM2.webp';
+import mobilityTech from './assets/newsMobility.webp';
+import tkkimPresentation from './assets/tkkimPresentation.webp';
+import changhuiKimNews from './assets/김창희News2.webp';
 import scienceTechSupport2025 from './assets/scienceTechSupport2025.webp';
 import molitAward from './assets/MOLITaward.webp';
 import trafficTwin from './assets/trafficTwin.webp';

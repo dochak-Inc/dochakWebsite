@@ -1,10 +1,10 @@
 import React, { useState, useContext } from 'react';
 import './Projects.css';
-import nepo from './assets/nepo.png';
-import working from './assets/working.png';
-import tele from './assets/tele.png';
-import jeju from './assets/jeju.png';
-import laugh from './assets/laugh.png';
+import nepo from './assets/nepo.webp';
+import working from './assets/working.webp';
+import tele from './assets/tele.webp';
+import jeju from './assets/jeju.webp';
+import laugh from './assets/laugh.webp';
 import LanguageContext from './contexts/LanguageContext';
 import { useScrollAnimation } from './hooks/useScrollAnimation';
 

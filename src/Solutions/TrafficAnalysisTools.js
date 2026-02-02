@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import './TrafficAnalysisTools.css';
 import LanguageContext from '../contexts/LanguageContext';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import meso from '../assets/meso.png';
-import micro from '../assets/micro.png';
-import nepo from '../assets/내포3D모델.png';
+import meso from '../assets/meso.webp';
+import micro from '../assets/micro.webp';
+import nepo from '../assets/내포3D모델.webp';
 import { EnhancedStickyScroll } from '../components/ui/enhanced-sticky-scroll';
 import { transformTechnologiesData } from '../utils/dataTransform';
 

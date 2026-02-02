@@ -7,10 +7,10 @@ import {
   IconBriefcase
 } from "@tabler/icons-react";
 import { useNavigate } from "react-router-dom";
-import traffic from '../../assets/simulFake.png'; //
-import truck from '../../assets/truck_hori.png';
-import multi from '../../assets/multi.png';
-import working from '../../assets/working.png';
+import traffic from '../../assets/simulFake.webp'; //
+import truck from '../../assets/truck_hori.webp';
+import multi from '../../assets/multi.webp';
+import working from '../../assets/working.webp';
 import LanguageContext from '../../contexts/LanguageContext';
 
 export function BentoDemo() {

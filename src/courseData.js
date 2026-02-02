@@ -1,10 +1,10 @@
 // Import product images from assets
-import visum from './assets/visum.jpg';
-import vissimImage from './assets/Simulation-in-PTV-VISSIM-software.png';
-import vistro from './assets/vistro.png';
-import simulatorCourse from './assets/simulator_course.jpg';
-import unity3D from './assets/unity3D.png';
-import digitalTwin from './assets/twin.png';
+import visum from './assets/visum.webp';
+import vissimImage from './assets/Simulation-in-PTV-VISSIM-software.webp';
+import vistro from './assets/vistro.webp';
+import simulatorCourse from './assets/simulator_course.webp';
+import unity3D from './assets/unity3D.webp';
+import digitalTwin from './assets/twin.webp';
 
 export const courseData = {
   'ind-001': {

@@ -15,7 +15,7 @@ import {
 const mockTechnology = {
   title: 'Test Technology',
   subtitle: 'A test technology for validation',
-  image: '/test-image.png',
+  image: '/test-image.webp',
   features: [
     {
       title: 'How it works',
@@ -61,7 +61,7 @@ describe('validateContentStructure', () => {
       {
         title: 'Test Tech',
         subtitle: 'Test subtitle',
-        image: '/test.png',
+        image: '/test.webp',
         sections: [
           { sectionTitle: 'Section 1', content: ['Content 1'] },
           { sectionTitle: 'Section 2', content: ['Content 2'] },
@@ -91,7 +91,7 @@ describe('transformTechnologiesData', () => {
     expect(result).toHaveLength(1);
     expect(result[0]).toHaveProperty('title', 'Test Technology');
     expect(result[0]).toHaveProperty('subtitle', 'A test technology for validation');
-    expect(result[0]).toHaveProperty('image', '/test-image.png');
+    expect(result[0]).toHaveProperty('image', '/test-image.webp');
     expect(result[0].sections).toHaveLength(3);
     
     // Check section structure
@@ -117,14 +117,14 @@ describe('createTechnologyData', () => {
     const result = createTechnologyData(
       'Test Tech',
       'Test subtitle',
-      '/test.png',
+      '/test.webp',
       mockTechnology.features
     );
     
     expect(result).toEqual({
       title: 'Test Tech',
       subtitle: 'Test subtitle',
-      image: '/test.png',
+      image: '/test.webp',
       sections: [
         {
           sectionTitle: 'How it works',

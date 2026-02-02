@@ -9,7 +9,7 @@ const technologies = [
   {
     title: 'Visum Mesoscopic Model​',
     subtitle: 'A mesoscopic traffic demand prediction and operation evaluation model',
-    image: './assets/meso.png',
+    image: './assets/meso.webp',
     features: [
       {
         title: 'How it works',

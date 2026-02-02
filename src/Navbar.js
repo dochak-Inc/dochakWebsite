@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext, useRef } from 'react';
 import './Navbar.css';
-import logo from './assets/logo.png';
+import logo from './assets/logo.webp';
 import { Link, useLocation } from 'react-router-dom';
 import LanguageSelector from './components/LanguageSelector';
 import LanguageContext from './contexts/LanguageContext';

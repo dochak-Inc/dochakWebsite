@@ -5,7 +5,7 @@ import LanguageContext from '../contexts/LanguageContext';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 // Import images (you may need to add these to your assets folder)
-// import digitalTwinDemo from '../assets/digital-twin-demo.png';
+// import digitalTwinDemo from '../assets/digital-twin-demo.webp';
 
 export default function DigitalTwin() {
   const { t } = useContext(LanguageContext);

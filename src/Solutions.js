@@ -5,12 +5,12 @@ import LanguageContext from './contexts/LanguageContext';
 import { useScrollAnimation } from './hooks/useScrollAnimation';
 
 // Import solution images
-import dash from './assets/dash.png';
-import simulator from './assets/내포3D모델.png';
-import vr from './assets/로봇.png';
-import visual from './assets/visual.png';
-import multi from './assets/multi.png';
-import tele from './assets/teledriving.png';
+import dash from './assets/dash.webp';
+import simulator from './assets/내포3D모델.webp';
+import vr from './assets/로봇.webp';
+import visual from './assets/visual.webp';
+import multi from './assets/multi.webp';
+import tele from './assets/teledriving.webp';
 
 const solutionImages = [tele, simulator, multi, dash, vr, visual];
 

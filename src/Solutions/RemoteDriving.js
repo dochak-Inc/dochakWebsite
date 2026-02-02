@@ -5,9 +5,9 @@ import LanguageContext from '../contexts/LanguageContext';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 // Import images
-import tele from '../assets/tele.png';
-import jeju from '../assets/jeju.png';
-import working from '../assets/working.png';
+import tele from '../assets/tele.webp';
+import jeju from '../assets/jeju.webp';
+import working from '../assets/working.webp';
 
 export default function RemoteDriving() {
   const { t } = useContext(LanguageContext);
