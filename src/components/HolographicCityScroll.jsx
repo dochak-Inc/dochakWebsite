@@ -14,16 +14,14 @@ const LoadingScreen = ({ progress }) => {
   return (
     <div className="holographic-loading">
       <div className="loading-content">
-        <div className="loading-spinner">
-          <div className="spinner-ring"></div>
-          <div className="spinner-ring"></div>
-          <div className="spinner-ring"></div>
+        <div className="holographic-loading-spinner">
+          <div className="holographic-spinner-ring"></div>
         </div>
         <div className="loading-text">Loading Urban Intelligence...</div>
         <div className="loading-progress">
-          <div className="progress-bar">
+          <div className="holographic-progress-bar">
             <div
-              className="progress-fill"
+              className="holographic-progress-fill"
               style={{ width: `${progress}%` }}
             ></div>
           </div>
