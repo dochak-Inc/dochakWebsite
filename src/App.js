@@ -8,7 +8,6 @@ import Hyperspeed from './Hyperspeed';
 import { ContainerTextFlip } from "./components/ui/container-text-flip";
 import HolographicCityScroll from './components/HolographicCityScroll';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
-// import Technologies from './Technologies';
 import About from './About';
 import SolutionsOverview from './Solutions';
 import ProjectsPage from './components/ProjectsPage';
@@ -26,7 +25,6 @@ import News from './News';
 import NewsArticle from './NewsArticle';
 import Training from './Training';
 import CourseDetail from './components/CourseDetail';
-import HeroPrototypeDemo from './HeroPrototypeDemo';
 
 import TawkToWidget from './TawkToWidget';
 import { LanguageProvider } from './contexts/LanguageContext';
@@ -52,10 +50,6 @@ function App() {
           path: "about",
           element: <About />
         },
-        // {
-        //   path: "technologies",
-        //   element: <Technologies />
-        // },
         {
           path: "solutions",
           element: <SolutionsOverview />
@@ -119,10 +113,6 @@ function App() {
         {
           path: "get-in-touch",
           element: <GetInTouch />
-        },
-        {
-          path: "hero-demo",
-          element: <HeroPrototypeDemo />
         }
       ]
     }

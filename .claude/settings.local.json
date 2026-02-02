@@ -10,7 +10,8 @@
       "Bash(npm run build:*)",
       "Bash(npm install:*)",
       "Read(//var/folders/8q/mvyfdk_n6y14nhz32l208f7r0000gn/T/TemporaryItems/NSIRD_screencaptureui_So6eeH/**)",
-      "Bash(wc:*)"
+      "Bash(wc:*)",
+      "Bash(git rm:*)"
     ],
     "deny": [],
     "ask": []
