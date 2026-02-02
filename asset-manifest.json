@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/dochakWebsite/static/css/main.6066df9f.css",
-    "main.js": "/dochakWebsite/static/js/main.8a9133ab.js",
+    "main.css": "/dochakWebsite/static/css/main.ad85f1a1.css",
+    "main.js": "/dochakWebsite/static/js/main.205de03c.js",
     "static/js/453.1dfa49b1.chunk.js": "/dochakWebsite/static/js/453.1dfa49b1.chunk.js",
     "static/media/teledriving.png": "/dochakWebsite/static/media/teledriving.8bc10f8cb15680acea73.png",
     "static/media/내포3D모델.png": "/dochakWebsite/static/media/내포3D모델.64cd1130ab4817480017.png",
@@ -173,12 +173,12 @@
     "static/media/logo.png": "/dochakWebsite/static/media/logo.dcd6d0af317670769eed.png",
     "static/media/reuben.jpg": "/dochakWebsite/static/media/reuben.1b2c79142ccc5c225435.jpg",
     "index.html": "/dochakWebsite/index.html",
-    "main.6066df9f.css.map": "/dochakWebsite/static/css/main.6066df9f.css.map",
-    "main.8a9133ab.js.map": "/dochakWebsite/static/js/main.8a9133ab.js.map",
+    "main.ad85f1a1.css.map": "/dochakWebsite/static/css/main.ad85f1a1.css.map",
+    "main.205de03c.js.map": "/dochakWebsite/static/js/main.205de03c.js.map",
     "453.1dfa49b1.chunk.js.map": "/dochakWebsite/static/js/453.1dfa49b1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6066df9f.css",
-    "static/js/main.8a9133ab.js"
+    "static/css/main.ad85f1a1.css",
+    "static/js/main.205de03c.js"
   ]
 }
