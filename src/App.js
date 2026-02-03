@@ -1,36 +1,35 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect, useContext, lazy, Suspense } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import './App.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import Hyperspeed from './Hyperspeed';
-import { ContainerTextFlip } from "./components/ui/container-text-flip";
 import HolographicCityScroll from './components/HolographicCityScroll';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
-import About from './About';
-import SolutionsOverview from './Solutions';
-import ProjectsPage from './components/ProjectsPage';
-import Team from './Team';
-import GetInTouch from './GetInTouch';
-import Disclosure from './Disclosure';
-import { BentoDemo } from './components/ui/bentoDemo';
-import RemoteDriving from './Solutions/RemoteDriving';
-import DigitalTwin from './Solutions/DigitalTwin';
-import MultimodalSimulator from './Solutions/MultimodalSimulator';
-import TrafficAnalysisTools from './Solutions/TrafficAnalysisTools';
-import Visualisation from './Solutions/Visualisation';
-import VRRoadDesign from './Solutions/VRRoadDesign';
-import News from './News';
-import NewsArticle from './NewsArticle';
-import Training from './Training';
-import CourseDetail from './components/CourseDetail';
-
 import TawkToWidget from './TawkToWidget';
 import { LanguageProvider } from './contexts/LanguageContext';
 import LanguageContext from './contexts/LanguageContext';
 import { useScrollAnimation } from './hooks/useScrollAnimation';
 import ScrollToTop from './components/ScrollToTop';
+import LoadingFallback from './components/LoadingFallback';
+
+// Lazy load all route components for better performance
+const About = lazy(() => import('./About'));
+const SolutionsOverview = lazy(() => import('./Solutions'));
+const ProjectsPage = lazy(() => import('./components/ProjectsPage'));
+const Team = lazy(() => import('./Team'));
+const GetInTouch = lazy(() => import('./GetInTouch'));
+const Disclosure = lazy(() => import('./Disclosure'));
+const RemoteDriving = lazy(() => import('./Solutions/RemoteDriving'));
+const DigitalTwin = lazy(() => import('./Solutions/DigitalTwin'));
+const MultimodalSimulator = lazy(() => import('./Solutions/MultimodalSimulator'));
+const TrafficAnalysisTools = lazy(() => import('./Solutions/TrafficAnalysisTools'));
+const Visualisation = lazy(() => import('./Solutions/Visualisation'));
+const VRRoadDesign = lazy(() => import('./Solutions/VRRoadDesign'));
+const News = lazy(() => import('./News'));
+const NewsArticle = lazy(() => import('./NewsArticle'));
+const Training = lazy(() => import('./Training'));
+const CourseDetail = lazy(() => import('./components/CourseDetail'));
 
 function App() {
   useEffect(() => {
@@ -134,7 +133,9 @@ function Layout() {
     <div className="App">
       <ScrollToTop />
       <Navbar />
-      <Outlet />
+      <Suspense fallback={<LoadingFallback />}>
+        <Outlet />
+      </Suspense>
       <Footer />
       <TawkToWidget />
     </div>

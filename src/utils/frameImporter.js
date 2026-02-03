@@ -1,7 +1,7 @@
 /**
  * Frame Importer using webpack's require.context
  * This pre-imports all frames for reliable loading
- * Using webp format (100 frames)
+ * Using webp format (50 frames - every other frame for performance)
  */
 
 // Import all frames at build time using webpack's require.context
@@ -37,8 +37,8 @@ const importAllFrames = () => {
 export const FRAME_IMPORTS = importAllFrames();
 
 /**
- * Get frame path by number
- * @param {number} frameNumber - Frame number (1-100)
+ * Get frame path by number (odd-numbered frames only)
+ * @param {number} frameNumber - Frame number (1-200, odd numbers only)
  * @returns {string} Frame path
  */
 export const getFrameImport = (frameNumber) => {
@@ -46,12 +46,12 @@ export const getFrameImport = (frameNumber) => {
 };
 
 /**
- * Get all frame paths in order (100 frames)
+ * Get all frame paths in order (50 frames)
  * @returns {string[]} Array of frame paths
  */
 export const getAllFrameImports = () => {
   const frames = [];
-  for (let i = 1; i <= 100; i++) {
+  for (let i = 1; i <= 200; i += 2) {
     if (FRAME_IMPORTS[i]) {
       frames.push(FRAME_IMPORTS[i]);
     }
@@ -60,12 +60,12 @@ export const getAllFrameImports = () => {
 };
 
 /**
- * Get priority frames (first 40 for smoother start)
+ * Get priority frames (first 20 odd-numbered frames for smoother start)
  * @returns {string[]} Array of priority frame paths
  */
 export const getPriorityFrameImports = () => {
   const frames = [];
-  for (let i = 1; i <= 40; i++) {
+  for (let i = 1; i <= 40; i += 2) {
     if (FRAME_IMPORTS[i]) {
       frames.push(FRAME_IMPORTS[i]);
     }
@@ -79,7 +79,7 @@ export const getPriorityFrameImports = () => {
  */
 export const getRemainingFrameImports = () => {
   const frames = [];
-  for (let i = 41; i <= 100; i++) {
+  for (let i = 41; i <= 200; i += 2) {
     if (FRAME_IMPORTS[i]) {
       frames.push(FRAME_IMPORTS[i]);
     }

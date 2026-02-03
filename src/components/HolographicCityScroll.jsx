@@ -131,24 +131,24 @@ const CanvasRenderer = ({ currentFrame, loadedFrames, containerRef }) => {
       ctx.imageSmoothingEnabled = true;
       ctx.imageSmoothingQuality = 'high';
 
-      // Calculate aspect ratio to contain image
+      // Calculate aspect ratio to cover canvas (scale up, crop edges)
       const imgAspect = img.naturalWidth / img.naturalHeight;
       const canvasAspect = displayWidth / displayHeight;
 
       let drawWidth, drawHeight, offsetX, offsetY;
 
       if (imgAspect > canvasAspect) {
-        // Image is wider - fit to width
-        drawWidth = displayWidth;
-        drawHeight = displayWidth / imgAspect;
-        offsetX = 0;
-        offsetY = (displayHeight - drawHeight) / 2;
-      } else {
-        // Image is taller - fit to height
+        // Image is wider - fit to height (crop left/right)
         drawHeight = displayHeight;
         drawWidth = displayHeight * imgAspect;
         offsetX = (displayWidth - drawWidth) / 2;
         offsetY = 0;
+      } else {
+        // Image is taller - fit to width (crop top/bottom)
+        drawWidth = displayWidth;
+        drawHeight = displayWidth / imgAspect;
+        offsetX = 0;
+        offsetY = (displayHeight - drawHeight) / 2;
       }
 
       // Draw image at calculated size for maximum quality
@@ -166,8 +166,8 @@ const CanvasRenderer = ({ currentFrame, loadedFrames, containerRef }) => {
 
   // Glow intensity based on frame (peak during layer separation)
   const getGlowIntensity = () => {
-    if (currentFrame >= 30 && currentFrame <= 70) {
-      const progress = (currentFrame - 30) / 40;
+    if (currentFrame >= 15 && currentFrame <= 35) {
+      const progress = (currentFrame - 15) / 20;
       return 0.3 + (Math.sin(progress * Math.PI) * 0.3);
     }
     return 0.2;
@@ -248,7 +248,7 @@ const HolographicCityScroll = () => {
     return (
       <section className="holographic-static">
         <div className="holographic-static-content">
-          <ScrollContentOverlay currentFrame={200} phase="cta" />
+          <ScrollContentOverlay currentFrame={50} phase="cta" />
         </div>
       </section>
     );

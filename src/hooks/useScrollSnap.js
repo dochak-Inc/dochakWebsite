@@ -1,16 +1,16 @@
 import { useEffect, useRef } from 'react';
 
 /**
- * Snap points configuration (100 frames total)
+ * Snap points configuration (50 frames total)
  * These are the "magnetic" frames where scrolling should slow down
  */
 const SNAP_POINTS = [
   { frame: 1, label: 'Intro Start', strength: 0.3 },
-  { frame: 12, label: 'Intro Mid', strength: 0.25 },
-  { frame: 36, label: 'Expansion Peak', strength: 0.4 },
-  { frame: 62, label: 'Deep Dive Peak', strength: 0.4 },
-  { frame: 92, label: 'CTA', strength: 0.35 },
-  { frame: 100, label: 'End', strength: 0.3 }
+  { frame: 6, label: 'Intro Mid', strength: 0.25 },
+  { frame: 18, label: 'Expansion Peak', strength: 0.4 },
+  { frame: 31, label: 'Deep Dive Peak', strength: 0.4 },
+  { frame: 46, label: 'CTA', strength: 0.35 },
+  { frame: 50, label: 'End', strength: 0.3 }
 ];
 
 /**
@@ -72,8 +72,8 @@ export const useScrollSnap = (currentFrame, containerRef, enabled = true) => {
         const distance = snap.frame - currentFrame;
 
         // Only consider snap points AHEAD (positive distance)
-        // Snap if we're within 12 frames BEFORE the snap point
-        if (distance > 0 && distance < 12 && distance < minDistanceAhead) {
+        // Snap if we're within 6 frames BEFORE the snap point
+        if (distance > 0 && distance < 6 && distance < minDistanceAhead) {
           minDistanceAhead = distance;
           nextSnap = snap;
         }
@@ -93,7 +93,7 @@ export const useScrollSnap = (currentFrame, containerRef, enabled = true) => {
         const scrollableHeight = containerHeight - viewportHeight;
 
         // Calculate scroll position for target frame
-        const frameProgress = (nextSnap.frame - 1) / 99; // 0 to 1 (100 frames)
+        const frameProgress = (nextSnap.frame - 1) / 49; // 0 to 1 (50 frames)
         const targetScrollY = containerTop + (scrollableHeight * frameProgress);
 
         // Smooth scroll to snap point

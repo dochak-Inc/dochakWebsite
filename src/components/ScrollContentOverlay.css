@@ -188,7 +188,6 @@
   max-width: 650px;
   text-align: center;
   position: relative;
-  padding-right: 8%;
 }
 
 .cta-heading {
@@ -212,7 +211,7 @@
 .cta-buttons {
   display: flex;
   gap: 1rem;
-  justify-content: flex-end;
+  justify-content: center;
   margin-bottom: 2rem;
   pointer-events: auto;
 }
@@ -403,9 +402,14 @@
     padding-right: 0;
   }
 
-  .deepdive-text-block,
-  .cta-text-block {
+  .deepdive-text-block {
     text-align: right;
+    max-width: 100%;
+    padding-right: 0;
+  }
+
+  .cta-text-block {
+    text-align: center;
     max-width: 100%;
     padding-right: 0;
   }
@@ -449,7 +453,7 @@
 
   .cta-buttons {
     flex-direction: row !important;
-    justify-content: flex-end !important;
+    justify-content: center !important;
     align-items: center !important;
     gap: 0.75rem !important;
     flex-wrap: nowrap !important;
@@ -489,9 +493,12 @@
     text-align: left;
   }
 
-  .deepdive-text-block,
-  .cta-text-block {
+  .deepdive-text-block {
     text-align: right;
+  }
+
+  .cta-text-block {
+    text-align: center;
   }
 
   .intro-title {
@@ -532,7 +539,7 @@
 
   .cta-buttons {
     flex-direction: row !important;
-    justify-content: flex-end !important;
+    justify-content: center !important;
     gap: 0.5rem !important;
     flex-wrap: nowrap !important;
   }

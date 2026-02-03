@@ -5,11 +5,11 @@ import './CornerCards.css';
 
 /**
  * Feature Card for Four-Corner Layout
- * Displays during expansion phase (Frames 25-48)
+ * Displays during expansion phase (Frames 13-24)
  */
 const FeatureCard = ({ title, metric, ctaLink, position, currentFrame, accentColor = '#58BDEC' }) => {
-  // Fade in quickly: frames 25-32, FULLY visible by frame 36 (sticky frame), fade out: 43-48
-  const opacity = useFrameOpacity(25, 32, 43, 48, currentFrame);
+  // Fade in quickly: frames 13-16, FULLY visible by frame 18 (sticky frame), fade out: 21-24
+  const opacity = useFrameOpacity(13, 16, 21, 24, currentFrame);
 
   // Position-specific slide-in animations
   const getInitialOffset = () => {
@@ -28,7 +28,7 @@ const FeatureCard = ({ title, metric, ctaLink, position, currentFrame, accentCol
   };
 
   const initialOffset = getInitialOffset();
-  const progress = Math.max(0, Math.min(1, (currentFrame - 25) / 7)); // 0-1 over frames 25-32
+  const progress = Math.max(0, Math.min(1, (currentFrame - 13) / 3)); // 0-1 over frames 13-16
 
   const slideX = initialOffset.x * (1 - progress);
   const slideY = initialOffset.y * (1 - progress);
@@ -58,8 +58,8 @@ const FeatureCard = ({ title, metric, ctaLink, position, currentFrame, accentCol
  * Four-corner feature showcase for expansion phase
  */
 const CornerCards = ({ currentFrame }) => {
-  // Only render if in expansion phase (frames 25-48)
-  if (currentFrame < 25 || currentFrame > 48) {
+  // Only render if in expansion phase (frames 13-24)
+  if (currentFrame < 13 || currentFrame > 24) {
     return null;
   }
 

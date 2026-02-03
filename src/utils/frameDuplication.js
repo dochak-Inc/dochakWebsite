@@ -4,14 +4,14 @@
  */
 
 /**
- * Key frames to hold/duplicate (100 frames total - 2x smoother)
+ * Key frames to hold/duplicate (50 frames total - optimized)
  * duration: how many times to repeat the frame (higher = stickier)
  */
 const KEY_FRAME_HOLDS = [
   { frame: 1, duration: 5, label: 'Intro Start' },
-  { frame: 38, duration: 3, label: 'Expansion Peak' },
-  { frame: 68, duration: 4, label: 'Deep Dive Start' },
-  { frame: 100, duration: 10, label: 'CTA End' }
+  { frame: 19, duration: 3, label: 'Expansion Peak' },
+  { frame: 34, duration: 4, label: 'Deep Dive Start' },
+  { frame: 50, duration: 10, label: 'CTA End' }
 ];
 
 /**
@@ -22,7 +22,7 @@ export const buildExtendedFrameSequence = () => {
   const sequence = [];
   let currentFrame = 1;
 
-  while (currentFrame <= 100) {
+  while (currentFrame <= 50) {
     // Check if this frame should be held
     const hold = KEY_FRAME_HOLDS.find(h => h.frame === currentFrame);
 
@@ -36,10 +36,10 @@ export const buildExtendedFrameSequence = () => {
     } else {
       // Show every frame once for faster playback
       const nextHold = KEY_FRAME_HOLDS.find(h => h.frame > currentFrame);
-      const distanceToNextHold = nextHold ? (nextHold.frame - currentFrame) : 100;
+      const distanceToNextHold = nextHold ? (nextHold.frame - currentFrame) : 50;
 
-      // Within 10 frames of a sticky point, show all frames
-      if (distanceToNextHold <= 10) {
+      // Within 5 frames of a sticky point, show all frames
+      if (distanceToNextHold <= 5) {
         sequence.push(currentFrame);
       } else {
         // Regular frames: show each frame once (faster animation)
@@ -50,7 +50,7 @@ export const buildExtendedFrameSequence = () => {
     }
   }
 
-  console.log(`Extended sequence: ${sequence.length} total positions for 100 unique frames (smoother animation)`);
+  console.log(`Extended sequence: ${sequence.length} total positions for 50 unique frames (optimized animation)`);
   return sequence;
 };
 
@@ -60,7 +60,7 @@ export const EXTENDED_FRAME_SEQUENCE = buildExtendedFrameSequence();
 /**
  * Map scroll progress to actual frame number (with duplication)
  * @param {number} scrollProgress - Scroll progress (0.0 to 1.0)
- * @returns {number} Frame number to display (1-100)
+ * @returns {number} Frame number to display (1-50)
  */
 export const mapScrollToFrame = (scrollProgress) => {
   const clampedProgress = Math.max(0, Math.min(1, scrollProgress));

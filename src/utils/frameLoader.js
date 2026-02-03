@@ -13,8 +13,8 @@ import {
 const FRAME_CONFIG = {
   prefix: 'Sequence 01_frame_',
   extension: '.webp',
-  totalFrames: 100,
-  priority: 40, // Number of priority frames to load first
+  totalFrames: 50,
+  priority: 20, // Number of priority frames to load first
 };
 
 /**
@@ -53,28 +53,28 @@ export const getRemainingFramePaths = () => {
 /**
  * Map scroll progress to frame number
  * @param {number} scrollProgress - Scroll progress (0.0 to 1.0)
- * @returns {number} Frame number (1 to 100)
+ * @returns {number} Frame number (1 to 50)
  */
 export const scrollToFrame = (scrollProgress) => {
   // Clamp scroll progress between 0 and 1
   const clampedProgress = Math.max(0, Math.min(1, scrollProgress));
 
-  // Map to frame number (1-100)
-  // Frame 1 at 0%, Frame 100 at 100%
+  // Map to frame number (1-50)
+  // Frame 1 at 0%, Frame 50 at 100%
   const frameIndex = Math.floor(clampedProgress * (FRAME_CONFIG.totalFrames - 1)) + 1;
 
   return Math.max(1, Math.min(FRAME_CONFIG.totalFrames, frameIndex));
 };
 
 /**
- * Determine content phase based on frame number (100 frames total)
+ * Determine content phase based on frame number (50 frames total)
  * @param {number} frameNumber - Current frame number
  * @returns {string} Phase name
  */
 export const getContentPhase = (frameNumber) => {
-  if (frameNumber <= 24) return 'intro';
-  if (frameNumber <= 48) return 'expansion';
-  if (frameNumber <= 77) return 'deepDive';
+  if (frameNumber <= 12) return 'intro';
+  if (frameNumber <= 24) return 'expansion';
+  if (frameNumber <= 38) return 'deepDive';
   return 'cta';
 };
 
@@ -84,16 +84,16 @@ export const getContentPhase = (frameNumber) => {
  * @returns {number} Phase progress (0.0 to 1.0)
  */
 export const getPhaseProgress = (frameNumber) => {
+  if (frameNumber <= 12) {
+    return (frameNumber - 1) / 11; // Frames 1-12
+  }
   if (frameNumber <= 24) {
-    return (frameNumber - 1) / 23; // Frames 1-24
+    return (frameNumber - 13) / 11; // Frames 13-24
   }
-  if (frameNumber <= 48) {
-    return (frameNumber - 25) / 23; // Frames 25-48
+  if (frameNumber <= 38) {
+    return (frameNumber - 25) / 13; // Frames 25-38
   }
-  if (frameNumber <= 77) {
-    return (frameNumber - 49) / 28; // Frames 49-77
-  }
-  return (frameNumber - 78) / 22; // Frames 78-100
+  return (frameNumber - 39) / 11; // Frames 39-50
 };
 
 export default {

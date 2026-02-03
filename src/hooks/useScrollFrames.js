@@ -8,10 +8,10 @@ import { mapScrollToFrame } from '../utils/frameDuplication';
  * Uses custom scroll tracking for better reliability
  *
  * @param {Object} options - Configuration options
- * @param {number} options.totalFrames - Total number of frames (default: 100)
+ * @param {number} options.totalFrames - Total number of frames (default: 50)
  * @returns {Object} Scroll frame data and refs
  */
-export const useScrollFrames = ({ totalFrames = 100 } = {}) => {
+export const useScrollFrames = ({ totalFrames = 50 } = {}) => {
   const containerRef = useRef(null);
   const [currentFrame, setCurrentFrame] = useState(1);
   const [phase, setPhase] = useState('intro');
@@ -57,7 +57,7 @@ export const useScrollFrames = ({ totalFrames = 100 } = {}) => {
       // Update motion value
       scrollYProgress.set(progress);
 
-      // Calculate frame number using duplication mapping (1 to 100)
+      // Calculate frame number using duplication mapping (1 to 50)
       const frame = mapScrollToFrame(progress);
       const clampedFrame = Math.max(1, Math.min(totalFrames, frame));
 
