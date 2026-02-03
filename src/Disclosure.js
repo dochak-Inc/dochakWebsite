@@ -40,7 +40,6 @@ const Disclosure = () => {
   const [activeTab, setActiveTab] = useState('publications');
   const [searchTerm, setSearchTerm] = useState('');
   const [yearFilter, setYearFilter] = useState('all');
-  const [typeFilter, setTypeFilter] = useState('all');
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [processedData, setProcessedData] = useState({
@@ -77,13 +76,13 @@ const Disclosure = () => {
 
   // Apply filters to get filtered data
   const filteredData = useMemo(() => {
-    const filters = { searchTerm, year: yearFilter, type: typeFilter };
-    
+    const filters = { searchTerm, year: yearFilter };
+
     return {
       publications: applyPublicationFilters(processedData.publications, filters),
       patents: applyPatentFilters(processedData.patents, filters)
     };
-  }, [processedData, searchTerm, yearFilter, typeFilter]);
+  }, [processedData, searchTerm, yearFilter]);
 
   // Handle URL parameter changes
   useEffect(() => {
@@ -129,11 +128,6 @@ const Disclosure = () => {
   // Handle year filter changes
   const handleYearFilterChange = (year) => {
     setYearFilter(year);
-  };
-
-  // Handle type filter changes
-  const handleTypeFilterChange = (type) => {
-    setTypeFilter(type);
   };
 
   // Get search placeholder based on active tab
@@ -268,8 +262,6 @@ const Disclosure = () => {
             onSearchChange={handleSearchChange}
             yearFilter={yearFilter}
             onYearFilterChange={handleYearFilterChange}
-            typeFilter={typeFilter}
-            onTypeFilterChange={handleTypeFilterChange}
             availableYears={availableYears}
             activeTab={activeTab}
             placeholder={getSearchPlaceholder()}

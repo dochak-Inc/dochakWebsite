@@ -175,27 +175,21 @@ export const sortPatentsByDate = (patents) => {
  * @param {Object} filters - Filter options
  * @param {string} filters.searchTerm - Search term
  * @param {string} filters.year - Year filter
- * @param {string} filters.type - Type filter
  * @returns {Array} Filtered and sorted publications
  */
 export const applyPublicationFilters = (publications, filters = {}) => {
   let filtered = publications;
-  
+
   // Apply search filter
   if (filters.searchTerm) {
     filtered = filterPublicationsBySearch(filtered, filters.searchTerm);
   }
-  
+
   // Apply year filter
   if (filters.year && filters.year !== 'all') {
     filtered = filterPublicationsByYear(filtered, filters.year);
   }
-  
-  // Apply type filter
-  if (filters.type && filters.type !== 'all') {
-    filtered = filterPublicationsByType(filtered, filters.type);
-  }
-  
+
   // Sort by date (newest first)
   return sortPublicationsByDate(filtered);
 };

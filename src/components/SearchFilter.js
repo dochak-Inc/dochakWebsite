@@ -2,16 +2,14 @@ import React, { useState, useEffect, useContext } from 'react';
 import './SearchFilter.css';
 import LanguageContext from '../contexts/LanguageContext';
 
-const SearchFilter = ({ 
-  searchTerm, 
-  onSearchChange, 
-  yearFilter, 
-  onYearFilterChange, 
-  typeFilter, 
-  onTypeFilterChange, 
-  availableYears, 
+const SearchFilter = ({
+  searchTerm,
+  onSearchChange,
+  yearFilter,
+  onYearFilterChange,
+  availableYears,
   activeTab,
-  placeholder 
+  placeholder
 }) => {
   const { t } = useContext(LanguageContext);
   const [localSearchTerm, setLocalSearchTerm] = useState(searchTerm);
@@ -38,10 +36,6 @@ const SearchFilter = ({
     onYearFilterChange(e.target.value);
   };
 
-  const handleTypeFilterChange = (e) => {
-    onTypeFilterChange(e.target.value);
-  };
-
   const clearSearch = () => {
     setLocalSearchTerm('');
     onSearchChange('');
@@ -51,17 +45,12 @@ const SearchFilter = ({
     onYearFilterChange('all');
   };
 
-  const clearTypeFilter = () => {
-    onTypeFilterChange('all');
-  };
-
   const clearAllFilters = () => {
     clearSearch();
     clearYearFilter();
-    clearTypeFilter();
   };
 
-  const hasActiveFilters = localSearchTerm.trim() !== '' || yearFilter !== 'all' || (activeTab === 'publications' && typeFilter !== 'all');
+  const hasActiveFilters = localSearchTerm.trim() !== '' || yearFilter !== 'all';
 
   return (
     <section 
@@ -143,41 +132,6 @@ const SearchFilter = ({
             {t('disclosure.yearFilterDescription') || 'Filter results by publication year'}
           </div>
         </div>
-
-        {/* Type Filter - Only show for publications */}
-        {activeTab === 'publications' && (
-          <div className="type-filter-container">
-            <label htmlFor="type-filter" className="sr-only">
-              {t('disclosure.typeFilterLabel') || 'Filter by publication type'}
-            </label>
-            <select
-              id="type-filter"
-              className="type-filter-select"
-              value={typeFilter}
-              onChange={handleTypeFilterChange}
-              aria-label={t('disclosure.typeFilterAriaLabel') || 'Filter by publication type'}
-              aria-describedby="type-filter-description"
-            >
-              <option value="all">
-                {t('disclosure.allTypes') || 'All Types'}
-              </option>
-              <option value="journal">
-                {t('disclosure.publicationType.journal') || 'Journal'}
-              </option>
-              <option value="conference">
-                {t('disclosure.publicationType.conference') || 'Conference'}
-              </option>
-            </select>
-            <div className="select-arrow" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <polyline points="6,9 12,15 18,9"></polyline>
-              </svg>
-            </div>
-            <div id="type-filter-description" className="sr-only">
-              {t('disclosure.typeFilterDescription') || 'Filter results by publication type'}
-            </div>
-          </div>
-        )}
       </div>
 
       {/* Active Filters Display */}
@@ -222,28 +176,6 @@ const SearchFilter = ({
                   className="filter-tag-remove"
                   onClick={clearYearFilter}
                   aria-label={t('disclosure.removeYearFilter') || `Remove year filter: ${yearFilter}`}
-                  type="button"
-                  tabIndex="0"
-                >
-                  ×
-                </button>
-              </div>
-            )}
-            {activeTab === 'publications' && typeFilter !== 'all' && (
-              <div className="filter-tag" role="listitem">
-                <span className="filter-tag-label">
-                  {t('disclosure.typeFilter') || 'Type'}:
-                </span>
-                <span className="filter-tag-value">
-                  {typeFilter === 'journal' 
-                    ? (t('disclosure.publicationType.journal') || 'Journal')
-                    : (t('disclosure.publicationType.conference') || 'Conference')
-                  }
-                </span>
-                <button
-                  className="filter-tag-remove"
-                  onClick={clearTypeFilter}
-                  aria-label={t('disclosure.removeTypeFilter') || `Remove type filter: ${typeFilter}`}
                   type="button"
                   tabIndex="0"
                 >

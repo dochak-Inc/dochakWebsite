@@ -31,27 +31,14 @@ const PublicationCard = ({ publication }) => {
     });
   };
 
-  // Get publication type label
-  const getTypeLabel = (type) => {
-    return type === 'journal' ? t('disclosure.publicationType.journal') || 'Journal' : 
-           t('disclosure.publicationType.conference') || 'Conference';
-  };
-
   return (
-    <article 
+    <article
       className="publication-card"
       role="article"
       aria-labelledby={`publication-title-${publication.id}`}
     >
       <header className="publication-header">
-        <div 
-          className={`publication-type-badge publication-type-${publication.type}`}
-          role="img"
-          aria-label={`Publication type: ${getTypeLabel(publication.type)}`}
-        >
-          {getTypeLabel(publication.type)}
-        </div>
-        <time 
+        <time
           className="publication-date"
           dateTime={publication.date}
           aria-label={`Published on ${formatDate(publication.date)}`}
