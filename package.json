@@ -2,7 +2,7 @@
   "name": "dochak-website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://msminseo.github.io/dochakWebsite",
+  "homepage": "https://dochak.com",
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@react-three/drei": "^10.3.0",
