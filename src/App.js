@@ -117,9 +117,9 @@ function App() {
     }
   ],
   {
-    basename: "/dochakWebsite",
+    basename: process.env.PUBLIC_URL,
   }
-        );
+  );
 
   return (
     <LanguageProvider>

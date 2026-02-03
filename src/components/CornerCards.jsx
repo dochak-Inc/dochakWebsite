@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { useFrameOpacity } from '../hooks/useScrollFrames';
 import './CornerCards.css';
+import { Link } from 'react-router-dom';
 
 /**
  * Feature Card for Four-Corner Layout
@@ -46,7 +47,11 @@ const FeatureCard = ({ title, metric, ctaLink, position, currentFrame, accentCol
     >
       <div className="corner-card-content">
         <div className="corner-card-metric">{metric}</div>
-        <a href={ctaLink} className="corner-card-title">{title}</a>
+        {ctaLink && (ctaLink.startsWith('http') || ctaLink.startsWith('mailto:') || ctaLink.startsWith('#')) ? (
+          <a href={ctaLink} className="corner-card-title">{title}</a>
+        ) : (
+          <Link to={ctaLink} className="corner-card-title">{title}</Link>
+        )}
       </div>
       <div className="corner-card-glow"></div>
     </motion.div>
@@ -68,28 +73,28 @@ const CornerCards = ({ currentFrame }) => {
       position: 'top-left',
       title: 'Research Papers',
       metric: '47+',
-      ctaLink: '/dochakWebsite/disclosure',
+      ctaLink: '/disclosure',
       accentColor: '#58BDEC'
     },
     {
       position: 'top-right',
       title: 'Expert Team',
       metric: '15+',
-      ctaLink: '/dochakWebsite/team',
+      ctaLink: '/team',
       accentColor: '#10b981'
     },
     {
       position: 'bottom-left',
       title: 'Training Courses',
       metric: '10+',
-      ctaLink: '/dochakWebsite/training',
+      ctaLink: '/training',
       accentColor: '#10b981'
     },
     {
       position: 'bottom-right',
       title: 'Integrated Solutions',
       metric: '7+',
-      ctaLink: '/dochakWebsite/solutions',
+      ctaLink: '/solutions',
       accentColor: '#58BDEC'
     }
   ];

@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { useFrameOpacity } from '../hooks/useScrollFrames';
 import logo from '../assets/logo.webp';
 import './ScrollContentOverlay.css';
+import { Link } from 'react-router-dom';
 
 /**
  * Phase 1: Introduction Content (Frames 1-12)
@@ -26,12 +27,12 @@ const IntroContent = ({ currentFrame }) => {
           Urban Mobility Revolution
         </h1>
         <p className="intro-tagline">Driving the Future: Smarter, Safer, and Seamless Mobility</p>
-        <a href="/dochakWebsite/about" className="intro-cta-button">
+        <Link to="/about" className="intro-cta-button">
           Learn More
           <svg className="intro-cta-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M5 12h14M12 5l7 7-7 7"/>
           </svg>
-        </a>
+        </Link>
       </div>
     </motion.div>
   );
@@ -77,9 +78,9 @@ const DeepDiveContent = ({ currentFrame }) => {
   "impact": "City-wide"
 }`}</code>
           </pre>
-          <a href="/dochakWebsite/projects" className="deepdive-code-cta">
+          <Link to="/projects" className="deepdive-code-cta">
             View All Projects
-          </a>
+          </Link>
         </div>
       </div>
     </motion.div>
@@ -106,12 +107,12 @@ const CTAContent = ({ currentFrame }) => {
         </p>
 
         <div className="cta-buttons">
-          <a href="/dochakWebsite/solutions" className="cta-button cta-primary">
+          <Link to="/solutions" className="cta-button cta-primary">
             Explore Solutions
-          </a>
-          <a href="/dochakWebsite/get-in-touch" className="cta-button cta-secondary">
+          </Link>
+          <Link to="/get-in-touch" className="cta-button cta-secondary">
             Get in Touch
-          </a>
+          </Link>
         </div>
 
         <div className="cta-trust-badge">
