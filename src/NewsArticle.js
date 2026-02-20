@@ -30,6 +30,15 @@ import changhuiKimNews2 from './assets/김창희News2.webp';
 import scienceTechSupport2025 from './assets/scienceTechSupport2025.webp';
 import molitAward from './assets/MOLITaward.webp';
 import trafficTwin from './assets/trafficTwin.webp';
+import ptvNaepoBlog from './assets/newsMobility.webp';
+import tkArticle1 from './assets/TKarticle1.png';
+import tkArticle2 from './assets/TKarticle2.jpg';
+import tkArticle3 from './assets/TKarticle3.jpg';
+import tkArticle4 from './assets/TKarticle4.jpg';
+import tkArticle5 from './assets/TKarticle5.jpg';
+import tkArticle6 from './assets/TKarticle6.jpg';
+import tkArticle7 from './assets/TKarticle7.jpg';
+import tkArticle8 from './assets/TKarticle8.jpg';
 
 export default function NewsArticle() {
   const { slug } = useParams();
@@ -57,6 +66,26 @@ export default function NewsArticle() {
   // Article data based on slug
   const getArticleData = (slug) => {
     const articles = {
+      'ptv-naepo-digital-twin-blog': {
+        id: 8,
+        title: t('news.articles.ptvGroupNaepoBlogPost.title'),
+        date: '2026-02-11',
+        displayDate: t('news.articles.ptvGroupNaepoBlogPost.date'),
+        category: t('news.articles.ptvGroupNaepoBlogPost.category'),
+        author: t('news.articles.ptvGroupNaepoBlogPost.author'),
+        readTime: t('news.articles.ptvGroupNaepoBlogPost.readTime'),
+        heroImage: tkArticle2,
+        content: t('news.articles.ptvGroupNaepoBlogPost.content')
+          .replace('IMAGE_TKARTICLE1', tkArticle1)
+          .replace('IMAGE_TKARTICLE2', tkArticle2)
+          .replace('IMAGE_TKARTICLE3', tkArticle3)
+          .replace('IMAGE_TKARTICLE4', tkArticle4)
+          .replace('IMAGE_TKARTICLE5', tkArticle5)
+          .replace('IMAGE_TKARTICLE6', tkArticle6)
+          .replace('IMAGE_TKARTICLE7', tkArticle7)
+          .replace('IMAGE_TKARTICLE8', tkArticle8),
+        images: []
+      },
       'ptv-certified-trainers-2025': {
         id: 0,
         title: t('news.articles.ptvCertified.title'),
