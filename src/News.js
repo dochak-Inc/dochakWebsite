@@ -17,6 +17,7 @@ import changhuiKimNews from './assets/김창희News2.webp';
 import scienceTechSupport2025 from './assets/scienceTechSupport2025.webp';
 import molitAward from './assets/MOLITaward.webp';
 import trafficTwin from './assets/trafficTwin.webp';
+import ptvNaepoBlog from './assets/TKarticle2.jpg';
 
 export default function News() {
   const { t } = useContext(LanguageContext);
@@ -63,6 +64,16 @@ export default function News() {
 
   // Real news data - Articles ordered by date (newest first)
   const allNewsItems = [
+    {
+      id: 8,
+      title: t('news.items.ptvGroupNaepoBlogPost.title'),
+      date: '2026-02-11',
+      displayDate: t('news.items.ptvGroupNaepoBlogPost.date'),
+      category: t('news.items.ptvGroupNaepoBlogPost.category'),
+      excerpt: t('news.items.ptvGroupNaepoBlogPost.excerpt'),
+      image: ptvNaepoBlog,
+      slug: 'ptv-naepo-digital-twin-blog'
+    },
     {
       id: 7,
       title: t('news.items.trafficTwinV2.title'),
