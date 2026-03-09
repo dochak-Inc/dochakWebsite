@@ -3,16 +3,10 @@ import { Link } from 'react-router-dom';
 import './TrafficAnalysisTools.css';
 import LanguageContext from '../contexts/LanguageContext';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import meso from '../assets/meso.webp';
-import micro from '../assets/micro.webp';
-import nepo from '../assets/내포3D모델.webp';
-import { EnhancedStickyScroll } from '../components/ui/enhanced-sticky-scroll';
-import { transformTechnologiesData } from '../utils/dataTransform';
 
 export default function TrafficAnalysisTools() {
   const { t } = useContext(LanguageContext);
 
-  // Animation component for individual elements
   const AnimatedElement = ({ children, animation = 'slide-up', delay = 0, className = '' }) => {
     const { elementRef, isVisible } = useScrollAnimation({
       threshold: 0.1,
@@ -29,73 +23,6 @@ export default function TrafficAnalysisTools() {
       </div>
     );
   };
-
-  
-  // Create technologies data using translations
-  const technologies = [
-    {
-      title: t('technologies.items.visum.title'),
-      subtitle: t('technologies.items.visum.subtitle'),
-      image: meso,
-      features: [
-        {
-          title: t('technologies.items.visum.howItWorks'),
-          desc: t('technologies.items.visum.features.howItWorks')
-        },
-        {
-          title: t('technologies.items.visum.whatItCanDo'),
-          desc: t('technologies.items.visum.features.whatItCanDo')
-        },
-        {
-          title: t('technologies.items.visum.whereItCanBeUsed'),
-          desc: t('technologies.items.visum.features.whereItCanBeUsed')
-        }
-      ]
-    },
-    {
-      title: t('technologies.items.vissim.title'),
-      subtitle: t('technologies.items.vissim.subtitle'),
-      image: micro,
-      features: [
-        {
-          title: t('technologies.items.visum.howItWorks'),
-          desc: t('technologies.items.vissim.features.howItWorks')
-        },
-        {
-          title: t('technologies.items.visum.whatItCanDo'),
-          desc: t('technologies.items.vissim.features.whatItCanDo')
-        },
-        {
-          title: t('technologies.items.visum.whereItCanBeUsed'),
-          desc: t('technologies.items.vissim.features.whereItCanBeUsed')
-        }
-      ]
-    },
-    {
-      title: t('technologies.items.mesh.title'),
-      subtitle: t('technologies.items.mesh.subtitle'),
-      image: nepo,
-      features: [
-        {
-          title: t('technologies.items.visum.howItWorks'),
-          desc: t('technologies.items.mesh.features.howItWorks')
-        },
-        {
-          title: t('technologies.items.visum.whatItCanDo'),
-          desc: t('technologies.items.mesh.features.whatItCanDo')
-        },
-        {
-          title: t('technologies.items.visum.whereItCanBeUsed'),
-          desc: t('technologies.items.mesh.features.whereItCanBeUsed')
-        }
-      ]
-    }
-  ];
-
-  // Transform technologies data for enhanced sticky scroll
-  const enhancedContent = transformTechnologiesData(technologies);
-  
-
 
   return (
     <div className="traffic-analysis-tools-page">
@@ -114,163 +41,158 @@ export default function TrafficAnalysisTools() {
       {/* Overview Section */}
       <section className="overview-section">
         <div className="section-container">
-            <AnimatedElement animation="slide-right" delay={200}>
-              <div className="video-wrapper">
-                <div className="video-container">
-                  <iframe
-                    src="https://www.youtube.com/embed/kL11AdA_DvE?si=_AKT55Okf50-HtPF"
-                    title={t('solutions.trafficAnalysisToolsSolution.overview.demo')}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="youtube-video"
-                  ></iframe>
-                </div>
-              </div>
-            </AnimatedElement>
-            <AnimatedElement animation="slide-right" delay={100}>
-              <div className="explanation-content">
-                <h3>{t('solutions.trafficAnalysisToolsSolution.overview.TA-5')}</h3>
-                <p dangerouslySetInnerHTML={{ __html: t('solutions.trafficAnalysisToolsSolution.overview.TA-5Desc') }}></p>
-              </div>
-            </AnimatedElement>
           <AnimatedElement animation="slide-up" delay={0}>
             <h2 className="section-title">{t('solutions.trafficAnalysisToolsSolution.overview.title')}</h2>
           </AnimatedElement>
-          <div className="overview-row">          
-          {/* Second Row: Video Left, Explanation Right */}              
-            <AnimatedElement animation="slide-left" delay={100}>
-              <div className="video-wrapper">
-                <div className="video-container">
-                  <iframe
-                    src="https://www.youtube.com/embed/GPcCS-LHPOY?si=UKYBYGYcwKc-K3mi"
-                    title={t('solutions.trafficAnalysisToolsSolution.overview.TA-4')}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="youtube-video"
-                  ></iframe>
+
+          {/* Video 01 — Featured, full-width horizontal */}
+          <AnimatedElement animation="slide-up" delay={100}>
+            <div className="featured-video-card">
+              <div className="featured-video-col">
+                <div className="video-wrapper">
+                  <div className="video-container">
+                    <iframe
+                      src="https://www.youtube.com/embed/kL11AdA_DvE?si=_AKT55Okf50-HtPF"
+                      title={t('solutions.trafficAnalysisToolsSolution.overview.TA-5')}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="youtube-video"
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+              <div className="featured-video-content">
+                <h3>{t('solutions.trafficAnalysisToolsSolution.overview.TA-5')}</h3>
+                <p dangerouslySetInnerHTML={{ __html: t('solutions.trafficAnalysisToolsSolution.overview.TA-5Desc') }}></p>
+              </div>
+            </div>
+          </AnimatedElement>
+
+          {/* Videos 02–07 — 2-column grid */}
+          <div className="videos-grid">
+            <AnimatedElement animation="slide-up" delay={100}>
+              <div className="video-card">
+                <div className="video-wrapper">
+                  <div className="video-container">
+                    <iframe
+                      src="https://www.youtube.com/embed/GPcCS-LHPOY?si=UKYBYGYcwKc-K3mi"
+                      title={t('solutions.trafficAnalysisToolsSolution.overview.TA-4')}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="youtube-video"
+                    ></iframe>
+                  </div>
+                </div>
+                <div className="video-card-content">
+                  <h3>{t('solutions.trafficAnalysisToolsSolution.overview.TA-4')}</h3>
+                  <p dangerouslySetInnerHTML={{ __html: t('solutions.trafficAnalysisToolsSolution.overview.TA-4Desc') }}></p>
                 </div>
               </div>
             </AnimatedElement>
-            <AnimatedElement animation="slide-right" delay={100}>
-              <div className="explanation-content">
-                <h3>{t('solutions.trafficAnalysisToolsSolution.overview.TA-4')}</h3>
-                <p dangerouslySetInnerHTML={{ __html: t('solutions.trafficAnalysisToolsSolution.overview.TA-4Desc') }}></p>
-              </div>
-            </AnimatedElement>
-          </div>
-          {/* Single Video Demo */}
-          <div className="overview-content">
-            <AnimatedElement animation="slide-left" delay={100}>
-              <div className="explanation-content">
-                <h3>{t('solutions.trafficAnalysisToolsSolution.overview.demo')}</h3>
-                <p dangerouslySetInnerHTML={{ __html: t('solutions.trafficAnalysisToolsSolution.overview.demoDesc') }}></p>
-              </div>
-            </AnimatedElement>
-            
-            <AnimatedElement animation="slide-right" delay={200}>
-              <div className="video-wrapper">
-                <div className="video-container">
-                  <iframe
-                    src="https://www.youtube.com/embed/4GHNow4uQ7c?si=v0t2i9JzwIu7hx8U"
-                    title={t('solutions.trafficAnalysisToolsSolution.overview.demo')}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="youtube-video"
-                  ></iframe>
+
+            <AnimatedElement animation="slide-up" delay={150}>
+              <div className="video-card">
+                <div className="video-wrapper">
+                  <div className="video-container">
+                    <iframe
+                      src="https://www.youtube.com/embed/4GHNow4uQ7c?si=v0t2i9JzwIu7hx8U"
+                      title={t('solutions.trafficAnalysisToolsSolution.overview.demo')}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="youtube-video"
+                    ></iframe>
+                  </div>
+                </div>
+                <div className="video-card-content">
+                  <h3>{t('solutions.trafficAnalysisToolsSolution.overview.demo')}</h3>
+                  <p dangerouslySetInnerHTML={{ __html: t('solutions.trafficAnalysisToolsSolution.overview.demoDesc') }}></p>
                 </div>
               </div>
             </AnimatedElement>
-          </div>
-          <div className="overview-row">          
-          {/* Second Row: Video Left, Explanation Right */}              
-            <AnimatedElement animation="slide-left" delay={100}>
-              <div className="video-wrapper">
-                <div className="video-container">
-                  <iframe
-                    src="https://www.youtube.com/embed/SIvNsejU8wA?si=BOCS-1AnToQd58t5"
-                    title={t('solutions.trafficAnalysisToolsSolution.overview.TA-1')}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="youtube-video"
-                  ></iframe>
+
+            <AnimatedElement animation="slide-up" delay={100}>
+              <div className="video-card">
+                <div className="video-wrapper">
+                  <div className="video-container">
+                    <iframe
+                      src="https://www.youtube.com/embed/SIvNsejU8wA?si=BOCS-1AnToQd58t5"
+                      title={t('solutions.trafficAnalysisToolsSolution.overview.TA-1')}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="youtube-video"
+                    ></iframe>
+                  </div>
+                </div>
+                <div className="video-card-content">
+                  <h3>{t('solutions.trafficAnalysisToolsSolution.overview.TA-1')}</h3>
+                  <p dangerouslySetInnerHTML={{ __html: t('solutions.trafficAnalysisToolsSolution.overview.TA-1Desc') }}></p>
                 </div>
               </div>
             </AnimatedElement>
-            <AnimatedElement animation="slide-right" delay={100}>
-              <div className="explanation-content">
-                <h3>{t('solutions.trafficAnalysisToolsSolution.overview.TA-1')}</h3>
-                <p dangerouslySetInnerHTML={{ __html: t('solutions.trafficAnalysisToolsSolution.overview.TA-1Desc') }}></p>
-              </div>
-            </AnimatedElement>
-          </div>
-          <div className="overview-content">
-            <AnimatedElement animation="slide-left" delay={100}>
-              <div className="explanation-content">
-                <h3>{t('solutions.trafficAnalysisToolsSolution.overview.TA-2')}</h3>
-                <p dangerouslySetInnerHTML={{ __html: t('solutions.trafficAnalysisToolsSolution.overview.TA-2Desc') }}></p>
-              </div>
-            </AnimatedElement>
-            
-            <AnimatedElement animation="slide-right" delay={200}>
-              <div className="video-wrapper">
-                <div className="video-container">
-                  <iframe
-                    src="https://www.youtube.com/embed/P6qtlPoWqBs?si=98PZbDMEP5FPJRd2"
-                    title={t('solutions.trafficAnalysisToolsSolution.overview.TA-2')}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="youtube-video"
-                  ></iframe>
+
+            <AnimatedElement animation="slide-up" delay={150}>
+              <div className="video-card">
+                <div className="video-wrapper">
+                  <div className="video-container">
+                    <iframe
+                      src="https://www.youtube.com/embed/P6qtlPoWqBs?si=98PZbDMEP5FPJRd2"
+                      title={t('solutions.trafficAnalysisToolsSolution.overview.TA-2')}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="youtube-video"
+                    ></iframe>
+                  </div>
+                </div>
+                <div className="video-card-content">
+                  <h3>{t('solutions.trafficAnalysisToolsSolution.overview.TA-2')}</h3>
+                  <p dangerouslySetInnerHTML={{ __html: t('solutions.trafficAnalysisToolsSolution.overview.TA-2Desc') }}></p>
                 </div>
               </div>
             </AnimatedElement>
-          </div>
-          <div className="overview-row">
-          {/* Second Row: Video Left, Explanation Right */}
-            <AnimatedElement animation="slide-left" delay={100}>
-              <div className="video-wrapper">
-                <div className="video-container">
-                  <iframe
-                    src="https://www.youtube.com/embed/200mMlmkDVA?si=g85lm4fD7F97rncg"
-                    title={t('solutions.trafficAnalysisToolsSolution.overview.TA-3')}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="youtube-video"
-                  ></iframe>
+
+            <AnimatedElement animation="slide-up" delay={100}>
+              <div className="video-card">
+                <div className="video-wrapper">
+                  <div className="video-container">
+                    <iframe
+                      src="https://www.youtube.com/embed/200mMlmkDVA?si=g85lm4fD7F97rncg"
+                      title={t('solutions.trafficAnalysisToolsSolution.overview.TA-3')}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="youtube-video"
+                    ></iframe>
+                  </div>
+                </div>
+                <div className="video-card-content">
+                  <h3>{t('solutions.trafficAnalysisToolsSolution.overview.TA-3')}</h3>
+                  <p dangerouslySetInnerHTML={{ __html: t('solutions.trafficAnalysisToolsSolution.overview.TA-3Desc') }}></p>
                 </div>
               </div>
             </AnimatedElement>
-            <AnimatedElement animation="slide-right" delay={100}>
-              <div className="explanation-content">
-                <h3>{t('solutions.trafficAnalysisToolsSolution.overview.TA-3')}</h3>
-                <p dangerouslySetInnerHTML={{ __html: t('solutions.trafficAnalysisToolsSolution.overview.TA-3Desc') }}></p>
-              </div>
-            </AnimatedElement>
-          </div>
-          <div className="overview-content">
-            <AnimatedElement animation="slide-left" delay={100}>
-              <div className="explanation-content">
-                <h3>{t('solutions.trafficAnalysisToolsSolution.overview.TA-6')}</h3>
-                <p dangerouslySetInnerHTML={{ __html: t('solutions.trafficAnalysisToolsSolution.overview.TA-6Desc') }}></p>
-              </div>
-            </AnimatedElement>
-            <AnimatedElement animation="slide-right" delay={200}>
-              <div className="video-wrapper">
-                <div className="video-container">
-                  <iframe
-                    src="https://www.youtube.com/embed/7oWZzj1lrkc?si=bA-VeNpgFsmk0NxV"
-                    title={t('solutions.trafficAnalysisToolsSolution.overview.TA-6')}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="youtube-video"
-                  ></iframe>
+
+            <AnimatedElement animation="slide-up" delay={150}>
+              <div className="video-card">
+                <div className="video-wrapper">
+                  <div className="video-container">
+                    <iframe
+                      src="https://www.youtube.com/embed/7oWZzj1lrkc?si=bA-VeNpgFsmk0NxV"
+                      title={t('solutions.trafficAnalysisToolsSolution.overview.TA-6')}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="youtube-video"
+                    ></iframe>
+                  </div>
+                </div>
+                <div className="video-card-content">
+                  <h3>{t('solutions.trafficAnalysisToolsSolution.overview.TA-6')}</h3>
+                  <p dangerouslySetInnerHTML={{ __html: t('solutions.trafficAnalysisToolsSolution.overview.TA-6Desc') }}></p>
                 </div>
               </div>
             </AnimatedElement>
@@ -284,15 +206,6 @@ export default function TrafficAnalysisTools() {
           <AnimatedElement animation="slide-up" delay={0}>
             <h2 className="section-title">{t('solutions.trafficAnalysisToolsSolution.technical.title')}</h2>
           </AnimatedElement>
-        </div>
-      </section>    
-          {/* Enhanced Sticky Scroll Section - Full Page Height */}
-          <EnhancedStickyScroll
-            content={enhancedContent}
-            className="w-full"
-          />
-      <section className="technical-section">
-        <div className="section-container">             
           <div className="technical-grid">
             <AnimatedElement animation="slide-left" delay={100}>
               <div className="specs-card">
@@ -347,7 +260,7 @@ export default function TrafficAnalysisTools() {
           <AnimatedElement animation="slide-up" delay={0}>
             <h2 className="section-title">{t('solutions.trafficAnalysisToolsSolution.useCases.title')}</h2>
           </AnimatedElement>
-          
+
           <div className="use-cases-content">
             <AnimatedElement animation="slide-up" delay={100}>
               <div className="industries-card">
