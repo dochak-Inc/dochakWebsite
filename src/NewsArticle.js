@@ -39,6 +39,7 @@ import tkArticle5 from './assets/TKarticle5.jpg';
 import tkArticle6 from './assets/TKarticle6.jpg';
 import tkArticle7 from './assets/TKarticle7.jpg';
 import tkArticle8 from './assets/TKarticle8.jpg';
+import aimoTwinAnalytics from './assets/vh.png';
 
 export default function NewsArticle() {
   const { slug } = useParams();
@@ -66,6 +67,24 @@ export default function NewsArticle() {
   // Article data based on slug
   const getArticleData = (slug) => {
     const articles = {
+      'aimotwin-analytics-v01': {
+        id: 9,
+        title: t('news.articles.aimoTwinAnalyticsV01.title'),
+        date: '2026-03-09',
+        displayDate: t('news.articles.aimoTwinAnalyticsV01.date'),
+        category: t('news.articles.aimoTwinAnalyticsV01.category'),
+        author: t('news.articles.aimoTwinAnalyticsV01.author'),
+        readTime: t('news.articles.aimoTwinAnalyticsV01.readTime'),
+        heroImage: aimoTwinAnalytics,
+        contentIntro: t('news.articles.aimoTwinAnalyticsV01.contentIntro'),
+        contentMain: t('news.articles.aimoTwinAnalyticsV01.contentMain'),
+        images: [],
+        videoUrl: "https://www.youtube.com/embed/7oWZzj1lrkc?si=bA-VeNpgFsmk0NxV",
+        ctaButton: {
+          text: t('news.articles.aimoTwinAnalyticsV01.ctaButton'),
+          link: '/solutions/traffic-analysis-tools'
+        }
+      },
       'ptv-naepo-digital-twin-blog': {
         id: 8,
         title: t('news.articles.ptvGroupNaepoBlogPost.title'),

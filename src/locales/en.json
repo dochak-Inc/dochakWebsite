@@ -410,6 +410,8 @@
         "TA-4Desc": "This model focuses on understanding and simulating the <strong>autonomous vehicle level 4+</strong> that will occur within Hwaseung City in 2027, providing insights into <strong>traffic patterns</strong> and urban mobility.",
         "TA-5": "LLM-based Microscopic Traffic Analysis Tool is released NOW",
         "TA-5Desc": "A <strong>Large Language Model (LLM)-based traffic analysis tool</strong> developed by <strong>Dr. Bo Wang</strong>(dochack's technical advisor) is an advanced software application that leverages the capabilities of large language models, such as GPT-4, to analyze and interpret traffic data. This tool can process vast amounts of traffic-related information, including historical data, real-time sensor inputs, and textual reports, to provide insights and predictions about traffic patterns, congestion, and incidents.",
+        "TA-6": "AiMoTwin Analytics V-0.1 — Development Release",
+        "TA-6Desc": "<strong>AiMoTwin Analytics V-0.1</strong> is an AI-powered urban traffic analysis and simulation solution that transforms manual, repetitive tasks into automated updates. It features <strong>Base Model Management</strong> with live traffic data, <strong>Automated Validation</strong>, intuitive <strong>Scenario Testing</strong> with real-time updates, and a <strong>Comparative Analysis</strong> dashboard with customizable KPIs — reducing weeks of work to minutes while ensuring 100% secure, on-premise data protection.",
         "playVideo": "Play Video"
       },
       "technical": {
@@ -1083,6 +1085,12 @@
         "date": "January 13, 2026",
         "category": "Business",
         "excerpt": "TrafficTwin V2.0, an AI-powered mobility command center, has been released. It combines real-time road networks, AI forecasting, and high-performance simulation to translate complex traffic models into actionable strategies."
+      },
+      "aimoTwinAnalyticsV01": {
+        "title": "Development of AiMoTwin Analytics V-0.1",
+        "date": "March 9, 2026",
+        "category": "Technology",
+        "excerpt": "DOCHAK announces the development of AiMoTwin Analytics V-0.1, an AI-powered urban traffic analysis and simulation solution that transforms manual, repetitive tasks into automated updates to significantly increase operational efficiency."
       }
     },
     "articles": {
@@ -1163,6 +1171,16 @@
         "contentIntro": "<p>We're excited to announce the release of <strong>LLM-based Microscopic Traffic Analysis Tool V2.0 - TrafficTwin</strong>, an AI-powered mobility command center that turns live traffic data into an AI-powered operations command center.</p>",
         "contentMain": "<h2>Intelligent Mobility × AI Digital Twin</h2><p><strong>TrafficTwin</strong> blends real-time road networks, AI forecasting, and high-performance simulation to translate complex traffic models into actionable strategies for faster planning and operations.</p><h2>Key Features</h2><h3>AI Strategy Builder</h3><p>Evaluate closures, speed policies, and routing guidance scenarios in seconds with generative playbooks.</p><h3>Multi-Agent Scenario Studio</h3><p>Powerful studio capabilities for simulating and analyzing various agent-based scenarios.</p><h3>Real-time Feedback</h3><p>Track evolving conditions with cloud SUMO simulation clusters and live Mapbox speed intelligence.</p><ul><li><strong>Live Speeds</strong> - Real-time speed monitoring</li><li><strong>Adaptive KPI</strong> - Adaptive key performance indicators</li><li><strong>City Twin Status</strong> - City twin status monitoring</li></ul><h2>Performance Metrics</h2><p>TrafficTwin V2.0 delivers the following performance:</p><ul><li><strong>Network Flow 87%</strong> - Network flow efficiency</li><li><strong>AI Confidence 0.94</strong> - High AI confidence level</li><li><strong>40% Faster congestion recovery</strong> - Significantly improved congestion recovery</li><li><strong>12+ Interactive performance KPIs</strong> - Comprehensive performance tracking</li><li><strong>3D Citywide situational twins</strong> - Full 3D city situational awareness</li></ul><blockquote>TrafficTwin empowers smarter cities with AI-driven mobility twins. Simulate, optimize, and thrive.</blockquote><p>V2.0 builds on the success of V1.0, offering even more powerful AI capabilities and real-time analysis to set a new standard for urban traffic management.</p>",
         "ctaButton": "Visit TrafficTwin Service"
+      },
+      "aimoTwinAnalyticsV01": {
+        "title": "Development of AiMoTwin Analytics V-0.1",
+        "date": "March 9, 2026",
+        "category": "Technology",
+        "author": "DOCHAK TEAM",
+        "readTime": "4 min read",
+        "contentIntro": "<p>We are proud to announce the development of <strong>AiMoTwin Analytics V-0.1</strong>, an AI-powered urban traffic analysis and simulation solution designed to optimize city mobility. AiMoTwin transforms manual, repetitive tasks into automated updates, significantly increasing operational efficiency.</p>",
+        "contentMain": "<h2>Key Features</h2><h3>Base Model Management</h3><p>Users can select and update base models with live traffic data to ensure simulations reflect current conditions.</p><h3>Automated Validation</h3><p>The system provides instant model validation, allowing users to gain immediate confidence through automated processes.</p><h3>Scenario Testing</h3><ul><li><strong>Intuitive Design</strong> — Features a \"zero learning curve\" with simplified controls for modifying road networks and intersections.</li><li><strong>Real-time Updates</strong> — Changes made to scenarios are processed and updated in real-time.</li></ul><h3>Comparative Analysis</h3><ul><li>Includes an integrated visual analytics dashboard.</li><li>Allows for comparison between different scenarios using customizable Performance Indicators (KPIs) like average network speed and traffic volume.</li></ul><h2>Core Benefits</h2><ul><li><strong>Efficiency</strong> — Reduces weeks of manual work into minutes of automated updates.</li><li><strong>Security</strong> — Offers 100% secure, on-premise operation to protect sensitive urban data.</li><li><strong>Optimization</strong> — Aims to assist urban planning by optimizing systems for better mobility.</li></ul><blockquote>AiMoTwin Analytics V-0.1 marks a new milestone in AI-driven urban mobility solutions, empowering city planners and traffic engineers to make smarter, data-driven decisions.</blockquote>",
+        "ctaButton": "Explore Traffic Impact Analysis"
       }
     },
     "article": {

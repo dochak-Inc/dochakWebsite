@@ -230,8 +230,8 @@ export default function TrafficAnalysisTools() {
               </div>
             </AnimatedElement>
           </div>
-          <div className="overview-row">          
-          {/* Second Row: Video Left, Explanation Right */}              
+          <div className="overview-row">
+          {/* Second Row: Video Left, Explanation Right */}
             <AnimatedElement animation="slide-left" delay={100}>
               <div className="video-wrapper">
                 <div className="video-container">
@@ -250,6 +250,28 @@ export default function TrafficAnalysisTools() {
               <div className="explanation-content">
                 <h3>{t('solutions.trafficAnalysisToolsSolution.overview.TA-3')}</h3>
                 <p dangerouslySetInnerHTML={{ __html: t('solutions.trafficAnalysisToolsSolution.overview.TA-3Desc') }}></p>
+              </div>
+            </AnimatedElement>
+          </div>
+          <div className="overview-content">
+            <AnimatedElement animation="slide-left" delay={100}>
+              <div className="explanation-content">
+                <h3>{t('solutions.trafficAnalysisToolsSolution.overview.TA-6')}</h3>
+                <p dangerouslySetInnerHTML={{ __html: t('solutions.trafficAnalysisToolsSolution.overview.TA-6Desc') }}></p>
+              </div>
+            </AnimatedElement>
+            <AnimatedElement animation="slide-right" delay={200}>
+              <div className="video-wrapper">
+                <div className="video-container">
+                  <iframe
+                    src="https://www.youtube.com/embed/7oWZzj1lrkc?si=bA-VeNpgFsmk0NxV"
+                    title={t('solutions.trafficAnalysisToolsSolution.overview.TA-6')}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="youtube-video"
+                  ></iframe>
+                </div>
               </div>
             </AnimatedElement>
           </div>

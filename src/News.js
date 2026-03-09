@@ -18,6 +18,7 @@ import scienceTechSupport2025 from './assets/scienceTechSupport2025.webp';
 import molitAward from './assets/MOLITaward.webp';
 import trafficTwin from './assets/trafficTwin.webp';
 import ptvNaepoBlog from './assets/TKarticle2.jpg';
+import aimoTwinAnalytics from './assets/vh.png';
 
 export default function News() {
   const { t } = useContext(LanguageContext);
@@ -64,6 +65,16 @@ export default function News() {
 
   // Real news data - Articles ordered by date (newest first)
   const allNewsItems = [
+    {
+      id: 9,
+      title: t('news.items.aimoTwinAnalyticsV01.title'),
+      date: '2026-03-09',
+      displayDate: t('news.items.aimoTwinAnalyticsV01.date'),
+      category: t('news.items.aimoTwinAnalyticsV01.category'),
+      excerpt: t('news.items.aimoTwinAnalyticsV01.excerpt'),
+      image: aimoTwinAnalytics,
+      slug: 'aimotwin-analytics-v01'
+    },
     {
       id: 8,
       title: t('news.items.ptvGroupNaepoBlogPost.title'),
