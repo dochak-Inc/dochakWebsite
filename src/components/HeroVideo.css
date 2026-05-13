@@ -1,0 +1,97 @@
+/* ===== Hero Video — base layout ===== */
+
+.hero-video {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #070707;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+}
+
+/* Layer 1 — video / poster */
+.hero-video__media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+
+/* Layer 2 — vignette */
+.hero-video__vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    rgba(7, 7, 7, 0.25) 60%,
+    rgba(7, 7, 7, 0.55) 100%
+  );
+}
+
+/* Layer 3 — scanline overlay (ported from HolographicCityScroll.css) */
+.hero-video__scanline {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(255, 255, 255, 0.02) 50%,
+    transparent 100%
+  );
+  animation: heroScanline 8s linear infinite;
+  will-change: transform;
+}
+
+@keyframes heroScanline {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+/* Layer 4+ — foreground UI containers (positioning only; typography in Task 5) */
+.hero-video__brand {
+  position: absolute;
+  top: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+}
+
+.hero-video__headline {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  text-align: center;
+  margin: 0;
+  max-width: 90vw;
+}
+
+.hero-video__scroll-cue {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.hero-video__scroll-cue:focus-visible {
+  outline: 2px solid #57bceb;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
