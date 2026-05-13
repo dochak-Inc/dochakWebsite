@@ -14,12 +14,6 @@ const HeroVideo = () => {
     return () => mq.removeEventListener('change', onChange);
   }, []);
 
-  const Wordmark = () => (
-    <span className="hero-video__wordmark">
-      DOCHAK<span className="hero-video__dot" aria-hidden="true" />SMART MOBILITY
-    </span>
-  );
-
   const Headline = () => (
     <h1 className="hero-video__headline">
       Smarter cities.<br />
@@ -51,7 +45,6 @@ const HeroVideo = () => {
           alt="Holographic smart city — Dochak"
         />
         <div className="hero-video__vignette" aria-hidden="true" />
-        <header className="hero-video__brand"><Wordmark /></header>
         <Headline />
         <ScrollCue />
       </section>
@@ -79,7 +72,6 @@ const HeroVideo = () => {
       </video>
       <div className="hero-video__vignette" aria-hidden="true" />
       <div className="hero-video__scanline" aria-hidden="true" />
-      <header className="hero-video__brand"><Wordmark /></header>
       <Headline />
       <ScrollCue />
     </section>
