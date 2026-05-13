@@ -177,3 +177,35 @@
     transform: translate(-50%, -50%);
   }
 }
+
+/* ===== Hero Video — idle motion (after video ends) ===== */
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-video__scroll-cue.is-idle .hero-video__scroll-line {
+    animation: heroBreathe 2400ms ease-in-out infinite;
+  }
+
+  /* Optional cyan hairline under the wordmark for an extra "live" beat */
+  .hero-video__brand::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 1px;
+    background: #57bceb;
+    opacity: 0.4;
+    animation: heroHairline 4000ms ease-in-out infinite;
+  }
+}
+
+@keyframes heroBreathe {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.3; }
+}
+
+@keyframes heroHairline {
+  0%, 100% { opacity: 0.4; }
+  50%      { opacity: 1; }
+}
