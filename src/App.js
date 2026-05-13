@@ -4,7 +4,7 @@ import Footer from './Footer';
 import './App.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import HolographicCityScroll from './components/HolographicCityScroll';
+import HeroVideo from './components/HeroVideo';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import TawkToWidget from './TawkToWidget';
 import { LanguageProvider } from './contexts/LanguageContext';
@@ -164,9 +164,9 @@ function HomePage() {
   };
   
   return (
-    <main>
-      {/* Section 1: Holographic City Hero */}
-      <HolographicCityScroll />
+    <main id="main">
+      {/* Section 1: Video Hero */}
+      <HeroVideo />
     </main>
   );
 }
