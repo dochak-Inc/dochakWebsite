@@ -146,3 +146,34 @@
   background: linear-gradient(to bottom, #57bceb, transparent);
   box-shadow: 0 0 4px rgba(87, 188, 235, 0.6);
 }
+
+/* ===== Hero Video — entrance motion ===== */
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-video__brand {
+    opacity: 0;
+    animation: heroFadeIn 600ms ease-out 200ms forwards;
+  }
+
+  .hero-video__headline {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% + 8px));
+    animation: heroHeadlineIn 800ms ease-out 2000ms forwards;
+  }
+
+  .hero-video__scroll-cue {
+    opacity: 0;
+    animation: heroFadeIn 500ms ease-out 4500ms forwards;
+  }
+}
+
+@keyframes heroFadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes heroHeadlineIn {
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
