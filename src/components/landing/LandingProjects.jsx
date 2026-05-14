@@ -6,8 +6,8 @@ import SectionEyebrow from './atoms/SectionEyebrow';
 import SectionHeading from './atoms/SectionHeading';
 import AnimatedElement from './atoms/AnimatedElement';
 import naepoImg from '../../assets/nepo.webp';
-import teleImg from '../../assets/teledriving.webp';
-import airportImg from '../../assets/automob.webp';
+import teleImg from '../../assets/teledrivingLanding.png';
+import airportImg from '../../assets/incheonLanding.png';
 import './LandingProjects.css';
 
 const IMAGES = [naepoImg, teleImg, airportImg];
