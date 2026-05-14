@@ -1247,6 +1247,20 @@
       "headline": "We engineer the operating systems of urban mobility.",
       "body": "Dochak builds the platforms that move cities — autonomous fleets, digital twins, traffic intelligence, and the people trained to run them. Our work spans Korea, the Middle East, Australia, and Southeast Asia. We believe smarter cities are built one system at a time, and that every line of code should serve the streets it runs on."
     },
+    "solutions": {
+      "eyebrow": "02 · SOLUTIONS",
+      "headline": "Six platforms. One vision.",
+      "body": "Our suite covers the full mobility stack — from the cars in motion to the cities they navigate to the engineers who keep the systems running.",
+      "viewAll": "View all solutions →",
+      "cards": {
+        "remoteDriving":         { "title": "Remote Driving",         "body": "Tele-driving for fleets and fail-safe vehicle handoff." },
+        "digitalTwin":           { "title": "Digital Twin",           "body": "Real-time 3D mirrors of city traffic and infrastructure." },
+        "multimodalSimulator":   { "title": "Multimodal Simulator",   "body": "Test autonomous behavior across cars, buses, drones, and pedestrians." },
+        "trafficAnalysisTools":  { "title": "Traffic Analysis Tools", "body": "Volume, flow, and signal-timing analytics for transport authorities." },
+        "visualization":         { "title": "Visualization",          "body": "Geospatial dashboards and decision-support displays." },
+        "vrRoadDesign":          { "title": "VR Road Design",         "body": "Immersive design reviews for new roads before they're built." }
+      }
+    },
     "cta": {
       "eyebrow": "06 · GET IN TOUCH",
       "headline": "Let's build smarter cities together.",
