@@ -149,8 +149,16 @@ function Layout() {
 function HomePage() {
   return (
     <main id="main">
-      <HeroVideo />
-      <LandingIntro />
+      {/* Hero + Intro share a 200vh stage so the hero video stays
+          sticky-pinned to the top while the Intro copy scrolls in over it. */}
+      <div className="hero-intro-stage">
+        <div className="hero-intro-stage__pinned">
+          <HeroVideo />
+        </div>
+        <div className="hero-intro-stage__intro">
+          <LandingIntro />
+        </div>
+      </div>
       <LandingSolutions />
       <LandingProjects />
       <LandingTraining />

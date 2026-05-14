@@ -495,3 +495,51 @@ h2,
     opacity: 1 !important;
   }
 }
+
+/* ===== Hero + Intro pinned stage =====
+   The hero video stays sticky-pinned at the top of the viewport while the
+   Intro section scrolls in over it. The stage is 200vh tall: 100vh for
+   the hero pinned state + 100vh for the intro scrolling above it. */
+.hero-intro-stage {
+  position: relative;
+  height: 200vh;
+}
+
+.hero-intro-stage__pinned {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  z-index: 0;
+}
+
+.hero-intro-stage__intro {
+  position: relative;
+  z-index: 1;
+}
+
+/* When the Intro section is inside the stage, its background must be
+   transparent so the pinned hero video remains visible through it.
+   A radial vignette tints the corners only, so the intro copy stays
+   legible against the holographic-city video underneath. */
+.hero-intro-stage__intro .landing-section--base {
+  background: transparent;
+}
+
+.hero-intro-stage__intro .landing-section--base::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(7, 7, 7, 0.35) 0%,
+    rgba(7, 7, 7, 0.65) 70%,
+    rgba(7, 7, 7, 0.85) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-intro-stage__intro .landing-section--base > * {
+  position: relative;
+  z-index: 1;
+}

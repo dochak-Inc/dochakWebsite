@@ -11,11 +11,6 @@ const LandingIntro = () => {
 
   return (
     <SectionShell tone="base" ariaLabel={t('landing.intro.eyebrow')}>
-      <div
-        className="landing-intro__backdrop"
-        aria-hidden="true"
-        style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/videos/hero-smart-city-poster.jpg)` }}
-      />
       <div className="landing-intro">
         <AnimatedElement delay={0}>
           <SectionEyebrow text={t('landing.intro.eyebrow')} />
