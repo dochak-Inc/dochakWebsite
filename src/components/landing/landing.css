@@ -1,0 +1,24 @@
+/* ===== Landing page — shared design tokens ===== */
+/* Scoped to .landing-section so they don't leak into other routes. */
+
+.landing-section {
+  --bg-deep: #050505;
+  --bg-base: #070707;
+  --bg-lift: #121212;
+
+  --accent-cyan: #57bceb;
+
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.65);
+  --text-muted: rgba(255, 255, 255, 0.4);
+
+  --font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+}
+
+/* ===== Shared keyframes ===== */
+
+@keyframes landingBreathe {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.5; }
+}
