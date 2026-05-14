@@ -5,15 +5,14 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background: #070707;
+  /* Match the browser-drawn video letterbox color so there is no visible
+     boundary between the scaled-down video element and the section. */
+  background: #000;
   color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
 }
 
-/* Layer 1 — video / poster.
-   background-color matches the section so the letterbox bands around
-   the contained video blend into the page instead of reading as a
-   pure-black rectangular frame against #070707. */
+/* Layer 1 — video / poster. */
 .hero-video__media {
   position: absolute;
   inset: 0;
@@ -21,7 +20,6 @@
   height: 100%;
   object-fit: contain;
   object-position: center;
-  background-color: #070707;
   transform: scale(0.7);
   z-index: 1;
 }
