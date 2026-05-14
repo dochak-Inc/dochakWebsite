@@ -1,0 +1,15 @@
+.landing-heading {
+  margin: 0 0 24px 0;
+  font-family: var(--font-stack);
+  font-size: clamp(32px, 4.5vw, 56px);
+  font-weight: 200;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--text-primary);
+  max-width: 18ch;
+}
+
+.landing-heading .landing-heading__accent {
+  color: var(--accent-cyan);
+  font-weight: 300;
+}
