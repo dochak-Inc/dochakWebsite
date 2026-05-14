@@ -1250,22 +1250,22 @@
   },
   "landing": {
     "intro": {
-      "eyebrow": "01 · MISSION",
-      "headline": "We engineer the operating systems of urban mobility.",
-      "body": "Dochak builds the platforms that move cities — autonomous fleets, digital twins, traffic intelligence, and the people trained to run them. Our work spans Korea, the Middle East, Australia, and Southeast Asia. We believe smarter cities are built one system at a time, and that every line of code should serve the streets it runs on."
+      "eyebrow": "01 · 미션",
+      "headline": "도시 모빌리티의 운영 체계를 설계합니다.",
+      "body": "도착은 도시를 움직이는 플랫폼을 만듭니다 — 자율주행 차량, 디지털 트윈, 교통 인텔리전스, 그리고 이를 운영할 인재까지. 한국, 중동, 호주, 동남아시아 전역에서 활동하고 있습니다. 더 스마트한 도시는 시스템 하나하나에서 시작되며, 모든 코드는 그 도시의 거리를 위해 작동해야 한다고 믿습니다."
     },
     "solutions": {
-      "eyebrow": "02 · SOLUTIONS",
-      "headline": "Six platforms. One vision.",
-      "body": "Our suite covers the full mobility stack — from the cars in motion to the cities they navigate to the engineers who keep the systems running.",
-      "viewAll": "View all solutions →",
+      "eyebrow": "02 · 솔루션",
+      "headline": "여섯 개의 플랫폼, 하나의 비전.",
+      "body": "주행 중인 차량부터 그 차량이 다니는 도시, 그리고 시스템을 지키는 엔지니어까지 — 도시 모빌리티의 전 영역을 아우르는 솔루션 스택입니다.",
+      "viewAll": "모든 솔루션 보기 →",
       "cards": {
-        "remoteDriving":         { "title": "Remote Driving",         "body": "Tele-driving for fleets and fail-safe vehicle handoff." },
-        "digitalTwin":           { "title": "Digital Twin",           "body": "Real-time 3D mirrors of city traffic and infrastructure." },
-        "multimodalSimulator":   { "title": "Multimodal Simulator",   "body": "Test autonomous behavior across cars, buses, drones, and pedestrians." },
-        "trafficAnalysisTools":  { "title": "Traffic Analysis Tools", "body": "Volume, flow, and signal-timing analytics for transport authorities." },
-        "visualization":         { "title": "Visualization",          "body": "Geospatial dashboards and decision-support displays." },
-        "vrRoadDesign":          { "title": "VR Road Design",         "body": "Immersive design reviews for new roads before they're built." }
+        "remoteDriving":         { "title": "원격 주행",        "body": "차량 fleet의 안전한 핸드오프를 보장하는 원격 주행 솔루션." },
+        "digitalTwin":           { "title": "디지털 트윈",      "body": "도시 교통과 인프라를 실시간 3D로 비추는 디지털 미러." },
+        "multimodalSimulator":   { "title": "멀티모달 시뮬레이터", "body": "자동차, 버스, 드론, 보행자까지 — 자율주행 시나리오를 검증합니다." },
+        "trafficAnalysisTools":  { "title": "교통 분석 도구",   "body": "교통 당국을 위한 통행량, 흐름, 신호 운영 분석." },
+        "visualization":         { "title": "시각화",           "body": "지리정보 기반 대시보드와 의사결정 지원 디스플레이." },
+        "vrRoadDesign":          { "title": "VR 도로 설계",     "body": "도로가 만들어지기 전, 가상 공간에서 진행하는 설계 리뷰." }
       }
     },
     "training": {
@@ -1284,48 +1284,48 @@
       ]
     },
     "projects": {
-      "eyebrow": "03 · PROJECTS",
-      "headline": "Real cities running on Dochak.",
-      "body": "We don't write white papers — we ship infrastructure. These are live deployments operating today.",
-      "viewAll": "View all projects →",
-      "viewCase": "View case study →",
+      "eyebrow": "03 · 프로젝트",
+      "headline": "실제 도시에서 가동 중인 도착의 시스템.",
+      "body": "백서가 아닌 인프라를 만듭니다. 다음은 지금도 현장에서 운영 중인 실제 사례입니다.",
+      "viewAll": "모든 프로젝트 보기 →",
+      "viewCase": "사례 자세히 보기 →",
       "items": [
         {
-          "title": "Naepo Digital Twin",
-          "body": "Korea's first full-scale municipal digital twin. Real-time traffic, environmental, and infrastructure data for a 15 km² administrative city.",
+          "title": "내포 디지털 트윈",
+          "body": "한국 최초의 종합 시(市) 단위 디지털 트윈. 15 km² 행정도시의 교통·환경·인프라 데이터를 실시간으로 제공합니다.",
           "anchor": "#naepo-digital-twin"
         },
         {
-          "title": "Daejeon–Jeju Tele-driving",
-          "body": "Commercial-grade remote driving across 460 km of intercity routes. Demonstrated fail-safe handoff at highway speeds.",
+          "title": "대전–제주 원격 주행",
+          "body": "460 km 도시 간 노선에서 검증된 상용급 원격 주행. 고속도로 속도에서의 안전한 핸드오프를 입증했습니다.",
           "anchor": "#daejeon-jeju-tele-driving"
         },
         {
-          "title": "Incheon Airport Parking",
-          "body": "Autonomous valet system handling 23,000 vehicles per day in Korea's busiest air gateway.",
+          "title": "인천공항 자율주차",
+          "body": "한국에서 가장 분주한 공항에서 하루 23,000대의 차량을 처리하는 자율 발렛 시스템.",
           "anchor": "#incheon-airport-parking"
         }
       ]
     },
     "about": {
-      "eyebrow": "05 · ABOUT",
-      "headline": "A KAIST spin-off, building real cities.",
-      "body": "Dochak was spun out of KAIST in 2024 by transport engineers and AI researchers with deep roots in Korea's smart-mobility ecosystem. We work directly with municipal authorities, airport operators, and OEMs across Korea, the Middle East, Australia, and Southeast Asia.",
+      "eyebrow": "05 · 회사 소개",
+      "headline": "KAIST 스핀오프, 실제 도시를 만듭니다.",
+      "body": "도착은 2024년 KAIST에서 분사한 회사로, 한국 스마트 모빌리티 생태계에 깊이 뿌리내린 교통 엔지니어와 AI 연구자들이 모였습니다. 한국, 중동, 호주, 동남아시아의 지자체, 공항 운영사, OEM과 직접 협력합니다.",
       "stats": [
-        { "value": "15",   "label": "Team" },
-        { "value": "4",    "label": "Projects" },
-        { "value": "4",    "label": "Regions" },
-        { "value": "2024", "label": "Founded" }
+        { "value": "15",   "label": "팀" },
+        { "value": "4",    "label": "프로젝트" },
+        { "value": "4",    "label": "지역" },
+        { "value": "2024", "label": "설립" }
       ],
-      "meetTeam": "Meet the team →",
-      "regionLabel": "Active deployments"
+      "meetTeam": "팀 만나기 →",
+      "regionLabel": "운영 중인 지역"
     },
     "cta": {
-      "eyebrow": "06 · GET IN TOUCH",
-      "headline": "Let's build smarter cities together.",
-      "body": "Whether you're scoping a digital twin, a tele-driving pilot, or training your engineering team — we'd like to hear about it.",
-      "button": "Get in Touch →",
-      "emailLine": "Or email us at",
+      "eyebrow": "06 · 문의하기",
+      "headline": "더 스마트한 도시, 함께 만들어 갑니다.",
+      "body": "디지털 트윈 도입, 원격 주행 파일럿, 엔지니어 교육 — 어떤 프로젝트든 함께 이야기 나누고 싶습니다.",
+      "button": "문의하기 →",
+      "emailLine": "또는 이메일로 연락 주세요:",
       "email": "info@dochak.com"
     }
   }
