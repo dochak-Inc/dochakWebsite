@@ -24,14 +24,25 @@
   color: var(--text-secondary);
 }
 
+/* Inline credential strip — sits as a single horizontal pill below the body,
+   not a floating card. Compact, no shadow. */
 .landing-training__badge {
   display: inline-flex;
-  flex-direction: column;
-  padding: 24px 32px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--accent-cyan);
-  border-radius: 8px;
-  box-shadow: 0 0 24px rgba(87, 188, 235, 0.15);
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: rgba(87, 188, 235, 0.05);
+  border: 1px solid rgba(87, 188, 235, 0.35);
+  border-radius: 999px;
+}
+
+.landing-training__badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  box-shadow: 0 0 8px var(--accent-cyan);
 }
 
 .landing-training__badge-label {
@@ -41,13 +52,13 @@
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--text-muted);
-  margin-bottom: 8px;
 }
 
 .landing-training__badge-title {
-  font-size: 36px;
-  font-weight: 300;
-  letter-spacing: -0.02em;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
   color: var(--accent-cyan);
 }
 
