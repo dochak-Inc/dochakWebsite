@@ -498,11 +498,14 @@ h2,
 
 /* ===== Hero + Intro pinned stage =====
    The hero video stays sticky-pinned at the top of the viewport while the
-   Intro section scrolls in over it. The stage is 200vh tall: 100vh for
-   the hero pinned state + 100vh for the intro scrolling above it. */
+   Intro section scrolls UP across it. Stage is 300vh tall:
+     0–100vh scroll: Intro slides in from the bottom of the viewport.
+     100–200vh scroll: Intro continues scrolling up across the still-pinned hero
+                       (this is the read-and-leave phase the user is feeling for).
+     200–300vh scroll: Hero releases from sticky and exits up with the page. */
 .hero-intro-stage {
   position: relative;
-  height: 200vh;
+  height: 300vh;
 }
 
 .hero-intro-stage__pinned {
