@@ -5,6 +5,12 @@ import './App.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import HeroVideo from './components/HeroVideo';
+import LandingIntro from './components/landing/LandingIntro';
+import LandingSolutions from './components/landing/LandingSolutions';
+import LandingProjects from './components/landing/LandingProjects';
+import LandingTraining from './components/landing/LandingTraining';
+import LandingAbout from './components/landing/LandingAbout';
+import LandingCTA from './components/landing/LandingCTA';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import TawkToWidget from './TawkToWidget';
 import { LanguageProvider } from './contexts/LanguageContext';
@@ -165,8 +171,13 @@ function HomePage() {
   
   return (
     <main id="main">
-      {/* Section 1: Video Hero */}
       <HeroVideo />
+      <LandingIntro />
+      <LandingSolutions />
+      <LandingProjects />
+      <LandingTraining />
+      <LandingAbout />
+      <LandingCTA />
     </main>
   );
 }
