@@ -1276,6 +1276,30 @@
         { "code": "DOC-001",  "title": "Digital Twin Foundations" }
       ]
     },
+    "projects": {
+      "eyebrow": "03 · PROJECTS",
+      "headline": "Real cities running on Dochak.",
+      "body": "We don't write white papers — we ship infrastructure. These are live deployments operating today.",
+      "viewAll": "View all projects →",
+      "viewCase": "View case study →",
+      "items": [
+        {
+          "title": "Naepo Digital Twin",
+          "body": "Korea's first full-scale municipal digital twin. Real-time traffic, environmental, and infrastructure data for a 15 km² administrative city.",
+          "anchor": "#naepo-digital-twin"
+        },
+        {
+          "title": "Daejeon–Jeju Tele-driving",
+          "body": "Commercial-grade remote driving across 460 km of intercity routes. Demonstrated fail-safe handoff at highway speeds.",
+          "anchor": "#daejeon-jeju-tele-driving"
+        },
+        {
+          "title": "Incheon Airport Parking",
+          "body": "Autonomous valet system handling 23,000 vehicles per day in Korea's busiest air gateway.",
+          "anchor": "#incheon-airport-parking"
+        }
+      ]
+    },
     "cta": {
       "eyebrow": "06 · GET IN TOUCH",
       "headline": "Let's build smarter cities together.",
