@@ -1261,6 +1261,21 @@
         "vrRoadDesign":          { "title": "VR Road Design",         "body": "Immersive design reviews for new roads before they're built." }
       }
     },
+    "training": {
+      "eyebrow": "04 · TRAINING",
+      "headline": "Build the team that builds the city.",
+      "body": "We don't just deploy systems — we teach engineers and transport planners how to design, run, and maintain them. Our PTV-certified courses run year-round in Korea and on-site internationally.",
+      "viewAll": "View all courses →",
+      "badge": {
+        "label": "Certified Training Partner",
+        "title": "PTV"
+      },
+      "courses": [
+        { "code": "PTV-V01",  "title": "VISSIM Microscopic Simulation" },
+        { "code": "PTV-V02",  "title": "Visum Network Modelling" },
+        { "code": "DOC-001",  "title": "Digital Twin Foundations" }
+      ]
+    },
     "cta": {
       "eyebrow": "06 · GET IN TOUCH",
       "headline": "Let's build smarter cities together.",

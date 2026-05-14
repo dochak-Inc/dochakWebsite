@@ -1268,6 +1268,21 @@
         "vrRoadDesign":          { "title": "VR Road Design",         "body": "Immersive design reviews for new roads before they're built." }
       }
     },
+    "training": {
+      "eyebrow": "04 · 교육",
+      "headline": "도시를 만드는 팀을 만들어 드립니다.",
+      "body": "시스템을 구축하는 것에 그치지 않고, 엔지니어와 교통 계획가들이 시스템을 설계·운영·유지할 수 있도록 교육합니다. PTV 공인 과정은 연중 한국 및 국제 현장에서 운영됩니다.",
+      "viewAll": "모든 교육 과정 보기 →",
+      "badge": {
+        "label": "공인 교육 파트너",
+        "title": "PTV"
+      },
+      "courses": [
+        { "code": "PTV-V01",  "title": "VISSIM 미시적 시뮬레이션" },
+        { "code": "PTV-V02",  "title": "Visum 네트워크 모델링" },
+        { "code": "DOC-001",  "title": "디지털 트윈 기초" }
+      ]
+    },
     "cta": {
       "eyebrow": "06 · GET IN TOUCH",
       "headline": "Let's build smarter cities together.",

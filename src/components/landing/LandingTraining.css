@@ -1,0 +1,107 @@
+.landing-training {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .landing-training {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+.landing-training__text {
+  max-width: 480px;
+}
+
+.landing-training__body {
+  margin: 0 0 32px 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.landing-training__badge {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 24px 32px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--accent-cyan);
+  border-radius: 8px;
+  box-shadow: 0 0 24px rgba(87, 188, 235, 0.15);
+}
+
+.landing-training__badge-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.landing-training__badge-title {
+  font-size: 36px;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: var(--accent-cyan);
+}
+
+.landing-training__courses {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.landing-training__course {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  transition: border-color 200ms ease, background-color 200ms ease;
+}
+
+.landing-training__course:hover {
+  border-color: rgba(87, 188, 235, 0.3);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.landing-training__course-code {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+}
+
+.landing-training__course-title {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.landing-training__viewall {
+  margin-top: 16px;
+  align-self: flex-end;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(87, 188, 235, 0.3);
+  padding-bottom: 4px;
+  transition: border-color 200ms ease;
+}
+
+.landing-training__viewall:hover {
+  border-bottom-color: var(--accent-cyan);
+}
