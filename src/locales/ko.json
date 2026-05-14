@@ -1247,5 +1247,12 @@
         "message": "찾고 계신 교육 과정이 존재하지 않거나 이동되었을 수 있습니다."
       }
     }
+  },
+  "landing": {
+    "intro": {
+      "eyebrow": "01 · MISSION",
+      "headline": "We engineer the operating systems of urban mobility.",
+      "body": "Dochak builds the platforms that move cities — autonomous fleets, digital twins, traffic intelligence, and the people trained to run them. Our work spans Korea, the Middle East, Australia, and Southeast Asia. We believe smarter cities are built one system at a time, and that every line of code should serve the streets it runs on."
+    }
   }
 }
