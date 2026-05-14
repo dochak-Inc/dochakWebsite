@@ -22,6 +22,13 @@ const StatCounter = ({ value, label, delay = 0 }) => {
 
   useEffect(() => {
     if (!isVisible) return;
+    const prefersReduced =
+      typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) {
+      setDisplayValue(value);
+      return;
+    }
     const numericMatch = String(value).match(/^(\d+)(.*)$/);
     if (!numericMatch) {
       setDisplayValue(value);

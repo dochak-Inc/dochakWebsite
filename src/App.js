@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, lazy, Suspense } from 'react';
+import React, { useEffect, lazy, Suspense } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import './App.css';
@@ -14,8 +14,6 @@ import LandingCTA from './components/landing/LandingCTA';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import TawkToWidget from './TawkToWidget';
 import { LanguageProvider } from './contexts/LanguageContext';
-import LanguageContext from './contexts/LanguageContext';
-import { useScrollAnimation } from './hooks/useScrollAnimation';
 import ScrollToTop from './components/ScrollToTop';
 import LoadingFallback from './components/LoadingFallback';
 
@@ -149,26 +147,6 @@ function Layout() {
 }
 
 function HomePage() {
-  const { t } = useContext(LanguageContext);
-  
-  // Animation component for individual elements
-  const AnimatedElement = ({ children, animation = 'slide-up', delay = 0, className = '' }) => {
-    const { elementRef, isVisible } = useScrollAnimation({
-      threshold: 0.1,
-      triggerOnce: true
-    });
-
-    return (
-      <div
-        ref={elementRef}
-        className={`animate-on-scroll ${animation} ${isVisible ? 'visible' : ''} ${className}`}
-        style={{ transitionDelay: `${delay}ms` }}
-      >
-        {children}
-      </div>
-    );
-  };
-  
   return (
     <main id="main">
       <HeroVideo />
