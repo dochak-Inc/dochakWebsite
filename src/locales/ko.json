@@ -1307,6 +1307,19 @@
         }
       ]
     },
+    "about": {
+      "eyebrow": "05 · ABOUT",
+      "headline": "A KAIST spin-off, building real cities.",
+      "body": "Dochak was spun out of KAIST in 2024 by transport engineers and AI researchers with deep roots in Korea's smart-mobility ecosystem. We work directly with municipal authorities, airport operators, and OEMs across Korea, the Middle East, Australia, and Southeast Asia.",
+      "stats": [
+        { "value": "15",   "label": "Team" },
+        { "value": "4",    "label": "Projects" },
+        { "value": "4",    "label": "Regions" },
+        { "value": "2024", "label": "Founded" }
+      ],
+      "meetTeam": "Meet the team →",
+      "regionLabel": "Active deployments"
+    },
     "cta": {
       "eyebrow": "06 · GET IN TOUCH",
       "headline": "Let's build smarter cities together.",
