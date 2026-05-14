@@ -1253,6 +1253,14 @@
       "eyebrow": "01 · MISSION",
       "headline": "We engineer the operating systems of urban mobility.",
       "body": "Dochak builds the platforms that move cities — autonomous fleets, digital twins, traffic intelligence, and the people trained to run them. Our work spans Korea, the Middle East, Australia, and Southeast Asia. We believe smarter cities are built one system at a time, and that every line of code should serve the streets it runs on."
+    },
+    "cta": {
+      "eyebrow": "06 · GET IN TOUCH",
+      "headline": "Let's build smarter cities together.",
+      "body": "Whether you're scoping a digital twin, a tele-driving pilot, or training your engineering team — we'd like to hear about it.",
+      "button": "Get in Touch →",
+      "emailLine": "Or email us at",
+      "email": "info@dochak.com"
     }
   }
 }
