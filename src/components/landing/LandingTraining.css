@@ -1,3 +1,10 @@
+/* Drop the section's min-height so it sizes to its content and stops
+   leaving a large empty band at the bottom of the Training section. */
+section.landing-section--lift:has(.landing-training) {
+  min-height: auto;
+  padding-bottom: clamp(48px, 7vh, 96px);
+}
+
 .landing-training {
   display: grid;
   grid-template-columns: 1fr 1fr;
