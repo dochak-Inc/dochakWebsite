@@ -1,15 +1,19 @@
-import React, { useEffect, useContext, lazy, Suspense } from 'react';
+import React, { useEffect, lazy, Suspense } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import './App.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import HolographicCityScroll from './components/HolographicCityScroll';
+import HeroVideo from './components/HeroVideo';
+import LandingIntro from './components/landing/LandingIntro';
+import LandingSolutions from './components/landing/LandingSolutions';
+import LandingProjects from './components/landing/LandingProjects';
+import LandingTraining from './components/landing/LandingTraining';
+import LandingAbout from './components/landing/LandingAbout';
+import LandingCTA from './components/landing/LandingCTA';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import TawkToWidget from './TawkToWidget';
 import { LanguageProvider } from './contexts/LanguageContext';
-import LanguageContext from './contexts/LanguageContext';
-import { useScrollAnimation } from './hooks/useScrollAnimation';
 import ScrollToTop from './components/ScrollToTop';
 import LoadingFallback from './components/LoadingFallback';
 
@@ -143,30 +147,28 @@ function Layout() {
 }
 
 function HomePage() {
-  const { t } = useContext(LanguageContext);
-  
-  // Animation component for individual elements
-  const AnimatedElement = ({ children, animation = 'slide-up', delay = 0, className = '' }) => {
-    const { elementRef, isVisible } = useScrollAnimation({
-      threshold: 0.1,
-      triggerOnce: true
-    });
-
-    return (
-      <div
-        ref={elementRef}
-        className={`animate-on-scroll ${animation} ${isVisible ? 'visible' : ''} ${className}`}
-        style={{ transitionDelay: `${delay}ms` }}
-      >
-        {children}
-      </div>
-    );
-  };
-  
   return (
-    <main>
-      {/* Section 1: Holographic City Hero */}
-      <HolographicCityScroll />
+    <main id="main">
+      {/* Hero + Intro share a 300vh sticky stage. The video stays pinned to
+          the top of the viewport across all 300vh of scroll while the hero
+          text (Smarter cities. Seamless mobility.) scrolls up first, then
+          the Intro copy scrolls in and back out, then the video releases. */}
+      <div className="hero-intro-stage">
+        <div className="hero-intro-stage__bg-pin">
+          <HeroVideo render="bg" />
+        </div>
+        <div className="hero-intro-stage__hero-text">
+          <HeroVideo render="fg" />
+        </div>
+        <div className="hero-intro-stage__intro">
+          <LandingIntro />
+        </div>
+      </div>
+      <LandingSolutions />
+      <LandingProjects />
+      <LandingTraining />
+      <LandingAbout />
+      <LandingCTA />
     </main>
   );
 }

@@ -1,0 +1,125 @@
+/* Drop the section's min-height so it sizes to its content and stops
+   leaving a large empty band at the bottom of the Training section. */
+section.landing-section--lift:has(.landing-training) {
+  min-height: auto;
+  padding-bottom: clamp(48px, 7vh, 96px);
+}
+
+.landing-training {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .landing-training {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+.landing-training__text {
+  max-width: 480px;
+}
+
+.landing-training__body {
+  margin: 0 0 32px 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* Inline credential strip — sits as a single horizontal pill below the body,
+   not a floating card. Compact, no shadow. */
+.landing-training__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: rgba(87, 188, 235, 0.05);
+  border: 1px solid rgba(87, 188, 235, 0.35);
+  border-radius: 999px;
+}
+
+.landing-training__badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  box-shadow: 0 0 8px var(--accent-cyan);
+}
+
+.landing-training__badge-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.landing-training__badge-title {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--accent-cyan);
+}
+
+.landing-training__courses {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.landing-training__course {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 28px 28px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  transition: border-color 200ms ease, background-color 200ms ease;
+}
+
+.landing-training__course:hover {
+  border-color: rgba(87, 188, 235, 0.3);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.landing-training__course-code {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+}
+
+.landing-training__course-title {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.landing-training__viewall {
+  margin-top: 16px;
+  align-self: flex-end;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(87, 188, 235, 0.3);
+  padding-bottom: 4px;
+  transition: border-color 200ms ease;
+}
+
+.landing-training__viewall:hover {
+  border-bottom-color: var(--accent-cyan);
+}

@@ -1,0 +1,371 @@
+# Landing Page Renovation — Design
+
+**Date**: 2026-05-14
+**Status**: Approved (brainstorming)
+**Scope**: Build the rest of the homepage below the existing hero. Six new sections, all dark-themed, premium minimalist. One unified spec; implementation will batch section by section.
+
+**Prior work**: `docs/superpowers/specs/2026-05-13-hero-video-renovation-design.md` (the hero this builds on top of).
+
+---
+
+## 1. Goal
+
+Below the existing `HeroVideo`, render six self-contained sections that collectively form the homepage. The sections share a tonal palette, typography, motion language, and structural shell — so the page reads as one cohesive experience, not six stitched-together blocks. Each section funnels visitors toward a specific destination route (`/solutions`, `/projects`, `/training`, `/team`, `/get-in-touch`).
+
+The aesthetic carries the hero forward: all-dark with subtle tonal variation, cyan-only accent (`#57bceb`), system fonts, restrained motion, editorial copy (5–8 word headlines + 2–3 sentence bodies).
+
+---
+
+## 2. Foundations
+
+### 2.1 Tonal palette
+
+Three tones, ~13 RGB-point spread:
+
+| Token | Value | Used on |
+|---|---|---|
+| `--bg-deep` | `#050505` | Projects (Section 3) |
+| `--bg-base` | `#070707` | Hero (existing), Intro, About, CTA |
+| `--bg-lift` | `#121212` | Solutions, Training |
+
+Accent and text:
+
+| Token | Value |
+|---|---|
+| `--accent-cyan` | `#57bceb` |
+| `--text-primary` | `#ffffff` |
+| `--text-secondary` | `rgba(255, 255, 255, 0.65)` |
+| `--text-muted` | `rgba(255, 255, 255, 0.4)` |
+
+These live in `src/components/landing/landing.css` as `:root` custom properties (or scoped to a `.landing-page` selector if we want to keep them off other routes).
+
+### 2.2 Typography
+
+System font stack — no new web fonts:
+
+```css
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+```
+
+| Element | Size | Weight | Letter-spacing |
+|---|---|---|---|
+| Section H2 | `clamp(32px, 4.5vw, 56px)` | 200 | -0.02em |
+| Eyebrow label | 11px | 500 | 0.35em (uppercase) |
+| Body | 16px | 400 | normal, line-height 1.6, max-width 60ch |
+| Card title (Solutions) | 18px | 400 | -0.01em |
+| Big stat number (About) | `clamp(36px, 4vw, 56px)` | 300 | -0.02em, color `--accent-cyan` |
+| Mono (stat labels, code badges) | 11px | 500 | `'JetBrains Mono', monospace` |
+
+### 2.3 Section shell
+
+Every section gets the same outer frame:
+
+- Outer `<section>` with one of `--bg-deep | --bg-base | --bg-lift` background
+- Min-height `100vh` on desktop, auto on mobile (`@media (max-width: 768px)`)
+- Vertical padding `clamp(80px, 12vh, 160px)` top/bottom
+- Inner container `max-width: 1200px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 64px)`
+- Eyebrow label at top in `--text-muted`, mono, format `"01 · MISSION"`
+
+### 2.4 Motion language
+
+Reuses the existing `useScrollAnimation` hook (already used in `src/About.js`). Pattern:
+
+- All section content fades in (opacity 0→1) and translates up 16px → 0 when it enters the viewport
+- Stagger of 100ms between sibling elements in a grid
+- `triggerOnce: true` — animations don't replay
+- No parallax, no scroll-jacking, no GSAP, no Motion library imports for these sections
+- Cyan accents on hover use a 200ms transition (`transition: border-color 200ms, color 200ms, transform 200ms`)
+
+### 2.5 Layout primitives
+
+Only three primitives recur across the six sections:
+
+1. **Centered text block** — eyebrow + headline + 1-paragraph body, max-width 720px, centered. Used by Intro, CTA.
+2. **Grid of cards** — 3-column desktop / 1-column mobile, each card a glass-morphism panel (`rgba(255,255,255,0.02)` fill, 1px `rgba(255,255,255,0.08)` border, 16px radius). Used by Solutions, and nested inside About for stats.
+3. **Asymmetric split** — 2-column desktop: text on one side, visual element on the other. Used by Projects (image), Training (visual), About (region map).
+
+No other layout primitives. If a section needs something the three above can't express, that's a signal to revisit the design — not invent a new primitive.
+
+### 2.6 Atoms
+
+Three shared atoms in `src/components/landing/atoms/`:
+
+- `SectionShell.jsx` — renders the outer `<section>`, takes a `tone` prop (`"deep" | "base" | "lift"`), applies the right background + standard padding + max-width container
+- `SectionEyebrow.jsx` — renders the `"NN · TITLE"` label in mono
+- `SectionHeading.jsx` — renders the H2 with consistent type styles
+
+These exist to keep typography consistent without duplicating CSS across six section files.
+
+---
+
+## 3. Page sections
+
+Section ordering on the homepage, top to bottom:
+
+1. Hero (existing — `<HeroVideo />`)
+2. Intro / Mission — Section 1 below
+3. Solutions overview — Section 2
+4. Featured projects — Section 3
+5. Training teaser — Section 4
+6. About + Stats — Section 5
+7. CTA — Section 6
+
+### 3.1 Section 1 — Intro / Mission
+
+- **Primitive**: Centered text block
+- **Tone**: `--bg-base` (`#070707`)
+- **Eyebrow**: `01 · MISSION`
+- **Headline**: *We engineer the operating systems of urban mobility.*
+- **Body**:
+  > Dochak builds the platforms that move cities — autonomous fleets, digital twins, traffic intelligence, and the people trained to run them. Our work spans Korea, the Middle East, Australia, and Southeast Asia. We believe smarter cities are built one system at a time, and that every line of code should serve the streets it runs on.
+- **Behavior**: Eyebrow fades in first; headline 200ms later; body 400ms later. No image. Same height as hero (100vh) — scrolling from hero feels like turning a page.
+
+### 3.2 Section 2 — Solutions overview
+
+- **Primitive**: Grid of cards (3-column desktop / 1-column mobile)
+- **Tone**: `--bg-lift` (`#121212`)
+- **Eyebrow**: `02 · SOLUTIONS`
+- **Headline**: *Six platforms. One vision.*
+- **Body**:
+  > Our suite covers the full mobility stack — from the cars in motion to the cities they navigate to the engineers who keep the systems running.
+- **Six cards**, each linking to `/solutions/<slug>`:
+
+| Card title | Body (1-sentence) | Slug |
+|---|---|---|
+| Remote Driving | Tele-driving for fleets and fail-safe vehicle handoff. | `remote-driving` |
+| Digital Twin | Real-time 3D mirrors of city traffic and infrastructure. | `digital-twin` |
+| Multimodal Simulator | Test autonomous behavior across cars, buses, drones, and pedestrians. | `multimodal-simulator` |
+| Traffic Analysis Tools | Volume, flow, and signal-timing analytics for transport authorities. | `traffic-analysis-tools` |
+| Visualization | Geospatial dashboards and decision-support displays. | `visualization` |
+| VR Road Design | Immersive design reviews for new roads before they're built. | `vr-road-design` |
+
+- **Card visual**: glass-morphism panel. On hover: border becomes `rgba(87, 188, 235, 0.4)`, faint cyan glow (`box-shadow: 0 0 24px rgba(87, 188, 235, 0.15)`), 4px `translate-y(-4px)`. Each card has a small lucide-style line icon top-left and an arrow `→` bottom-right that translates 4px right on hover.
+- **Behavior**: Cards stagger-fade in at 100ms intervals as the grid enters the viewport.
+
+### 3.3 Section 3 — Featured projects
+
+- **Primitive**: Asymmetric split (3 alternating rows)
+- **Tone**: `--bg-deep` (`#050505` — darkest section)
+- **Eyebrow**: `03 · PROJECTS`
+- **Headline**: *Real cities running on Dochak.*
+- **Body**:
+  > We don't write white papers — we ship infrastructure. These are live deployments operating today.
+
+Three project rows, alternating text-left / text-right / text-left:
+
+| # | Project | Body | Layout |
+|---|---|---|---|
+| 1 | **Naepo Digital Twin** | Korea's first full-scale municipal digital twin. Real-time traffic, environmental, and infrastructure data for a 15 km² administrative city. | text-left, image-right |
+| 2 | **Daejeon–Jeju Tele-driving** | Commercial-grade remote driving across 460 km of intercity routes. Demonstrated fail-safe handoff at highway speeds. | image-left, text-right |
+| 3 | **Incheon Airport Parking** | Autonomous valet system handling 23,000 vehicles per day in Korea's busiest air gateway. | text-left, image-right |
+
+Each row has a `[View case study →]` link to `/projects` with an anchor (`/projects#naepo-digital-twin`, etc.).
+
+- **Image treatment**: project thumbnails are 4:3 aspect, dark + cyan-tinted via CSS filter (`saturate(0.7) brightness(0.85)`), with a 1px cyan border. On hover: filter resets to natural color, border brightens to full cyan. Treats each project as a "case file" being opened.
+- **Bottom-right of section**: `View all projects →` link to `/projects`.
+- **Behavior**: Each row staggers in as it enters viewport (standard 16px translate-up fade).
+
+### 3.4 Section 4 — Training teaser
+
+- **Primitive**: Asymmetric split
+- **Tone**: `--bg-lift` (`#121212`)
+- **Eyebrow**: `04 · TRAINING`
+- **Headline**: *Build the team that builds the city.*
+- **Body**:
+  > We don't just deploy systems — we teach engineers and transport planners how to design, run, and maintain them. Our PTV-certified courses run year-round in Korea and on-site internationally.
+- **Right column**: vertical list of 3 featured course titles pulled from `src/courseData.js` (or `courseData_ko.js` based on `LanguageContext`). Each course title gets a small course-code badge (e.g. `PTV-V01`) in mono, eyebrow-style. Below the list: `View all courses →` link to `/training`.
+- **Left column / visual element**: a single bold "PTV-certified" badge — either an image asset (if you have one) or stylized text in a glass-morphism frame. No photos of classrooms (too generic).
+- **Behavior**: Standard fade-up on scroll, then course list items stagger at 100ms intervals.
+
+### 3.5 Section 5 — About + Stats
+
+- **Primitive**: Asymmetric split + nested 4-card stat grid
+- **Tone**: `--bg-base` (`#070707`)
+- **Eyebrow**: `05 · ABOUT`
+- **Headline**: *A KAIST spin-off, building real cities.*
+- **Body**:
+  > Dochak was spun out of KAIST in 2024 by transport engineers and AI researchers with deep roots in Korea's smart-mobility ecosystem. We work directly with municipal authorities, airport operators, and OEMs across Korea, the Middle East, Australia, and Southeast Asia.
+
+- **Stats grid** (below body, 4 cards in a row, 2-column on mobile):
+
+| Number | Label |
+|---|---|
+| 15 | Team |
+| 4 | Projects |
+| 4 | Regions |
+| 2024 | Founded |
+
+Each stat: large number in `clamp(36px, 4vw, 56px)`, weight 300, color `--accent-cyan`. Label below in mono 11px uppercase `--text-muted`.
+
+- `[Meet the team →]` link to `/team` below the stats.
+- **Visual element on right (desktop)**: dotted-map-style region indicator. Uses the existing `dotted-map` dependency (already in `package.json` from the About page's globe). Renders a minimal world map with 4 cyan dots at approximate Korea / Middle East / Australia / SE Asia locations. Single static map — no animation, no globe rotation.
+- **Behavior**: Numbers count up from 0 → final on scroll (1.2s ease-out tween triggered by `useScrollAnimation`). Map dots pulse softly once and settle.
+
+### 3.6 Section 6 — CTA close
+
+- **Primitive**: Centered text block
+- **Tone**: `--bg-base` (`#070707` — matches hero, closes the loop)
+- **Eyebrow**: `06 · GET IN TOUCH`
+- **Headline**: *Let's build smarter cities together.*
+- **Body**:
+  > Whether you're scoping a digital twin, a tele-driving pilot, or training your engineering team — we'd like to hear about it.
+- **Primary CTA**: `[Get in Touch →]` button, cyan-bordered, mono uppercase letter-spacing matching the hero's scroll-cue typography. Links to `/get-in-touch`.
+- **Secondary line below**:
+  > Or email us at **info@dochak.com**.
+- **Behavior**: Fade up on entry. CTA button has a subtle cyan border-breathing pulse (reuses the `heroBreathe` keyframe from `HeroVideo.css` — port it into a shared keyframe in `landing.css` or duplicate; do NOT import HeroVideo.css from a non-hero component).
+
+---
+
+## 4. Component structure
+
+### 4.1 File map
+
+```
+src/components/landing/
+├── landing.css                    — shared :root custom properties, shared keyframes
+├── atoms/
+│   ├── SectionShell.jsx           — outer <section> with tone, padding, max-width
+│   ├── SectionShell.css
+│   ├── SectionEyebrow.jsx         — "NN · TITLE" label
+│   ├── SectionEyebrow.css
+│   ├── SectionHeading.jsx         — H2 wrapper with consistent type
+│   └── SectionHeading.css
+├── LandingIntro.jsx + .css        — Section 1
+├── LandingSolutions.jsx + .css    — Section 2
+├── LandingProjects.jsx + .css     — Section 3
+├── LandingTraining.jsx + .css     — Section 4
+├── LandingAbout.jsx + .css        — Section 5
+└── LandingCTA.jsx + .css          — Section 6
+```
+
+Each section component:
+- Imports its own `.css` (scoped class names prefixed `landing-<name>__`)
+- Pulls headline / body / labels from `LanguageContext` (`useContext(LanguageContext).t('landing.<section>.<key>')`)
+- Wraps content in `<SectionShell tone="...">`
+- Uses `useScrollAnimation` for entrance fades
+
+### 4.2 Integration
+
+`src/App.js` → `HomePage` becomes:
+
+```jsx
+return (
+  <main id="main">
+    <HeroVideo />
+    <LandingIntro />
+    <LandingSolutions />
+    <LandingProjects />
+    <LandingTraining />
+    <LandingAbout />
+    <LandingCTA />
+  </main>
+);
+```
+
+That's the only change to `App.js`. Six new imports above.
+
+---
+
+## 5. i18n
+
+All copy lives under a new `landing.*` namespace in `src/locales/en.json` and `src/locales/ko.json`:
+
+```json
+{
+  "landing": {
+    "intro": {
+      "eyebrow": "01 · MISSION",
+      "headline": "We engineer the operating systems of urban mobility.",
+      "body": "Dochak builds the platforms that move cities..."
+    },
+    "solutions": {
+      "eyebrow": "02 · SOLUTIONS",
+      "headline": "Six platforms. One vision.",
+      "body": "Our suite covers the full mobility stack...",
+      "viewAll": "View all solutions →",
+      "cards": {
+        "remoteDriving": { "title": "Remote Driving", "body": "..." },
+        ...
+      }
+    },
+    "projects": { ... },
+    "training": { ... },
+    "about": {
+      "eyebrow": "05 · ABOUT",
+      "headline": "A KAIST spin-off, building real cities.",
+      "body": "...",
+      "stats": {
+        "team": { "value": "15", "label": "Team" },
+        "projects": { "value": "4", "label": "Projects" },
+        "regions": { "value": "4", "label": "Regions" },
+        "founded": { "value": "2024", "label": "Founded" }
+      },
+      "meetTeam": "Meet the team →"
+    },
+    "cta": {
+      "eyebrow": "06 · GET IN TOUCH",
+      "headline": "Let's build smarter cities together.",
+      "body": "Whether you're scoping a digital twin...",
+      "button": "Get in Touch →",
+      "emailLine": "Or email us at",
+      "email": "info@dochak.com"
+    }
+  }
+}
+```
+
+For v1, `ko.json` gets the same English strings as placeholders — Korean translation is a follow-up task (explicitly out of scope here).
+
+---
+
+## 6. Performance
+
+- No new web fonts.
+- No new JS dependencies — `dotted-map` is already in `package.json` from `About.js`'s globe.
+- Images: project thumbnails will reuse existing assets in `src/assets/` where possible. If specific projects need imagery that doesn't exist (e.g. a clean shot of the Incheon airport parking system), flag as a follow-up; placeholder image with a "thumbnail TBD" overlay in dev, real asset before merge.
+- All `<img>` tags use `loading="lazy"` so below-fold project thumbnails don't block initial paint.
+- Total added bundle weight: ~6 React components + ~6 CSS files + some atoms = expected ~15–25 KB minified, plus image assets. Negligible vs the existing hero.
+- No code splitting via `lazy()` — the homepage is a single route, users scroll through it linearly, splitting would add complexity for no perceived benefit.
+
+---
+
+## 7. Implementation order
+
+Build in this sequence — each is a coherent commit batch:
+
+1. **Foundations** — `landing.css` (custom properties + shared keyframes), plus the three atoms (`SectionShell`, `SectionEyebrow`, `SectionHeading`). Nothing renders yet.
+2. **Section 1 — Intro** — smallest section, validates the atoms end-to-end.
+3. **Section 6 — CTA** — same primitive as Intro (centered text block); validates the loop closes visually.
+4. **Section 2 — Solutions** — grid-of-cards primitive, used here only.
+5. **Section 4 — Training** — first asymmetric-split (simpler than Projects — no imagery).
+6. **Section 3 — Projects** — asymmetric-split with imagery; benefits from Training paving the way.
+7. **Section 5 — About + Stats** — most complex (stats count-up animation + dotted-map region indicator); built last.
+8. **Wire into App.js** — drop all six into `HomePage` in order. Verify in browser.
+
+After step 3 the top and bottom of the page are visible end-to-end — a useful structural checkpoint before the middle sections.
+
+---
+
+## 8. Out of scope
+
+- Korean copy proofreading — `ko.json` ships with English placeholders for v1; native Korean copy is a follow-up.
+- The 6 individual `/solutions/<slug>` sub-pages — untouched; the landing just links to them.
+- New imagery beyond what `src/assets/` already has — if Projects section needs better thumbnails, that's a follow-up task; placeholder until then.
+- Navbar restyle, Footer changes — explicitly preserved as-is.
+- A/B testing infrastructure, analytics events, scroll-depth tracking — not in scope.
+- The `dotted-map` region indicator's exact dot coordinates — the implementer picks reasonable lat/long for "Korea, Middle East, Australia, SE Asia"; pixel-perfect placement isn't a contract.
+
+---
+
+## 9. Open questions
+
+None remaining at design time. The choices made during brainstorming:
+
+- Scope: one big design for the whole landing page → confirmed (Option A).
+- Sections: 6 sections in order Intro → Solutions → Projects → Training → About → CTA → confirmed.
+- Tonal rhythm: 3-tone palette `#050505 / #070707 / #121212`, ~13-point spread → confirmed.
+- Copy tone: editorial / measured (5–8 word headlines + 2–3 sentence bodies) → confirmed.
+- About headline: *A KAIST spin-off, building real cities.* → confirmed.
+- Stats: 15 / 4 / 4 / 2024 (dropped "6 Solutions" as redundant with the Solutions section above) → confirmed.
+- Contact email: `info@dochak.com` → confirmed.
+- Featured projects: Naepo / Daejeon–Jeju / Incheon Airport Parking → confirmed.

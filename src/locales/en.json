@@ -1240,5 +1240,86 @@
         "message": "The course you're looking for doesn't exist or may have been moved."
       }
     }
+  },
+  "landing": {
+    "intro": {
+      "eyebrow": "01 · MISSION",
+      "headline": "We engineer the operating systems of urban mobility.",
+      "body": "Dochak builds the platforms that move cities — autonomous fleets, digital twins, traffic intelligence, and the people trained to run them. Our work spans Korea, the Middle East, Australia, and Southeast Asia. We believe smarter cities are built one system at a time, and that every line of code should serve the streets it runs on."
+    },
+    "solutions": {
+      "eyebrow": "02 · SOLUTIONS",
+      "headline": "Six platforms. One vision.",
+      "body": "Our suite covers the full mobility stack — from the cars in motion to the cities they navigate to the engineers who keep the systems running.",
+      "viewAll": "View all solutions →",
+      "cards": {
+        "remoteDriving":         { "title": "Remote Driving",         "body": "Tele-driving for fleets and fail-safe vehicle handoff." },
+        "digitalTwin":           { "title": "Digital Twin",           "body": "Real-time 3D mirrors of city traffic and infrastructure." },
+        "multimodalSimulator":   { "title": "Multimodal Simulator",   "body": "Test autonomous behavior across cars, buses, drones, and pedestrians." },
+        "trafficAnalysisTools":  { "title": "Traffic Analysis Tools", "body": "Volume, flow, and signal-timing analytics for transport authorities." },
+        "visualization":         { "title": "Visualization",          "body": "Geospatial dashboards and decision-support displays." },
+        "vrRoadDesign":          { "title": "VR Road Design",         "body": "Immersive design reviews for new roads before they're built." }
+      }
+    },
+    "training": {
+      "eyebrow": "04 · TRAINING",
+      "headline": "Build the team that builds the city.",
+      "body": "We don't just deploy systems — we teach engineers and transport planners how to design, run, and maintain them. Our PTV-certified courses run year-round in Korea and on-site internationally.",
+      "viewAll": "View all courses →",
+      "badge": {
+        "label": "Certified Training Partner",
+        "title": "PTV"
+      },
+      "courses": [
+        { "code": "PTV-V01",  "title": "VISSIM Microscopic Simulation" },
+        { "code": "PTV-V02",  "title": "Visum Network Modelling" },
+        { "code": "DOC-001",  "title": "Digital Twin Foundations" }
+      ]
+    },
+    "projects": {
+      "eyebrow": "03 · PROJECTS",
+      "headline": "Real cities running on Dochak.",
+      "body": "We don't write white papers — we ship infrastructure. These are live deployments operating today.",
+      "viewAll": "View all projects →",
+      "viewCase": "View case study →",
+      "items": [
+        {
+          "title": "Naepo Digital Twin",
+          "body": "Korea's first full-scale municipal digital twin. Real-time traffic, environmental, and infrastructure data for a 15 km² administrative city.",
+          "anchor": "#naepo-digital-twin"
+        },
+        {
+          "title": "Daejeon–Jeju Tele-driving",
+          "body": "Commercial-grade remote driving across 460 km of intercity routes. Demonstrated fail-safe handoff at highway speeds.",
+          "anchor": "#daejeon-jeju-tele-driving"
+        },
+        {
+          "title": "Incheon Airport Parking",
+          "body": "Autonomous valet system handling 23,000 vehicles per day in Korea's busiest air gateway.",
+          "anchor": "#incheon-airport-parking"
+        }
+      ]
+    },
+    "about": {
+      "eyebrow": "05 · ABOUT",
+      "headline": "A KAIST spin-off, building real cities.",
+      "body": "Dochak was spun out of KAIST in 2024 by transport engineers and AI researchers with deep roots in Korea's smart-mobility ecosystem. We work directly with municipal authorities, airport operators, and OEMs across Korea, the Middle East, Australia, and Southeast Asia.",
+      "stats": [
+        { "value": "15",   "label": "Team" },
+        { "value": "4",    "label": "Projects" },
+        { "value": "4",    "label": "Regions" },
+        { "value": "2024", "label": "Founded" }
+      ],
+      "meetTeam": "Meet the team →",
+      "regionLabel": "Active deployments"
+    },
+    "cta": {
+      "eyebrow": "06 · GET IN TOUCH",
+      "headline": "Let's build smarter cities together.",
+      "body": "Whether you're scoping a digital twin, a tele-driving pilot, or training your engineering team — we'd like to hear about it.",
+      "button": "Get in Touch →",
+      "emailLine": "Or email us at",
+      "email": "info@dochak.com"
+    }
   }
 }
