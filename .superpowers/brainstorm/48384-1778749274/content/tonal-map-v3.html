@@ -1,0 +1,179 @@
+<h2>Tonal map — middle ground</h2>
+<p class="subtitle">Between v1 (too subtle) and v2 (too visible). Lift is now <code>#121212</code> — ~13-point spread from baseline. Deep stays subtle at <code>#050505</code>.</p>
+
+<style>
+  .page-preview {
+    width: 100%;
+    max-width: 460px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+    color: #fff;
+  }
+  .sec {
+    position: relative;
+    padding: 32px 24px;
+    min-height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .sec-label {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .sec-title {
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+  }
+  .sec-title .accent { color: #57bceb; }
+  .sec-tone {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.05em;
+  }
+  .sec-body {
+    font-size: 12px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.55;
+  }
+
+  /* TONAL VALUES — middle ground */
+  .hero       { background: #070707; min-height: 180px; }
+  .intro      { background: #070707; }
+  .solutions  { background: #121212; }
+  .projects   { background: #050505; }
+  .training   { background: #121212; }
+  .about      { background: #070707; }
+  .cta        { background: #070707; min-height: 130px; }
+
+  .mini-card {
+    display: inline-block;
+    padding: 6px 10px;
+    border: 1px solid rgba(87, 188, 235, 0.3);
+    background: rgba(255,255,255,0.025);
+    border-radius: 3px;
+    font-size: 10px;
+    color: rgba(255,255,255,0.75);
+    margin: 6px 4px 0 0;
+  }
+  .cta-btn {
+    display: inline-block;
+    padding: 8px 14px;
+    border: 1px solid #57bceb;
+    color: #57bceb;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: 8px;
+  }
+
+  .tone-legend {
+    max-width: 460px;
+    margin: 20px auto 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+  }
+  .tone-chip {
+    flex: 1;
+    padding: 12px 8px;
+    text-align: center;
+    border-radius: 4px;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .tone-chip .label {
+    display: block;
+    color: rgba(255,255,255,0.4);
+    font-size: 8px;
+    letter-spacing: 0.2em;
+    margin-bottom: 4px;
+  }
+  .tone-chip .value { color: #57bceb; }
+</style>
+
+<div class="page-preview">
+
+  <div class="sec hero">
+    <span class="sec-tone">#070707</span>
+    <span class="sec-label">HERO (existing)</span>
+    <div class="sec-title">Smarter cities. Seamless <span class="accent">mobility</span>.</div>
+    <div class="sec-body" style="opacity:0.45">[ video ]</div>
+  </div>
+
+  <div class="sec intro">
+    <span class="sec-tone">#070707</span>
+    <span class="sec-label">1 · INTRO / MISSION</span>
+    <div class="sec-title">We engineer the operating systems of <span class="accent">urban mobility</span>.</div>
+    <div class="sec-body">Soft landing — same tone as hero.</div>
+  </div>
+
+  <div class="sec solutions">
+    <span class="sec-tone">#121212</span>
+    <span class="sec-label">2 · SOLUTIONS</span>
+    <div class="sec-title">Six platforms. One vision.</div>
+    <div>
+      <span class="mini-card">Remote Driving</span>
+      <span class="mini-card">Digital Twin</span>
+      <span class="mini-card">Multimodal Simulator</span>
+    </div>
+  </div>
+
+  <div class="sec projects">
+    <span class="sec-tone">#050505</span>
+    <span class="sec-label">3 · FEATURED PROJECTS</span>
+    <div class="sec-title">Real cities running on Dochak.</div>
+    <div class="sec-body">Subtly darker — case studies and project imagery read more dramatically.</div>
+  </div>
+
+  <div class="sec training">
+    <span class="sec-tone">#121212</span>
+    <span class="sec-label">4 · TRAINING</span>
+    <div class="sec-title">Build the team that builds the city.</div>
+    <div class="sec-body">Lift — secondary offering reads as friendlier.</div>
+  </div>
+
+  <div class="sec about">
+    <span class="sec-tone">#070707</span>
+    <span class="sec-label">5 · ABOUT + STATS</span>
+    <div class="sec-title">A team of <span class="accent">40+</span> across four regions.</div>
+    <div class="sec-body">Back to baseline.</div>
+  </div>
+
+  <div class="sec cta">
+    <span class="sec-tone">#070707</span>
+    <span class="sec-label">6 · CTA</span>
+    <div class="sec-title">Let's build smarter cities together.</div>
+    <div><span class="cta-btn">Get in Touch →</span></div>
+  </div>
+
+</div>
+
+<div class="tone-legend">
+  <div class="tone-chip" style="background:#050505">
+    <span class="label">DEEP</span>
+    <span class="value">#050505</span>
+  </div>
+  <div class="tone-chip" style="background:#070707">
+    <span class="label">BASE / HERO</span>
+    <span class="value">#070707</span>
+  </div>
+  <div class="tone-chip" style="background:#121212">
+    <span class="label">LIFT</span>
+    <span class="value">#121212</span>
+  </div>
+</div>

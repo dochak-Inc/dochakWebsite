@@ -1,0 +1,132 @@
+<h2>Final polish — accent treatment</h2>
+<p class="subtitle">Same Layout A, two finishes. Pick a direction (or pick parts to mix).</p>
+
+<style>
+  .hero-preview {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-image: url('hero-bg.jpg');
+    background-size: cover; background-position: center;
+    border-radius: 6px; overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+    color: #fff;
+  }
+  .hero-preview::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(7,7,7,0.25) 0%, rgba(7,7,7,0.55) 100%);
+  }
+  .hero-preview > * { position: relative; z-index: 2; }
+  .wordmark {
+    position: absolute; top: 24px; left: 50%; transform: translateX(-50%);
+    font-size: 12px; letter-spacing: 0.35em; font-weight: 500;
+  }
+  .headline {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -45%);
+    text-align: center; line-height: 1.05; white-space: nowrap;
+  }
+  .scroll-cue {
+    position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
+    font-size: 10px; letter-spacing: 0.35em; opacity: 0.7;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .live-pill {
+    position: absolute; top: 24px; right: 28px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px; letter-spacing: 0.25em;
+    padding: 5px 10px; border-radius: 999px;
+    display: flex; align-items: center; gap: 6px;
+    border: 1px solid rgba(255,255,255,0.18);
+    background: rgba(0,0,0,0.35); backdrop-filter: blur(8px);
+  }
+  .live-pill .dot {
+    width: 5px; height: 5px; border-radius: 50%;
+    box-shadow: 0 0 6px currentColor;
+  }
+
+  /* Variant 1 — Pure monochrome */
+  .v1 .headline {
+    font-size: 52px; font-weight: 200; letter-spacing: -0.025em;
+  }
+  .v1 .scroll-cue { color: rgba(255,255,255,0.7); }
+  .v1 .scroll-cue .line {
+    display: block; width: 1px; height: 14px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.7), transparent);
+  }
+  .v1 .live-pill { color: #fff; }
+  .v1 .live-pill .dot { background: #fff; color: #fff; }
+
+  /* Variant 2 — Cyan accent */
+  .v2 .headline {
+    font-size: 52px; font-weight: 200; letter-spacing: -0.025em;
+  }
+  .v2 .headline .accent { color: #57bceb; font-weight: 300; }
+  .v2 .wordmark .dot {
+    display: inline-block; width: 4px; height: 4px;
+    background: #57bceb; border-radius: 50%; margin: 0 8px 2px 8px;
+    box-shadow: 0 0 8px #57bceb;
+    vertical-align: middle;
+  }
+  .v2 .scroll-cue { color: rgba(87,188,235,0.85); }
+  .v2 .scroll-cue .line {
+    display: block; width: 1px; height: 14px;
+    background: linear-gradient(to bottom, #57bceb, transparent);
+    box-shadow: 0 0 4px #57bceb;
+  }
+  .v2 .live-pill { color: #57bceb; border-color: rgba(87,188,235,0.35); }
+  .v2 .live-pill .dot { background: #57bceb; color: #57bceb; }
+
+  .variant-label {
+    display: block; font-size: 11px; letter-spacing: 0.2em;
+    text-transform: uppercase; opacity: 0.6; margin-top: 12px;
+  }
+  .variant-title { font-size: 14px; margin: 4px 0 6px 0; }
+  .variant-desc { font-size: 12px; opacity: 0.7; line-height: 1.55; }
+  .cards .card { padding: 16px; }
+</style>
+
+<div class="cards">
+
+  <div class="card" data-choice="V1" onclick="toggleSelect(this)">
+    <div class="hero-preview v1">
+      <div class="wordmark">DOCHAK</div>
+      <div class="live-pill"><span class="dot"></span>LIVE</div>
+      <div class="headline" style="">
+        <div style="font-size:52px;font-weight:200;letter-spacing:-0.025em">Smarter cities.</div>
+        <div style="font-size:52px;font-weight:200;letter-spacing:-0.025em">Seamless mobility.</div>
+      </div>
+      <div class="scroll-cue">
+        <span>SCROLL</span><span class="line"></span>
+      </div>
+    </div>
+    <span class="variant-label">V1 · Monochrome</span>
+    <h3 class="variant-title">Pure white on dark</h3>
+    <p class="variant-desc">No color accent — the video carries all the color. Most editorial / Apple-keynote-like. The "LIVE" pill top-right uses a white pulse for the live-system feel.</p>
+  </div>
+
+  <div class="card" data-choice="V2" onclick="toggleSelect(this)">
+    <div class="hero-preview v2">
+      <div class="wordmark">DOCHAK<span class="dot"></span>SMART MOBILITY</div>
+      <div class="live-pill"><span class="dot"></span>LIVE</div>
+      <div class="headline">
+        <div style="font-size:52px;font-weight:200;letter-spacing:-0.025em">Smarter cities.</div>
+        <div style="font-size:52px;font-weight:200;letter-spacing:-0.025em">Seamless <span class="accent">mobility</span>.</div>
+      </div>
+      <div class="scroll-cue">
+        <span>SCROLL</span><span class="line"></span>
+      </div>
+    </div>
+    <span class="variant-label">V2 · Cyan accent</span>
+    <h3 class="variant-title">Holographic blue accents</h3>
+    <p class="variant-desc">Cyan (#57bceb — already in your codebase) accents on one word, the scroll line, and the LIVE pulse. Ties UI to the video's holographic palette without being loud.</p>
+  </div>
+
+</div>
+
+<div class="section" style="margin-top:32px">
+  <span class="label">Plus, the live-system loop mechanism</span>
+  <h3 style="margin:8px 0 6px 0;font-size:16px">Video plays full 6s → freezes on the last frame. A small "LIVE" pill (top-right) pulses softly, and the scroll cue line breathes — that's where the live-system feel lives.</h3>
+  <p style="font-size:13px;opacity:0.7;line-height:1.6">
+    No second video file, no seamless tail loop needed. The video itself is one-shot; HTML/CSS provides the continuous "system is alive" motion via subtle, isolated micro-animations. Cleanest possible footprint.
+  </p>
+</div>
