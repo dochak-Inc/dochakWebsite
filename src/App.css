@@ -498,24 +498,23 @@ h2,
 
 /* ===== Hero + Intro pinned stage =====
    Three children:
-     - .hero-intro-stage__bg-pin: sticky video layer (100vh, pinned for 200vh
-       of scroll inside the 300vh stage).
+     - .hero-intro-stage__bg-pin: sticky video layer (100vh, pinned for the
+       first 100vh of scroll inside the 200vh stage).
      - .hero-intro-stage__hero-text: the hero's headline + scroll cue. Lives
        in normal flow but with margin-top: -100vh so it visually overlays
        the bg-pin at scroll 0. Scrolls up normally as the user scrolls.
      - .hero-intro-stage__intro: the Intro section. Follows the hero-text in
        flow, also overlays the pinned bg with a radial vignette tint.
 
-   Scroll timeline (300vh stage):
+   Scroll timeline (200vh stage):
      0–100vh   hero-text scrolls UP off the top of the viewport.
-                Video stays pinned. Intro is not yet visible.
-     100–200vh Intro scrolls UP across the still-pinned video.
-                Hero-text is gone, intro slides through.
-     200–300vh Video releases sticky and exits with the stage as the
-                Solutions section enters from below. */
+                Video stays pinned. Intro slides in from below.
+     100–200vh Intro scrolls UP across the (now-releasing) video.
+                As the stage ends, the Solutions section enters from below
+                with no empty gap in between. */
 .hero-intro-stage {
   position: relative;
-  height: 300vh;
+  height: 200vh;
 }
 
 .hero-intro-stage__bg-pin {
