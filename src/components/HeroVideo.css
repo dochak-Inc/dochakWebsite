@@ -210,11 +210,12 @@
 
 /* On portrait mobile, switch from contain (which letterboxes top/bottom
    because the video is landscape) to cover, so the city block fills the
-   viewport with the sides cropped — building reads at full presence. */
+   viewport with the sides cropped. A slight scale-down keeps it from
+   feeling overwhelming on small screens. */
 @media (max-width: 767px) {
   .hero-video__media {
     object-fit: cover;
-    transform: none;
+    transform: scale(0.85);
   }
 
   .hero-video__headline {
