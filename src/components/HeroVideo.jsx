@@ -50,7 +50,16 @@ const HeroVideo = ({ render = 'full' }) => {
           playsInline
           preload="auto"
           aria-hidden="true"
-          onEnded={() => setVideoEnded(true)}
+          onEnded={(e) => {
+            // After the first full playthrough, loop only the last ~1.5s so
+            // the city keeps the subtle live-system motion without replaying
+            // the full intro sequence each cycle.
+            setVideoEnded(true);
+            const v = e.currentTarget;
+            const tailStart = Math.max(0, (v.duration || 6) - 1.5);
+            v.currentTime = tailStart;
+            v.play().catch(() => {});
+          }}
         >
           <source src="/videos/hero-smart-city.webm" type="video/webm" />
           <source src="/videos/hero-smart-city.mp4" type="video/mp4" />
