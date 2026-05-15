@@ -1,19 +1,32 @@
 name: Deploy to GitHub Pages
 
 on:
+  # Auto-deploy on every push to main.
   push:
-    branches:
-      - main
+    branches: [main]
 
+  # Allow manual trigger from the Actions tab — useful when you want
+  # to redeploy without making a new commit.
+  workflow_dispatch:
+
+# Required permissions for the official actions/deploy-pages action.
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one Pages deployment at a time. New runs cancel queued duplicates,
+# but already-running deploys are allowed to finish (cancel-in-progress: false).
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
-  build-and-deploy:
+  build:
+    name: Build
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup Node
@@ -26,12 +39,25 @@ jobs:
         run: npm ci
 
       - name: Build project
-        run: |
-          CI=false npm run build
+        run: CI=false npm run build
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
-          publish_branch: gh-pages
+          # CRA's default build output directory.
+          path: ./build
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
