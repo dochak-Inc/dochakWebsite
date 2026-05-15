@@ -1,6 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import './HeroVideo.css';
 
+const POSTER_SRC = '/videos/hero-smart-city-poster.jpg';
+const POSTER_ALT = 'Holographic smart city — Dochak';
+const WEBM_SRC = '/videos/hero-smart-city.webm';
+const MP4_SRC = '/videos/hero-smart-city.mp4';
+
+const Headline = () => (
+  <h1 className="hero-video__headline">
+    Smarter cities.<br />
+    Seamless <span className="hero-video__accent">mobility</span>.
+  </h1>
+);
+
+const ScrollCue = ({ isIdle }) => (
+  <a
+    href="#main"
+    className={`hero-video__scroll-cue${isIdle ? ' is-idle' : ''}`}
+    aria-label="Scroll to next section"
+  >
+    <span className="hero-video__scroll-label">SCROLL</span>
+    <span className="hero-video__scroll-line" aria-hidden="true" />
+  </a>
+);
+
 /**
  * HeroVideo — supports three render modes for use inside a sticky stage:
  *   - "full" (default): video + foreground text in one section. Standalone use.
@@ -8,6 +31,10 @@ import './HeroVideo.css';
  *             Used as the sticky-pinned background layer.
  *   - "fg":   only the headline + scroll cue, transparent background.
  *             Used as the scrolling foreground layer over a separate pinned bg.
+ *
+ * Playback: the video plays through its full intro once, then freezes on the
+ * final frame. The `videoEnded` state is used to switch the scroll cue into
+ * its idle breathing animation; no replay or loop logic.
  */
 const HeroVideo = ({ render = 'full' }) => {
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
@@ -32,71 +59,34 @@ const HeroVideo = ({ render = 'full' }) => {
     return () => clearTimeout(t);
   }, [render]);
 
-  const Background = ({ ariaHidden = false }) => (
-    <>
-      {prefersReducedMotion ? (
-        <img
-          className="hero-video__media"
-          src="/videos/hero-smart-city-poster.jpg"
-          alt={ariaHidden ? '' : 'Holographic smart city — Dochak'}
-          {...(ariaHidden ? { 'aria-hidden': 'true' } : {})}
-        />
-      ) : (
-        <video
-          className="hero-video__media"
-          poster="/videos/hero-smart-city-poster.jpg"
-          autoPlay
-          muted
-          playsInline
-          preload="auto"
-          aria-hidden="true"
-          onEnded={(e) => {
-            // After the first full playthrough, loop only the last ~1.5s so
-            // the city keeps the subtle live-system motion without replaying
-            // the full intro sequence each cycle.
-            setVideoEnded(true);
-            const v = e.currentTarget;
-            const tailStart = Math.max(0, (v.duration || 6) - 1.5);
-            v.currentTime = tailStart;
-            v.play().catch(() => {});
-          }}
-        >
-          <source src="/videos/hero-smart-city.webm" type="video/webm" />
-          <source src="/videos/hero-smart-city.mp4" type="video/mp4" />
-        </video>
-      )}
-      <div className="hero-video__vignette" aria-hidden="true" />
-      {!prefersReducedMotion && (
-        <div className="hero-video__scanline" aria-hidden="true" />
-      )}
-    </>
-  );
+  const handleVideoEnded = () => setVideoEnded(true);
 
-  const Headline = () => (
-    <h1 className="hero-video__headline">
-      Smarter cities.<br />
-      Seamless <span className="hero-video__accent">mobility</span>.
-    </h1>
-  );
-
-  const ScrollCue = () => (
-    <a
-      href="#main"
-      className={`hero-video__scroll-cue${videoEnded ? ' is-idle' : ''}`}
-      aria-label="Scroll to next section"
-    >
-      <span className="hero-video__scroll-label">SCROLL</span>
-      <span className="hero-video__scroll-line" aria-hidden="true" />
-    </a>
-  );
+  // --- render branches ---
 
   if (render === 'bg') {
     return (
-      <section
-        className="hero-video hero-video--bg-only"
-        aria-hidden="true"
-      >
-        <Background ariaHidden />
+      <section className="hero-video hero-video--bg-only" aria-hidden="true">
+        {prefersReducedMotion ? (
+          <img className="hero-video__media" src={POSTER_SRC} alt="" aria-hidden="true" />
+        ) : (
+          <video
+            className="hero-video__media"
+            poster={POSTER_SRC}
+            autoPlay
+            muted
+            playsInline
+            preload="auto"
+            aria-hidden="true"
+            onEnded={handleVideoEnded}
+          >
+            <source src={WEBM_SRC} type="video/webm" />
+            <source src={MP4_SRC} type="video/mp4" />
+          </video>
+        )}
+        <div className="hero-video__vignette" aria-hidden="true" />
+        {!prefersReducedMotion && (
+          <div className="hero-video__scanline" aria-hidden="true" />
+        )}
       </section>
     );
   }
@@ -109,7 +99,7 @@ const HeroVideo = ({ render = 'full' }) => {
         aria-label="Dochak smart mobility hero"
       >
         <Headline />
-        <ScrollCue />
+        <ScrollCue isIdle={videoEnded} />
       </section>
     );
   }
@@ -123,14 +113,10 @@ const HeroVideo = ({ render = 'full' }) => {
         role="banner"
         aria-label="Dochak smart mobility hero"
       >
-        <img
-          className="hero-video__media"
-          src="/videos/hero-smart-city-poster.jpg"
-          alt="Holographic smart city — Dochak"
-        />
+        <img className="hero-video__media" src={POSTER_SRC} alt={POSTER_ALT} />
         <div className="hero-video__vignette" aria-hidden="true" />
         <Headline />
-        <ScrollCue />
+        <ScrollCue isIdle={videoEnded} />
       </section>
     );
   }
@@ -141,9 +127,23 @@ const HeroVideo = ({ render = 'full' }) => {
       role="banner"
       aria-label="Dochak smart mobility hero"
     >
-      <Background />
+      <video
+        className="hero-video__media"
+        poster={POSTER_SRC}
+        autoPlay
+        muted
+        playsInline
+        preload="auto"
+        aria-hidden="true"
+        onEnded={handleVideoEnded}
+      >
+        <source src={WEBM_SRC} type="video/webm" />
+        <source src={MP4_SRC} type="video/mp4" />
+      </video>
+      <div className="hero-video__vignette" aria-hidden="true" />
+      <div className="hero-video__scanline" aria-hidden="true" />
       <Headline />
-      <ScrollCue />
+      <ScrollCue isIdle={videoEnded} />
     </section>
   );
 };
