@@ -189,13 +189,34 @@
 
 /* ===== Hero Video — responsive ===== */
 
+/* On desktop the video sits at scale(0.7) so the city block reads as a small,
+   contained object floating in negative space. As the viewport shrinks the
+   building would feel lost at that scale, so we progressively grow it. */
+@media (max-width: 1279px) {
+  .hero-video__media {
+    transform: scale(0.85);
+  }
+}
+
 @media (max-width: 1023px) {
+  .hero-video__media {
+    transform: scale(0.95);
+  }
+
   .hero-video__headline {
     font-size: clamp(32px, 5vw, 52px);
   }
 }
 
+/* On portrait mobile, switch from contain (which letterboxes top/bottom
+   because the video is landscape) to cover, so the city block fills the
+   viewport with the sides cropped — building reads at full presence. */
 @media (max-width: 767px) {
+  .hero-video__media {
+    object-fit: cover;
+    transform: none;
+  }
+
   .hero-video__headline {
     font-size: clamp(28px, 8vw, 40px);
     max-width: 90vw;
