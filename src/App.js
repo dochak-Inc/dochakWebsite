@@ -149,11 +149,16 @@ function Layout() {
 function HomePage() {
   return (
     <main id="main">
-      {/* Hero + Intro share a 200vh stage so the hero video stays
-          sticky-pinned to the top while the Intro copy scrolls in over it. */}
+      {/* Hero + Intro share a 300vh sticky stage. The video stays pinned to
+          the top of the viewport across all 300vh of scroll while the hero
+          text (Smarter cities. Seamless mobility.) scrolls up first, then
+          the Intro copy scrolls in and back out, then the video releases. */}
       <div className="hero-intro-stage">
-        <div className="hero-intro-stage__pinned">
-          <HeroVideo />
+        <div className="hero-intro-stage__bg-pin">
+          <HeroVideo render="bg" />
+        </div>
+        <div className="hero-intro-stage__hero-text">
+          <HeroVideo render="fg" />
         </div>
         <div className="hero-intro-stage__intro">
           <LandingIntro />

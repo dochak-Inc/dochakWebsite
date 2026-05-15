@@ -12,6 +12,19 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
 }
 
+/* In the split-stage layout the bg-only section holds the video, vignette,
+   and scanline — needs the same black background as the full hero so the
+   video letterbox blends in. */
+.hero-video--bg-only {
+  background: #000;
+}
+
+/* The fg-only section is the scrolling text layer that overlays the pinned
+   video underneath. It must be fully transparent so the bg shows through. */
+.hero-video--fg-only {
+  background: transparent;
+}
+
 /* Layer 1 — video / poster. */
 .hero-video__media {
   position: absolute;

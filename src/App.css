@@ -497,22 +497,50 @@ h2,
 }
 
 /* ===== Hero + Intro pinned stage =====
-   The hero video stays sticky-pinned at the top of the viewport while the
-   Intro section scrolls UP across it. Stage is 300vh tall:
-     0–100vh scroll: Intro slides in from the bottom of the viewport.
-     100–200vh scroll: Intro continues scrolling up across the still-pinned hero
-                       (this is the read-and-leave phase the user is feeling for).
-     200–300vh scroll: Hero releases from sticky and exits up with the page. */
+   Three children:
+     - .hero-intro-stage__bg-pin: sticky video layer (100vh, pinned for 200vh
+       of scroll inside the 300vh stage).
+     - .hero-intro-stage__hero-text: the hero's headline + scroll cue. Lives
+       in normal flow but with margin-top: -100vh so it visually overlays
+       the bg-pin at scroll 0. Scrolls up normally as the user scrolls.
+     - .hero-intro-stage__intro: the Intro section. Follows the hero-text in
+       flow, also overlays the pinned bg with a radial vignette tint.
+
+   Scroll timeline (300vh stage):
+     0–100vh   hero-text scrolls UP off the top of the viewport.
+                Video stays pinned. Intro is not yet visible.
+     100–200vh Intro scrolls UP across the still-pinned video.
+                Hero-text is gone, intro slides through.
+     200–300vh Video releases sticky and exits with the stage as the
+                Solutions section enters from below. */
 .hero-intro-stage {
   position: relative;
   height: 300vh;
 }
 
-.hero-intro-stage__pinned {
+.hero-intro-stage__bg-pin {
   position: sticky;
   top: 0;
   height: 100vh;
   z-index: 0;
+}
+
+.hero-intro-stage__hero-text {
+  position: relative;
+  height: 100vh;
+  /* Pull this layer up to overlay the bg-pin's flow space, so at scroll 0
+     the user sees the hero headline over the video — not a 100vh gap. */
+  margin-top: -100vh;
+  z-index: 1;
+  /* Don't intercept clicks meant for the underlying video / canvas. */
+  pointer-events: none;
+}
+
+/* Re-enable pointer events on the actual interactive bits. */
+.hero-intro-stage__hero-text > *,
+.hero-intro-stage__hero-text a,
+.hero-intro-stage__hero-text button {
+  pointer-events: auto;
 }
 
 .hero-intro-stage__intro {
