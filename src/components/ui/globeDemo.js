@@ -8,7 +8,7 @@ export function GlobeDemo() {
       pointSize: 4,
       globeColor: "#2e2e2e",
       showAtmosphere: true,
-      atmosphereColor: "#10B981",
+      atmosphereColor: "#57bceb",
       atmosphereAltitude: 0.1,
       emissive: "#2e2e2e",
       emissiveIntensity: 0.1,
@@ -17,7 +17,7 @@ export function GlobeDemo() {
       ambientLight: "#363636",
       directionalLeftLight: "#ffffff",
       directionalTopLight: "#ffffff",
-      pointLight: "#10B981",
+      pointLight: "#57bceb",
       arcTime: 1000,
       arcLength: 0.9,
       rings: 1,
@@ -26,7 +26,10 @@ export function GlobeDemo() {
       autoRotate: true,
       autoRotateSpeed: 0.5,
     };
-    const colors = ["#58BDEC", "#10B981", "#10B981"];
+    // Three cyan shades — primary, deeper, and lighter — so arcs read with
+    // subtle variation while staying in one color family. Matches the
+    // landing page's --accent-cyan palette.
+    const colors = ["#57bceb", "#3aa6d4", "#7fcef0"];
     const sampleArcs = [
       {
         order: 1,

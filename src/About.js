@@ -74,10 +74,11 @@ export default function About() {
           <AnimatedElement animation="slide-up" delay={100}>
             <div className="about-mission-column">
               <div className="about-mission-column-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--picton-blue)" strokeWidth="2">
-                  <path d="M9 11H5a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-4"/>
-                  <path d="M9 7V3a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4"/>
-                  <circle cx="12" cy="16" r="1"/>
+                {/* Stacked layers — represents the suite of solutions. */}
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                  <polyline points="2 17 12 22 22 17"/>
+                  <polyline points="2 12 12 17 22 12"/>
                 </svg>
               </div>
               <p className="about-mission-column-text"
@@ -106,10 +107,10 @@ export default function About() {
           <AnimatedElement animation="slide-up" delay={200}>
             <div className="about-mission-column">
               <div className="about-mission-column-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--emerald)" strokeWidth="2">
-                  <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                  <path d="M2 17l10 5 10-5"/>
-                  <path d="M2 12l10 5 10-5"/>
+                {/* Map pin — represents real cities running on Dochak. */}
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
                 </svg>
               </div>
               <p className="about-mission-column-text"
@@ -138,11 +139,12 @@ export default function About() {
           <AnimatedElement animation="slide-up" delay={300}>
             <div className="about-mission-column">
               <div className="about-mission-column-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" strokeWidth="2">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                  <circle cx="9" cy="7" r="4"/>
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                {/* Two-circle network — represents the people who build the systems. */}
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="9" cy="7" r="3"/>
+                  <circle cx="17" cy="7" r="3"/>
+                  <path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
+                  <path d="M21 21v-2a4 4 0 0 0-3-3.87"/>
                 </svg>
               </div>
               <p className="about-mission-column-text"
