@@ -5,8 +5,8 @@
   justify-content: space-between;
   padding: 0.5rem 1.75rem;
 
-  /* Glassmorphism Effect */
-  background: rgba(0, 0, 0, 0.5);
+  /* Glassmorphism Effect — tinted to match landing's --bg-base (#070707). */
+  background: rgba(7, 7, 7, 0.6);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
 
@@ -31,7 +31,7 @@
 
 /* Scrolled state - increase blur and background */
 .navbar.scrolled {
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(7, 7, 7, 0.75);
   backdrop-filter: blur(28px) saturate(200%);
   -webkit-backdrop-filter: blur(28px) saturate(200%);
   border-color: rgba(255, 255, 255, 0.2);
@@ -66,10 +66,10 @@
 .navbar-center a {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.85);
-  font-size: 0.95rem;
+  font-size: 13px;
   font-weight: 500;
-  letter-spacing: 0.5px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 0.05em;
+  transition: color 200ms ease, background-color 200ms ease;
   text-shadow: none;
   border-radius: 0.5rem;
   padding: 0.4rem 0.7rem;
@@ -81,17 +81,30 @@
 }
 
 .navbar-center a:hover {
-  color: rgba(255, 255, 255, 1);
-  background: rgba(255, 255, 255, 0.05);
+  color: #57bceb;
+  background: transparent;
 }
 
 .navbar-center a:focus {
   outline: none;
 }
 
+/* Active route — cyan dot prefix in the eyebrow style, matches landing
+   section eyebrows like "01 · MISSION". */
 .navbar-center a.active {
-  color: rgba(255, 255, 255, 1);
-  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  background: transparent;
+}
+
+.navbar-center a.active::before {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #57bceb;
+  box-shadow: 0 0 8px #57bceb;
+  margin-right: 8px;
 }
 
 /* Solutions Dropdown Styles */
@@ -115,10 +128,10 @@
 .solutions-main-link {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.85);
-  font-size: 0.95rem;
+  font-size: 13px;
   font-weight: 500;
-  letter-spacing: 0.5px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 0.05em;
+  transition: color 200ms ease, background-color 200ms ease;
   text-shadow: none;
   display: flex;
   align-items: center;
@@ -128,13 +141,24 @@
 }
 
 .solutions-main-link:hover {
-  color: rgba(255, 255, 255, 1);
-  background: rgba(255, 255, 255, 0.05);
+  color: #57bceb;
+  background: transparent;
 }
 
 .solutions-main-link.active {
-  color: rgba(255, 255, 255, 1);
-  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  background: transparent;
+}
+
+.solutions-main-link.active::before {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #57bceb;
+  box-shadow: 0 0 8px #57bceb;
+  margin-right: 8px;
 }
 
 .solutions-main-link:focus {
@@ -343,25 +367,45 @@
   gap: 1rem;
 }
 
+/* Matches the landing-cta__button style: mono uppercase, cyan border,
+   soft breathing pulse — creates a visual rhyme between top-nav and
+   the page's bottom CTA section. */
 .getintouch-btn {
-  background: rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 0.75rem;
-  padding: 0.4rem 1.1rem;
-  font-size: 0.9rem;
+  background: transparent;
+  color: #57bceb;
+  border: 1px solid #57bceb;
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 11px;
   font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  transition: background-color 200ms ease, transform 200ms ease;
+  animation: navbarCtaBreathe 2400ms ease-in-out infinite;
 }
 
 .getintouch-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(87, 188, 235, 0.08);
+  color: #57bceb;
   transform: translateY(-1px);
+}
+
+.getintouch-btn:focus-visible {
+  outline: 2px solid #57bceb;
+  outline-offset: 4px;
+}
+
+@keyframes navbarCtaBreathe {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.6; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .getintouch-btn {
+    animation: none;
+  }
 }
 
 /* Hamburger Menu Styles */
