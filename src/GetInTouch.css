@@ -450,66 +450,119 @@
   line-height: 1.6;
 }
 
-/* FAQ Section */
+/* FAQ Section — aligned with landing design system: base tone, eyebrow
+   label, light heading, glass-morphism cards with blueprint grid. */
 .faq-section {
-  padding: 6rem 0;
-  background: #000000;
+  padding: clamp(80px, 12vh, 160px) 0;
+  background: #070707;
+  position: relative;
 }
 
 .faq-header {
-  text-align: center;
-  margin-bottom: 4rem;
+  text-align: left;
+  margin-bottom: 64px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 clamp(24px, 5vw, 64px);
+}
+
+/* Eyebrow added via ::before so we don't touch the JSX. */
+.faq-header::before {
+  content: '02 · FAQ';
+  display: block;
+  font-family: var(--gi-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 24px;
 }
 
 .faq-header h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: clamp(32px, 4.5vw, 56px);
+  font-weight: 200;
   color: #ffffff;
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
   letter-spacing: -0.02em;
+  line-height: 1.1;
+  max-width: 18ch;
 }
 
 .faq-header p {
-  font-size: 1.125rem;
-  color: rgba(255, 255, 255, 0.7);
-  max-width: 600px;
-  margin: 0 auto;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 60ch;
+  margin: 0;
   line-height: 1.6;
 }
 
 .faq-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 5vw, 64px);
 }
 
+/* Same glass-morphism + cyan blueprint-grid + radial vignette as the
+   solutions cards and contact-item cards. */
 .faq-item {
-  background: #0f0f0f;
-  padding: 2rem;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.02);
+  background-image:
+    linear-gradient(rgba(87, 188, 235, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(87, 188, 235, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: -1px -1px;
+  padding: 32px 28px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
+}
+
+.faq-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 30% 30%,
+    rgba(7, 7, 7, 0.85) 0%,
+    rgba(7, 7, 7, 0.5) 45%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.faq-item > * {
+  position: relative;
+  z-index: 1;
 }
 
 .faq-item:hover {
+  border-color: rgba(87, 188, 235, 0.4);
+  box-shadow: 0 0 24px rgba(87, 188, 235, 0.15);
   transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(87, 188, 235, 0.2);
-  border-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.035);
 }
 
 .faq-item h4 {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 500;
   color: #ffffff;
-  margin-bottom: 1rem;
-  line-height: 1.4;
-  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
 }
 
 .faq-item p {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.65);
   line-height: 1.6;
+  font-weight: 400;
 }
 
 /* Animations */
