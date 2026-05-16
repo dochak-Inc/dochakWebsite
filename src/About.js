@@ -73,14 +73,7 @@ export default function About() {
           {/* Solutions Column */}
           <AnimatedElement animation="slide-up" delay={100}>
             <div className="about-mission-column">
-              <div className="about-mission-column-icon">
-                {/* Stacked layers — represents the suite of solutions. */}
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <polygon points="12 2 2 7 12 12 22 7 12 2"/>
-                  <polyline points="2 17 12 22 22 17"/>
-                  <polyline points="2 12 12 17 22 12"/>
-                </svg>
-              </div>
+              <h3 className="about-mission-column-title">{t('about.missionTitle1')}</h3>
               <p className="about-mission-column-text"
                  dangerouslySetInnerHTML={{ __html: t('about.solutionsText') }}
               />
@@ -106,13 +99,7 @@ export default function About() {
           {/* Projects Column */}
           <AnimatedElement animation="slide-up" delay={200}>
             <div className="about-mission-column">
-              <div className="about-mission-column-icon">
-                {/* Map pin — represents real cities running on Dochak. */}
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                  <circle cx="12" cy="10" r="3"/>
-                </svg>
-              </div>
+              <h3 className="about-mission-column-title">{t('about.missionTitle2')}</h3>
               <p className="about-mission-column-text"
                  dangerouslySetInnerHTML={{ __html: t('about.projectsText') }}
               />
@@ -138,15 +125,7 @@ export default function About() {
           {/* Team Column */}
           <AnimatedElement animation="slide-up" delay={300}>
             <div className="about-mission-column">
-              <div className="about-mission-column-icon">
-                {/* Two-circle network — represents the people who build the systems. */}
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="9" cy="7" r="3"/>
-                  <circle cx="17" cy="7" r="3"/>
-                  <path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
-                  <path d="M21 21v-2a4 4 0 0 0-3-3.87"/>
-                </svg>
-              </div>
+              <h3 className="about-mission-column-title">{t('about.missionTitle3')}</h3>
               <p className="about-mission-column-text"
                  dangerouslySetInnerHTML={{ __html: t('about.teamText') }}
               />
