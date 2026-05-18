@@ -40,49 +40,37 @@ export default function Solutions() {
       title: t('solutions.items.teleDriving.title'),
       desc: t('solutions.items.teleDriving.desc'),
       path: '/solutions/remote-driving',
-      icon: '🎮',
-      category: 'Control'
     },
     {
       title: t('solutions.items.digitalTwin.title'),
       desc: t('solutions.items.digitalTwin.desc'),
       path: '/solutions/digital-twin',
-      icon: '🏗️',
-      category: 'Infrastructure'
     },
     {
       title: t('solutions.items.multimodal.title'),
       desc: t('solutions.items.multimodal.desc'),
       path: '/solutions/multimodal-simulator',
-      icon: '🚗',
-      category: 'Simulation'
     },
     {
       title: t('solutions.items.trafficAnalysis.title'),
       desc: t('solutions.items.trafficAnalysis.desc'),
       path: '/solutions/traffic-analysis-tools',
-      icon: '📊',
-      category: 'Analytics'
     },
     {
       title: t('solutions.items.lifeSavingRobot.title'),
       desc: t('solutions.items.lifeSavingRobot.desc'),
       path: '/solutions/vr-road-design',
-      icon: '🥽',
-      category: 'Design'
     },
     {
       title: t('solutions.items.visualisation.title'),
       desc: t('solutions.items.visualisation.desc'),
       path: '/solutions/visualization',
-      icon: '📈',
-      category: 'Visualization'
     }
   ];
 
   return (
     <div className="solutions-page">
-      {/* Hero Section - Matching other pages */}
+      {/* Hero Section */}
       <section className="solutions-hero">
         <div className="solutions-hero-content">
           <AnimatedElement animation="slide-up" delay={0}>
@@ -101,29 +89,24 @@ export default function Solutions() {
             {solutions.map((solution, index) => (
               <AnimatedElement key={`solution-${index}`} animation="slide-up" delay={index * 100}>
                 <Link to={solution.path} className="solution-card-link">
-                  <div 
+                  <div
                     className="solution-card solution-card-overlay"
-                    style={{
-                      backgroundImage: `url(${solutionImages[index]})`
-                    }}
+                    style={{ backgroundImage: `url(${solutionImages[index]})` }}
                   >
                     <div className="solution-card-overlay-bg"></div>
                     <div className="solution-card-content">
                       <div className="solution-card-text">
                         <h2 className="solution-card-title">{solution.title}</h2>
-                        <div className="solution-description"
-                             dangerouslySetInnerHTML={{
-                               __html: Array.isArray(solution.desc) 
-                                 ? `${solution.desc[0]} ${solution.desc[1] || ''}`.trim()
-                                 : solution.desc
-                             }}
+                        <div
+                          className="solution-description"
+                          dangerouslySetInnerHTML={{
+                            __html: Array.isArray(solution.desc)
+                              ? `${solution.desc[0]} ${solution.desc[1] || ''}`.trim()
+                              : solution.desc
+                          }}
                         />
                       </div>
-                      <div className="solution-tags">
-                        <span className="solution-tag">Real-time Processing</span>
-                        <span className="solution-tag">AI-Powered</span>
-                        <span className="solution-tag">Scalable</span>
-                      </div>
+                      <span className="solution-card-arrow" aria-hidden="true">→</span>
                     </div>
                   </div>
                 </Link>

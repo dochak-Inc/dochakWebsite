@@ -1,0 +1,629 @@
+/* =====================================
+   SOLUTIONS SUB-PAGES — SHARED DESIGN SYSTEM
+   Imported by each /solutions/* page. Aligns hero, sections, cards,
+   typography, and CTAs with the landing-page design system.
+   ===================================== */
+
+[class$="-page"][class*="remote-driving"],
+[class$="-page"][class*="digital-twin"],
+[class$="-page"][class*="multimodal-simulator"],
+[class$="-page"][class*="traffic-analysis-tools"],
+[class$="-page"][class*="visualisation"],
+[class$="-page"][class*="vr-road-design"] {
+  --sol-cyan: #57bceb;
+  --sol-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  background: #070707;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+/* ---------- HERO ---------- */
+
+.remote-driving-hero,
+.digital-twin-hero,
+.multimodal-simulator-hero,
+.traffic-analysis-tools-hero,
+.visualisation-hero,
+.vr-road-design-hero {
+  background: #070707 !important;
+  padding: clamp(120px, 16vh, 200px) 0 clamp(80px, 12vh, 160px) 0 !important;
+  text-align: center !important;
+  position: relative;
+  border-bottom: none !important;
+}
+
+.remote-driving-hero::before,
+.digital-twin-hero::before,
+.multimodal-simulator-hero::before,
+.traffic-analysis-tools-hero::before,
+.visualisation-hero::before,
+.vr-road-design-hero::before {
+  content: '01 · OVERVIEW';
+  display: block;
+  font-family: var(--sol-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 24px;
+}
+
+.hero-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 clamp(24px, 5vw, 64px) !important;
+}
+
+.hero-title {
+  font-size: clamp(40px, 5.5vw, 64px) !important;
+  font-weight: 200 !important;
+  color: #ffffff !important;
+  margin: 0 auto 24px auto !important;
+  letter-spacing: -0.025em !important;
+  line-height: 1.1 !important;
+  max-width: 18ch !important;
+  text-align: center !important;
+}
+
+.hero-subtitle {
+  font-size: 16px !important;
+  color: rgba(255, 255, 255, 0.65) !important;
+  font-weight: 400 !important;
+  max-width: 60ch !important;
+  margin: 0 auto !important;
+  line-height: 1.6 !important;
+}
+
+/* ---------- SECTIONS ---------- */
+
+.overview-section,
+.technical-section,
+.use-cases-section {
+  padding: clamp(80px, 12vh, 160px) 0 !important;
+  background: #070707;
+  position: relative;
+}
+
+/* Tonal alternation: overview = base; technical = lift; use-cases = base. */
+.technical-section {
+  background: #0c0c0c;
+}
+
+.overview-section::before {
+  content: '02 · HOW IT WORKS';
+}
+.technical-section::before {
+  content: '03 · TECHNICAL';
+}
+.use-cases-section::before {
+  content: '04 · USE CASES';
+}
+
+.overview-section::before,
+.technical-section::before,
+.use-cases-section::before {
+  display: block;
+  font-family: var(--sol-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0 auto 24px auto;
+  max-width: 1200px;
+  padding: 0 clamp(24px, 5vw, 64px);
+}
+
+.section-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 clamp(24px, 5vw, 64px) !important;
+}
+
+.section-title {
+  font-size: clamp(32px, 4.5vw, 56px) !important;
+  font-weight: 200 !important;
+  color: #ffffff !important;
+  margin: 0 0 48px 0 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.1 !important;
+  max-width: 18ch !important;
+}
+
+/* ---------- OVERVIEW ROWS (text + video alternating) ---------- */
+
+.overview-row,
+.overview-content {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: clamp(32px, 5vw, 80px) !important;
+  align-items: center !important;
+  margin-bottom: 64px !important;
+}
+
+.overview-row.first-row {
+  margin-top: 0 !important;
+}
+
+@media (max-width: 900px) {
+  .overview-row,
+  .overview-content {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+}
+
+.explanation-content {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.7;
+}
+
+.explanation-content h3 {
+  font-size: 20px !important;
+  font-weight: 500 !important;
+  color: #ffffff !important;
+  margin: 0 0 16px 0 !important;
+  letter-spacing: -0.01em !important;
+}
+
+.explanation-content p {
+  margin: 0 0 16px 0 !important;
+  font-size: 16px !important;
+  color: rgba(255, 255, 255, 0.65) !important;
+  line-height: 1.6 !important;
+}
+
+.explanation-content strong {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.explanation-content em {
+  color: var(--sol-cyan);
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* ---------- VIDEO CONTAINERS ---------- */
+
+.video-wrapper {
+  position: relative;
+}
+
+.video-container {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border: 1px solid rgba(87, 188, 235, 0.25) !important;
+  border-radius: 8px !important;
+  overflow: hidden;
+  filter: saturate(0.85) brightness(0.9);
+  transition: filter 400ms ease, border-color 200ms ease;
+  background: #050505;
+}
+
+.video-container:hover {
+  filter: saturate(1) brightness(1);
+  border-color: var(--sol-cyan) !important;
+}
+
+.youtube-video {
+  width: 100% !important;
+  height: 100% !important;
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+/* ---------- TECHNICAL SECTION CARDS (specs + research) ---------- */
+
+.technical-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 16px !important;
+}
+
+@media (max-width: 900px) {
+  .technical-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Glass-morphism card with cyan blueprint grid — same primitive used
+   across landing solutions, contact page, faq, about mission columns. */
+.specs-card,
+.research-card,
+.industries-card,
+.scenario-card {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.02) !important;
+  background-image:
+    linear-gradient(rgba(87, 188, 235, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(87, 188, 235, 0.06) 1px, transparent 1px) !important;
+  background-size: 32px 32px !important;
+  background-position: -1px -1px !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 12px !important;
+  padding: 32px !important;
+  overflow: hidden;
+  transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
+}
+
+.specs-card::before,
+.research-card::before,
+.industries-card::before,
+.scenario-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 30% 30%,
+    rgba(7, 7, 7, 0.85) 0%,
+    rgba(7, 7, 7, 0.5) 45%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.specs-card > *,
+.research-card > *,
+.industries-card > *,
+.scenario-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.specs-card:hover,
+.research-card:hover,
+.industries-card:hover,
+.scenario-card:hover {
+  border-color: rgba(87, 188, 235, 0.4) !important;
+  box-shadow: 0 0 24px rgba(87, 188, 235, 0.15) !important;
+  background-color: rgba(255, 255, 255, 0.035) !important;
+}
+
+.specs-card h3,
+.research-card h3,
+.industries-card h3,
+.scenario-card h3 {
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  color: #ffffff !important;
+  margin: 0 0 16px 0 !important;
+  letter-spacing: -0.01em !important;
+}
+
+.specs-card h4,
+.research-card h4,
+.industries-card h4,
+.scenario-card h4 {
+  font-family: var(--sol-mono) !important;
+  font-size: 10px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.25em !important;
+  text-transform: uppercase !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  margin: 16px 0 8px 0 !important;
+}
+
+.specs-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.specs-list li {
+  position: relative;
+  padding-left: 24px !important;
+  margin-bottom: 12px !important;
+  font-size: 15px !important;
+  color: rgba(255, 255, 255, 0.65) !important;
+  line-height: 1.55 !important;
+}
+
+.specs-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--sol-cyan);
+  box-shadow: 0 0 8px rgba(87, 188, 235, 0.5);
+}
+
+.specs-list li strong {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* Patent details */
+.patent-details {
+  margin-top: 8px;
+}
+
+.patent-title {
+  font-size: 15px;
+  color: #ffffff;
+  margin-bottom: 12px;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.patent-info-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.patent-date,
+.patent-number {
+  display: flex;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.patent-date-label,
+.patent-number-label {
+  font-family: var(--sol-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.patent-date-value,
+.patent-number-value {
+  font-family: var(--sol-mono);
+  font-size: 12px;
+  color: var(--sol-cyan);
+}
+
+.research-item {
+  margin-top: 24px;
+}
+
+.research-item p {
+  font-size: 15px !important;
+  color: rgba(255, 255, 255, 0.65) !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+/* ---------- USE CASES SECTION ---------- */
+
+.use-cases-content {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 16px !important;
+}
+
+@media (max-width: 900px) {
+  .use-cases-content {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.industry-tags {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  margin-bottom: 24px !important;
+}
+
+.industry-tag {
+  display: inline-block !important;
+  padding: 6px 12px !important;
+  background: rgba(87, 188, 235, 0.08) !important;
+  border: 1px solid rgba(87, 188, 235, 0.3) !important;
+  border-radius: 999px !important;
+  font-family: var(--sol-mono) !important;
+  font-size: 10px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+  color: var(--sol-cyan) !important;
+}
+
+.outcome {
+  margin-top: 16px;
+}
+
+.outcome p {
+  font-size: 15px !important;
+  color: rgba(255, 255, 255, 0.65) !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+/* Scenario flow steps */
+.scenario-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.flow-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.step-number {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(87, 188, 235, 0.08);
+  border: 1px solid rgba(87, 188, 235, 0.4);
+  color: var(--sol-cyan);
+  font-family: var(--sol-mono);
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flow-step p {
+  font-size: 14px !important;
+  color: rgba(255, 255, 255, 0.65) !important;
+  line-height: 1.55 !important;
+  margin: 0 !important;
+}
+
+.flow-arrow {
+  display: none; /* vertical layout doesn't need arrows */
+}
+
+/* ---------- CTA BUTTONS ---------- */
+
+.cta-button,
+.contact-button,
+.contact-button.primary {
+  display: inline-block !important;
+  padding: 12px 28px !important;
+  background: transparent !important;
+  color: var(--sol-cyan) !important;
+  border: 1px solid var(--sol-cyan) !important;
+  border-radius: 999px !important;
+  font-family: var(--sol-mono) !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  transition: background-color 200ms ease, transform 200ms ease !important;
+  cursor: pointer;
+  animation: subSolCtaBreathe 2400ms ease-in-out infinite;
+}
+
+.cta-button:hover,
+.contact-button:hover,
+.contact-button.primary:hover {
+  background: rgba(87, 188, 235, 0.08) !important;
+  transform: translateY(-2px) !important;
+}
+
+.cta-button:focus-visible,
+.contact-button:focus-visible {
+  outline: 2px solid var(--sol-cyan) !important;
+  outline-offset: 4px !important;
+}
+
+.cta-button-container {
+  margin-top: 24px;
+}
+
+@keyframes subSolCtaBreathe {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.7; }
+}
+
+/* ---------- GET IN TOUCH SECTION ---------- */
+
+.get-in-touch-section {
+  background: #070707 !important;
+  padding: clamp(80px, 12vh, 160px) 0 !important;
+  text-align: center !important;
+  position: relative;
+}
+
+.get-in-touch-section::before {
+  content: '05 · CONNECT';
+  display: block;
+  font-family: var(--sol-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 24px;
+}
+
+.get-in-touch-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 clamp(24px, 5vw, 64px) !important;
+}
+
+.get-in-touch-content {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.get-in-touch-section .section-title {
+  margin: 0 0 16px 0 !important;
+  max-width: 18ch !important;
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.get-in-touch-description {
+  font-size: 16px !important;
+  color: rgba(255, 255, 255, 0.65) !important;
+  line-height: 1.6 !important;
+  margin: 0 0 32px 0 !important;
+}
+
+.get-in-touch-buttons {
+  display: inline-flex !important;
+  gap: 16px !important;
+}
+
+/* ---------- FEATURED VIDEO CARDS (Visualisation, etc.) ---------- */
+
+.featured-video-card,
+.video-card {
+  background-color: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+  transition: border-color 200ms ease, transform 200ms ease;
+}
+
+.featured-video-card:hover,
+.video-card:hover {
+  border-color: rgba(87, 188, 235, 0.4) !important;
+  transform: translateY(-4px) !important;
+}
+
+.featured-video-card .video-container,
+.video-card .video-container {
+  aspect-ratio: 16 / 9 !important;
+  border: none !important;
+  border-radius: 8px 8px 0 0 !important;
+}
+
+.featured-video-content,
+.video-card-content {
+  padding: 24px !important;
+}
+
+.videos-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+  gap: 16px !important;
+}
+
+/* ---------- REDUCED MOTION ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-button,
+  .contact-button,
+  .contact-button.primary {
+    animation: none !important;
+  }
+  .video-container,
+  .specs-card,
+  .research-card,
+  .industries-card,
+  .scenario-card {
+    transition: none !important;
+  }
+}
