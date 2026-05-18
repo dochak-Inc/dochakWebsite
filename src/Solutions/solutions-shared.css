@@ -234,59 +234,43 @@
 .technical-grid {
   display: flex !important;
   flex-direction: column !important;
-  gap: 24px !important;
+  gap: 80px !important;
 }
 
-/* Card frame — keep the glass-morphism + cyan blueprint grid primitive. */
+/* No card frame — content sits directly on the section background as a
+   bordered block separated by hairlines. Reads as editorial / spec-sheet
+   rather than 'big glass card'. The card heading becomes an inline mono
+   sub-label that sets the section apart. */
 .specs-card,
 .research-card,
 .industries-card,
 .scenario-card {
   position: relative;
-  background-color: rgba(255, 255, 255, 0.02) !important;
-  background-image:
-    linear-gradient(rgba(87, 188, 235, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(87, 188, 235, 0.05) 1px, transparent 1px) !important;
-  background-size: 40px 40px !important;
-  background-position: -1px -1px !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-  border-radius: 12px !important;
-  padding: clamp(32px, 4vw, 56px) !important;
-  overflow: hidden;
-  transition: border-color 200ms ease, background-color 200ms ease;
+  background: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  overflow: visible;
+  transition: none;
 }
 
 .specs-card::before,
 .research-card::before,
 .industries-card::before,
 .scenario-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    ellipse at 20% 20%,
-    rgba(7, 7, 7, 0.7) 0%,
-    rgba(7, 7, 7, 0.4) 50%,
-    transparent 100%
-  );
-  pointer-events: none;
-  z-index: 0;
-}
-
-.specs-card > *,
-.research-card > *,
-.industries-card > *,
-.scenario-card > * {
-  position: relative;
-  z-index: 1;
+  content: none !important;
 }
 
 .specs-card:hover,
 .research-card:hover,
 .industries-card:hover,
 .scenario-card:hover {
-  border-color: rgba(87, 188, 235, 0.3) !important;
-  background-color: rgba(255, 255, 255, 0.025) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  background-image: none !important;
 }
 
 /* Card heading (large) — used as the card's primary label. */
@@ -463,7 +447,7 @@
 .use-cases-content {
   display: flex !important;
   flex-direction: column !important;
-  gap: 24px !important;
+  gap: 80px !important;
 }
 
 .industry-tags {
