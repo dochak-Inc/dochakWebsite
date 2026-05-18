@@ -130,6 +130,16 @@
   letter-spacing: -0.02em !important;
   line-height: 1.1 !important;
   max-width: 18ch !important;
+  text-align: left !important;
+}
+
+/* Defensive: any nested text-align rules from the legacy stylesheets get
+   overridden — left alignment is the universal default for these pages. */
+.section-container,
+.overview-section,
+.technical-section,
+.use-cases-section {
+  text-align: left !important;
 }
 
 /* ---------- OVERVIEW ROWS (text + video alternating) ---------- */
@@ -216,22 +226,18 @@
   border-radius: 0 !important;
 }
 
-/* ---------- TECHNICAL SECTION CARDS (specs + research) ---------- */
+/* ---------- TECHNICAL SECTION ----------
+   Restructured for readability + premium feel: cards stack vertically
+   (full-width each) instead of cramped 2-col, with a "spec sheet" feel
+   for the specifications list (mono indices, generous spacing). */
 
 .technical-grid {
-  display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
-  gap: 16px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 24px !important;
 }
 
-@media (max-width: 900px) {
-  .technical-grid {
-    grid-template-columns: 1fr !important;
-  }
-}
-
-/* Glass-morphism card with cyan blueprint grid — same primitive used
-   across landing solutions, contact page, faq, about mission columns. */
+/* Card frame — keep the glass-morphism + cyan blueprint grid primitive. */
 .specs-card,
 .research-card,
 .industries-card,
@@ -239,15 +245,15 @@
   position: relative;
   background-color: rgba(255, 255, 255, 0.02) !important;
   background-image:
-    linear-gradient(rgba(87, 188, 235, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(87, 188, 235, 0.06) 1px, transparent 1px) !important;
-  background-size: 32px 32px !important;
+    linear-gradient(rgba(87, 188, 235, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(87, 188, 235, 0.05) 1px, transparent 1px) !important;
+  background-size: 40px 40px !important;
   background-position: -1px -1px !important;
   border: 1px solid rgba(255, 255, 255, 0.08) !important;
   border-radius: 12px !important;
-  padding: 32px !important;
+  padding: clamp(32px, 4vw, 56px) !important;
   overflow: hidden;
-  transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
+  transition: border-color 200ms ease, background-color 200ms ease;
 }
 
 .specs-card::before,
@@ -258,9 +264,9 @@
   position: absolute;
   inset: 0;
   background: radial-gradient(
-    ellipse at 30% 30%,
-    rgba(7, 7, 7, 0.85) 0%,
-    rgba(7, 7, 7, 0.5) 45%,
+    ellipse at 20% 20%,
+    rgba(7, 7, 7, 0.7) 0%,
+    rgba(7, 7, 7, 0.4) 50%,
     transparent 100%
   );
   pointer-events: none;
@@ -279,22 +285,25 @@
 .research-card:hover,
 .industries-card:hover,
 .scenario-card:hover {
-  border-color: rgba(87, 188, 235, 0.4) !important;
-  box-shadow: 0 0 24px rgba(87, 188, 235, 0.15) !important;
-  background-color: rgba(255, 255, 255, 0.035) !important;
+  border-color: rgba(87, 188, 235, 0.3) !important;
+  background-color: rgba(255, 255, 255, 0.025) !important;
 }
 
+/* Card heading (large) — used as the card's primary label. */
 .specs-card h3,
 .research-card h3,
 .industries-card h3,
 .scenario-card h3 {
-  font-size: 18px !important;
+  font-family: var(--sol-mono) !important;
+  font-size: 11px !important;
   font-weight: 500 !important;
-  color: #ffffff !important;
-  margin: 0 0 16px 0 !important;
-  letter-spacing: -0.01em !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+  margin: 0 0 32px 0 !important;
+  letter-spacing: 0.3em !important;
+  text-transform: uppercase !important;
 }
 
+/* Sub-heading inside a card (e.g. 'Related Patents', 'Academic Links'). */
 .specs-card h4,
 .research-card h4,
 .industries-card h4,
@@ -304,35 +313,50 @@
   font-weight: 500 !important;
   letter-spacing: 0.25em !important;
   text-transform: uppercase !important;
-  color: rgba(255, 255, 255, 0.6) !important;
-  margin: 16px 0 8px 0 !important;
+  color: rgba(255, 255, 255, 0.4) !important;
+  margin: 32px 0 12px 0 !important;
 }
 
+/* Specifications — numbered "spec sheet" rows.
+   Each <li> gets a mono index 01 / 02 / 03 ... via CSS counters. */
 .specs-list {
   list-style: none !important;
   padding: 0 !important;
   margin: 0 !important;
+  counter-reset: specs;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .specs-list li {
   position: relative;
-  padding-left: 24px !important;
-  margin-bottom: 12px !important;
-  font-size: 15px !important;
-  color: rgba(255, 255, 255, 0.65) !important;
-  line-height: 1.55 !important;
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 20px 0 !important;
+  margin: 0 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: clamp(15px, 1.4vw, 18px) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+  line-height: 1.5 !important;
+  font-weight: 300 !important;
+  counter-increment: specs;
 }
 
 .specs-list li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 9px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--sol-cyan);
-  box-shadow: 0 0 8px rgba(87, 188, 235, 0.5);
+  content: counter(specs, decimal-leading-zero);
+  flex-shrink: 0;
+  width: 36px;
+  font-family: var(--sol-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: var(--sol-cyan);
+  padding-top: 5px;
+  background: none;
+  box-shadow: none;
+  height: auto;
+  border-radius: 0;
+  position: static;
 }
 
 .specs-list li strong {
@@ -340,144 +364,208 @@
   font-weight: 500;
 }
 
-/* Patent details */
-.patent-details {
-  margin-top: 8px;
-}
-
-.patent-title {
-  font-size: 15px;
-  color: #ffffff;
-  margin-bottom: 12px;
-  font-style: italic;
+.specs-list li em {
+  color: var(--sol-cyan);
+  font-style: normal;
   font-weight: 400;
 }
 
+/* Patent details — refined key-value display. */
+.patent-details {
+  margin-top: 0;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.patent-title {
+  font-size: clamp(18px, 2vw, 22px) !important;
+  color: #ffffff !important;
+  margin: 0 0 24px 0 !important;
+  font-style: italic;
+  font-weight: 300 !important;
+  line-height: 1.3;
+}
+
+/* Switch from a vertical list to a clean 2-column key-value grid:
+   APPLICATION DATE  |  PATENT NUMBER
+   2024.12.13        |  P2024-1108-KR01 */
 .patent-info-row {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 32px !important;
+}
+
+@media (max-width: 640px) {
+  .patent-info-row {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
 }
 
 .patent-date,
 .patent-number {
-  display: flex;
-  gap: 8px;
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.65);
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+  font-size: 13px !important;
+  color: rgba(255, 255, 255, 0.85) !important;
 }
 
 .patent-date-label,
 .patent-number-label {
-  font-family: var(--sol-mono);
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.4);
+  font-family: var(--sol-mono) !important;
+  font-size: 10px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.25em !important;
+  text-transform: uppercase !important;
+  color: rgba(255, 255, 255, 0.4) !important;
 }
 
 .patent-date-value,
 .patent-number-value {
-  font-family: var(--sol-mono);
-  font-size: 12px;
-  color: var(--sol-cyan);
+  font-family: var(--sol-mono) !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  color: var(--sol-cyan) !important;
+  letter-spacing: 0.02em !important;
 }
 
 .research-item {
   margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.research-item:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
 }
 
 .research-item p {
-  font-size: 15px !important;
-  color: rgba(255, 255, 255, 0.65) !important;
-  line-height: 1.6 !important;
+  font-size: clamp(15px, 1.3vw, 17px) !important;
+  color: rgba(255, 255, 255, 0.75) !important;
+  line-height: 1.65 !important;
   margin: 0 !important;
+  font-weight: 300 !important;
 }
 
-/* ---------- USE CASES SECTION ---------- */
+.research-item p strong {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* ---------- USE CASES SECTION ----------
+   Restructured for readability: cards stack full-width, bigger numbered
+   step indicators, generous spacing. Industries + scenario read as
+   separate stories rather than a cramped 2-up grid. */
 
 .use-cases-content {
-  display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
-  gap: 16px !important;
-}
-
-@media (max-width: 900px) {
-  .use-cases-content {
-    grid-template-columns: 1fr !important;
-  }
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 24px !important;
 }
 
 .industry-tags {
   display: flex !important;
   flex-wrap: wrap !important;
-  gap: 8px !important;
-  margin-bottom: 24px !important;
+  gap: 12px !important;
+  margin: 0 0 32px 0 !important;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .industry-tag {
   display: inline-block !important;
-  padding: 6px 12px !important;
+  padding: 8px 16px !important;
   background: rgba(87, 188, 235, 0.08) !important;
   border: 1px solid rgba(87, 188, 235, 0.3) !important;
   border-radius: 999px !important;
   font-family: var(--sol-mono) !important;
-  font-size: 10px !important;
+  font-size: 11px !important;
   font-weight: 500 !important;
-  letter-spacing: 0.15em !important;
+  letter-spacing: 0.2em !important;
   text-transform: uppercase !important;
   color: var(--sol-cyan) !important;
+  transition: background-color 200ms ease, border-color 200ms ease;
+}
+
+.industry-tag:hover {
+  background: rgba(87, 188, 235, 0.15) !important;
+  border-color: var(--sol-cyan) !important;
 }
 
 .outcome {
-  margin-top: 16px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .outcome p {
-  font-size: 15px !important;
-  color: rgba(255, 255, 255, 0.65) !important;
-  line-height: 1.6 !important;
+  font-size: clamp(15px, 1.3vw, 17px) !important;
+  color: rgba(255, 255, 255, 0.75) !important;
+  line-height: 1.65 !important;
   margin: 0 !important;
+  font-weight: 300 !important;
 }
 
-/* Scenario flow steps */
+.outcome p strong {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* Scenario flow — vertical timeline of steps with large mono indices. */
 .scenario-flow {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .flow-step {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
+  display: grid !important;
+  grid-template-columns: 60px 1fr !important;
+  align-items: flex-start !important;
+  gap: 24px !important;
+  padding: 24px 0 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .step-number {
   flex-shrink: 0;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: rgba(87, 188, 235, 0.08);
-  border: 1px solid rgba(87, 188, 235, 0.4);
-  color: var(--sol-cyan);
-  font-family: var(--sol-mono);
-  font-size: 12px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: auto !important;
+  height: auto !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  color: var(--sol-cyan) !important;
+  font-family: var(--sol-mono) !important;
+  font-size: clamp(24px, 2.5vw, 32px) !important;
+  font-weight: 300 !important;
+  display: block !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1 !important;
+  padding-top: 6px;
 }
 
+/* CSS counters would be cleaner but the JSX already hard-codes 1/2/3,
+   so we leave the number as-is and just restyle it. */
+
 .flow-step p {
-  font-size: 14px !important;
-  color: rgba(255, 255, 255, 0.65) !important;
+  font-size: clamp(15px, 1.3vw, 17px) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
   line-height: 1.55 !important;
   margin: 0 !important;
+  font-weight: 300 !important;
+}
+
+.flow-step p strong {
+  color: #ffffff;
+  font-weight: 500;
 }
 
 .flow-arrow {
-  display: none; /* vertical layout doesn't need arrows */
+  display: none !important;
 }
 
 /* ---------- CTA BUTTONS ---------- */
