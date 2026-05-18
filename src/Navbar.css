@@ -167,69 +167,83 @@
   border-radius: 0.5rem;
 }
 
+/* Solutions dropdown menu — opaque tinted panel to match the navbar's
+   --bg-base tone. Items get a subtle cyan-tinted hover, single cyan dot
+   indicator on the active route (matches the navbar nav-link active style). */
 .solutions-dropdown-menu {
   position: absolute;
   top: 100%;
   left: 0;
   margin-top: 0.75rem;
-  min-width: 200px;
+  min-width: 240px;
 
-  /* Dark Glassmorphism */
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  /* Tinted glass — much more opaque than before so the page underneath
+     doesn't bleed through. Matches the navbar's #070707 base tone. */
+  background: rgba(7, 7, 7, 0.96);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
 
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 0.75rem;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.55);
   z-index: 99;
   overflow: hidden;
-  padding: 0.5rem 0;
-
-  /* Remove animation for instant appearance */
+  padding: 8px 0;
   animation: none;
 }
 
-/* Solution items styled as dropdown items */
 .solutions-dropdown-menu .solution-item {
+  position: relative;
   display: flex;
   align-items: center;
-  padding: 0.65rem 1.25rem;
+  padding: 10px 20px;
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
   font-weight: 500;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  min-height: 40px;
+  letter-spacing: 0.02em;
+  transition: color 200ms ease, background-color 200ms ease;
   white-space: nowrap;
+  background: transparent;
+  border: none;
+  outline: none;
 }
 
 .solutions-dropdown-menu .solution-item:hover {
-  color: rgba(255, 255, 255, 1);
-  background: rgba(255, 255, 255, 0.08);
+  color: #57bceb;
+  background: rgba(87, 188, 235, 0.06);
 }
 
 .solutions-dropdown-menu .solution-item:focus {
-  outline: 1px solid rgba(255, 255, 255, 0.3);
-  outline-offset: -1px;
-  color: rgba(255, 255, 255, 1);
-  background: rgba(255, 255, 255, 0.08);
+  outline: none;
+  color: #57bceb;
+  background: rgba(87, 188, 235, 0.06);
 }
 
+.solutions-dropdown-menu .solution-item:focus-visible {
+  outline: 2px solid #57bceb;
+  outline-offset: -2px;
+}
+
+/* Active route — cyan dot prefix in the same style as the top-level
+   nav-link active indicator. No background fill / no left stripe. */
 .solutions-dropdown-menu .solution-item.active {
-  color: rgba(255, 255, 255, 1);
-  background: rgba(255, 255, 255, 0.1);
-  position: relative;
+  color: #ffffff;
+  background: transparent;
+  padding-left: 36px;
 }
 
 .solutions-dropdown-menu .solution-item.active::before {
   content: '';
   position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: rgba(255, 255, 255, 0.8);
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #57bceb;
+  box-shadow: 0 0 8px #57bceb;
 }
 
 /* Disclosure Dropdown Styles */
