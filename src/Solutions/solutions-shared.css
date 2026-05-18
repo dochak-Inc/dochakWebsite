@@ -326,21 +326,28 @@
   counter-increment: specs;
 }
 
+/* Force-override the legacy '.specs-list li::before { content: "✓"; color:
+   #10B981; position: absolute; }' rule that lives in each sub-page's CSS
+   and was bleeding the green checkmark over the row text. */
 .specs-list li::before {
-  content: counter(specs, decimal-leading-zero);
+  content: counter(specs, decimal-leading-zero) !important;
   flex-shrink: 0;
-  width: 36px;
-  font-family: var(--sol-mono);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  color: var(--sol-cyan);
-  padding-top: 5px;
-  background: none;
-  box-shadow: none;
-  height: auto;
-  border-radius: 0;
-  position: static;
+  width: 36px !important;
+  font-family: var(--sol-mono) !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.15em !important;
+  color: var(--sol-cyan) !important;
+  padding-top: 5px !important;
+  background: none !important;
+  box-shadow: none !important;
+  height: auto !important;
+  border-radius: 0 !important;
+  position: static !important;
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: auto !important;
 }
 
 .specs-list li strong {
