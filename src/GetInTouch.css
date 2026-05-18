@@ -501,6 +501,10 @@
 .faq-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* Equal-height rows so all FAQ cards line up regardless of how long
+     each answer is — the grid sizes every row to the tallest item. */
+  grid-auto-rows: 1fr;
+  align-items: stretch;
   gap: 16px;
   max-width: 1200px;
   margin: 0 auto;
@@ -521,6 +525,12 @@
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   overflow: hidden;
+  /* Flex column so the card stretches to fill its grid cell — combined
+     with grid-auto-rows: 1fr on the parent this gives every card the
+     same visible height. */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
 }
 

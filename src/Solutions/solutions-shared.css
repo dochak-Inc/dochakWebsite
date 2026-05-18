@@ -201,6 +201,22 @@
 
 .video-wrapper {
   position: relative;
+  /* Override any page-specific wrapper chrome (extra border, large
+     drop-shadow, big border-radius) so the inner .video-container is
+     the only element drawing a frame — keeps every sub-page consistent
+     with the editorial / spec-sheet look. */
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  overflow: visible !important;
+  transform: none !important;
+}
+
+.video-wrapper:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
 }
 
 .video-container {
@@ -630,58 +646,83 @@
   padding: 0 clamp(24px, 5vw, 64px) !important;
 }
 
+/* Explicit flex-column centering so title + description + buttons stack
+   perfectly centered — defensive against legacy left-aligned wrappers. */
 .get-in-touch-content {
-  max-width: 720px;
-  margin: 0 auto;
+  max-width: 720px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+/* Defensive: AnimatedElement wrapper around .get-in-touch-content should
+   also be centered, since it's the actual grid/block child of the
+   container. */
+.get-in-touch-section .animate-on-scroll {
+  text-align: center !important;
 }
 
 .get-in-touch-section .section-title {
-  margin: 0 0 16px 0 !important;
+  margin: 0 auto 16px auto !important;
   max-width: 18ch !important;
   text-align: center !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
 }
 
 .get-in-touch-description {
   font-size: 16px !important;
   color: rgba(255, 255, 255, 0.65) !important;
   line-height: 1.6 !important;
-  margin: 0 0 32px 0 !important;
+  margin: 0 auto 32px auto !important;
+  text-align: center !important;
+  max-width: 60ch !important;
 }
 
 .get-in-touch-buttons {
   display: inline-flex !important;
   gap: 16px !important;
+  justify-content: center !important;
 }
 
-/* ---------- FEATURED VIDEO CARDS (Visualisation, etc.) ---------- */
+/* ---------- VIDEOS LIST (Traffic Impact Analysis) ----------
+   Vertical list of overview-row blocks. Each row is video (left) +
+   explanation (right). No card frame so content reads as editorial.
+   Generous spacing between rows; tighter than the default overview-row. */
+
+.videos-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: clamp(48px, 6vh, 80px) !important;
+}
+
+.videos-list .overview-row {
+  margin-bottom: 0 !important;
+}
+
+/* ---------- LEGACY: card-style video frames kept transparent ----------
+   Older sub-pages may still reference these classes. Strip the card
+   background so they don't show a frame on the new design. */
 
 .featured-video-card,
 .video-card {
-  background-color: rgba(255, 255, 255, 0.02) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-  border-radius: 12px !important;
-  overflow: hidden;
-  transition: border-color 200ms ease, transform 200ms ease;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  overflow: visible;
+  transition: none;
 }
 
 .featured-video-card:hover,
 .video-card:hover {
-  border-color: rgba(87, 188, 235, 0.4) !important;
-  transform: translateY(-4px) !important;
-}
-
-.featured-video-card .video-container,
-.video-card .video-container {
-  aspect-ratio: 16 / 9 !important;
-  border: none !important;
-  border-radius: 8px 8px 0 0 !important;
+  border-color: transparent !important;
+  transform: none !important;
 }
 
 .featured-video-content,
 .video-card-content {
-  padding: 24px !important;
+  padding: 16px 0 0 0 !important;
 }
 
 .videos-grid {

@@ -46,10 +46,13 @@ export default function TrafficAnalysisTools() {
             <h2 className="section-title">{t('solutions.trafficAnalysisToolsSolution.overview.title')}</h2>
           </AnimatedElement>
 
-          {/* Video 01 — Featured, full-width horizontal */}
-          <AnimatedElement animation="slide-up" delay={100}>
-            <div className="featured-video-card">
-              <div className="featured-video-col">
+          {/* Two-column list: each row = video (left) + explanation (right).
+              No card frames — content sits directly on the section bg so the
+              section reads as a clean editorial list rather than a 2x3 grid
+              of huge cards. The featured TA-5 leads the list. */}
+          <div className="videos-list">
+            <div className="overview-row first-row">
+              <AnimatedElement animation="slide-left" delay={100}>
                 <div className="video-wrapper">
                   <div className="video-container">
                     <iframe
@@ -62,18 +65,17 @@ export default function TrafficAnalysisTools() {
                     ></iframe>
                   </div>
                 </div>
-              </div>
-              <div className="featured-video-content">
-                <h3>{t('solutions.trafficAnalysisToolsSolution.overview.TA-5')}</h3>
-                <p dangerouslySetInnerHTML={{ __html: t('solutions.trafficAnalysisToolsSolution.overview.TA-5Desc') }}></p>
-              </div>
+              </AnimatedElement>
+              <AnimatedElement animation="slide-right" delay={200}>
+                <div className="explanation-content">
+                  <h3>{t('solutions.trafficAnalysisToolsSolution.overview.TA-5')}</h3>
+                  <p dangerouslySetInnerHTML={{ __html: t('solutions.trafficAnalysisToolsSolution.overview.TA-5Desc') }}></p>
+                </div>
+              </AnimatedElement>
             </div>
-          </AnimatedElement>
 
-          {/* Videos 02–07 — 2-column grid */}
-          <div className="videos-grid">
-            <AnimatedElement animation="slide-up" delay={100}>
-              <div className="video-card">
+            <div className="overview-row">
+              <AnimatedElement animation="slide-left" delay={100}>
                 <div className="video-wrapper">
                   <div className="video-container">
                     <iframe
@@ -86,15 +88,17 @@ export default function TrafficAnalysisTools() {
                     ></iframe>
                   </div>
                 </div>
-                <div className="video-card-content">
+              </AnimatedElement>
+              <AnimatedElement animation="slide-right" delay={200}>
+                <div className="explanation-content">
                   <h3>{t('solutions.trafficAnalysisToolsSolution.overview.TA-4')}</h3>
                   <p dangerouslySetInnerHTML={{ __html: t('solutions.trafficAnalysisToolsSolution.overview.TA-4Desc') }}></p>
                 </div>
-              </div>
-            </AnimatedElement>
+              </AnimatedElement>
+            </div>
 
-            <AnimatedElement animation="slide-up" delay={150}>
-              <div className="video-card">
+            <div className="overview-row">
+              <AnimatedElement animation="slide-left" delay={100}>
                 <div className="video-wrapper">
                   <div className="video-container">
                     <iframe
@@ -107,15 +111,17 @@ export default function TrafficAnalysisTools() {
                     ></iframe>
                   </div>
                 </div>
-                <div className="video-card-content">
+              </AnimatedElement>
+              <AnimatedElement animation="slide-right" delay={200}>
+                <div className="explanation-content">
                   <h3>{t('solutions.trafficAnalysisToolsSolution.overview.demo')}</h3>
                   <p dangerouslySetInnerHTML={{ __html: t('solutions.trafficAnalysisToolsSolution.overview.demoDesc') }}></p>
                 </div>
-              </div>
-            </AnimatedElement>
+              </AnimatedElement>
+            </div>
 
-            <AnimatedElement animation="slide-up" delay={100}>
-              <div className="video-card">
+            <div className="overview-row">
+              <AnimatedElement animation="slide-left" delay={100}>
                 <div className="video-wrapper">
                   <div className="video-container">
                     <iframe
@@ -128,15 +134,17 @@ export default function TrafficAnalysisTools() {
                     ></iframe>
                   </div>
                 </div>
-                <div className="video-card-content">
+              </AnimatedElement>
+              <AnimatedElement animation="slide-right" delay={200}>
+                <div className="explanation-content">
                   <h3>{t('solutions.trafficAnalysisToolsSolution.overview.TA-1')}</h3>
                   <p dangerouslySetInnerHTML={{ __html: t('solutions.trafficAnalysisToolsSolution.overview.TA-1Desc') }}></p>
                 </div>
-              </div>
-            </AnimatedElement>
+              </AnimatedElement>
+            </div>
 
-            <AnimatedElement animation="slide-up" delay={150}>
-              <div className="video-card">
+            <div className="overview-row">
+              <AnimatedElement animation="slide-left" delay={100}>
                 <div className="video-wrapper">
                   <div className="video-container">
                     <iframe
@@ -149,15 +157,17 @@ export default function TrafficAnalysisTools() {
                     ></iframe>
                   </div>
                 </div>
-                <div className="video-card-content">
+              </AnimatedElement>
+              <AnimatedElement animation="slide-right" delay={200}>
+                <div className="explanation-content">
                   <h3>{t('solutions.trafficAnalysisToolsSolution.overview.TA-2')}</h3>
                   <p dangerouslySetInnerHTML={{ __html: t('solutions.trafficAnalysisToolsSolution.overview.TA-2Desc') }}></p>
                 </div>
-              </div>
-            </AnimatedElement>
+              </AnimatedElement>
+            </div>
 
-            <AnimatedElement animation="slide-up" delay={100}>
-              <div className="video-card">
+            <div className="overview-row">
+              <AnimatedElement animation="slide-left" delay={100}>
                 <div className="video-wrapper">
                   <div className="video-container">
                     <iframe
@@ -170,15 +180,17 @@ export default function TrafficAnalysisTools() {
                     ></iframe>
                   </div>
                 </div>
-                <div className="video-card-content">
+              </AnimatedElement>
+              <AnimatedElement animation="slide-right" delay={200}>
+                <div className="explanation-content">
                   <h3>{t('solutions.trafficAnalysisToolsSolution.overview.TA-3')}</h3>
                   <p dangerouslySetInnerHTML={{ __html: t('solutions.trafficAnalysisToolsSolution.overview.TA-3Desc') }}></p>
                 </div>
-              </div>
-            </AnimatedElement>
+              </AnimatedElement>
+            </div>
 
-            <AnimatedElement animation="slide-up" delay={150}>
-              <div className="video-card">
+            <div className="overview-row">
+              <AnimatedElement animation="slide-left" delay={100}>
                 <div className="video-wrapper">
                   <div className="video-container">
                     <iframe
@@ -191,12 +203,14 @@ export default function TrafficAnalysisTools() {
                     ></iframe>
                   </div>
                 </div>
-                <div className="video-card-content">
+              </AnimatedElement>
+              <AnimatedElement animation="slide-right" delay={200}>
+                <div className="explanation-content">
                   <h3>{t('solutions.trafficAnalysisToolsSolution.overview.TA-6')}</h3>
                   <p dangerouslySetInnerHTML={{ __html: t('solutions.trafficAnalysisToolsSolution.overview.TA-6Desc') }}></p>
                 </div>
-              </div>
-            </AnimatedElement>
+              </AnimatedElement>
+            </div>
           </div>
         </div>
       </section>

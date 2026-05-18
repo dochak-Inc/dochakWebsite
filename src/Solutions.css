@@ -105,70 +105,90 @@
 
 /* =====================================
    SOLUTION CARDS
-   Clean text-only cards with cyan blueprint grid background — matches
-   the landing solutions section primitive. The image set on the card via
-   inline style is intentionally ignored (we don't render it as bg) so
-   each card reads as a calm, premium tile rather than a heavy hero.
+   Hybrid: the inline-style backgroundImage from the JSX is kept as a
+   faint backdrop, layered under a dark dim + cyan blueprint grid + radial
+   vignette + glass border. On hover the dim lifts slightly to reveal more
+   of the image. All cards are forced to equal height via the grid stretch.
    ===================================== */
 
 .solution-card-link {
   display: block;
   text-decoration: none;
+  height: 100%;
 }
 
 .solution-card {
   position: relative;
-  /* Background image set inline via JSX style is intentionally NOT used.
-     We override with a clean glass + cyan blueprint grid. */
-  background-image:
-    linear-gradient(rgba(87, 188, 235, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(87, 188, 235, 0.05) 1px, transparent 1px) !important;
-  background-color: rgba(255, 255, 255, 0.02);
-  background-size: 32px 32px !important;
-  background-position: -1px -1px !important;
+  /* Inline-style backgroundImage from JSX is the underlying image. */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
-  padding: 32px 28px 64px 28px;
+  padding: 32px 28px 80px 28px;
   overflow: hidden;
-  min-height: 200px;
+  min-height: 280px;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
+  filter: none !important;
+  aspect-ratio: auto !important;
+  transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
 }
 
 .solution-card:hover {
   border-color: rgba(87, 188, 235, 0.4);
   box-shadow: 0 0 24px rgba(87, 188, 235, 0.15);
   transform: translateY(-4px);
-  background-color: rgba(255, 255, 255, 0.035);
 }
 
-/* Vignette so the grid feels denser at the edges and clearer near text. */
+/* Layer 1 — dim the image so it reads as a low-opacity backdrop, plus
+   apply the cyan blueprint grid. Reuses the existing
+   .solution-card-overlay-bg div (no JSX change). */
+.solution-card-overlay-bg {
+  display: block !important;
+  position: absolute;
+  inset: 0;
+  background-color: rgba(7, 7, 7, 0.88);
+  background-image:
+    linear-gradient(rgba(87, 188, 235, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(87, 188, 235, 0.06) 1px, transparent 1px) !important;
+  background-size: 32px 32px !important;
+  background-position: -1px -1px !important;
+  z-index: 0;
+  transition: background-color 200ms ease;
+  pointer-events: none;
+}
+
+.solution-card:hover .solution-card-overlay-bg {
+  background-color: rgba(7, 7, 7, 0.72);
+}
+
+/* Layer 2 — radial vignette so the grid feels denser at the corners and
+   clearer near the text. */
 .solution-card::before {
   content: '';
   position: absolute;
   inset: 0;
   background: radial-gradient(
     ellipse at 30% 30%,
-    rgba(7, 7, 7, 0.85) 0%,
-    rgba(7, 7, 7, 0.5) 45%,
+    rgba(7, 7, 7, 0.6) 0%,
+    rgba(7, 7, 7, 0.3) 45%,
     transparent 100%
   );
   pointer-events: none;
-  z-index: 0;
-}
-
-/* The image-overlay legacy div is hidden in the new design. */
-.solution-card-overlay-bg {
-  display: none !important;
+  z-index: 1;
 }
 
 .solution-card-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   flex: 1;
   display: flex;
   flex-direction: column;
+  /* Reserve right margin so the description never collides with the
+     bottom-right arrow indicator. */
+  padding-right: 32px;
 }
 
 .solution-card-title {
@@ -177,16 +197,16 @@
   color: #ffffff;
   letter-spacing: -0.01em;
   margin: 0 0 12px 0;
-  text-shadow: none;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
 }
 
 .solution-description {
   font-size: 14px;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.7);
   line-height: 1.55;
   margin: 0;
-  text-shadow: none;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
 }
 
 .solution-description strong {
@@ -207,17 +227,21 @@
   color: var(--sol-cyan);
   font-size: 18px;
   transition: transform 200ms ease;
-  z-index: 2;
+  z-index: 3;
+  text-shadow: 0 0 10px rgba(87, 188, 235, 0.6);
 }
 
 .solution-card:hover .solution-card-arrow {
   transform: translateX(4px);
 }
 
-/* Aspect-ratio reset — the cards no longer need to be tall image tiles. */
-.solution-card.solution-card-overlay {
-  aspect-ratio: auto !important;
-  filter: none !important;
+/* Force grid items to stretch vertically so every card is the same
+   height regardless of description length. */
+.solutions-grid > * {
+  display: flex;
+}
+.solutions-grid .solution-card-link {
+  width: 100%;
 }
 
 /* =====================================
@@ -237,30 +261,43 @@
   padding: 0 clamp(24px, 5vw, 64px);
 }
 
+/* Force-center the content stack — explicit flex column so the title,
+   description, and buttons are perfectly centered horizontally even if
+   an ancestor wrapper (e.g. AnimatedElement) inherits a left text-align
+   from a legacy stylesheet. */
 .project-get-in-touch-section .get-in-touch-content {
   max-width: 720px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .project-get-in-touch-section .section-title {
   font-size: clamp(32px, 4.5vw, 56px);
   font-weight: 200;
   color: #ffffff;
-  margin: 0 0 16px 0;
+  margin: 0 auto 16px auto;
   letter-spacing: -0.02em;
   line-height: 1.1;
+  text-align: center;
+  max-width: 18ch;
 }
 
 .project-get-in-touch-section .get-in-touch-description {
   font-size: 16px;
   color: rgba(255, 255, 255, 0.65);
   line-height: 1.6;
-  margin: 0 0 32px 0;
+  margin: 0 auto 32px auto;
+  text-align: center;
+  max-width: 60ch;
 }
 
 .project-get-in-touch-section .get-in-touch-buttons {
   display: inline-flex;
   gap: 16px;
+  justify-content: center;
 }
 
 .project-get-in-touch-section .contact-button.primary {
