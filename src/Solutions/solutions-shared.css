@@ -696,8 +696,18 @@
   gap: clamp(48px, 6vh, 80px) !important;
 }
 
+/* Override the default .overview-row 1fr 1fr split so the video column
+   takes ~42% and the explanation takes ~58% — the video reads as a
+   supporting element rather than dominating the row. */
 .videos-list .overview-row {
   margin-bottom: 0 !important;
+  grid-template-columns: 5fr 7fr !important;
+}
+
+@media (max-width: 900px) {
+  .videos-list .overview-row {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 /* ---------- LEGACY: card-style video frames kept transparent ----------
