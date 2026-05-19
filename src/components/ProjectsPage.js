@@ -1,9 +1,8 @@
-import React, { useState, useContext, useRef, useEffect } from 'react';
+import React, { useState, useContext, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './ProjectsPage.css';
-import VideoPlayer from './VideoPlayer';
 import LanguageContext from '../contexts/LanguageContext';
-import { useScrollAnimation, useStaggeredAnimation } from '../hooks/useScrollAnimation';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 // Import project images
 import nepo from '../assets/nepo.webp';
