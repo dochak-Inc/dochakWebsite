@@ -559,6 +559,7 @@
     "items": {
       "naepo": {
         "title": "Naepo New City Digital Twin",
+        "tabLabel": "Naepo Digital Twin",
         "date": "2025-Present",
         "explanation": "Dochak will position itself as a <strong>regional mobility innovation leader</strong> in Chungnam by using <em>digital twins and simulation</em> for traffic solutions.",
         "detailedDescription": "Developing <strong>Korea's first traffic-focused digital twin</strong> for Naepo New City to support <em>advanced mobility planning and operations</em>. The system integrates <strong>real-time data collection</strong>, <em>AI-based predictive modeling</em>, and <strong>3D visualization</strong> to help city planners and operators make better decisions. This project plays a key role in <em>sustainable urban development</em> and building a <strong>smart mobility ecosystem</strong>.",
@@ -586,6 +587,7 @@
       },
       "teleDriving": {
         "title": "Daejeon-Jeju Tele-driving",
+        "tabLabel": "Tele-Driving",
         "date": "2025-Present",
         "explanation": "Provides <strong>remote driver intervention</strong> when autonomous vehicles encounter issues, addressing <em>limitations of autonomous systems</em>.",
         "detailedDescription": "Developing <strong>tele-driving technology</strong> for autonomous vehicles over a <em>500km distance</em> between Daejeon and Jeju. Using <strong>ultra-low-latency communication</strong> via <em>5G networks</em>, remote drivers can control vehicles in <strong>real-time</strong>, providing <em>safe intervention</em> when autonomous systems cannot handle situations. This technology can be widely applied in <strong>mobility services</strong>, <em>logistics</em>, and <strong>defense sectors</strong>.",
@@ -617,6 +619,7 @@
       },
       "publicTransport": {
         "title": "Daejeon 3-Car Public Transportation",
+        "tabLabel": "Public Transport",
         "date": "2025-Present",
         "explanation": "Innovating <strong>Daejeon's public transportation system</strong> to maximize <em>traffic efficiency</em> through <strong>3-car connected electric train operation</strong>.",
         "detailedDescription": "Innovating <strong>Daejeon's existing public transportation system</strong> by building a <em>3-car connected electric train operation system</em>. This system greatly improves the <strong>efficiency and convenience</strong> of public transportation through <em>flexible vehicle deployment</em> based on passenger demand, <strong>real-time passenger information</strong>, and integration with <em>smart signal systems</em>. It also implements an <strong>environmentally friendly transportation system</strong> through <em>energy-efficient operation</em>.",
@@ -644,6 +647,7 @@
       },
       "airportParking": {
         "title": "Incheon Airport Parking Improvement",
+        "tabLabel": "Airport Parking",
         "date": "2025-Present",
         "explanation": "Improving <strong>Incheon Airport's parking system</strong> with <em>smart technology</em> to maximize <strong>user convenience</strong>.",
         "detailedDescription": "Improving <strong>Incheon Airport's parking system</strong> by integrating <em>IoT sensors</em>, <strong>AI-based prediction</strong>, and <em>mobile apps</em> into a <strong>smart parking solution</strong>. <em>Real-time parking space guidance</em>, <strong>reservation systems</strong>, and <em>automatic payment functions</em> revolutionize the parking experience for users. It also increases <strong>parking lot operational efficiency</strong> and reduces <em>management costs</em>.",

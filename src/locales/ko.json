@@ -559,6 +559,7 @@
     "items": {
       "naepo": {
         "title": "내포신도시 디지털 트윈",
+        "tabLabel": "내포 디지털 트윈",
         "date": "2025년-현재",
         "explanation": "도착은 <em>디지털 트윈과 시뮬레이션</em>을 활용한 교통 솔루션으로 충남의 <strong>지역 모빌리티 혁신 리더</strong>로 자리매김할 것입니다.",
         "detailedDescription": "내포신도시를 위한 <strong>한국 최초의 교통 중심 디지털 트윈</strong>을 개발하여 <em>첨단 모빌리티 계획 및 운영</em>을 지원합니다. <strong>실시간 데이터 수집</strong>, <em>AI 기반 예측 모델링</em>, 그리고 <strong>3D 시각화</strong>를 통해 도시 계획자와 운영자가 더 나은 의사결정을 할 수 있도록 지원합니다. 이 프로젝트는 도시의 <em>지속가능한 발전</em>과 <strong>스마트 모빌리티 생태계</strong> 구축의 핵심 역할을 합니다.",
@@ -590,6 +591,7 @@
       },
       "teleDriving": {
         "title": "대전-제주간 원격주행",
+        "tabLabel": "원격주행",
         "date": "2025년-현재",
         "explanation": "자율주행차가 문제에 직면했을 때 <strong>원격 운전자 개입</strong>을 제공하여 <em>자율 시스템의 한계</em>를 해결합니다.",
         "detailedDescription": "대전과 제주 간 <em>500km 거리</em>에서 자율주행차의 <strong>원격 운전 기술</strong>을 개발하고 있습니다. <em>5G 네트워크</em>를 활용한 <strong>초저지연 통신</strong>으로 원격 운전자가 <strong>실시간</strong>으로 차량을 제어할 수 있으며, 자율주행 시스템이 처리할 수 없는 상황에서 <em>안전한 개입</em>을 제공합니다. 이 기술은 <strong>모빌리티 서비스</strong>, <em>물류</em>, <strong>국방 분야</strong>에서 광범위하게 적용될 수 있습니다.",
@@ -621,6 +623,7 @@
       },
       "publicTransport": {
         "title": "대전 3량 대중교통 운영",
+        "tabLabel": "대중교통",
         "date": "2025년-현재",
         "explanation": "<strong>대전시의 대중교통 시스템</strong>을 혁신하여 <em>3량 연결 전동차 운영</em>을 통해 <strong>교통 효율성을 극대화</strong>합니다.",
         "detailedDescription": "<strong>대전시의 기존 대중교통 시스템</strong>을 혁신하여 <em>3량 연결 전동차 운영 시스템</em>을 구축하고 있습니다. 이 시스템은 <strong>승객 수요에 따른 유연한 차량 배치</strong>, <em>실시간 승객 정보 제공</em>, 그리고 <strong>스마트 신호 시스템과의 연동</strong>을 통해 대중교통의 <em>효율성과 편의성을 크게 향상</em>시킵니다. 또한 <strong>에너지 효율적인 운영</strong>으로 <em>환경 친화적인 교통 시스템</em>을 구현합니다.",
@@ -652,6 +655,7 @@
       },
       "airportParking": {
         "title": "인천공항 주차장 개선",
+        "tabLabel": "공항 주차",
         "date": "2025년-현재",
         "explanation": "<strong>인천공항의 주차 시스템</strong>을 <em>스마트 기술</em>로 개선하여 <strong>이용객의 편의성을 극대화</strong>합니다.",
         "detailedDescription": "<strong>인천공항의 주차 시스템</strong>을 <em>IoT 센서</em>, <strong>AI 기반 예측</strong>, 그리고 <em>모바일 앱</em>을 통합하여 <strong>스마트 주차 솔루션</strong>으로 개선하고 있습니다. <em>실시간 주차 공간 안내</em>, <strong>예약 시스템</strong>, <em>자동 결제 기능</em>을 통해 이용객의 주차 경험을 혁신적으로 개선합니다. 또한 <strong>주차장 운영 효율성</strong>을 높이고 <em>관리 비용</em>을 절감합니다.",
