@@ -49,6 +49,9 @@
     "solutionsText": "Explore our <strong>innovative solutions</strong> designed to transform <em>urban mobility</em> through <strong>cutting-edge simulation</strong> and digital twin.",
     "projectsText": "Discover our <strong>impactful projects</strong> shaping the future of <em>smart cities</em> with <strong>advanced AI</strong> and simulation technologies.",
     "teamText": "Meet the <strong>talented researchers</strong>, engineers, and experts driving <em>mobility innovation</em> with <strong>decades of combined experience</strong>.",
+    "missionTitle1": "Solutions",
+    "missionTitle2": "Projects",
+    "missionTitle3": "Team",
     "missionCTA1": "Explore Solutions",
     "missionCTA2": "View Projects",
     "missionCTA3": "Meet the Team",
@@ -399,19 +402,19 @@
       "overview": {
         "title": "Overview",
         "demo": "Macro scopic simulation - Shared bikes",
-        "demoDesc": "A <strong>large scale network analysis</strong> for comprehensive traffic evaluation. This is particularly how the <strong>shared bike system</strong> is operated in Daejeon",
+        "demoDesc": "A <strong>large-scale network analysis</strong> for comprehensive traffic evaluation, demonstrated on the <strong>shared bike system</strong> operating across Daejeon.",
         "TA-1": "Co-simulation",
-        "TA-1Desc": "<strong>Co-simulation between VISSIM and Unity</strong> is a powerful technique for creating highly realistic and interactive virtual environments for traffic and transportation research. It combines the strengths of both platforms: <strong>VISSIM</strong> for its robust, validated, and detailed microscopic traffic simulation, and <strong>Unity</strong> for its advanced 3D rendering, physics, and a wide range of <strong>life-saving robot simulation</strong> and human-in-the-loop capabilities",
+        "TA-1Desc": "<strong>VISSIM + Unity co-simulation</strong> pairs validated microscopic traffic simulation with advanced 3D rendering, enabling realistic <em>human-in-the-loop</em> virtual environments for transportation research.",
         "TA-2": "Co-simulation with Dynanometer",
-        "TA-2Desc": "A <strong>specialized and powerful form</strong> of Hardware-in-the-Loop (HIL) simulation. It combines a <strong>real, physical piece of hardware</strong>—the dynamometer—with one or more virtual simulation models. This approach is widely used in the <strong>automotive and aerospace industries</strong> for testing and developing powertrains and control systems",
+        "TA-2Desc": "A specialized form of <strong>Hardware-in-the-Loop (HIL) simulation</strong> that pairs a physical dynamometer with virtual models — widely used in <em>automotive and aerospace</em> powertrain testing.",
         "TA-3": "Micro simulation - EV autonomous charging station",
-        "TA-3Desc": "An <strong>autonomous EV charging station</strong> is a system that can charge an electric vehicle without any human intervention. Using <strong>microsimulation</strong>, this technology is being developed to address some of the key challenges of the growing EV market",
+        "TA-3Desc": "An <strong>autonomous EV charging station</strong> charges electric vehicles without human intervention. <em>Microsimulation</em> helps address key challenges of the growing EV market.",
         "TA-4": "Activity Based Model for Hwaseung City in Korea",
-        "TA-4Desc": "This model focuses on understanding and simulating the <strong>autonomous vehicle level 4+</strong> that will occur within Hwaseung City in 2027, providing insights into <strong>traffic patterns</strong> and urban mobility.",
+        "TA-4Desc": "This model simulates the <strong>autonomous vehicle level 4+</strong> rollout planned for Hwaseung City in 2027, providing insights into <em>traffic patterns</em> and urban mobility.",
         "TA-5": "LLM-based Microscopic Traffic Analysis Tool is released NOW",
-        "TA-5Desc": "A <strong>Large Language Model (LLM)-based traffic analysis tool</strong> developed by <strong>Dr. Bo Wang</strong>(dochack's technical advisor) is an advanced software application that leverages the capabilities of large language models, such as GPT-4, to analyze and interpret traffic data. This tool can process vast amounts of traffic-related information, including historical data, real-time sensor inputs, and textual reports, to provide insights and predictions about traffic patterns, congestion, and incidents.",
+        "TA-5Desc": "A <strong>Large Language Model (LLM)-based traffic analysis tool</strong> by <strong>Dr. Bo Wang</strong> (dochak's technical advisor) — leveraging GPT-4 to turn historical data, real-time sensors, and textual reports into <em>traffic insights and predictions</em>.",
         "TA-6": "AiMoTwin Analytics V-0.1 — Development Release",
-        "TA-6Desc": "<strong>AiMoTwin Analytics V-0.1</strong> is an AI-powered urban traffic analysis and simulation solution that transforms manual, repetitive tasks into automated updates. It features <strong>Base Model Management</strong> with live traffic data, <strong>Automated Validation</strong>, intuitive <strong>Scenario Testing</strong> with real-time updates, and a <strong>Comparative Analysis</strong> dashboard with customizable KPIs — reducing weeks of work to minutes while ensuring 100% secure, on-premise data protection.",
+        "TA-6Desc": "<strong>AiMoTwin Analytics V-0.1</strong> — AI-powered urban traffic analysis with <em>live base-model management</em>, automated validation, scenario testing, and a comparative KPI dashboard. Weeks of work, in minutes.",
         "playVideo": "Play Video"
       },
       "technical": {
@@ -556,6 +559,7 @@
     "items": {
       "naepo": {
         "title": "Naepo New City Digital Twin",
+        "tabLabel": "Naepo Digital Twin",
         "date": "2025-Present",
         "explanation": "Dochak will position itself as a <strong>regional mobility innovation leader</strong> in Chungnam by using <em>digital twins and simulation</em> for traffic solutions.",
         "detailedDescription": "Developing <strong>Korea's first traffic-focused digital twin</strong> for Naepo New City to support <em>advanced mobility planning and operations</em>. The system integrates <strong>real-time data collection</strong>, <em>AI-based predictive modeling</em>, and <strong>3D visualization</strong> to help city planners and operators make better decisions. This project plays a key role in <em>sustainable urban development</em> and building a <strong>smart mobility ecosystem</strong>.",
@@ -583,6 +587,7 @@
       },
       "teleDriving": {
         "title": "Daejeon-Jeju Tele-driving",
+        "tabLabel": "Tele-Driving",
         "date": "2025-Present",
         "explanation": "Provides <strong>remote driver intervention</strong> when autonomous vehicles encounter issues, addressing <em>limitations of autonomous systems</em>.",
         "detailedDescription": "Developing <strong>tele-driving technology</strong> for autonomous vehicles over a <em>500km distance</em> between Daejeon and Jeju. Using <strong>ultra-low-latency communication</strong> via <em>5G networks</em>, remote drivers can control vehicles in <strong>real-time</strong>, providing <em>safe intervention</em> when autonomous systems cannot handle situations. This technology can be widely applied in <strong>mobility services</strong>, <em>logistics</em>, and <strong>defense sectors</strong>.",
@@ -614,6 +619,7 @@
       },
       "publicTransport": {
         "title": "Daejeon 3-Car Public Transportation",
+        "tabLabel": "Public Transport",
         "date": "2025-Present",
         "explanation": "Innovating <strong>Daejeon's public transportation system</strong> to maximize <em>traffic efficiency</em> through <strong>3-car connected electric train operation</strong>.",
         "detailedDescription": "Innovating <strong>Daejeon's existing public transportation system</strong> by building a <em>3-car connected electric train operation system</em>. This system greatly improves the <strong>efficiency and convenience</strong> of public transportation through <em>flexible vehicle deployment</em> based on passenger demand, <strong>real-time passenger information</strong>, and integration with <em>smart signal systems</em>. It also implements an <strong>environmentally friendly transportation system</strong> through <em>energy-efficient operation</em>.",
@@ -641,6 +647,7 @@
       },
       "airportParking": {
         "title": "Incheon Airport Parking Improvement",
+        "tabLabel": "Airport Parking",
         "date": "2025-Present",
         "explanation": "Improving <strong>Incheon Airport's parking system</strong> with <em>smart technology</em> to maximize <strong>user convenience</strong>.",
         "detailedDescription": "Improving <strong>Incheon Airport's parking system</strong> by integrating <em>IoT sensors</em>, <strong>AI-based prediction</strong>, and <em>mobile apps</em> into a <strong>smart parking solution</strong>. <em>Real-time parking space guidance</em>, <strong>reservation systems</strong>, and <em>automatic payment functions</em> revolutionize the parking experience for users. It also increases <strong>parking lot operational efficiency</strong> and reduces <em>management costs</em>.",

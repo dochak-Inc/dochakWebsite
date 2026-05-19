@@ -1,90 +1,102 @@
-/* About Page Styles */
+/* About Page — aligned with landing page design system. */
 
 .about-page {
-  background: #000000;
-  font-family: 'Inter', 'Segoe UI', 'Roboto', Arial, sans-serif;
+  background: #070707;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+  --ab-cyan: #57bceb;
+  --ab-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 }
 
 
-/* Hero Section */
+/* Hero Section — base tone, eyebrow added via ::before, light heading. */
 .about-hero {
-  background: #0f0f0f;
-  padding: 8rem 0 7rem 0;
+  background: #070707;
+  padding: clamp(120px, 16vh, 200px) 0 clamp(80px, 12vh, 160px) 0;
   text-align: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: none;
+  position: relative;
 }
+
+.about-hero::before {
+  content: '01 · ABOUT';
+  display: block;
+  font-family: var(--ab-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 24px;
+}
+
 .about-hero-content {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 clamp(24px, 5vw, 64px);
 }
+
 .about-hero-title {
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: clamp(40px, 5.5vw, 64px);
+  font-weight: 200;
   color: #ffffff !important;
-  margin-bottom: 1.5rem;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
+  margin-bottom: 24px;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  max-width: 18ch;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 .about-hero-subtitle {
-  font-size: 1.25rem;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.65);
   font-weight: 400;
-  max-width: 700px;
+  max-width: 60ch;
   margin: 0 auto;
   line-height: 1.6;
 }
 
-/* Large screen responsive font sizes */
-@media (min-width: 1200px) {
-    .about-hero-title {
-        font-size: 3.5rem;
-    }
-    .about-hero-subtitle {
-        font-size: 1.5rem;
-    }
-    .about-section-title {
-        font-size: 2.5rem;
-    }
-    .about-mission-text {
-        font-size: 1.4rem;
-    }
-    .about-value-title {
-        font-size: 1.4rem;
-    }
-    .about-value-desc {
-        font-size: 1.2rem;
-    }
-    .about-story-title {
-        font-size: 3rem;
-    }
-}
-
 @media (max-width: 900px) {
     .about-hero {
-        padding: 6rem 2rem 5rem 2rem;
+        padding: clamp(80px, 14vh, 160px) 2rem clamp(48px, 8vh, 96px) 2rem;
     }
 }
   
 
 /* Mission Section */
 
-/* Mission Section - Hybrid Layout */
+/* Mission Section — lift tone, eyebrow via ::before. */
 .about-mission {
-    background: #000000;
-    padding: 5rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background: #0c0c0c;
+    padding: clamp(80px, 12vh, 160px) 0;
+    border-bottom: none;
+    position: relative;
 }
 
-/* First Row: Original Left-Right Layout */
+.about-mission::before {
+    content: '02 · MISSION';
+    display: block;
+    font-family: var(--ab-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 32px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 clamp(24px, 5vw, 64px);
+}
+
 .about-mission-intro-row {
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 1100px;
-    margin: 0 auto 3rem auto;
-    gap: 3rem;
-    padding: 0 2rem;
+    max-width: 1200px;
+    margin: 0 auto 64px auto;
+    gap: 64px;
+    padding: 0 clamp(24px, 5vw, 64px);
 }
 
 .about-mission-intro-left {
@@ -98,123 +110,179 @@
 }
 
 .about-mission-intro-text {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.7);
-    margin-top: 1rem;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.65);
+    margin-top: 16px;
     line-height: 1.6;
     font-weight: 400;
+    max-width: 60ch;
 }
 
 .about-mission-image {
     max-width: 100%;
     max-width: 500px;
     height: auto;
-    border-radius: 1rem;
+    border-radius: 12px;
     object-fit: contain;
+    filter: saturate(0.85) brightness(0.9);
+    transition: filter 400ms ease;
 }
 
-/* Three Column Grid */
+.about-mission-image:hover {
+    filter: saturate(1) brightness(1);
+}
+
+/* Three Column Grid — glass + cyan blueprint grid, matches solutions cards. */
 .about-mission-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    max-width: 1100px;
+    gap: 16px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 clamp(24px, 5vw, 64px);
 }
 
 .about-mission-column {
-    background: rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 1rem;
-    padding: 2rem 1.5rem;
-    text-align: center;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.02);
+    background-image:
+        linear-gradient(rgba(87, 188, 235, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(87, 188, 235, 0.06) 1px, transparent 1px);
+    background-size: 32px 32px;
+    background-position: -1px -1px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 32px 24px;
+    text-align: left;
     display: flex;
     flex-direction: column;
     height: 100%;
-    backdrop-filter: blur(8px);
+    overflow: hidden;
+    transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
 }
 
+.about-mission-column::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        ellipse at 30% 30%,
+        rgba(7, 7, 7, 0.85) 0%,
+        rgba(7, 7, 7, 0.5) 45%,
+        transparent 100%
+    );
+    pointer-events: none;
+}
+
+.about-mission-column > * {
+    position: relative;
+    z-index: 1;
+}
+
+.about-mission-column:hover {
+    border-color: rgba(87, 188, 235, 0.4);
+    box-shadow: 0 0 24px rgba(87, 188, 235, 0.15);
+    transform: translateY(-4px);
+    background-color: rgba(255, 255, 255, 0.035);
+}
+
+/* Column title — matches landing-solutions__card-title style. */
+.about-mission-column-title {
+    margin: 0 0 12px 0;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: #ffffff;
+}
+
+/* Kept (now-unused) icon container styling so any lingering markup
+   doesn't visually break — safe to delete in a follow-up. */
 .about-mission-column-icon {
-    margin: 0 auto 1rem auto;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 0.75rem;
-    width: fit-content;
+    display: none;
 }
 
 .about-mission-column-text {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.6;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.55;
     font-weight: 400;
-    margin-bottom: 1.5rem;
+    margin-bottom: 24px;
     flex-grow: 1;
 }
 
-.about-mission-cta {
+/* CTAs — mono uppercase, cyan border, breathing pulse; matches landing CTA. */
+.about-mission-cta,
+.about-mission-cta-emerald,
+.about-mission-cta-blue,
+.about-mission-cta-purple {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    padding: 0.65rem 1.25rem;
-    border-radius: 0.75rem;
-    text-decoration: none;
+    gap: 8px;
+    padding: 10px 18px;
+    background: transparent;
+    color: var(--ab-cyan);
+    border: 1px solid var(--ab-cyan);
+    border-radius: 999px;
+    font-family: var(--ab-mono);
+    font-size: 11px;
     font-weight: 500;
-    font-size: 0.9rem;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 200ms ease, transform 200ms ease;
     position: relative;
     overflow: hidden;
     text-align: center;
     margin-top: auto;
-    background: rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.95);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    align-self: flex-start;
+    animation: aboutCtaBreathe 2400ms ease-in-out infinite;
 }
 
-/* All CTAs use same glassmorphism style */
-.about-mission-cta-emerald,
-.about-mission-cta-blue,
-.about-mission-cta-purple {
-    background: rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.95);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
+.about-mission-cta:hover,
 .about-mission-cta-emerald:hover,
 .about-mission-cta-blue:hover,
 .about-mission-cta-purple:hover {
-    background: rgba(255, 255, 255, 0.2);
-    color: #ffffff;
-    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(87, 188, 235, 0.08);
+    color: var(--ab-cyan);
+    border-color: var(--ab-cyan);
     transform: translateY(-1px);
 }
 
-/* Shimmer effect for all CTAs */
-.about-mission-cta::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-    transition: left 0.6s;
+.about-mission-cta:focus-visible {
+    outline: 2px solid var(--ab-cyan);
+    outline-offset: 4px;
 }
 
-.about-mission-cta:hover::before {
-    left: 100%;
+/* Disable the old shimmer effect — replaced by the breathing pulse. */
+.about-mission-cta::before {
+    content: none;
 }
 
 .about-mission-cta-arrow {
-    transition: transform 0.3s ease;
+    transition: transform 200ms ease;
     flex-shrink: 0;
 }
 
 .about-mission-cta:hover .about-mission-cta-arrow {
     transform: translateX(4px);
+}
+
+@keyframes aboutCtaBreathe {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0.7; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .about-mission-cta,
+    .about-mission-cta-emerald,
+    .about-mission-cta-blue,
+    .about-mission-cta-purple {
+        animation: none;
+    }
 }
 
 /* Responsive Design */
@@ -290,85 +358,107 @@
     }
 }
 
-/* Section Titles */
+/* Section Titles — light weight to match landing section headings. */
 .about-section-title {
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: clamp(32px, 4.5vw, 56px);
+  font-weight: 200;
   color: #ffffff !important;
-  margin-bottom: 1.5rem;
+  margin-bottom: 24px;
   letter-spacing: -0.02em;
-  line-height: 1.2;
+  line-height: 1.1;
+  max-width: 18ch;
 }
 
-/* Core Values Section */
+/* Core Values Section — base tone, eyebrow via ::before. */
 .about-values {
-  background: #0f0f0f;
-  padding: 5rem 0;
-  text-align: center;
+  background: #070707;
+  padding: clamp(80px, 12vh, 160px) 0;
+  text-align: left;
+  position: relative;
+}
+
+.about-values::before {
+  content: '03 · CORE VALUES';
+  display: block;
+  font-family: var(--ab-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 32px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 clamp(24px, 5vw, 64px);
+}
+
+.about-values > .animate-on-scroll {
+  max-width: 1200px;
+  margin: 0 auto 32px auto;
+  padding: 0 clamp(24px, 5vw, 64px);
 }
 
 .about-values-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 clamp(24px, 5vw, 64px);
 }
 
 .about-values-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  margin-top: 2rem;
+  gap: 16px;
+  margin-top: 24px;
 }
 
+/* Value cards keep their background images but get the same cyan-tinted
+   filter + 1px cyan border treatment as the landing-projects items, with
+   the image desaturating on hover. */
 .about-value-card {
   position: relative;
-  height: 280px;
+  aspect-ratio: 3 / 4;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  border-radius: 16px;
+  border-radius: 8px;
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  box-shadow:
-    0 2px 12px rgba(0, 0, 0, 0.06),
-    0 1px 3px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(87, 188, 235, 0.25);
+  transition: border-color 200ms ease, transform 200ms ease;
   cursor: default;
-  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+  filter: saturate(0.7) brightness(0.85);
 }
 
 .about-value-card:hover {
-  transform: translateY(-2px);
-  box-shadow:
-    0 8px 24px rgba(88, 189, 236, 0.2),
-    0 2px 8px rgba(88, 189, 236, 0.3);
+  border-color: var(--ab-cyan);
+  filter: saturate(1) brightness(1);
+  transform: translateY(-4px);
 }
 
 .about-value-card-overlay {
-  background-blend-mode: multiply;
+  background-blend-mode: normal;
 }
 
 .about-value-card-overlay-bg {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.05) 0%,
-    rgba(0, 0, 0, 0.25) 50%,
-    rgba(0, 0, 0, 0.65) 100%
+    rgba(7, 7, 7, 0.1) 0%,
+    rgba(7, 7, 7, 0.5) 60%,
+    rgba(7, 7, 7, 0.9) 100%
   );
   z-index: 1;
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: background 200ms ease;
 }
 
 .about-value-card:hover .about-value-card-overlay-bg {
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.08) 0%,
-    rgba(0, 0, 0, 0.28) 50%,
-    rgba(0, 0, 0, 0.68) 100%
+    rgba(7, 7, 7, 0.05) 0%,
+    rgba(7, 7, 7, 0.4) 60%,
+    rgba(7, 7, 7, 0.85) 100%
   );
 }
 
@@ -377,7 +467,7 @@
   z-index: 2;
   color: white;
   height: 100%;
-  padding: 1.25rem;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -385,29 +475,25 @@
 }
 
 .about-value-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: white;
-  margin-bottom: 0.75rem;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
-  text-shadow:
-    0 2px 12px rgba(0, 0, 0, 0.5),
-    0 1px 3px rgba(0, 0, 0, 0.8);
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
   text-transform: uppercase;
 }
 
 .about-value-desc {
-  color: rgba(255, 255, 255, 0.95);
-  font-size: 0.875rem;
-  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 13px;
+  line-height: 1.55;
   font-weight: 400;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
-  text-shadow:
-    0 1px 6px rgba(0, 0, 0, 0.4),
-    0 1px 2px rgba(0, 0, 0, 0.6);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
 }
 
 .about-value-desc strong {
@@ -422,11 +508,11 @@
 }
 
 
-/* Target Market Section */
+/* Target Market Section — lift tone, eyebrow via ::before. */
 .about-market {
-    background: #000000;
-    padding: 5rem 2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background: #0c0c0c;
+    padding: clamp(80px, 12vh, 160px) clamp(24px, 5vw, 64px);
+    border-bottom: none;
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -435,11 +521,23 @@
     flex-direction: column;
   }
 
+  .about-market::before {
+    content: '04 · GLOBAL REACH';
+    display: block;
+    font-family: var(--ab-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 24px;
+  }
+
   .about-mission-text {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.7);
-    margin: 0 auto 2rem auto;
-    max-width: 800px;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.65);
+    margin: 0 auto 32px auto;
+    max-width: 60ch;
     line-height: 1.6;
     font-weight: 400;
   }
@@ -496,11 +594,11 @@
   }
   
 
-/* Our Story Timeline */
+/* Our Story Timeline — base tone, eyebrow via ::before, light heading. */
 .about-story {
-  background: #0f0f0f;
-  padding: 5rem 2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: #070707;
+  padding: clamp(80px, 12vh, 160px) clamp(24px, 5vw, 64px);
+  border-bottom: none;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -509,12 +607,25 @@
   flex-direction: column;
 }
 
+.about-story::before {
+    content: '05 · OUR STORY';
+    display: block;
+    font-family: var(--ab-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 24px;
+}
+
 .about-story-title {
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: clamp(32px, 4.5vw, 56px);
+    font-weight: 200;
     color: #ffffff !important;
-    margin-bottom: 2rem;
+    margin-bottom: 32px;
     letter-spacing: -0.02em;
+    line-height: 1.1;
 }
 
 .about-timeline {

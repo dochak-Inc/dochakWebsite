@@ -208,20 +208,22 @@ export default function Team() {
 
       {/* CEO Section */}
       <section className="team-ceo-section">
-        <div className="team-ceo-card">
-          <img src={ceoData.photo} alt={ceoData.name} className="team-ceo-photo" />
-          <div className="team-ceo-info">
-            {ceoData.certifiedTrainer && (
-              <div className="team-certified-badge">PTV Certified Trainer</div>
-            )}
-            <div className="team-ceo-name">{ceoData.name}</div>
-            <div className="team-ceo-title">{ceoData.title}</div>
-            <div className="team-ceo-bio">{ceoData.bio}</div>
-            <div className="team-email">
-              <a href={`mailto:${ceoData.email}`} className="team-email-link">{ceoData.email}</a>
+        <AnimatedElement animation="slide-up" delay={0}>
+          <div className="team-ceo-card">
+            <img src={ceoData.photo} alt={ceoData.name} className="team-ceo-photo" />
+            <div className="team-ceo-info">
+              {ceoData.certifiedTrainer && (
+                <div className="team-certified-badge">PTV Certified Trainer</div>
+              )}
+              <div className="team-ceo-name">{ceoData.name}</div>
+              <div className="team-ceo-title">{ceoData.title}</div>
+              <div className="team-ceo-bio">{ceoData.bio}</div>
+              <div className="team-email">
+                <a href={`mailto:${ceoData.email}`} className="team-email-link">{ceoData.email}</a>
+              </div>
             </div>
           </div>
-        </div>
+        </AnimatedElement>
       </section>
 
       {/* Team Members Section */}
@@ -246,18 +248,24 @@ export default function Team() {
         
         <div className="team-members-grid">
           {sortedMembers.map((m, idx) => (
-            <div className="team-member-card" key={idx}>
-              <img src={m.photo} alt={m.name} className="team-member-photo" />
-              {m.certifiedTrainer && (
-                <div className="team-certified-badge">PTV Certified Trainer</div>
-              )}
-              <div className="team-member-name">{m.name}</div>
-              <div className="team-member-title">{m.title}</div>
-              <div className="team-member-bio">{m.bio}</div>
-              <div className="team-email">
-                <a href={`mailto:${m.email}`} className="team-email-link">{m.email}</a>
+            <AnimatedElement
+              key={`${m.name}-${idx}`}
+              animation="slide-up"
+              delay={Math.min(idx * 40, 240)}
+            >
+              <div className="team-member-card">
+                <img src={m.photo} alt={m.name} className="team-member-photo" />
+                {m.certifiedTrainer && (
+                  <div className="team-certified-badge">PTV Certified Trainer</div>
+                )}
+                <div className="team-member-name">{m.name}</div>
+                <div className="team-member-title">{m.title}</div>
+                <div className="team-member-bio">{m.bio}</div>
+                <div className="team-email">
+                  <a href={`mailto:${m.email}`} className="team-email-link">{m.email}</a>
+                </div>
               </div>
-            </div>
+            </AnimatedElement>
           ))}
         </div>
       </section>

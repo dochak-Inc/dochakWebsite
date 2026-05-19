@@ -73,13 +73,7 @@ export default function About() {
           {/* Solutions Column */}
           <AnimatedElement animation="slide-up" delay={100}>
             <div className="about-mission-column">
-              <div className="about-mission-column-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--picton-blue)" strokeWidth="2">
-                  <path d="M9 11H5a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-4"/>
-                  <path d="M9 7V3a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4"/>
-                  <circle cx="12" cy="16" r="1"/>
-                </svg>
-              </div>
+              <h3 className="about-mission-column-title">{t('about.missionTitle1')}</h3>
               <p className="about-mission-column-text"
                  dangerouslySetInnerHTML={{ __html: t('about.solutionsText') }}
               />
@@ -105,13 +99,7 @@ export default function About() {
           {/* Projects Column */}
           <AnimatedElement animation="slide-up" delay={200}>
             <div className="about-mission-column">
-              <div className="about-mission-column-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--emerald)" strokeWidth="2">
-                  <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                  <path d="M2 17l10 5 10-5"/>
-                  <path d="M2 12l10 5 10-5"/>
-                </svg>
-              </div>
+              <h3 className="about-mission-column-title">{t('about.missionTitle2')}</h3>
               <p className="about-mission-column-text"
                  dangerouslySetInnerHTML={{ __html: t('about.projectsText') }}
               />
@@ -137,14 +125,7 @@ export default function About() {
           {/* Team Column */}
           <AnimatedElement animation="slide-up" delay={300}>
             <div className="about-mission-column">
-              <div className="about-mission-column-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" strokeWidth="2">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                  <circle cx="9" cy="7" r="4"/>
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                </svg>
-              </div>
+              <h3 className="about-mission-column-title">{t('about.missionTitle3')}</h3>
               <p className="about-mission-column-text"
                  dangerouslySetInnerHTML={{ __html: t('about.teamText') }}
               />

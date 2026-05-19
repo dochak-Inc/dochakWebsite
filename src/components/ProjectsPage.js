@@ -1,9 +1,8 @@
-import React, { useState, useContext, useRef, useEffect } from 'react';
+import React, { useState, useContext, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './ProjectsPage.css';
-import VideoPlayer from './VideoPlayer';
 import LanguageContext from '../contexts/LanguageContext';
-import { useScrollAnimation, useStaggeredAnimation } from '../hooks/useScrollAnimation';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 // Import project images
 import nepo from '../assets/nepo.webp';
@@ -60,6 +59,7 @@ const ProjectsPage = () => {
     {
       id: 'naepo',
       title: t('projects.items.naepo.title'),
+      tabLabel: t('projects.items.naepo.tabLabel'),
       date: t('projects.items.naepo.date'),
       status: t('projects.status.ongoing'),
       description: t('projects.items.naepo.explanation'),
@@ -78,6 +78,7 @@ const ProjectsPage = () => {
     {
       id: 'teleDriving',
       title: t('projects.items.teleDriving.title'),
+      tabLabel: t('projects.items.teleDriving.tabLabel'),
       date: t('projects.items.teleDriving.date'),
       status: t('projects.status.ongoing'),
       description: t('projects.items.teleDriving.explanation'),
@@ -96,6 +97,7 @@ const ProjectsPage = () => {
     {
       id: 'publicTransport',
       title: t('projects.items.publicTransport.title'),
+      tabLabel: t('projects.items.publicTransport.tabLabel'),
       date: t('projects.items.publicTransport.date'),
       status: t('projects.status.ongoing'),
       description: t('projects.items.publicTransport.explanation'),
@@ -114,6 +116,7 @@ const ProjectsPage = () => {
     {
       id: 'airportParking',
       title: t('projects.items.airportParking.title'),
+      tabLabel: t('projects.items.airportParking.tabLabel'),
       date: t('projects.items.airportParking.date'),
       status: t('projects.status.ongoing'),
       description: t('projects.items.airportParking.explanation'),
@@ -278,7 +281,7 @@ const ProjectsPage = () => {
               id={`tab-${project.id}`}
               aria-controls={`tabpanel-${project.id}`}
             >
-              {project.title}
+              {project.tabLabel || project.title}
             </button>
           ))}
         </div>

@@ -1,50 +1,68 @@
-/* Get In Touch Page - Dark Theme */
+/* Get In Touch Page - aligned with landing page design system. */
 .getintouch-page {
-  background: #000000;
+  background: #070707;
   color: #ffffff;
-  font-family: 'Inter', 'Segoe UI', 'Roboto', Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
   overflow-x: hidden;
+  --gi-cyan: #57bceb;
+  --gi-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 }
 
-/* Hero Section */
+/* Hero Section — matches landing section padding + tone, eyebrow label
+   added via ::before so we don't need to touch the JSX. */
 .getintouch-hero {
-  background: #0f0f0f;
-  padding: 8rem 0 7rem 0;
+  background: #070707;
+  padding: clamp(120px, 16vh, 200px) 0 clamp(80px, 12vh, 160px) 0;
   text-align: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: none;
+  position: relative;
+}
+
+.getintouch-hero::before {
+  content: '01 · GET IN TOUCH';
+  display: block;
+  font-family: var(--gi-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 24px;
 }
 
 .getintouch-hero-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 clamp(24px, 5vw, 64px);
   position: relative;
   z-index: 2;
 }
 
-
 .getintouch-hero-title {
-  font-size: 3.2rem;
-  font-weight: 700;
+  font-size: clamp(40px, 5.5vw, 64px);
+  font-weight: 200;
   color: #ffffff;
-  margin-bottom: 1.5rem;
-  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+  letter-spacing: -0.025em;
   line-height: 1.1;
+  max-width: 18ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .getintouch-hero-subtitle {
-  font-size: 1.4rem;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.65);
   font-weight: 400;
-  max-width: 700px;
+  max-width: 60ch;
   margin: 0 auto;
   line-height: 1.6;
 }
 
-/* Main Content */
+/* Main Content — lift tone (#0c0c0c-ish) for a subtle visual break from hero */
 .getintouch-content {
-  padding: 8rem 0;
-  background: #000000;
+  padding: clamp(80px, 12vh, 160px) 0;
+  background: #0c0c0c;
 }
 
 .getintouch-container {
@@ -67,129 +85,101 @@
 }
 
 .contact-info-title {
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 200;
   color: #ffffff;
-  margin-bottom: 2.5rem;
-  line-height: 1.2;
+  margin-bottom: 32px;
+  line-height: 1.1;
   letter-spacing: -0.02em;
+  max-width: 18ch;
 }
 
 .contact-items {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  margin-bottom: 3rem;
+  gap: 16px;
+  margin-bottom: 48px;
 }
 
+/* Glass-morphism card with subtle cyan blueprint grid — matches the
+   landing solutions cards. */
 .contact-item {
   display: flex;
   align-items: flex-start;
-  gap: 1.2rem;
-  padding: 1.8rem 1.5rem;
-  background: #0f0f0f;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
+  gap: 16px;
+  padding: 24px;
+  background-color: rgba(255, 255, 255, 0.02);
+  background-image:
+    linear-gradient(rgba(87, 188, 235, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(87, 188, 235, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: -1px -1px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
   position: relative;
   overflow: hidden;
 }
 
+.contact-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 30% 30%,
+    rgba(7, 7, 7, 0.85) 0%,
+    rgba(7, 7, 7, 0.5) 45%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.contact-item > * {
+  position: relative;
+  z-index: 1;
+}
+
 .contact-item:hover {
-  background: #0f0f0f;
+  border-color: rgba(87, 188, 235, 0.4);
+  box-shadow: 0 0 24px rgba(87, 188, 235, 0.15);
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(87, 188, 235, 0.2);
-  border-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.035);
 }
-
-.contact-item:nth-child(1) {
-  border-color: rgba(87, 188, 235, 0.3);
-}
-
-.contact-item:nth-child(1):hover {
-  border-color: #57bceb;
-  box-shadow: 0 12px 32px rgba(87, 188, 235, 0.3);
-}
-
-.contact-item:nth-child(1):hover .contact-icon {
-  background: linear-gradient(135deg, #57bceb, #289ad7);
-  color: white;
-}
-
-.contact-item:nth-child(2) {
-  border-color: rgba(16, 185, 129, 0.3);
-}
-
-.contact-item:nth-child(2):hover {
-  border-color: #10b981;
-  box-shadow: 0 12px 32px rgba(16, 185, 129, 0.3);
-}
-
-.contact-item:nth-child(2):hover .contact-icon {
-  background: linear-gradient(135deg, #10b981, #059669);
-  color: white;
-}
-
-.contact-item:nth-child(3) {
-  border-color: rgba(245, 158, 11, 0.3);
-}
-
-.contact-item:nth-child(3):hover {
-  border-color: #f59e0b;
-  box-shadow: 0 12px 32px rgba(245, 158, 11, 0.3);
-}
-
-.contact-item:nth-child(3):hover .contact-icon {
-  background: linear-gradient(135deg, #f59e0b, #d97706);
-  color: white;
-}
-
 
 .contact-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 52px;
-  height: 52px;
-  border-radius: 16px;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
   flex-shrink: 0;
   font-size: 20px;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: color 200ms ease, border-color 200ms ease;
   position: relative;
+  background: rgba(87, 188, 235, 0.08);
+  border: 1px solid rgba(87, 188, 235, 0.25);
+  color: var(--gi-cyan);
 }
 
-.contact-item:nth-child(1) .contact-icon {
-  background: rgba(87, 188, 235, 0.2);
-  color: #57bceb;
-  box-shadow: 0 4px 12px rgba(87, 188, 235, 0.3);
-}
-
-.contact-item:nth-child(2) .contact-icon {
-  background: rgba(16, 185, 129, 0.2);
-  color: #10b981;
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
-}
-
-.contact-item:nth-child(3) .contact-icon {
-  background: rgba(245, 158, 11, 0.2);
-  color: #f59e0b;
-  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+.contact-item:hover .contact-icon {
+  border-color: var(--gi-cyan);
 }
 
 .contact-details h4 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 0.6rem;
-  letter-spacing: -0.02em;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 6px;
+  letter-spacing: 0.05em;
 }
 
 .contact-details p {
-  font-size: 1.05rem;
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.5;
-  font-weight: 500;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.55;
+  font-weight: 400;
 }
 
 /* Social Links - Now integrated into contact items */
@@ -256,75 +246,107 @@
   box-shadow: 0 6px 15px rgba(255, 255, 255, 0.4);
 }
 
-/* Contact Form */
+/* Contact Form — glass-morphism panel with the same blueprint grid bg
+   as the contact-info cards, for visual cohesion across the section. */
 .contact-form-wrapper {
-  background: #0f0f0f;
-  border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.02);
+  background-image:
+    linear-gradient(rgba(87, 188, 235, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(87, 188, 235, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: -1px -1px;
+  border-radius: 12px;
+  box-shadow: none;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   overflow: hidden;
+  position: relative;
+}
+
+.contact-form-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 30% 30%,
+    rgba(7, 7, 7, 0.85) 0%,
+    rgba(7, 7, 7, 0.5) 45%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contact-form-wrapper > * {
+  position: relative;
+  z-index: 1;
 }
 
 .contact-form {
-  padding: 3rem;
+  padding: 40px;
 }
 
 .form-header {
-  text-align: center;
-  margin-bottom: 3rem;
+  text-align: left;
+  margin-bottom: 32px;
 }
 
 .form-header h2 {
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: clamp(22px, 2.2vw, 28px);
+  font-weight: 200;
   color: #ffffff;
-  margin-bottom: 0.75rem;
+  margin-bottom: 8px;
   letter-spacing: -0.02em;
 }
 
 .form-header p {
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.65);
   line-height: 1.6;
 }
 
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
+  gap: 16px;
+  margin-bottom: 16px;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 8px;
 }
 
+/* Labels in mono uppercase — matches eyebrow style across the design system. */
 .form-group label {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #ffffff;
+  font-family: var(--gi-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 4px;
 }
 
 .required {
-  color: #ef4444;
-  font-size: 1.1rem;
+  color: var(--gi-cyan);
+  font-size: 12px;
 }
 
+/* Transparent inputs with cyan focus ring — same family as the
+   landing CTA inputs would be if they existed. */
 .form-group input,
 .form-group textarea {
-  padding: 1rem 1.25rem;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-  border-radius: 12px;
-  font-size: 1rem;
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 8px;
+  font-size: 15px;
   font-family: inherit;
-  background: rgba(255, 255, 255, 0.05) !important;
+  background: rgba(255, 255, 255, 0.02) !important;
   color: #ffffff !important;
-  transition: all 0.3s ease;
+  transition: border-color 200ms ease, background-color 200ms ease;
   resize: vertical;
   outline: none;
 }
@@ -332,46 +354,68 @@
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none !important;
-  border-color: rgba(255, 255, 255, 0.4) !important;
-  box-shadow: none !important;
-  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: var(--gi-cyan) !important;
+  box-shadow: 0 0 0 3px rgba(87, 188, 235, 0.12) !important;
+  background: rgba(255, 255, 255, 0.04) !important;
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.35);
 }
 
+/* Submit button — same style as the landing-cta__button + navbar
+   GET IN TOUCH button: mono uppercase + cyan border + breathing pulse. */
 .submit-button {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
-  padding: 1rem 2rem;
+  gap: 12px;
+  padding: 14px 32px;
   background: transparent;
-  color: #57bceb;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 0.6rem;
-  font-size: 1rem;
-  font-weight: 700;
+  color: var(--gi-cyan);
+  border: 1px solid var(--gi-cyan);
+  border-radius: 999px;
+  font-family: var(--gi-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 1rem;
+  transition: background-color 200ms ease, transform 200ms ease;
+  margin-top: 24px;
+  animation: getintouchSubmitBreathe 2400ms ease-in-out infinite;
 }
 
 .submit-button:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(87, 188, 235, 0.08);
+  color: var(--gi-cyan);
+  transform: translateY(-2px);
+}
+
+.submit-button:focus-visible {
+  outline: 2px solid var(--gi-cyan);
+  outline-offset: 4px;
 }
 
 .submit-button svg {
-  transition: transform 0.3s ease;
+  transition: transform 200ms ease;
 }
 
 .submit-button:hover svg {
   transform: translateX(4px);
+}
+
+@keyframes getintouchSubmitBreathe {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.7; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .submit-button {
+    animation: none;
+  }
 }
 
 /* Success Message */
@@ -406,66 +450,129 @@
   line-height: 1.6;
 }
 
-/* FAQ Section */
+/* FAQ Section — aligned with landing design system: base tone, eyebrow
+   label, light heading, glass-morphism cards with blueprint grid. */
 .faq-section {
-  padding: 6rem 0;
-  background: #000000;
+  padding: clamp(80px, 12vh, 160px) 0;
+  background: #070707;
+  position: relative;
 }
 
 .faq-header {
-  text-align: center;
-  margin-bottom: 4rem;
+  text-align: left;
+  margin-bottom: 64px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 clamp(24px, 5vw, 64px);
+}
+
+/* Eyebrow added via ::before so we don't touch the JSX. */
+.faq-header::before {
+  content: '02 · FAQ';
+  display: block;
+  font-family: var(--gi-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 24px;
 }
 
 .faq-header h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: clamp(32px, 4.5vw, 56px);
+  font-weight: 200;
   color: #ffffff;
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
   letter-spacing: -0.02em;
+  line-height: 1.1;
+  max-width: 18ch;
 }
 
 .faq-header p {
-  font-size: 1.125rem;
-  color: rgba(255, 255, 255, 0.7);
-  max-width: 600px;
-  margin: 0 auto;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 60ch;
+  margin: 0;
   line-height: 1.6;
 }
 
 .faq-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* Equal-height rows so all FAQ cards line up regardless of how long
+     each answer is — the grid sizes every row to the tallest item. */
+  grid-auto-rows: 1fr;
+  align-items: stretch;
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 5vw, 64px);
 }
 
+/* Same glass-morphism + cyan blueprint-grid + radial vignette as the
+   solutions cards and contact-item cards. */
 .faq-item {
-  background: #0f0f0f;
-  padding: 2rem;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.02);
+  background-image:
+    linear-gradient(rgba(87, 188, 235, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(87, 188, 235, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: -1px -1px;
+  padding: 32px 28px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  /* Flex column so the card stretches to fill its grid cell — combined
+     with grid-auto-rows: 1fr on the parent this gives every card the
+     same visible height. */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
+}
+
+.faq-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 30% 30%,
+    rgba(7, 7, 7, 0.85) 0%,
+    rgba(7, 7, 7, 0.5) 45%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.faq-item > * {
+  position: relative;
+  z-index: 1;
 }
 
 .faq-item:hover {
+  border-color: rgba(87, 188, 235, 0.4);
+  box-shadow: 0 0 24px rgba(87, 188, 235, 0.15);
   transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(87, 188, 235, 0.2);
-  border-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.035);
 }
 
 .faq-item h4 {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 500;
   color: #ffffff;
-  margin-bottom: 1rem;
-  line-height: 1.4;
-  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
 }
 
 .faq-item p {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.65);
   line-height: 1.6;
+  font-weight: 400;
 }
 
 /* Animations */
