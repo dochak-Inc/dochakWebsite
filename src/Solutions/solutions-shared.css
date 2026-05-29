@@ -4,12 +4,13 @@
    typography, and CTAs with the landing-page design system.
    ===================================== */
 
+[class$="-page"][class*="nexus"],
+[class$="-page"][class*="prism"],
+[class$="-page"][class*="vista"],
 [class$="-page"][class*="remote-driving"],
-[class$="-page"][class*="digital-twin"],
 [class$="-page"][class*="multimodal-simulator"],
-[class$="-page"][class*="traffic-analysis-tools"],
-[class$="-page"][class*="visualisation"],
-[class$="-page"][class*="vr-road-design"] {
+[class$="-page"][class*="digital-twin"],
+[class$="-page"][class*="traffic-simulation-modelling"] {
   --sol-cyan: #57bceb;
   --sol-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
   background: #070707;
@@ -20,12 +21,13 @@
 
 /* ---------- HERO ---------- */
 
+.nexus-hero,
+.prism-hero,
+.vista-hero,
 .remote-driving-hero,
-.digital-twin-hero,
 .multimodal-simulator-hero,
-.traffic-analysis-tools-hero,
-.visualisation-hero,
-.vr-road-design-hero {
+.digital-twin-hero,
+.traffic-simulation-modelling-hero {
   background: #070707 !important;
   padding: clamp(120px, 16vh, 200px) 0 clamp(80px, 12vh, 160px) 0 !important;
   text-align: center !important;
@@ -33,12 +35,13 @@
   border-bottom: none !important;
 }
 
+.nexus-hero::before,
+.prism-hero::before,
+.vista-hero::before,
 .remote-driving-hero::before,
-.digital-twin-hero::before,
 .multimodal-simulator-hero::before,
-.traffic-analysis-tools-hero::before,
-.visualisation-hero::before,
-.vr-road-design-hero::before {
+.digital-twin-hero::before,
+.traffic-simulation-modelling-hero::before {
   content: '01 · OVERVIEW';
   display: block;
   font-family: var(--sol-mono);

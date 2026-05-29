@@ -24,12 +24,13 @@ const ProjectsPage = lazy(() => import('./components/ProjectsPage'));
 const Team = lazy(() => import('./Team'));
 const GetInTouch = lazy(() => import('./GetInTouch'));
 const Disclosure = lazy(() => import('./Disclosure'));
+const Nexus = lazy(() => import('./Solutions/Nexus'));
+const Prism = lazy(() => import('./Solutions/Prism'));
+const Vista = lazy(() => import('./Solutions/Vista'));
 const RemoteDriving = lazy(() => import('./Solutions/RemoteDriving'));
 const DigitalTwin = lazy(() => import('./Solutions/DigitalTwin'));
 const MultimodalSimulator = lazy(() => import('./Solutions/MultimodalSimulator'));
-const TrafficAnalysisTools = lazy(() => import('./Solutions/TrafficAnalysisTools'));
-const Visualisation = lazy(() => import('./Solutions/Visualisation'));
-const VRRoadDesign = lazy(() => import('./Solutions/VRRoadDesign'));
+const TrafficSimulationModelling = lazy(() => import('./Solutions/TrafficSimulationModelling'));
 const News = lazy(() => import('./News'));
 const NewsArticle = lazy(() => import('./NewsArticle'));
 const Training = lazy(() => import('./Training'));
@@ -58,28 +59,32 @@ function App() {
           element: <SolutionsOverview />
         },
         {
-          path: "solutions/remote-driving",
-          element: <RemoteDriving />
+          path: "solutions/nexus",
+          element: <Nexus />
         },
         {
-          path: "solutions/digital-twin",
-          element: <DigitalTwin />
+          path: "solutions/prism",
+          element: <Prism />
+        },
+        {
+          path: "solutions/vista",
+          element: <Vista />
+        },
+        {
+          path: "solutions/remote-driving",
+          element: <RemoteDriving />
         },
         {
           path: "solutions/multimodal-simulator",
           element: <MultimodalSimulator />
         },
         {
-          path: "solutions/traffic-analysis-tools",
-          element: <TrafficAnalysisTools />
+          path: "solutions/digital-twin",
+          element: <DigitalTwin />
         },
         {
-          path: "solutions/visualization",
-          element: <Visualisation />
-        },
-        {
-          path: "solutions/vr-road-design",
-          element: <VRRoadDesign />
+          path: "solutions/traffic-simulation-modelling",
+          element: <TrafficSimulationModelling />
         },
         {
           path: "projects",

@@ -8,12 +8,13 @@ import AnimatedElement from './atoms/AnimatedElement';
 import './LandingSolutions.css';
 
 const SOLUTIONS = [
-  { key: 'remoteDriving',        slug: 'remote-driving' },
-  { key: 'digitalTwin',          slug: 'digital-twin' },
-  { key: 'multimodalSimulator',  slug: 'multimodal-simulator' },
-  { key: 'trafficAnalysisTools', slug: 'traffic-analysis-tools' },
-  { key: 'visualization',        slug: 'visualization' },
-  { key: 'vrRoadDesign',         slug: 'vr-road-design' },
+  { key: 'nexus',                       slug: 'nexus' },
+  { key: 'prism',                       slug: 'prism' },
+  { key: 'vista',                       slug: 'vista' },
+  { key: 'remoteDriving',               slug: 'remote-driving' },
+  { key: 'multimodalSimulator',         slug: 'multimodal-simulator' },
+  { key: 'digitalTwin',                 slug: 'digital-twin' },
+  { key: 'trafficSimulationModelling',  slug: 'traffic-simulation-modelling' },
 ];
 
 const LandingSolutions = () => {

@@ -82,7 +82,7 @@ export default function NewsArticle() {
         videoUrl: "https://www.youtube.com/embed/7oWZzj1lrkc?si=bA-VeNpgFsmk0NxV",
         ctaButton: {
           text: t('news.articles.aimoTwinAnalyticsV01.ctaButton'),
-          link: '/solutions/traffic-analysis-tools'
+          link: '/solutions/traffic-simulation-modelling'
         }
       },
       'ptv-naepo-digital-twin-blog': {
@@ -137,7 +137,7 @@ export default function NewsArticle() {
         videoUrl: "https://www.youtube.com/embed/kL11AdA_DvE?si=_AKT55Okf50-HtPF",
         ctaButton: {
           text: t('news.articles.llmTrafficAnalysis.ctaButton'),
-          link: '/solutions/traffic-analysis-tools'
+          link: '/solutions/traffic-simulation-modelling'
         }
       },
       'kaist-mobility-tech-2025': {

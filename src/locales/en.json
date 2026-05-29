@@ -183,6 +183,30 @@
     "overviewText": "Explore our comprehensive suite of mobility solutions designed to transform urban transportation and smart city operations. Each solution represents cutting-edge technology and innovative approaches to modern mobility challenges.",
     "solutionsTitle": "Our Solution Portfolio",
     "items": {
+      "nexus": {
+        "title": "Nexus",
+        "desc": [
+          "<strong>AI-powered base-model management</strong> that turns weeks of manual updates into minutes.",
+          "Automated validation, scenario testing, and comparative KPI dashboard — <strong>100% secure on-premise</strong>.",
+          "Zero learning curve, real-time updates, side-by-side scenario analysis with <strong>customizable performance indicators</strong>."
+        ]
+      },
+      "prism": {
+        "title": "Prism",
+        "desc": [
+          "<strong>Vissim validation dashboard</strong> that visualises model and observed data directly on the map.",
+          "Comparative scenario analysis with <strong>signal phases, flow bands, and KPIs</strong> unified in one view.",
+          "One-click professional reports and an <strong>AI assistant</strong> for parameter changes via natural language."
+        ]
+      },
+      "vista": {
+        "title": "Vista",
+        "desc": [
+          "Streams <strong>Vissim high-fidelity simulation data</strong> into a Unity 3D environment in real time.",
+          "Python-to-Vissim bridge over a <strong>high-speed UDP channel</strong> with synchronized vehicle trajectories.",
+          "Interactive web UI with <strong>intersection nodes</strong> for instant access to live performance metrics."
+        ]
+      },
       "trafficAnalysis": {
         "title": "Traffic Impact Analysis",
         "desc": [
@@ -191,29 +215,20 @@
           "Dashboard-type interface enhances <strong>user accessibility</strong> and analytical comprehension."
         ]
       },
+      "trafficSimulationModelling": {
+        "title": "Traffic Simulation Modelling",
+        "desc": [
+          "<strong>Multi-scale modelling</strong> across macro, meso, and micro for policy, planning, and operations.",
+          "<strong>Visum–Vissim automated integration</strong> with one-click analysis workflows.",
+          "LLM-assisted prediction, co-simulation with Unity, and <strong>hardware-in-the-loop</strong> setups."
+        ]
+      },
       "drivingSimulator": {
         "title": "Driving Simulator",
         "desc": [
           "Test drive <strong>actual or planned roads</strong> in virtual environments to identify issues.",
           "Verify and refine <strong>road design functionalities</strong>.",
           "Can be used as part of educational programs for <strong>safe driving and design validation</strong>."
-        ]
-      },
-      "lifeSavingRobot": {
-        "title": "Life Saving Robot",
-        "desc": [
-          "The <strong>Life-Saving Robot</strong> is designed to assist in emergency and disaster situations by <strong>guiding and protecting people</strong> in danger.",
-          "Simulate <strong>emergency response scenarios</strong> and environmental hazard navigation.",
-          "Verify safety aspects like <strong>visibility and sight distance</strong> under various conditions."
-        ]
-      },
-      "visualisation": {
-        "title": "Visualisation",
-        "desc": [
-          "Create <strong>high-definition videos</strong> based on digital twin environments.",
-          "Reflect <strong>realistic traffic behaviors</strong> for lifelike presentations.",
-          "Use in public hearings, <strong>policy promotions</strong>, and presentations.",
-          "Considered a <strong>required deliverable</strong> for major city projects globally."
         ]
       },
       "multimodal": {
@@ -394,10 +409,10 @@
         "button": "Get In Touch"
       }
     },
-    "trafficAnalysisToolsSolution": {
+    "trafficSimulationModellingSolution": {
       "hero": {
-        "title": "Traffic Impact Analysis",
-        "subtitle": "Comprehensive traffic analysis platform with one-click automation and multi-scale simulation capabilities for policy evaluation and traffic optimization"
+        "title": "Traffic Simulation Modelling",
+        "subtitle": "Multi-scale simulation modelling platform — macro, meso, and micro — with one-click automation for policy evaluation, infrastructure planning, and traffic operations"
       },
       "overview": {
         "title": "Overview",
@@ -453,99 +468,144 @@
         "button": "Get In Touch"
       }
     },
-    "visualisationSolution": {
+    "nexusSolution": {
       "hero": {
-        "title": "Visualisation",
-        "subtitle": "High-definition video production based on digital twin environments with realistic traffic behaviors for compelling presentations and public communications."
+        "title": "Nexus — AI Mobility Digital Twin Operations",
+        "subtitle": "Turn weeks of manual model updates into minutes of automated work — in a <strong>100% secure on-premise environment</strong>."
       },
       "overview": {
         "title": "Overview",
-        "demo": "Enhanced traffic monitoring visualization",
-        "demoDesc": "<strong>Data visualization</strong> has been important in democratizing data and analytics and making <strong>data-driven insights</strong> available to workers throughout an organization. Data visualization also plays an important role in big data and <strong>advanced analytics projects</strong>.",
+        "demo": "Dochak Nexus — Smart Modeling for Mobility Digital Twins",
+        "demoDesc": "Still spending weeks manually updating your traffic models? <strong>Nexus</strong> cuts the bottleneck. Select a base traffic model, define the analysis period, and click start — Nexus runs an <em>automated base-model update</em> with built-in validation, then moves seamlessly into <strong>scenario testing</strong>. Implement changes with simplified controls and see <em>real-time updates instantly</em>. Compare alternatives side by side with <strong>customizable performance indicators</strong>, all tracked on an integrated visual analytics dashboard.",
         "playVideo": "Play Video"
       },
       "technical": {
         "title": "Technical Details",
         "specsTitle": "Specifications & Technology",
-        "spec1": "<strong>High-definition video creation</strong> from digital twin environments",
-        "spec2": "<strong>Realistic traffic behavior modeling</strong> and animation",
-        "spec3": "Professional-grade rendering for <strong>presentations</strong>",
-        "spec4": "<strong>Integration</strong> with policy promotion materials",
-        "spec5": "Public hearing and <strong>stakeholder communication tools</strong>",
-        "researchTitle": "Research & Applications",
-        "patentTitle": "Related Technologies",
-        "patentName": "Digital Twin Visualization and Rendering System",
+        "spec1": "<strong>Automated base-model synchronization</strong> with selectable time periods",
+        "spec2": "<em>One-click analysis</em> with built-in <strong>automated validation</strong>",
+        "spec3": "Intuitive scenario controls with <strong>zero learning curve</strong> and real-time updates",
+        "spec4": "<strong>Comparative scenario analysis</strong> with customizable KPIs",
+        "spec5": "<strong>100% secure on-premise</strong> deployment — no data leaves your environment",
+        "researchTitle": "Research & Patents",
+        "patentTitle": "Related Patents",
+        "patentName": "AI-assisted Mobility Digital Twin Operation System",
         "applicationDate": "Application Date",
         "patentNumber": "Patent Number",
-        "academicTitle": "Global Applications",
-        "academicInfo": "Considered a required deliverable for major city projects globally",
+        "academicTitle": "Academic Links",
+        "academicInfo": "Built on KAIST's traffic digital twin research lineage and PTV Visum/Vissim integration work",
         "disclosureButton": "View Research Publications"
       },
       "useCases": {
         "title": "Use Cases",
         "industriesTitle": "Target Industries",
-        "industry1": "Urban Planning Departments",
-        "industry2": "Government Agencies",
-        "industry3": "Public Communication",
+        "industry1": "Smart City Operators",
+        "industry2": "Traffic Authorities",
+        "industry3": "Mobility Consultancies",
         "outcomeTitle": "Expected Outcomes",
-        "outcomeDesc": "<strong>Enhanced stakeholder understanding</strong> and improved public engagement through <strong>immersive visualizations</strong>",
+        "outcomeDesc": "<strong>Weeks of manual modeling compressed into minutes</strong> — immediate confidence in data, faster scenario decisions, and a single dashboard for every comparison",
         "scenarioTitle": "Application Scenario",
-        "scenarioStep1": "<strong>Major urban development project</strong> planning phase",
-        "scenarioStep2": "Create <strong>high-definition visualization</strong> from digital twin data",
-        "scenarioStep3": "Present <em>compelling visual evidence</em> in <strong>public hearings</strong> and policy meetings"
+        "scenarioStep1": "<strong>Select base model</strong> and define analysis period",
+        "scenarioStep2": "Run <strong>automated update and validation</strong> in minutes",
+        "scenarioStep3": "Compare scenarios side by side on the <strong>integrated analytics dashboard</strong>"
       },
       "cta": {
-        "title": "Ready to Enhance Your Visual Communications?",
-        "description": "Contact us to learn more about how our Visualisation solutions can improve your public presentations and stakeholder engagement.",
+        "title": "Ready to Modernize Your Mobility Operations?",
+        "description": "Contact us to learn how Nexus can collapse weeks of traffic modeling work into minutes — securely, on your own infrastructure.",
         "button": "Get In Touch"
       }
     },
-    "lifeSavingRobotSolution": {
+    "prismSolution": {
       "hero": {
-        "title": "Life Saving Robot ",
-        "subtitle": "Equipped with sensors, AI, and real-time communication capabilities, it can navigate complex environments, identify hazards, and support evacuation efforts."
+        "title": "Prism — Vissim Validation & Comparison Dashboard",
+        "subtitle": "Upload your model, see it on the map, compare scenarios, and ship a finished report in one click — with an <strong>AI assistant</strong> for parameter changes."
       },
       "overview": {
         "title": "Overview",
-        "demo": "Life Saving Robot",
-        "demoDesc": "<strong>Life-saving robot</strong> is designed to assist in dangerous situations where human intervention would be too risky or difficult. They are a <strong>critical tool for first responders</strong>, helping to save lives and <strong>protect rescuers</strong> during disasters, accidents, and other emergencies.",
-        "LSR-1": "Robot simulation",
-        "LSR-1Desc": "The robot can <strong>navigate complex environments</strong>, identify hazards, and <strong>support evacuation efforts</strong>. Whether by directing crowd flow, <strong>delivering essential supplies</strong>, or providing situational awareness to first responders, this robot plays a crucial role in <strong>reducing risk and saving lives</strong> during critical moments.",
+        "demo": "Dochak Prism — Intuitive Vissim Dashboard",
+        "demoDesc": "Upload a Vissim model alongside observed traffic data and <strong>Prism</strong> instantly visualises your <em>complex validation data on the map</em> — making analysis easier than ever. Select a comparison set to unlock <strong>comparative scenario analysis</strong>: evaluate key metrics, track customizable KPIs per intersection, and view <em>flow bands and signal phases</em> in one unified visual analytics dashboard. Generate complete, fully formatted reports with a single click. Need to change inputs and re-run the model? Tell the <strong>built-in AI assistant</strong> in natural language — it applies parameters and tracks execution in real time.",
         "playVideo": "Play Video"
       },
       "technical": {
         "title": "Technical Details",
         "specsTitle": "Specifications & Technology",
-        "spec1": "<strong>Sensing and Environmental Awareness</strong>",
-        "spec2": "Navigation and Control",
-        "spec3": "<strong>Propulsion and Chassis</strong>",
-        "spec4": "Artificial Intelligence (AI) and Robotics",
-        "spec5": "<strong>Communication</strong>",
-        "researchTitle": "Research & Development",
+        "spec1": "<strong>Model + observed data ingestion</strong> with instant map visualisation",
+        "spec2": "<em>Comparative scenario analysis</em> with customizable per-intersection KPIs",
+        "spec3": "Unified view of <strong>flow bands, signal phases, and validation metrics</strong>",
+        "spec4": "<strong>One-click report generation</strong> — professional, fully formatted output in seconds",
+        "spec5": "<strong>Built-in AI assistant</strong> — natural-language model edits with real-time execution tracking",
+        "researchTitle": "Research & Patents",
         "patentTitle": "Related Patents",
-        "patentName": "Evacuation robot guidance",
+        "patentName": "Vissim Validation and Comparative Analysis Dashboard",
         "applicationDate": "Application Date",
         "patentNumber": "Patent Number",
-        "academicTitle": "Educational Applications",
-        "academicInfo": "Used in educational programs for safe design validation",
+        "academicTitle": "Academic Links",
+        "academicInfo": "Validation methodology based on operational modelling guidelines and Visum–Vissim calibration research",
         "disclosureButton": "View Research Publications"
       },
       "useCases": {
         "title": "Use Cases",
         "industriesTitle": "Target Industries",
-        "industry1": "Building Design Companies",
-        "industry2": "Transportation Engineering",
-        "industry3": "Educational Institutions",
+        "industry1": "Transport Consultancies",
+        "industry2": "Traffic Engineering Firms",
+        "industry3": "Public Agencies",
         "outcomeTitle": "Expected Outcomes",
-        "outcomeDesc": "<strong>Improved design accuracy</strong> and safety validation before construction, reducing <strong>costly revisions</strong>",
+        "outcomeDesc": "<strong>Faster validation, easier comparison, and zero report-writing overhead</strong> — with AI handling the tedious model edits",
         "scenarioTitle": "Application Scenario",
-        "scenarioStep1": "<strong>Complex building design project</strong>",
-        "scenarioStep2": "Import <strong>BIM</strong> into 3D environment",
-        "scenarioStep3": "Validate safety aspects and <strong>emergency response effectiveness</strong> through robot simulation"
+        "scenarioStep1": "<strong>Upload model and observed data</strong> — see it on the map instantly",
+        "scenarioStep2": "Select a <strong>comparison set</strong> and review KPIs across intersections",
+        "scenarioStep3": "<strong>Generate the report</strong> with one click — or ask the AI to tweak inputs and re-run"
       },
       "cta": {
-        "title": "Ready to Revolutionize Your Building Design Process?",
-        "description": "Contact us to learn more about how our life saving robot solutions can enhance your design validation and safety verification processes.",
+        "title": "Ready to Modernize Your Validation Workflow?",
+        "description": "Contact us to learn how Prism can streamline your Vissim validation, comparison, and reporting — with an AI assistant doing the heavy lifting.",
+        "button": "Get In Touch"
+      }
+    },
+    "vistaSolution": {
+      "hero": {
+        "title": "Vista — Vissim ↔ Unity 3D Real-time Streaming",
+        "subtitle": "Stream <strong>Vissim's high-fidelity simulation data</strong> directly into a Unity 3D environment in real time — synchronized vehicles, dashboards, and interactive intersection nodes."
+      },
+      "overview": {
+        "title": "Overview",
+        "demo": "Dochak Vista — Seamless Vissim → Unity 3D Integration",
+        "demoDesc": "<strong>Vista</strong> binds a Python script to the Vissim interface and opens a <em>high-speed UDP communication channel</em> to stream vehicle trajectory data in real time. Select and run any Vissim scenario — live <strong>vehicle positions and speeds</strong> drive Unity's 3D traffic flow, with Unity dynamically adjusting vehicle speeds in <em>perfect sync with the simulation tempo</em>. Dashboard metrics update automatically based on the active scenario. On the web UI, <strong>purple nodes</strong> mark key intersections across the Vissim network — click any node to instantly review its real-time status and comprehensive performance metrics.",
+        "playVideo": "Play Video"
+      },
+      "technical": {
+        "title": "Technical Details",
+        "specsTitle": "Specifications & Technology",
+        "spec1": "<strong>Python ↔ Vissim binding</strong> via the Vissim COM interface",
+        "spec2": "<strong>High-speed UDP channel</strong> for low-latency vehicle trajectory streaming",
+        "spec3": "<em>Unity 3D rendering</em> with vehicle speeds synchronized to Vissim's simulation tempo",
+        "spec4": "<strong>Auto-updating dashboard metrics</strong> tied to the active scenario",
+        "spec5": "Interactive web UI with <strong>purple intersection nodes</strong> for instant per-node analytics",
+        "researchTitle": "Research & Patents",
+        "patentTitle": "Related Patents",
+        "patentName": "Vissim-to-Unity Real-time Simulation Streaming System",
+        "applicationDate": "Application Date",
+        "patentNumber": "Patent Number",
+        "academicTitle": "Academic Links",
+        "academicInfo": "Built on KAIST's co-simulation research and Unity-based driving simulator pipelines",
+        "disclosureButton": "View Research Publications"
+      },
+      "useCases": {
+        "title": "Use Cases",
+        "industriesTitle": "Target Industries",
+        "industry1": "AV Development Teams",
+        "industry2": "Driving Simulator Operators",
+        "industry3": "Urban Mobility Research",
+        "outcomeTitle": "Expected Outcomes",
+        "outcomeDesc": "<strong>Vissim's analytical rigour meets Unity's visual fidelity</strong> — live, synchronized, and instantly inspectable per intersection",
+        "scenarioTitle": "Application Scenario",
+        "scenarioStep1": "<strong>Python script binds to Vissim</strong> and opens a UDP channel",
+        "scenarioStep2": "Run a scenario — <strong>live vehicle data streams into Unity</strong> in real time",
+        "scenarioStep3": "Click an <strong>intersection node</strong> on the web UI for instant per-node metrics"
+      },
+      "cta": {
+        "title": "Ready to Bridge Simulation and 3D?",
+        "description": "Contact us to learn how Vista can connect your Vissim models to Unity 3D environments with real-time streaming and per-intersection analytics.",
         "button": "Get In Touch"
       }
     }
@@ -1256,16 +1316,17 @@
     },
     "solutions": {
       "eyebrow": "02 · SOLUTIONS",
-      "headline": "Six platforms. One vision.",
+      "headline": "Seven platforms. One vision.",
       "body": "Our suite covers the full mobility stack — from the cars in motion to the cities they navigate to the engineers who keep the systems running.",
       "viewAll": "View all solutions →",
       "cards": {
-        "remoteDriving":         { "title": "Remote Driving",         "body": "Tele-driving for fleets and fail-safe vehicle handoff." },
-        "digitalTwin":           { "title": "Digital Twin",           "body": "Real-time 3D mirrors of city traffic and infrastructure." },
-        "multimodalSimulator":   { "title": "Multimodal Simulator",   "body": "Test autonomous behavior across cars, buses, drones, and pedestrians." },
-        "trafficAnalysisTools":  { "title": "Traffic Analysis Tools", "body": "Volume, flow, and signal-timing analytics for transport authorities." },
-        "visualization":         { "title": "Visualization",          "body": "Geospatial dashboards and decision-support displays." },
-        "vrRoadDesign":          { "title": "VR Road Design",         "body": "Immersive design reviews for new roads before they're built." }
+        "nexus":                       { "title": "Nexus",                       "body": "AI-powered base-model management — weeks of work in minutes, on-premise." },
+        "prism":                       { "title": "Prism",                       "body": "Vissim validation dashboard with one-click reports and an AI assistant." },
+        "vista":                       { "title": "Vista",                       "body": "Real-time streaming from Vissim simulations into Unity 3D environments." },
+        "remoteDriving":               { "title": "Tele-Driving",                "body": "Remote driving for fleets and fail-safe vehicle handoff." },
+        "multimodalSimulator":         { "title": "Multimodal Simulator",        "body": "Test autonomous behavior across cars, buses, drones, and pedestrians." },
+        "digitalTwin":                 { "title": "Digital Twin",                "body": "Real-time 3D mirrors of city traffic and infrastructure." },
+        "trafficSimulationModelling":  { "title": "Traffic Simulation Modelling", "body": "Macro, meso, and micro simulation for policy, planning, and operations." }
       }
     },
     "training": {

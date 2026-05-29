@@ -7,12 +7,13 @@ import { useScrollAnimation } from './hooks/useScrollAnimation';
 // Import solution images
 import dash from './assets/dash.webp';
 import simulator from './assets/내포3D모델.webp';
-import vr from './assets/로봇.webp';
-import visual from './assets/visual.webp';
 import multi from './assets/multi.webp';
 import tele from './assets/teledriving.webp';
+import unity3D from './assets/unity3D.webp';
+import trafficTwin from './assets/trafficTwin.webp';
 
-const solutionImages = [tele, simulator, multi, dash, vr, visual];
+// Order: Nexus, Prism, Vista, Tele-Driving, Multimodal, Digital Twin, Traffic Simulation Modelling
+const solutionImages = [simulator, dash, unity3D, tele, multi, trafficTwin, dash];
 
 export default function Solutions() {
   const { t } = useContext(LanguageContext);
@@ -37,14 +38,24 @@ export default function Solutions() {
 
   const solutions = [
     {
+      title: t('solutions.items.nexus.title'),
+      desc: t('solutions.items.nexus.desc'),
+      path: '/solutions/nexus',
+    },
+    {
+      title: t('solutions.items.prism.title'),
+      desc: t('solutions.items.prism.desc'),
+      path: '/solutions/prism',
+    },
+    {
+      title: t('solutions.items.vista.title'),
+      desc: t('solutions.items.vista.desc'),
+      path: '/solutions/vista',
+    },
+    {
       title: t('solutions.items.teleDriving.title'),
       desc: t('solutions.items.teleDriving.desc'),
       path: '/solutions/remote-driving',
-    },
-    {
-      title: t('solutions.items.digitalTwin.title'),
-      desc: t('solutions.items.digitalTwin.desc'),
-      path: '/solutions/digital-twin',
     },
     {
       title: t('solutions.items.multimodal.title'),
@@ -52,19 +63,14 @@ export default function Solutions() {
       path: '/solutions/multimodal-simulator',
     },
     {
-      title: t('solutions.items.trafficAnalysis.title'),
-      desc: t('solutions.items.trafficAnalysis.desc'),
-      path: '/solutions/traffic-analysis-tools',
+      title: t('solutions.items.digitalTwin.title'),
+      desc: t('solutions.items.digitalTwin.desc'),
+      path: '/solutions/digital-twin',
     },
     {
-      title: t('solutions.items.lifeSavingRobot.title'),
-      desc: t('solutions.items.lifeSavingRobot.desc'),
-      path: '/solutions/vr-road-design',
-    },
-    {
-      title: t('solutions.items.visualisation.title'),
-      desc: t('solutions.items.visualisation.desc'),
-      path: '/solutions/visualization',
+      title: t('solutions.items.trafficSimulationModelling.title'),
+      desc: t('solutions.items.trafficSimulationModelling.desc'),
+      path: '/solutions/traffic-simulation-modelling',
     }
   ];
 
