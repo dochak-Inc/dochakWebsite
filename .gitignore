@@ -24,3 +24,7 @@ yarn-error.log*
 
 # Claude Code worktrees and local agent state
 .claude/
+
+# Local brainstorming and planning artifacts
+.superpowers/
+docs/superpowers/

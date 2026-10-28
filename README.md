@@ -1,67 +1,37 @@
-# dochakWebsite
+# Dochak website
 
-This is the official website for **도착 (Dochak)**.
+The company website for **Dochak**, a mobility and traffic-simulation company. Live at **https://dochak.com**.
 
-## Getting Started
+Built with React 19 (Create React App), React Router and three.js, in Korean and English. Deployed to GitHub Pages by [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) on every push to `main`.
 
-Follow the steps below to clone, install, and run the website locally.
-
-### 1. Clone the Repository
+## Run locally
 
 ```bash
-git clone https://github.com/MSminseo/dochakWebsite.git
+git clone https://github.com/dochak-Inc/dochakWebsite.git
 cd dochakWebsite
-```
-
-### 2. Install Dependencies
-
-```bash
 npm install
+PORT=3030 npm start     # http://localhost:3030
+npm run build           # production build in build/
 ```
 
-### 3. Build the Website
+## Pages
 
-```bash
-npm run build
-```
+| Page | Source |
+|---|---|
+| Home (landing sections) | `src/App.js`, `src/components/landing/` |
+| About, Team, Contact | `src/About.js`, `src/Team.js`, `src/GetInTouch.js` |
+| Solutions (Nexus, Prism, Vista, digital twin, simulators, remote driving) | `src/Solutions.js`, `src/Solutions/` |
+| Projects | `src/components/ProjectsPage.js` |
+| News, Training, Disclosure | `src/News.js`, `src/NewsArticle.js`, `src/Training.js`, `src/components/CourseDetail.js`, `src/Disclosure.js` |
 
-### 4. Run the Website Locally
+## Editing text
 
-```bash
-npm start
-```
+All interface text is in `src/locales/en.json` and `src/locales/ko.json` (course content is in `src/courseData.js` and `src/courseData_ko.js`).
 
-## Editing Text Content
+Only change the string values. Keep every key and the JSON structure as they are:
 
-To edit the text content of the website:
-
-1. Navigate to the `src/locales` directory.
-2. Open either `en.json` (English) or `ko.json` (Korean).
-3. **Only edit the string values.** Do not modify the JSON structure or keys.
-
-### Example
-
-```json
-{
-  "home.title": "Welcome to Dochak",
-  "home.subtitle": "Mobility for the future"
-}
-```
-
-✅ **Correct**:
 ```json
 "home.title": "Hello from Dochak"
 ```
 
-❌ **Incorrect** (Don't remove keys or change the structure):
-```json
-"welcome": "Hello from Dochak"
-```
-
----
-
-Feel free to open an issue or pull request if you have questions or suggestions.
-
-## Next step
-
-Purchase the domain of the website. Let me know once purchased, then I will update the domain here.
+Then commit to `main`; the site redeploys automatically.
